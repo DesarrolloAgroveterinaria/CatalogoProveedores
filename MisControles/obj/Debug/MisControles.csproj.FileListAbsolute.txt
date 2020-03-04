@@ -1,0 +1,30 @@
+c:\users\sistemas\documents\visual studio 2015\Projects\AGROHerramientas\MisControles\bin\Debug\MisControles.dll
+c:\users\sistemas\documents\visual studio 2015\Projects\AGROHerramientas\MisControles\bin\Debug\MisControles.pdb
+c:\users\sistemas\documents\visual studio 2015\Projects\AGROHerramientas\MisControles\obj\Debug\MisControles.dll
+c:\users\sistemas\documents\visual studio 2015\Projects\AGROHerramientas\MisControles\obj\Debug\MisControles.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\bin\Debug\MisControles.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\bin\Debug\MisControles.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\obj\Debug\MisControles.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\obj\Debug\MisControles.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\obj\Debug\MisControles.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\bin\Debug\MetroFramework.Design.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\bin\Debug\MetroFramework.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\MisControles\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\MisControles\bin\Debug\MisControles.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\MisControles\bin\Debug\MisControles.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\MisControles\obj\Debug\MisControles.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\Agroveterinaria\MisControles\obj\Debug\MisControles.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\MisControles\obj\Debug\MisControles.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\MisControles\obj\Debug\MisControles.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\MisControles\bin\Debug\MisControles.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\MisControles\bin\Debug\MisControles.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.pdb
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\MisControles\bin\Debug\MisControles.dll
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\MisControles\bin\Debug\MisControles.pdb
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.dll
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\MisControles\obj\Debug\MisControles.pdb

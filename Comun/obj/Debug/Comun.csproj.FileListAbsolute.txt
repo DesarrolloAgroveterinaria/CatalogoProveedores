@@ -1,0 +1,283 @@
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\CatalogosObjetos.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\CatalogosObjetos.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.AlmacenesAsociados.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Formas.BuscarProducto.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Formas.BuscarProveedor.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Formas.Espera.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Formas.ReportesBuscarProducto.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Formas.ReportesBuscarProveedor.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Formas.ReportesBuscarSucursal.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.Formas.VisualizadorReportes.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Comun\obj\Debug\Comun.Formas.Navegador.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.Formas.Navegador.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.Formas.VisualizadorReportes.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\Autorizaciones\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\Autorizaciones\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\Autorizaciones\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\Autorizaciones\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\documents\visual studio 2015\Projects\Autorizaciones\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\Autorizaciones\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AGROHerramientas\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AGROHerramientas\Comun\obj\Debug\Comun.Controles.ClaveAutorizacion.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Comun.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\FlashControlV71.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\ADODB.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\stdole.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Microsoft.ReportViewer.WinForms.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.xml
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.Controles.ClaveAutorizacion.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\obj\Debug\Comun.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\MetroFramework.Design.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\MetroFramework.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Comun\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\Comun.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\Comun.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\ADODB.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.Controles.ClaveAutorizacion.resources
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.csproj.GenerateResource.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Comun\obj\Debug\Comun.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\Comun.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\Comun.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\Microsoft.Build.Utilities.v3.5.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\ADODB.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\bin\Debug\es\Microsoft.Build.Utilities.v3.5.resources.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.Controles.ClaveAutorizacion.resources
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.Properties.Resources.resources
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.csproj.GenerateResource.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.dll.licenses
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Comun\obj\Debug\Comun.pdb

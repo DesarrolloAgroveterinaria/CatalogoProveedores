@@ -1,0 +1,7 @@
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\bin\Release\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\bin\Release\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\bin\Release\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Release\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Release\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Release\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Release\Conexiones.pdb

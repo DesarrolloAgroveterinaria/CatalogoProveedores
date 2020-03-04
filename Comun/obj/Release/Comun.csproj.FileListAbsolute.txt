@@ -1,0 +1,11 @@
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.AlmacenesAsociados.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Formas.BuscarProducto.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Formas.BuscarProveedor.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Formas.Espera.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Formas.ReportesBuscarProducto.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Formas.ReportesBuscarProveedor.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Formas.ReportesBuscarSucursal.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Comun\obj\Release\Comun.dll.licenses

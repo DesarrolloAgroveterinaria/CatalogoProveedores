@@ -1,0 +1,107 @@
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\EntregaDeMercancia\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AgroVet\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\GeneradorDeRecetas\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeRecetas\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Autorizaciones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\GeneradorDeOrdenEntrega\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\InventarioCiclico\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\InventarioCiclico\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\MiRancho\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AnalisisMinimos\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\AGROHerramientas\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\documents\visual studio 2015\Projects\AGROHerramientas\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\bin\Debug\Conexiones.dll.config
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.Cache
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\bin\Debug\MetroFramework.Design.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\bin\Debug\MetroFramework.dll
+C:\Users\Sistemas\Documents\Visual Studio 2015\Projects\Proveedores\Conexiones\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\obj\Debug\Conexiones.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.cache
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\Agroveterinaria\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.csprojAssemblyReference.cache
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.Properties.Resources.resources
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.GenerateResource.cache
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.CopyComplete
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
