@@ -7,13 +7,13 @@ using System.Text;
 
 namespace ProveedorEntidades
 {
-    public class EProveedorUsuario
+    static public class EProveedorUsuario
     {
-        public string Usuario { get; set; }
-        public string Nombre { get; set; }
+        public static string Usuario = "";
+        public static string Nombre;
 
-        public string Contra{ get; set; }
-        public string Estacion { get; set; }
+        public static string Contra;
+        public static string Estacion;
         //Agregar aquí atributos de permisos de Usuario
     }
 }

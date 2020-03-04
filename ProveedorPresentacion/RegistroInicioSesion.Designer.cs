@@ -174,10 +174,11 @@
             this.lblMensajeInvalidez.ForeColor = System.Drawing.Color.Red;
             this.lblMensajeInvalidez.Location = new System.Drawing.Point(220, 409);
             this.lblMensajeInvalidez.Name = "lblMensajeInvalidez";
-            this.lblMensajeInvalidez.Size = new System.Drawing.Size(149, 13);
+            this.lblMensajeInvalidez.Size = new System.Drawing.Size(155, 13);
             this.lblMensajeInvalidez.TabIndex = 36;
-            this.lblMensajeInvalidez.Text = "Contraseña o Usuario Inválido";
+            this.lblMensajeInvalidez.Text = "Contraseña o Usuario Inválido. ";
             this.lblMensajeInvalidez.Visible = false;
+            this.lblMensajeInvalidez.Click += new System.EventHandler(this.lblMensajeInvalidez_Click);
             // 
             // btnIniciarSesion
             // 

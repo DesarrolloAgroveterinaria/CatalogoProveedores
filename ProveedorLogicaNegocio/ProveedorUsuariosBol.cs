@@ -15,8 +15,20 @@ namespace ProveedorLogicaNegocio
 
         public string iniciarSesion(string usuario, string contra)
         {
-            mensajeRespuestaSP.Clear();   
-            return proveedorUsuariosDal.GetNombreByUsuarioByContra(usuario, contra).Nombre; ;
+            mensajeRespuestaSP.Clear();
+            return proveedorUsuariosDal.GetNombreByUsuarioByContra(usuario, contra);
+        }
+
+        public int CambiarContrasena(string usuario, string contra)
+        {
+            mensajeRespuestaSP.Clear();
+            return proveedorUsuariosDal.GetValorCambiarContrasenaByUsuarioByContra(usuario, contra);
+        }
+
+        public void cambiarValorContrasena(string usuario, string contra)
+        {
+            mensajeRespuestaSP.Clear();
+            proveedorUsuariosDal.EditarContrasenaByUsuarioByContra(usuario, contra);
         }
     }
 }

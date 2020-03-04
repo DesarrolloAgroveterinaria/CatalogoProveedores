@@ -41,29 +41,90 @@ namespace ProveedorPrueba
         {
 
         }
-        
         private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {            
+        {
             try
             {
-                string inicio = proveedorUsuariosBol.iniciarSesion(txtBoxUsuario.Text, txtBoxContra.Text);
+                string inicio = proveedorUsuariosBol.iniciarSesion(txtBoxUsuario.Text, txtBoxContra.Text);                
+
                 if (inicio == "")
                 {
                     lblMensajeInvalidez.Visible = true;
-                    MessageBox.Show("Usuario incorrecto.", "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuario incorrecto.", "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }
-                lblMensajeInvalidez.Visible = false;
-                this.Hide();
-                frmCatalogoProveedores Catalogo = new frmCatalogoProveedores();
-                Catalogo.eProveedorUsuario.Usuario = txtBoxUsuario.Text;
-                Catalogo.Show();
+                }                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ocurrio el siguiente problema: " + ex.Message, "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            int cambiarContrasena = proveedorUsuariosBol.CambiarContrasena(txtBoxUsuario.Text, txtBoxContra.Text);
+
+            if (cambiarContrasena == -1)
+            {
+                MessageBox.Show("Usuario incorrecto.", "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cambiarContrasena != 0)
+            {
+                txtBoxContra.Clear();
+                frmCambiarContrasena form = new frmCambiarContrasena();
+                form.Show();
+                form.txtBoxUsuario.Text = txtBoxUsuario.Text;
+                form.txtBoxUsuario.Enabled = false;
+                return;
+            }
+            lblMensajeInvalidez.Visible = false;
+            this.Hide();
+            frmCatalogoProveedores Catalogo = new frmCatalogoProveedores();
+            EProveedorUsuario.Usuario = txtBoxUsuario.Text;
+            Catalogo.Show();
         }
+
+        //private void btnIniciarSesion_Click(object sender, EventArgs e)
+        //{            
+        //    try
+        //    {
+        //        int cambiarContrasena = proveedorUsuariosBol.CambiarContrasena(txtBoxUsuario.Text, txtBoxContra.Text);
+        //        if (cambiarContrasena == -1)
+        //        {
+        //            MessageBox.Show("Usuario incorrecto.", "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //            return;
+        //        }
+                    
+        //        if(cambiarContrasena != 0)
+        //        {
+        //            txtBoxContra.Clear();
+        //            frmCambiarContrasena form = new frmCambiarContrasena();
+        //            form.Show();
+        //            form.txtBoxUsuario.Text = txtBoxUsuario.Text;
+        //            form.txtBoxUsuario.Enabled = false;
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            string inicio = proveedorUsuariosBol.iniciarSesion(txtBoxUsuario.Text, txtBoxContra.Text);
+
+        //            if (inicio == "")
+        //            {
+        //                lblMensajeInvalidez.Visible = true;
+        //                MessageBox.Show("Usuario incorrecto.", "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                return;
+        //            }
+        //        }                
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Ocurrio el siguiente problema: " + ex.Message, "Inicio Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }            
+        //    lblMensajeInvalidez.Visible = false;
+        //    this.Hide();
+        //    frmCatalogoProveedores Catalogo = new frmCatalogoProveedores();
+        //    EProveedorUsuario.Usuario = txtBoxUsuario.Text;
+        //    Catalogo.Show();
+        //}
 
         private void btnMin_Click(object sender, EventArgs e)
         {
@@ -91,6 +152,11 @@ namespace ProveedorPrueba
             {
                 btnIniciarSesion_Click(btnIniciarSesion, new EventArgs());
             }
+        }        
+
+        private void lblMensajeInvalidez_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

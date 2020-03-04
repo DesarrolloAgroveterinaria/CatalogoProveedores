@@ -47,3 +47,4 @@ C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\ProveedorPresentacion\obj\Debu
 C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\ProveedorPresentacion\obj\Debug\ProveedorPrueba.exe
 C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\ProveedorPresentacion\obj\Debug\ProveedorPrueba.pdb
 C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\ProveedorPresentacion\obj\Debug\ProveedorPrueba.frmNotificaciones.resources
+C:\Users\Soporte2\Desktop\CATALOGO_DE_PROVEEDORES\ProveedorPresentacion\obj\Debug\ProveedorPrueba.frmCambiarContrasena.resources

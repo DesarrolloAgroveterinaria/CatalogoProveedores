@@ -21,7 +21,7 @@ namespace ProveedorPrueba
     {
         frmNotificaciones notificaciones = new frmNotificaciones();
         //Crear instancias de Clase Entidad de todas las entidades a utilizar, así como listas para guardar datos 
-        public EProveedorUsuario eProveedorUsuario;
+        //public EProveedorUsuario eProveedorUsuario;
         private List<EProveedorUsuarioPermisos> eProveedorUsuarioPermisos;
         //private EProveedorExpediente eProveedorExpediente;
         private EProveedorDatosPrimarios eProveedorDatosPrim;
@@ -1130,7 +1130,7 @@ namespace ProveedorPrueba
                     MessageBox.Show("No se ha encontrado información con Clave " + txtBoxClaveDatosPrimarios.Text + ". Proporcione una Clave de Proveedor válida.");
                     return;
                 }
-                cargarDatosPorUsuario(eProveedorUsuario.Usuario);
+                //cargarDatosPorUsuario(eProveedorUsuario.Usuario);
                 DelegarUbicacionDeArchivos(eProveedorDatosPrim.ClaveProveedor);
                 CargarDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                 CargarAcuerdos(eProveedorDatosPrim.ClaveProveedor);
