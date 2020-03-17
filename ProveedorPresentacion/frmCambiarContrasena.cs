@@ -36,7 +36,10 @@ namespace ProveedorPrueba
                 else
                 {
                     if (textBoxContrasena1.Text == "1")
+                    {
                         MessageBox.Show("Cambiar Contraseña a una diferente de la Contraseña predeterminada", "Cambiar Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }                       
                     ProveedorUsuariosBol proveedorUsuarioBol = new ProveedorUsuariosBol();
                     proveedorUsuarioBol.cambiarValorContrasena(txtBoxUsuario.Text, textBoxContrasena1.Text);
                     lblMensajeInvalidez.Visible = false;

@@ -79,7 +79,28 @@ namespace ProveedorPrueba
             //{
             //    c.Enabled = false;
             //}
-            
+            if(EProveedorUsuario.Usuario == "CROMO")
+            {
+                checkBoxDireccionesRevisado.Enabled = true;
+                checkBoxContactosRevisado.Enabled = true;
+                checkBoxDatosBancariosMXRevisado.Enabled = true;
+                checkBoxDatosBancariosEXRevisado.Enabled = true;
+                checkBoxAcuerdosRevisado.Enabled = true;
+                checkBoxCondicionesRevisado.Enabled = true;
+                checkBoxPoliticasRevisado.Enabled = true;
+                checkBoxExpedienteRevisado.Enabled = true;
+            }
+            else
+            {
+                checkBoxDireccionesRevisado.Enabled = false;
+                checkBoxContactosRevisado.Enabled = false;
+                checkBoxDatosBancariosMXRevisado.Enabled = false;
+                checkBoxDatosBancariosEXRevisado.Enabled = false;
+                checkBoxAcuerdosRevisado.Enabled = false;
+                checkBoxCondicionesRevisado.Enabled = false;
+                checkBoxPoliticasRevisado.Enabled = false;
+                checkBoxExpedienteRevisado.Enabled = false;
+            }
 
 
             //Expediente
@@ -214,11 +235,248 @@ namespace ProveedorPrueba
             //}
 
         }
+        private void checkBoxDireccionesRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Dirección";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                if (checkBoxDireccionesRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }            
+        }
+        private void checkBoxContactosRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Contacto";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxContactosRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+        private void checkBoxDatosBancariosMXRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Cuenta Bancaria MX";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxDatosBancariosMXRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+
+        private void checkBoxDatosBancariosEXRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Cuenta Bancaria EX";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxDatosBancariosEXRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+
+        private void checkBoxPoliticasRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Políticas";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxPoliticasRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+
+        private void checkBoxCondicionesRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Condiciones";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxCondicionesRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+
+        private void checkBoxExpedienteRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Expediente";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxExpedienteRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+        private void checkBoxAcuerdosRevisado_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Acuerdos";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxAcuerdosRevisado.Checked)
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                }
+                else
+                {
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
         private void CargarCondiciones(string claveP)
         {
             try
             {
                 LimpiarCondiciones();
+                checkBoxCondicionesRevisado.Checked = eProveedorDatosPrim.isCondicionesRevisado;
                 eProveedorCondiciones = proveedorCondicionesBol.consultarCondicionesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
                 //ListaCondicionesEntregaPorSucursal = proveedorCostoFleteLimiteCapacidadBol.consultarCostoFleteLimiteCapacidadByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
                 //ListaFletes = proveedorFletesBol.consultarFletesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
@@ -367,6 +625,7 @@ namespace ProveedorPrueba
             try
             {
                 LimpiarPoliticas();
+                checkBoxPoliticasRevisado.Checked = eProveedorDatosPrim.isPoliticasRevisado;
                 eProveedorPoliticas = proveedorPoliticasBol.consultarPoliticasByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
                 ListaCategoriaPoliticasCompra = proveedorCategoriaPoliticasCompraBol.consultarCategoriaPoliticasCompraByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
                 //tab Politicas
@@ -423,6 +682,7 @@ namespace ProveedorPrueba
             try
             {
                 LimpiarExpediente();
+                checkBoxExpedienteRevisado.Checked = eProveedorDatosPrim.isExpedienteRevisado;
                 //tab Expediente
                 txtBoxClaveExpediente.Text = Convert.ToString(eProveedorDatosPrim.ClaveProveedor);
                 txtBoxProveedorExpediente.Text = Convert.ToString(eProveedorDatosPrim.NombreProveedor);
@@ -445,6 +705,7 @@ namespace ProveedorPrueba
             try
             {
                 LimpiarAcuerdos();
+                checkBoxAcuerdosRevisado.Checked = eProveedorDatosPrim.isAcuerdosRevisado;
                 eProveedorAcuerdos = proveedorAcuerdosBol.consultarAcuerdosByClaveProveedorVal(eProveedorDatosPrim.ClaveProveedor);
 
                 //tab Acuerdos
@@ -473,6 +734,7 @@ namespace ProveedorPrueba
             try
             {
                 //LimpiarCuentasBancariasEXDatosGenerales();
+                checkBoxDatosBancariosEXRevisado.Checked = eProveedorDatosPrim.isDatosBancariosEXRevisado;
                 ListaDatosBancariosEX = proveedorDatosBancariosEXBol.consultarDatosBancariosEXByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
 
                 if (ListaDatosBancariosEX.Count == 0)
@@ -563,6 +825,7 @@ namespace ProveedorPrueba
             try
             {
                 //LimpiarCuentasBancariasMXDatosGenerales();
+                checkBoxDatosBancariosMXRevisado.Checked = eProveedorDatosPrim.isDatosBancariosMXRevisado;
                 ListaDatosBancariosMX = proveedorDatosBancariosMXBol.consultarDatosBancariosMXByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
 
                 if (ListaDatosBancariosMX.Count == 0)
@@ -614,6 +877,7 @@ namespace ProveedorPrueba
             try
             {
                 //LimpiarContactosDatosGenerales();
+                checkBoxContactosRevisado.Checked = eProveedorDatosPrim.isContactosRevisado;
                 ListaContactos = proveedorContactosBol.consultarContactosByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
 
                 if (ListaContactos.Count == 0)
@@ -678,8 +942,9 @@ namespace ProveedorPrueba
             try
             {
                 //LimpiarDireccionesDatosGenerales();
+                checkBoxDireccionesRevisado.Checked = eProveedorDatosPrim.isDireccionesRevisado;
                 ListaDirecciones = proveedorDireccionesBol.consultarDireccionesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
-
+                                
                 if (ListaDirecciones.Count == 0)
                     return;
 
@@ -763,6 +1028,7 @@ namespace ProveedorPrueba
         {
             try
             {
+                checkBoxPoliticasRevisado.Checked = false;
                 txtBoxImporteMensualConvenioCompraPoliticas.Clear();
                 txtBoxImporteTrimestralConvenioCompraPoliticas.Clear();
                 txtBoxBeneficiosConvenioCompraPoliticas.Clear();
@@ -786,6 +1052,7 @@ namespace ProveedorPrueba
         {
             try
             {
+                checkBoxExpedienteRevisado.Checked = false;
                 txtBoxClaveExpediente.Clear();
                 txtBoxProveedorExpediente.Clear();
                 txtBoxRFCExpediente.Clear();
@@ -829,6 +1096,7 @@ namespace ProveedorPrueba
             try
             {
                 //tab Condiciones
+                checkBoxCondicionesRevisado.Checked = false;
                 txtBoxClaveCondiciones.Clear();
                 txtBoxProveedorCondiciones.Clear();
                 txtBoxRFCCondiciones.Clear();
@@ -901,6 +1169,7 @@ namespace ProveedorPrueba
         {
             try
             {
+                checkBoxAcuerdosRevisado.Checked = false;
                 txtBoxClaveAcuerdos.Clear();
                 txtBoxProveedorAcuerdos.Clear();
                 txtBoxRFCAcuerdos.Clear();
@@ -932,6 +1201,7 @@ namespace ProveedorPrueba
                 txtBoxPaginaWebProveedorDatosPrimarios.Clear();
 
                 //Direcciones
+                checkBoxDireccionesRevisado.Checked = false;
                 comboBoxConceptoUsoDirecciones.SelectedIndex = -1;
                 txtBoxDireccionDirecciones.Clear();
                 txtBoxNumExteriorDirecciones.Clear();
@@ -944,6 +1214,7 @@ namespace ProveedorPrueba
                 txtBoxPaisDirecciones.Clear();
 
                 //Contactos
+                checkBoxContactosRevisado.Checked = false;
                 txtBoxNombreContactos.Clear();
                 txtBoxPuestoContactos.Clear();
                 txtBoxTel1Contactos.Clear();
@@ -960,6 +1231,7 @@ namespace ProveedorPrueba
                 checkBox3Funciones.Checked = false;
 
                 //Datos Bancarios MX
+                checkBoxDatosBancariosMXRevisado.Checked = false;
                 comboBoxBancoDatosBancariosMX.SelectedIndex = -1;
                 txtBoxCLABEDatosBancariosMX.Clear();
                 txtBoxNumeroCuentaDestinatarioMX.Clear();
@@ -968,6 +1240,7 @@ namespace ProveedorPrueba
                 lblCuentaDePreferenciaClienteMX.Visible = false;
 
                 //Datos Bancarios EX
+                checkBoxDatosBancariosEXRevisado.Checked = false;
                 txtBoxNombreBancoDestinoEX.Clear();
                 txtBoxClaveBancoDestinoEX.Clear();
                 txtBoxNumeroCuentaDestinatarioEX.Clear();
@@ -5021,9 +5294,7 @@ namespace ProveedorPrueba
         {
 
         }
-
         
-
 
         //private void btnSiguienteRutas_Click(object sender, EventArgs e)
         //{

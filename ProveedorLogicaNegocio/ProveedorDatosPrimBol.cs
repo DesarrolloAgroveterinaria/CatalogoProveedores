@@ -74,8 +74,12 @@ namespace ProveedorLogicaNegocio
                 }
                 else
                     proveedorDatosPrimDal.editarProveedor(P);
-
             }
+        }
+        public void editarRevisionDirecciones(string claveProveedor, string seccion, bool revisado)
+        {
+            mensajeRespuestaSP.Clear();
+            proveedorDatosPrimDal.editarRevision(claveProveedor, seccion, revisado);
         }
         public void actualizarUtlimaActualizacion(string claveProveedor)
         {
@@ -144,8 +148,8 @@ namespace ProveedorLogicaNegocio
             //if ejecutar 
             //cerrar conexión con base de datos
             return "";
-        }
-        
+        }       
+
         //Obtener tabla de Proveedores
         //Obtener Ultima Actualizacion
     }

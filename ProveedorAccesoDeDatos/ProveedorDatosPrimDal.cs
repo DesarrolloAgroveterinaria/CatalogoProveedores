@@ -37,6 +37,14 @@ namespace ProveedorAccesoDeDatos
                             PATHImagen = reader["PATHImagen"] == DBNull.Value ? "" : Convert.ToString(reader["PATHImagen"]),
                             hasImagen = Convert.ToBoolean(reader["hasImagen"]),
                             fechaUltimaActualizacion = Convert.ToDateTime(reader["UltimaActualizacion"]),
+                            isDireccionesRevisado = reader["isDireccionesRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isDireccionesRevisado"]),
+                            isContactosRevisado = reader["isContactosRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isContactosRevisado"]),
+                            isDatosBancariosMXRevisado = reader["isDatosBancariosMXRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isDatosBancariosMXRevisado"]),
+                            isDatosBancariosEXRevisado = reader["isDatosBancariosEXRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isDatosBancariosEXRevisado"]),
+                            isAcuerdosRevisado = reader["isAcuerdosRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isAcuerdosRevisado"]),
+                            isCondicionesRevisado = reader["isCondicionesRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isCondicionesRevisado"]),
+                            isPoliticasRevisado = reader["isPoliticasRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isPoliticasRevisado"]),
+                            isExpedienteRevisado = reader["isExpedienteRevisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["isExpedienteRevisado"])                            
                         };
                         return P;
                     }
@@ -75,6 +83,116 @@ namespace ProveedorAccesoDeDatos
                     return PLista;
                 }
                 return null;
+            }
+        }
+
+        public void editarRevision(string claveProveedor, string seccion, bool revisado)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))
+            {
+                conn.Open();
+
+                const string Query = @"EXEC AGROCatalogoProveedoresSP_EditarRevisionesByClaveProveedor @ClaveProveedor,
+                                    @isDireccionesRevisado, @isContactosRevisado, @isDatosBancariosMXRevisado, 
+                                    @isDatosBancariosEXRevisado, @isAcuerdosRevisado, @isCondicionesRevisado,
+                                    @isExpedienteRevisado, @isPoliticasRevisado";
+
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClaveProveedor", claveProveedor);
+
+                    if(seccion == "Dirección")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }                        
+                    else if(seccion == "Contacto")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }
+                    else if (seccion == "Cuenta Bancaria MX")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }
+                        
+                    else if (seccion == "Cuenta Bancaria EX")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }
+                    else if (seccion == "Acuerdos")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }
+                    else if (seccion == "Condiciones")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }
+                    else if (seccion == "Expediente")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", revisado);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", DBNull.Value);
+                    }                        
+                    else if (seccion == "Políticas")
+                    {
+                        cmd.Parameters.AddWithValue("@isDireccionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isContactosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosMXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isDatosBancariosEXRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isAcuerdosRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isCondicionesRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isExpedienteRevisado", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@isPoliticasRevisado", revisado);
+                    }
+                        
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 

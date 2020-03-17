@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F1908C42-664B-457C-9936-069E747A8498}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProveedorPrueba</RootNamespace>
-    <AssemblyName>ProveedorPrueba</AssemblyName>
+    <RootNamespace>CatalogoDeProveedores</RootNamespace>
+    <AssemblyName>CatalogoDeProveedores</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -123,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistroInicioSesion.resx">
       <DependentUpon>RegistroInicioSesion.cs</DependentUpon>

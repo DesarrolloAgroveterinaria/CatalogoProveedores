@@ -79,7 +79,7 @@ namespace ProveedorPrueba
             lblMensajeInvalidez.Visible = false;
             this.Hide();
             frmCatalogoProveedores Catalogo = new frmCatalogoProveedores();
-            EProveedorUsuario.Usuario = txtBoxUsuario.Text;
+            EProveedorUsuario.Usuario = txtBoxUsuario.Text.ToUpper();
             Catalogo.Show();
         }
 

@@ -37,6 +37,7 @@
             this.tabExpediente = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlExpediente = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimExpediente = new System.Windows.Forms.Panel();
+            this.checkBoxExpedienteRevisado = new System.Windows.Forms.CheckBox();
             this.txtBoxCategoriaExpediente = new System.Windows.Forms.TextBox();
             this.dateTimePickerExpediente = new System.Windows.Forms.DateTimePicker();
             this.lblUltimaActualizacionExpediente = new System.Windows.Forms.Label();
@@ -127,6 +128,7 @@
             this.tabPoliticas = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlPoliticas = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimPoliticas = new System.Windows.Forms.Panel();
+            this.checkBoxPoliticasRevisado = new System.Windows.Forms.CheckBox();
             this.btnGuardarCambiosSeccionPoliticas1 = new System.Windows.Forms.Button();
             this.txtBoxCategoriaPoliticas = new System.Windows.Forms.TextBox();
             this.dateTimePickerPoliticas = new System.Windows.Forms.DateTimePicker();
@@ -196,6 +198,7 @@
             this.tabAcuerdos = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlAcuerdos = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimAcuerdos = new System.Windows.Forms.Panel();
+            this.checkBoxAcuerdosRevisado = new System.Windows.Forms.CheckBox();
             this.txtBoxCategoriaAcuerdos = new System.Windows.Forms.TextBox();
             this.dateTimePickerAcuerdos = new System.Windows.Forms.DateTimePicker();
             this.lblUltimaActualizacionAcuerdos = new System.Windows.Forms.Label();
@@ -253,6 +256,7 @@
             this.tabCondiciones = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlCondiciones = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimCondiciones = new System.Windows.Forms.Panel();
+            this.checkBoxCondicionesRevisado = new System.Windows.Forms.CheckBox();
             this.btnGuardarCambiosSeccionCondiciones1 = new System.Windows.Forms.Button();
             this.txtBoxCategoriaCondiciones = new System.Windows.Forms.TextBox();
             this.dateTimePickerCondiciones = new System.Windows.Forms.DateTimePicker();
@@ -420,6 +424,7 @@
             this.picBoxLogoProveedor = new System.Windows.Forms.PictureBox();
             this.pnlDirecciones = new System.Windows.Forms.Panel();
             this.pnlDireccion1 = new System.Windows.Forms.Panel();
+            this.checkBoxDireccionesRevisado = new System.Windows.Forms.CheckBox();
             this.comboBoxConceptoUsoDirecciones = new System.Windows.Forms.ComboBox();
             this.lblConceptoUsoDirecciones = new System.Windows.Forms.Label();
             this.txtBoxPaisDirecciones = new System.Windows.Forms.TextBox();
@@ -464,6 +469,7 @@
             this.lblDirecciones = new System.Windows.Forms.Label();
             this.pnlContactos = new System.Windows.Forms.Panel();
             this.pnlContacto1 = new System.Windows.Forms.Panel();
+            this.checkBoxContactosRevisado = new System.Windows.Forms.CheckBox();
             this.btnPriorizarContacto = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.checkBox3Funciones = new System.Windows.Forms.CheckBox();
@@ -516,6 +522,7 @@
             this.lblContactos = new System.Windows.Forms.Label();
             this.pnlDatosBancarios = new System.Windows.Forms.Panel();
             this.pnlDatosBancariosEX = new System.Windows.Forms.Panel();
+            this.checkBoxDatosBancariosEXRevisado = new System.Windows.Forms.CheckBox();
             this.btnEsPreferenciaDatosBancariosEX = new System.Windows.Forms.Button();
             this.lblCuentaDePreferenciaClienteEX = new System.Windows.Forms.Label();
             this.txtBoxMotivoPagoEX = new System.Windows.Forms.TextBox();
@@ -588,6 +595,7 @@
             this.btnEliminarCuentaEX = new System.Windows.Forms.Button();
             this.lblDatosBancariosEX = new System.Windows.Forms.Label();
             this.pnlDatosBancariosMX = new System.Windows.Forms.Panel();
+            this.checkBoxDatosBancariosMXRevisado = new System.Windows.Forms.CheckBox();
             this.btnEsPreferenciaDatosBancariosMX = new System.Windows.Forms.Button();
             this.comboBoxBancoDatosBancariosMX = new System.Windows.Forms.ComboBox();
             this.lblCuentaDePreferenciaClienteMX = new System.Windows.Forms.Label();
@@ -800,6 +808,7 @@
             // 
             // pnlDatosPrimExpediente
             // 
+            this.pnlDatosPrimExpediente.Controls.Add(this.checkBoxExpedienteRevisado);
             this.pnlDatosPrimExpediente.Controls.Add(this.txtBoxCategoriaExpediente);
             this.pnlDatosPrimExpediente.Controls.Add(this.dateTimePickerExpediente);
             this.pnlDatosPrimExpediente.Controls.Add(this.lblUltimaActualizacionExpediente);
@@ -816,6 +825,18 @@
             this.pnlDatosPrimExpediente.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimExpediente.TabIndex = 31;
             this.pnlDatosPrimExpediente.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDatosPrimExpediente_Paint);
+            // 
+            // checkBoxExpedienteRevisado
+            // 
+            this.checkBoxExpedienteRevisado.AutoSize = true;
+            this.checkBoxExpedienteRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxExpedienteRevisado.Location = new System.Drawing.Point(755, 83);
+            this.checkBoxExpedienteRevisado.Name = "checkBoxExpedienteRevisado";
+            this.checkBoxExpedienteRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxExpedienteRevisado.TabIndex = 56;
+            this.checkBoxExpedienteRevisado.Text = "Revisado";
+            this.checkBoxExpedienteRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxExpedienteRevisado.CheckedChanged += new System.EventHandler(this.checkBoxExpedienteRevisado_CheckedChanged);
             // 
             // txtBoxCategoriaExpediente
             // 
@@ -1822,6 +1843,7 @@
             // 
             // pnlDatosPrimPoliticas
             // 
+            this.pnlDatosPrimPoliticas.Controls.Add(this.checkBoxPoliticasRevisado);
             this.pnlDatosPrimPoliticas.Controls.Add(this.btnGuardarCambiosSeccionPoliticas1);
             this.pnlDatosPrimPoliticas.Controls.Add(this.txtBoxCategoriaPoliticas);
             this.pnlDatosPrimPoliticas.Controls.Add(this.dateTimePickerPoliticas);
@@ -1839,11 +1861,23 @@
             this.pnlDatosPrimPoliticas.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimPoliticas.TabIndex = 31;
             // 
+            // checkBoxPoliticasRevisado
+            // 
+            this.checkBoxPoliticasRevisado.AutoSize = true;
+            this.checkBoxPoliticasRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPoliticasRevisado.Location = new System.Drawing.Point(755, 83);
+            this.checkBoxPoliticasRevisado.Name = "checkBoxPoliticasRevisado";
+            this.checkBoxPoliticasRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxPoliticasRevisado.TabIndex = 58;
+            this.checkBoxPoliticasRevisado.Text = "Revisado";
+            this.checkBoxPoliticasRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxPoliticasRevisado.CheckedChanged += new System.EventHandler(this.checkBoxPoliticasRevisado_CheckedChanged);
+            // 
             // btnGuardarCambiosSeccionPoliticas1
             // 
             this.btnGuardarCambiosSeccionPoliticas1.BackColor = System.Drawing.Color.Wheat;
             this.btnGuardarCambiosSeccionPoliticas1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionPoliticas1.Location = new System.Drawing.Point(786, 40);
+            this.btnGuardarCambiosSeccionPoliticas1.Location = new System.Drawing.Point(755, 15);
             this.btnGuardarCambiosSeccionPoliticas1.Name = "btnGuardarCambiosSeccionPoliticas1";
             this.btnGuardarCambiosSeccionPoliticas1.Size = new System.Drawing.Size(155, 40);
             this.btnGuardarCambiosSeccionPoliticas1.TabIndex = 4;
@@ -2622,6 +2656,7 @@
             // 
             // pnlDatosPrimAcuerdos
             // 
+            this.pnlDatosPrimAcuerdos.Controls.Add(this.checkBoxAcuerdosRevisado);
             this.pnlDatosPrimAcuerdos.Controls.Add(this.txtBoxCategoriaAcuerdos);
             this.pnlDatosPrimAcuerdos.Controls.Add(this.dateTimePickerAcuerdos);
             this.pnlDatosPrimAcuerdos.Controls.Add(this.lblUltimaActualizacionAcuerdos);
@@ -2638,6 +2673,18 @@
             this.pnlDatosPrimAcuerdos.Name = "pnlDatosPrimAcuerdos";
             this.pnlDatosPrimAcuerdos.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimAcuerdos.TabIndex = 31;
+            // 
+            // checkBoxAcuerdosRevisado
+            // 
+            this.checkBoxAcuerdosRevisado.AutoSize = true;
+            this.checkBoxAcuerdosRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAcuerdosRevisado.Location = new System.Drawing.Point(755, 83);
+            this.checkBoxAcuerdosRevisado.Name = "checkBoxAcuerdosRevisado";
+            this.checkBoxAcuerdosRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxAcuerdosRevisado.TabIndex = 57;
+            this.checkBoxAcuerdosRevisado.Text = "Revisado";
+            this.checkBoxAcuerdosRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxAcuerdosRevisado.CheckedChanged += new System.EventHandler(this.checkBoxAcuerdosRevisado_CheckedChanged);
             // 
             // txtBoxCategoriaAcuerdos
             // 
@@ -2673,7 +2720,7 @@
             // 
             this.btnGuardarCambiosSeccionAcuerdos1.BackColor = System.Drawing.Color.Wheat;
             this.btnGuardarCambiosSeccionAcuerdos1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionAcuerdos1.Location = new System.Drawing.Point(778, 46);
+            this.btnGuardarCambiosSeccionAcuerdos1.Location = new System.Drawing.Point(755, 15);
             this.btnGuardarCambiosSeccionAcuerdos1.Name = "btnGuardarCambiosSeccionAcuerdos1";
             this.btnGuardarCambiosSeccionAcuerdos1.Size = new System.Drawing.Size(155, 40);
             this.btnGuardarCambiosSeccionAcuerdos1.TabIndex = 4;
@@ -3276,6 +3323,7 @@
             // 
             // pnlDatosPrimCondiciones
             // 
+            this.pnlDatosPrimCondiciones.Controls.Add(this.checkBoxCondicionesRevisado);
             this.pnlDatosPrimCondiciones.Controls.Add(this.btnGuardarCambiosSeccionCondiciones1);
             this.pnlDatosPrimCondiciones.Controls.Add(this.txtBoxCategoriaCondiciones);
             this.pnlDatosPrimCondiciones.Controls.Add(this.dateTimePickerCondiciones);
@@ -3293,11 +3341,23 @@
             this.pnlDatosPrimCondiciones.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimCondiciones.TabIndex = 31;
             // 
+            // checkBoxCondicionesRevisado
+            // 
+            this.checkBoxCondicionesRevisado.AutoSize = true;
+            this.checkBoxCondicionesRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCondicionesRevisado.Location = new System.Drawing.Point(755, 83);
+            this.checkBoxCondicionesRevisado.Name = "checkBoxCondicionesRevisado";
+            this.checkBoxCondicionesRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxCondicionesRevisado.TabIndex = 56;
+            this.checkBoxCondicionesRevisado.Text = "Revisado";
+            this.checkBoxCondicionesRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxCondicionesRevisado.CheckedChanged += new System.EventHandler(this.checkBoxCondicionesRevisado_CheckedChanged);
+            // 
             // btnGuardarCambiosSeccionCondiciones1
             // 
             this.btnGuardarCambiosSeccionCondiciones1.BackColor = System.Drawing.Color.Wheat;
             this.btnGuardarCambiosSeccionCondiciones1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionCondiciones1.Location = new System.Drawing.Point(787, 33);
+            this.btnGuardarCambiosSeccionCondiciones1.Location = new System.Drawing.Point(755, 15);
             this.btnGuardarCambiosSeccionCondiciones1.Name = "btnGuardarCambiosSeccionCondiciones1";
             this.btnGuardarCambiosSeccionCondiciones1.Size = new System.Drawing.Size(155, 40);
             this.btnGuardarCambiosSeccionCondiciones1.TabIndex = 4;
@@ -5752,6 +5812,7 @@
             // pnlDireccion1
             // 
             this.pnlDireccion1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDireccion1.Controls.Add(this.checkBoxDireccionesRevisado);
             this.pnlDireccion1.Controls.Add(this.comboBoxConceptoUsoDirecciones);
             this.pnlDireccion1.Controls.Add(this.lblConceptoUsoDirecciones);
             this.pnlDireccion1.Controls.Add(this.txtBoxPaisDirecciones);
@@ -5782,6 +5843,18 @@
             this.pnlDireccion1.Name = "pnlDireccion1";
             this.pnlDireccion1.Size = new System.Drawing.Size(946, 468);
             this.pnlDireccion1.TabIndex = 13;
+            // 
+            // checkBoxDireccionesRevisado
+            // 
+            this.checkBoxDireccionesRevisado.AutoSize = true;
+            this.checkBoxDireccionesRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDireccionesRevisado.Location = new System.Drawing.Point(726, 6);
+            this.checkBoxDireccionesRevisado.Name = "checkBoxDireccionesRevisado";
+            this.checkBoxDireccionesRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxDireccionesRevisado.TabIndex = 29;
+            this.checkBoxDireccionesRevisado.Text = "Revisado";
+            this.checkBoxDireccionesRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxDireccionesRevisado.CheckedChanged += new System.EventHandler(this.checkBoxDireccionesRevisado_CheckedChanged);
             // 
             // comboBoxConceptoUsoDirecciones
             // 
@@ -5877,7 +5950,7 @@
             // 
             this.btnPriorizarDirecciones.BackColor = System.Drawing.Color.Gold;
             this.btnPriorizarDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPriorizarDirecciones.Location = new System.Drawing.Point(697, 9);
+            this.btnPriorizarDirecciones.Location = new System.Drawing.Point(568, 6);
             this.btnPriorizarDirecciones.Name = "btnPriorizarDirecciones";
             this.btnPriorizarDirecciones.Size = new System.Drawing.Size(108, 23);
             this.btnPriorizarDirecciones.TabIndex = 28;
@@ -6232,6 +6305,7 @@
             // pnlContacto1
             // 
             this.pnlContacto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContacto1.Controls.Add(this.checkBoxContactosRevisado);
             this.pnlContacto1.Controls.Add(this.btnPriorizarContacto);
             this.pnlContacto1.Controls.Add(this.panel3);
             this.pnlContacto1.Controls.Add(this.lblFuncionesContacto);
@@ -6268,11 +6342,23 @@
             this.pnlContacto1.TabIndex = 30;
             this.pnlContacto1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContacto1_Paint);
             // 
+            // checkBoxContactosRevisado
+            // 
+            this.checkBoxContactosRevisado.AutoSize = true;
+            this.checkBoxContactosRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxContactosRevisado.Location = new System.Drawing.Point(713, 18);
+            this.checkBoxContactosRevisado.Name = "checkBoxContactosRevisado";
+            this.checkBoxContactosRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxContactosRevisado.TabIndex = 94;
+            this.checkBoxContactosRevisado.Text = "Revisado";
+            this.checkBoxContactosRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxContactosRevisado.CheckedChanged += new System.EventHandler(this.checkBoxContactosRevisado_CheckedChanged);
+            // 
             // btnPriorizarContacto
             // 
             this.btnPriorizarContacto.BackColor = System.Drawing.Color.Gold;
             this.btnPriorizarContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPriorizarContacto.Location = new System.Drawing.Point(673, 16);
+            this.btnPriorizarContacto.Location = new System.Drawing.Point(555, 15);
             this.btnPriorizarContacto.Name = "btnPriorizarContacto";
             this.btnPriorizarContacto.Size = new System.Drawing.Size(108, 23);
             this.btnPriorizarContacto.TabIndex = 49;
@@ -6797,6 +6883,7 @@
             // pnlDatosBancariosEX
             // 
             this.pnlDatosBancariosEX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDatosBancariosEX.Controls.Add(this.checkBoxDatosBancariosEXRevisado);
             this.pnlDatosBancariosEX.Controls.Add(this.btnEsPreferenciaDatosBancariosEX);
             this.pnlDatosBancariosEX.Controls.Add(this.lblCuentaDePreferenciaClienteEX);
             this.pnlDatosBancariosEX.Controls.Add(this.txtBoxMotivoPagoEX);
@@ -6856,14 +6943,26 @@
             this.pnlDatosBancariosEX.TabIndex = 64;
             this.pnlDatosBancariosEX.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_2);
             // 
+            // checkBoxDatosBancariosEXRevisado
+            // 
+            this.checkBoxDatosBancariosEXRevisado.AutoSize = true;
+            this.checkBoxDatosBancariosEXRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDatosBancariosEXRevisado.Location = new System.Drawing.Point(824, 34);
+            this.checkBoxDatosBancariosEXRevisado.Name = "checkBoxDatosBancariosEXRevisado";
+            this.checkBoxDatosBancariosEXRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxDatosBancariosEXRevisado.TabIndex = 117;
+            this.checkBoxDatosBancariosEXRevisado.Text = "Revisado";
+            this.checkBoxDatosBancariosEXRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxDatosBancariosEXRevisado.CheckedChanged += new System.EventHandler(this.checkBoxDatosBancariosEXRevisado_CheckedChanged);
+            // 
             // btnEsPreferenciaDatosBancariosEX
             // 
             this.btnEsPreferenciaDatosBancariosEX.BackColor = System.Drawing.Color.Gold;
             this.btnEsPreferenciaDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEsPreferenciaDatosBancariosEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEsPreferenciaDatosBancariosEX.Location = new System.Drawing.Point(554, 8);
+            this.btnEsPreferenciaDatosBancariosEX.Location = new System.Drawing.Point(551, 28);
             this.btnEsPreferenciaDatosBancariosEX.Name = "btnEsPreferenciaDatosBancariosEX";
-            this.btnEsPreferenciaDatosBancariosEX.Size = new System.Drawing.Size(354, 28);
+            this.btnEsPreferenciaDatosBancariosEX.Size = new System.Drawing.Size(236, 28);
             this.btnEsPreferenciaDatosBancariosEX.TabIndex = 91;
             this.btnEsPreferenciaDatosBancariosEX.Text = "Marcar Como Preferente";
             this.btnEsPreferenciaDatosBancariosEX.UseVisualStyleBackColor = false;
@@ -7605,6 +7704,7 @@
             // pnlDatosBancariosMX
             // 
             this.pnlDatosBancariosMX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDatosBancariosMX.Controls.Add(this.checkBoxDatosBancariosMXRevisado);
             this.pnlDatosBancariosMX.Controls.Add(this.btnEsPreferenciaDatosBancariosMX);
             this.pnlDatosBancariosMX.Controls.Add(this.comboBoxBancoDatosBancariosMX);
             this.pnlDatosBancariosMX.Controls.Add(this.lblCuentaDePreferenciaClienteMX);
@@ -7627,6 +7727,18 @@
             this.pnlDatosBancariosMX.Size = new System.Drawing.Size(945, 442);
             this.pnlDatosBancariosMX.TabIndex = 53;
             // 
+            // checkBoxDatosBancariosMXRevisado
+            // 
+            this.checkBoxDatosBancariosMXRevisado.AutoSize = true;
+            this.checkBoxDatosBancariosMXRevisado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDatosBancariosMXRevisado.Location = new System.Drawing.Point(825, 14);
+            this.checkBoxDatosBancariosMXRevisado.Name = "checkBoxDatosBancariosMXRevisado";
+            this.checkBoxDatosBancariosMXRevisado.Size = new System.Drawing.Size(70, 18);
+            this.checkBoxDatosBancariosMXRevisado.TabIndex = 82;
+            this.checkBoxDatosBancariosMXRevisado.Text = "Revisado";
+            this.checkBoxDatosBancariosMXRevisado.UseVisualStyleBackColor = true;
+            this.checkBoxDatosBancariosMXRevisado.CheckedChanged += new System.EventHandler(this.checkBoxDatosBancariosMXRevisado_CheckedChanged);
+            // 
             // btnEsPreferenciaDatosBancariosMX
             // 
             this.btnEsPreferenciaDatosBancariosMX.BackColor = System.Drawing.Color.Gold;
@@ -7634,7 +7746,7 @@
             this.btnEsPreferenciaDatosBancariosMX.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnEsPreferenciaDatosBancariosMX.Location = new System.Drawing.Point(552, 8);
             this.btnEsPreferenciaDatosBancariosMX.Name = "btnEsPreferenciaDatosBancariosMX";
-            this.btnEsPreferenciaDatosBancariosMX.Size = new System.Drawing.Size(354, 28);
+            this.btnEsPreferenciaDatosBancariosMX.Size = new System.Drawing.Size(244, 28);
             this.btnEsPreferenciaDatosBancariosMX.TabIndex = 62;
             this.btnEsPreferenciaDatosBancariosMX.Text = "Marcar Como Preferente";
             this.btnEsPreferenciaDatosBancariosMX.UseVisualStyleBackColor = false;
@@ -8134,10 +8246,10 @@
             // tabOpciones
             // 
             this.tabOpciones.Controls.Add(this.tabDatosGenerales);
+            this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabCondiciones);
             this.tabOpciones.Controls.Add(this.tabExpediente);
             this.tabOpciones.Controls.Add(this.tabAcuerdos);
-            this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Location = new System.Drawing.Point(33, 147);
             this.tabOpciones.Name = "tabOpciones";
             this.tabOpciones.SelectedIndex = 4;
@@ -8878,5 +8990,13 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private MetroFramework.Controls.MetroTabControl tabOpciones;
+        private System.Windows.Forms.CheckBox checkBoxExpedienteRevisado;
+        private System.Windows.Forms.CheckBox checkBoxPoliticasRevisado;
+        private System.Windows.Forms.CheckBox checkBoxAcuerdosRevisado;
+        private System.Windows.Forms.CheckBox checkBoxCondicionesRevisado;
+        private System.Windows.Forms.CheckBox checkBoxDireccionesRevisado;
+        private System.Windows.Forms.CheckBox checkBoxContactosRevisado;
+        private System.Windows.Forms.CheckBox checkBoxDatosBancariosEXRevisado;
+        private System.Windows.Forms.CheckBox checkBoxDatosBancariosMXRevisado;
     }
 }
