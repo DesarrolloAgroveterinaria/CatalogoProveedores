@@ -79,7 +79,7 @@ namespace ProveedorPrueba
             //{
             //    c.Enabled = false;
             //}
-            if(EProveedorUsuario.Usuario == "CROMO")
+            if(EProveedorUsuario.Usuario == "FROMO")
             {
                 checkBoxDireccionesRevisado.Enabled = true;
                 checkBoxContactosRevisado.Enabled = true;
