@@ -19,6 +19,8 @@ namespace ProveedorPrueba
 {
     public partial class frmCatalogoProveedores : MetroFramework.Forms.MetroForm
     {
+        public int pnlBarraSuperior_Width = 1078;
+        public int tabOpciones_Width = 1030;
         frmNotificaciones notificaciones = new frmNotificaciones();
         //Crear instancias de Clase Entidad de todas las entidades a utilizar, así como listas para guardar datos 
         //public EProveedorUsuario eProveedorUsuario;
@@ -79,7 +81,16 @@ namespace ProveedorPrueba
             //{
             //    c.Enabled = false;
             //}
-            if(EProveedorUsuario.Usuario == "FROMO")
+            checkBoxDireccionesRevisado.Enabled = false;
+            checkBoxContactosRevisado.Enabled = false;
+            checkBoxDatosBancariosMXRevisado.Enabled = false;
+            checkBoxDatosBancariosEXRevisado.Enabled = false;
+            checkBoxAcuerdosRevisado.Enabled = false;
+            checkBoxCondicionesRevisado.Enabled = false;
+            checkBoxPoliticasRevisado.Enabled = false;
+            checkBoxExpedienteRevisado.Enabled = false;
+
+            if (EProveedorUsuario.Usuario == "FROMO")
             {
                 checkBoxDireccionesRevisado.Enabled = true;
                 checkBoxContactosRevisado.Enabled = true;
@@ -90,19 +101,17 @@ namespace ProveedorPrueba
                 checkBoxPoliticasRevisado.Enabled = true;
                 checkBoxExpedienteRevisado.Enabled = true;
             }
-            else
+            else if (EProveedorUsuario.Usuario == "PMILLAN")
             {
-                checkBoxDireccionesRevisado.Enabled = false;
-                checkBoxContactosRevisado.Enabled = false;
-                checkBoxDatosBancariosMXRevisado.Enabled = false;
-                checkBoxDatosBancariosEXRevisado.Enabled = false;
-                checkBoxAcuerdosRevisado.Enabled = false;
-                checkBoxCondicionesRevisado.Enabled = false;
-                checkBoxPoliticasRevisado.Enabled = false;
-                checkBoxExpedienteRevisado.Enabled = false;
+                checkBoxDireccionesRevisado.Enabled = true;
+                checkBoxContactosRevisado.Enabled = true;
+                checkBoxDatosBancariosMXRevisado.Enabled = true;
+                checkBoxDatosBancariosEXRevisado.Enabled = true;
             }
-
-
+            else if(EProveedorUsuario.Usuario == "ADRIANCITO")
+            {
+                checkBoxDireccionesRevisado.Enabled = true;
+            }
             //Expediente
             //Acuerdos
             //Condiciones
@@ -115,6 +124,27 @@ namespace ProveedorPrueba
         private void btnMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        private void btnMax_Click(object sender, EventArgs e)
+        {
+            //double new_width = tabOpciones.MaximumSize.Width;
+            double new_width = this.Width;
+            //normalises window
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.pnlBarraSuperior.Width = pnlBarraSuperior_Width;
+                tabOpciones.Width = tabOpciones_Width;                                             
+            }
+
+            //maximises window
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+                this.pnlBarraSuperior.Width = this.Width;
+                tabOpciones.Size = new Size(tabOpciones.Height, Convert.ToInt32(new_width));                
+                this.CenterToScreen();
+            }
         }
         //Funciones de ayuda
         private void cargarDatosPorUsuario(string Usuario)
@@ -533,19 +563,84 @@ namespace ProveedorPrueba
                     checkBoxCMA.Checked = true;
 
                 //Forma de Entrega            
-                if (eProveedorCondiciones.FormaEntrega.Contains(" Paquetería Pagada por Proveedor "))
-                    checkBoxPaqueteriaPagadaProveedor.Checked = true;
-                if (eProveedorCondiciones.FormaEntrega.Contains(" Paquetería por Cobrar "))
-                    checkBoxPaqueteriaPorCobrar.Checked = true;
-                if (eProveedorCondiciones.FormaEntrega.Contains(" Transporte Contratado "))
-                    checkBoxTransporteContratado.Checked = true;
-                if (eProveedorCondiciones.FormaEntrega.Contains(" Transporte de Proveedor "))
-                    checkBoxTransporteProveedor.Checked = true;
-                if (eProveedorCondiciones.FormaEntrega.Contains(" Otra: "))
+                //if (eProveedorCondiciones.FormaEntrega.Contains(" Paquetería Pagada por Proveedor "))
+                //    checkBoxPaqueteriaPagadaProveedor.Checked = true;
+                //if (eProveedorCondiciones.FormaEntrega.Contains(" Paquetería por Cobrar "))
+                //    checkBoxPaqueteriaPorCobrar.Checked = true;
+                //if (eProveedorCondiciones.FormaEntrega.Contains(" Transporte Contratado "))
+                //    checkBoxTransporteContratado.Checked = true;
+                //if (eProveedorCondiciones.FormaEntrega.Contains(" Transporte de Proveedor "))
+                //    checkBoxTransporteProveedor.Checked = true;
+                //if (eProveedorCondiciones.FormaEntrega.Contains(" Otra: "))
+                //{
+                //    string[] cadenaFormaEntrega = eProveedorCondiciones.FormaEntrega.Split(new string[] { "Otra: " }, StringSplitOptions.None);
+                //    txtBoxOtraFormaEntrega.Text = cadenaFormaEntrega[1];
+                //}
+
+                //Rutas y Fletes
+                ListaFletes = proveedorFletesBol.consultarFletesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
+
+                if (ListaFletes.Count == 0)
+                    return;
+
+                DataTable tablaFletes = new DataTable();
+                tablaFletes.Columns.Add("ClaveProveedor");
+                tablaFletes.Columns.Add("Fleteid");
+                tablaFletes.Columns.Add("TipoEnvio");
+                tablaFletes.Columns.Add("FormaEntrega");
+                tablaFletes.Columns.Add("ClaveProveedorFlete");
+                tablaFletes.Columns.Add("NombreProveedor");
+                tablaFletes.Columns.Add("DescripcionProveedor");
+                tablaFletes.Columns.Add("PedidoMin");
+                tablaFletes.Columns.Add("PedidoMax");
+                tablaFletes.Columns.Add("Unidad");
+                tablaFletes.Columns.Add("Origen");
+                tablaFletes.Columns.Add("Destino");
+                tablaFletes.Columns.Add("Observaciones");
+                tablaFletes.Columns.Add("EsPreferencia");
+                tablaFletes.Columns.Add("CostoFleteMatriz");
+                tablaFletes.Columns.Add("CostoFleteHipodromo");
+                tablaFletes.Columns.Add("CostoFleteSanPedro");
+                tablaFletes.Columns.Add("CostoFleteMagdalena");
+                tablaFletes.Columns.Add("CostoFleteCaborca");
+                tablaFletes.Columns.Add("CostoFleteCEDIS");
+                tablaFletes.Columns.Add("CostoFleteCMA");
+
+                foreach (var i in ListaFletes)
                 {
-                    string[] cadenaFormaEntrega = eProveedorCondiciones.FormaEntrega.Split(new string[] { "Otra: " }, StringSplitOptions.None);
-                    txtBoxOtraFormaEntrega.Text = cadenaFormaEntrega[1];
+                        tablaFletes.Rows.Add(new object[] { i.ClaveProveedor, i.Fleteid, i.TipoEnvio, i.FormaEntrega,
+                    i.ClaveProveedorFlete, i.NombreProveedor, i.DescripcionProveedor, i.PedidoMin, i.PedidoMax,
+                    i.Unidad, i.Origen, i.Destino, i.Observaciones, i.EsPreferencia, i.CostoFleteMatriz, i.CostoFleteHipodromo,
+                        i.CostoFleteSanPedro, i.CostoFleteMagdalena, i.CostoFleteCaborca, i.CostoFleteCEDIS, i.CostoFleteCMA});
                 }
+
+                dataGridFletes.AutoGenerateColumns = true;
+                dataGridFletes.DataSource = tablaFletes;
+                dataGridFletes.CurrentCell = dataGridFletes.Rows[0].Cells[0];
+
+                //Flete                
+                comboBoxTipoEnvioFletes.SelectedItem = dataGridFletes.CurrentRow.Cells[2].Value.ToString();
+                comboBoxFormaEntregaFletes.SelectedItem = dataGridFletes.CurrentRow.Cells[3].Value.ToString();
+                txtBoxClaveProveedorFletes.Text = dataGridFletes.CurrentRow.Cells[4].Value.ToString();
+                txtBoxNombreFleteCondiciones.Text = dataGridFletes.CurrentRow.Cells[5].Value.ToString();
+                txtBoxPedidoMinCondiciones.Text = dataGridFletes.CurrentRow.Cells[7].Value.ToString();
+                txtBoxPedidoMaxCondiciones.Text = dataGridFletes.CurrentRow.Cells[8].Value.ToString();
+                comboBoxUnidadPedidoCondiciones.SelectedItem = dataGridFletes.CurrentRow.Cells[9].Value.ToString();
+                txtBoxFleteOrigenCondiciones.Text = dataGridFletes.CurrentRow.Cells[10].Value.ToString();
+                txtBoxFleteDestinoCondiciones.Text = dataGridFletes.CurrentRow.Cells[11].Value.ToString();
+                txtBoxObservacionesFletes.Text = dataGridFletes.CurrentRow.Cells[12].Value.ToString();
+                if (dataGridFletes.CurrentRow.Cells[13].Value.ToString() == "1")
+                    lblFletePreferenciaFletes.Visible = true;
+                txtBoxCantidadCostoSucursalMatrizFletes.Text = dataGridFletes.CurrentRow.Cells[14].Value.ToString();
+                txtBoxCantidadCostoSucursalHipodromoFletes.Text = dataGridFletes.CurrentRow.Cells[15].Value.ToString();
+                txtBoxCantidadCostoSucursalSanPedroFletes.Text = dataGridFletes.CurrentRow.Cells[16].Value.ToString();
+                txtBoxCantidadCostoSucursalMagdalenaFletes.Text = dataGridFletes.CurrentRow.Cells[17].Value.ToString();
+                txtBoxCantidadCostoSucursalCabrocaFletes.Text = dataGridFletes.CurrentRow.Cells[18].Value.ToString();
+                txtBoxCantidadCostoSucursalCEDISFletes.Text = dataGridFletes.CurrentRow.Cells[19].Value.ToString();
+                txtBoxCantidadCostoSucursalCMAletes.Text = dataGridFletes.CurrentRow.Cells[20].Value.ToString();
+
+
+                
 
                 //if (ListaCondicionesEntregaPorSucursal.Count > 0)
                 //{
@@ -925,12 +1020,12 @@ namespace ProveedorPrueba
                 txtBoxEmail1Contactos.Text = dataGridContactos.CurrentRow.Cells[12].Value.ToString();
                 txtBoxEmail2Contactos.Text = dataGridContactos.CurrentRow.Cells[13].Value.ToString();
                 txtBoxCategoriaContactos.Text = dataGridContactos.CurrentRow.Cells[4].Value.ToString();
-                if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                    checkBox1Funciones.Checked = true;
-                if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                    checkBox2Funciones.Checked = true;
-                if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                    checkBox3Funciones.Checked = true;
+                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
+                //    checkBox1Funciones.Checked = true;
+                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
+                //    checkBox2Funciones.Checked = true;
+                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
+                //    checkBox3Funciones.Checked = true;
             }
             catch (Exception ex)
             {
@@ -1029,6 +1124,8 @@ namespace ProveedorPrueba
             try
             {
                 checkBoxPoliticasRevisado.Checked = false;
+                dataGridCategoriasPoliticasCompra.DataSource = null;
+                dataGridCategoriasPoliticasCompra.Rows.Clear();
                 txtBoxImporteMensualConvenioCompraPoliticas.Clear();
                 txtBoxImporteTrimestralConvenioCompraPoliticas.Clear();
                 txtBoxBeneficiosConvenioCompraPoliticas.Clear();
@@ -1137,20 +1234,29 @@ namespace ProveedorPrueba
                 checkBoxCMA.Checked = false;
 
                 //Forma de Entrega
-                checkBoxPaqueteriaPagadaProveedor.Checked = false;
-                checkBoxPaqueteriaPorCobrar.Checked = false;
-                checkBoxTransporteContratado.Checked = false;
-                checkBoxTransporteProveedor.Checked = false;
-                txtBoxOtraFormaEntrega.Clear();
+                //checkBoxPaqueteriaPagadaProveedor.Checked = false;
+                //checkBoxPaqueteriaPorCobrar.Checked = false;
+                //checkBoxTransporteContratado.Checked = false;
+                //checkBoxTransporteProveedor.Checked = false;
+                //txtBoxOtraFormaEntrega.Clear();
+
+                //Limite de Capacidad por Bodega
+                dataGridLimiteCapacidad.DataSource = null;
+                dataGridLimiteCapacidad.Rows.Clear();
 
                 //Fletes
+                dataGridFletes.DataSource = null;
+                dataGridFletes.Rows.Clear();
                 lblFletePreferenciaFletes.Visible = false;
                 comboBoxFormaEntregaFletes.SelectedIndex = -1;
+                txtBoxClaveProveedorFletes.Clear();
                 txtBoxNombreFleteCondiciones.Clear();
+                comboBoxTipoEnvioFletes.SelectedIndex = -1;
                 txtBoxFleteOrigenCondiciones.Clear();
                 txtBoxFleteDestinoCondiciones.Clear();
                 txtBoxPedidoMinCondiciones.Clear();
                 txtBoxPedidoMaxCondiciones.Clear();
+                txtBoxObservacionesFletes.Clear();
                 comboBoxUnidadPedidoCondiciones.SelectedIndex = -1;
                 txtBoxCantidadCostoSucursalMatrizFletes.Clear();
                 txtBoxCantidadCostoSucursalHipodromoFletes.Clear();
@@ -1203,6 +1309,8 @@ namespace ProveedorPrueba
                 //Direcciones
                 checkBoxDireccionesRevisado.Checked = false;
                 comboBoxConceptoUsoDirecciones.SelectedIndex = -1;
+                dataGridDirecciones.DataSource = null;
+                dataGridDirecciones.Rows.Clear();
                 txtBoxDireccionDirecciones.Clear();
                 txtBoxNumExteriorDirecciones.Clear();
                 txtBoxNumInteriorDirecciones.Clear();
@@ -1215,6 +1323,8 @@ namespace ProveedorPrueba
 
                 //Contactos
                 checkBoxContactosRevisado.Checked = false;
+                dataGridContactos.DataSource = null;
+                dataGridContactos.Rows.Clear();
                 txtBoxNombreContactos.Clear();
                 txtBoxPuestoContactos.Clear();
                 txtBoxTel1Contactos.Clear();
@@ -1226,13 +1336,15 @@ namespace ProveedorPrueba
                 txtBoxEmail1Contactos.Clear();
                 txtBoxEmail2Contactos.Clear();
                 txtBoxCategoriaContactos.Clear();                
-                checkBox1Funciones.Checked = false;               
-                checkBox2Funciones.Checked = false;
-                checkBox3Funciones.Checked = false;
+                //checkBox1Funciones.Checked = false;               
+                //checkBox2Funciones.Checked = false;
+                //checkBox3Funciones.Checked = false;
 
                 //Datos Bancarios MX
                 checkBoxDatosBancariosMXRevisado.Checked = false;
                 comboBoxBancoDatosBancariosMX.SelectedIndex = -1;
+                dataGridViewDatosBancariosMX.DataSource = null;
+                dataGridViewDatosBancariosMX.Rows.Clear();
                 txtBoxCLABEDatosBancariosMX.Clear();
                 txtBoxNumeroCuentaDestinatarioMX.Clear();
                 txtBoxSucursalDatosBancariosMX.Clear();
@@ -1241,6 +1353,8 @@ namespace ProveedorPrueba
 
                 //Datos Bancarios EX
                 checkBoxDatosBancariosEXRevisado.Checked = false;
+                dataGridDatosBancariosEX.DataSource = null;
+                dataGridDatosBancariosEX.Rows.Clear();
                 txtBoxNombreBancoDestinoEX.Clear();
                 txtBoxClaveBancoDestinoEX.Clear();
                 txtBoxNumeroCuentaDestinatarioEX.Clear();
@@ -1833,12 +1947,12 @@ namespace ProveedorPrueba
                 }                
 
                 StringBuilder funcionesContacto = new StringBuilder();
-                if (checkBox1Funciones.Checked)
-                    funcionesContacto.Append("");
-                if (checkBox2Funciones.Checked)
-                    funcionesContacto.Append("");
-                if (checkBox3Funciones.Checked)
-                    funcionesContacto.Append("");
+                //if (checkBox1Funciones.Checked)
+                //    funcionesContacto.Append("");
+                //if (checkBox2Funciones.Checked)
+                //    funcionesContacto.Append("");
+                //if (checkBox3Funciones.Checked)
+                //    funcionesContacto.Append("");
 
                 EProveedorContacto Contacto = new EProveedorContacto
                 {
@@ -1894,10 +2008,7 @@ namespace ProveedorPrueba
                 txtBoxCel2Contactos.Text = "";
                 txtBoxExt2Contactos.Text = "";
                 txtBoxEmail1Contactos.Text = "";
-                txtBoxEmail2Contactos.Text = "";
-                checkBox1Funciones.Checked = false;
-                checkBox2Funciones.Checked = false;
-                checkBox3Funciones.Checked = false;
+                txtBoxEmail2Contactos.Text = "";               
             }
             catch (Exception ex)
             {
@@ -1996,12 +2107,12 @@ namespace ProveedorPrueba
                 }
                 
                 StringBuilder funcionesContacto = new StringBuilder();
-                if (checkBox1Funciones.Checked)
-                    funcionesContacto.Append("");
-                if (checkBox2Funciones.Checked)
-                    funcionesContacto.Append("");
-                if (checkBox3Funciones.Checked)
-                    funcionesContacto.Append("");
+                //if (checkBox1Funciones.Checked)
+                //    funcionesContacto.Append("");
+                //if (checkBox2Funciones.Checked)
+                //    funcionesContacto.Append("");
+                //if (checkBox3Funciones.Checked)
+                //    funcionesContacto.Append("");
 
                 EProveedorContacto Contacto = new EProveedorContacto
                 {
@@ -2065,12 +2176,12 @@ namespace ProveedorPrueba
                 txtBoxEmail1Contactos.Text = dataGridContactos.CurrentRow.Cells[12].Value.ToString();
                 txtBoxEmail2Contactos.Text = dataGridContactos.CurrentRow.Cells[13].Value.ToString();
                 txtBoxCategoriaContactos.Text = dataGridContactos.CurrentRow.Cells[4].Value.ToString();
-                if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                    checkBox1Funciones.Checked = true;
-                if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                    checkBox2Funciones.Checked = true;
-                if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                    checkBox3Funciones.Checked = true;
+                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
+                //    checkBox1Funciones.Checked = true;
+                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
+                //    checkBox2Funciones.Checked = true;
+                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
+                //    checkBox3Funciones.Checked = true;
             }
             catch (Exception ex)
             {
@@ -4245,16 +4356,16 @@ namespace ProveedorPrueba
                 StringBuilder formaDeEntrega = new StringBuilder("");
                 StringBuilder sucursalesDeEntrega = new StringBuilder("");                
 
-                if (checkBoxPaqueteriaPagadaProveedor.Checked)
-                    formaDeEntrega.Append(" Paquetería Pagada por Proveedor ");
-                if (checkBoxPaqueteriaPorCobrar.Checked)
-                    formaDeEntrega.Append(" Paquetería por Cobrar ");
-                if (checkBoxTransporteContratado.Checked)
-                    formaDeEntrega.Append(" Transporte Contratado ");
-                if (checkBoxTransporteProveedor.Checked)
-                    formaDeEntrega.Append(" Transporte de Proveedor ");
-                if (txtBoxOtraFormaEntrega.Text != "")
-                    formaDeEntrega.Append(" Otra: " + txtBoxOtraFormaEntrega.Text);
+                //if (checkBoxPaqueteriaPagadaProveedor.Checked)
+                //    formaDeEntrega.Append(" Paquetería Pagada por Proveedor ");
+                //if (checkBoxPaqueteriaPorCobrar.Checked)
+                //    formaDeEntrega.Append(" Paquetería por Cobrar ");
+                //if (checkBoxTransporteContratado.Checked)
+                //    formaDeEntrega.Append(" Transporte Contratado ");
+                //if (checkBoxTransporteProveedor.Checked)
+                //    formaDeEntrega.Append(" Transporte de Proveedor ");
+                //if (txtBoxOtraFormaEntrega.Text != "")
+                //    formaDeEntrega.Append(" Otra: " + txtBoxOtraFormaEntrega.Text);
                 
                 if (checkBoxMatriz.Checked)
                     sucursalesDeEntrega.Append(" Matriz ");
@@ -4327,16 +4438,16 @@ namespace ProveedorPrueba
                 StringBuilder formaDeEntrega = new StringBuilder("");
                 StringBuilder sucursalesDeEntrega = new StringBuilder("");
 
-                if (checkBoxPaqueteriaPagadaProveedor.Checked)
-                    formaDeEntrega.Append(" Paquetería Pagada por Proveedor ");
-                if (checkBoxPaqueteriaPorCobrar.Checked)
-                    formaDeEntrega.Append(" Paquetería por Cobrar ");
-                if (checkBoxTransporteContratado.Checked)
-                    formaDeEntrega.Append(" Transporte Contratado ");
-                if (checkBoxTransporteProveedor.Checked)
-                    formaDeEntrega.Append(" Transporte de Proveedor ");
-                if (txtBoxOtraFormaEntrega.Text != "")
-                    formaDeEntrega.Append(" Otra: " + txtBoxOtraFormaEntrega.Text);
+                //if (checkBoxPaqueteriaPagadaProveedor.Checked)
+                //    formaDeEntrega.Append(" Paquetería Pagada por Proveedor ");
+                //if (checkBoxPaqueteriaPorCobrar.Checked)
+                //    formaDeEntrega.Append(" Paquetería por Cobrar ");
+                //if (checkBoxTransporteContratado.Checked)
+                //    formaDeEntrega.Append(" Transporte Contratado ");
+                //if (checkBoxTransporteProveedor.Checked)
+                //    formaDeEntrega.Append(" Transporte de Proveedor ");
+                //if (txtBoxOtraFormaEntrega.Text != "")
+                //    formaDeEntrega.Append(" Otra: " + txtBoxOtraFormaEntrega.Text);
 
                 if (checkBoxMatriz.Checked)
                     sucursalesDeEntrega.Append(" Matriz ");
@@ -4527,18 +4638,127 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
         }
+        private void dataGridFletes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + "Seleccionar" + " " + "Flete",
+                          "Seleccionar" + " " + "Flete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                comboBoxTipoEnvioFletes.SelectedItem = dataGridFletes.CurrentRow.Cells[2].Value.ToString();
+                comboBoxFormaEntregaFletes.SelectedItem = dataGridFletes.CurrentRow.Cells[3].Value.ToString();
+                txtBoxClaveProveedorFletes.Text = dataGridFletes.CurrentRow.Cells[4].Value.ToString();
+                txtBoxNombreFleteCondiciones.Text = dataGridFletes.CurrentRow.Cells[5].Value.ToString();
+                txtBoxPedidoMinCondiciones.Text = dataGridFletes.CurrentRow.Cells[7].Value.ToString();
+                txtBoxPedidoMaxCondiciones.Text = dataGridFletes.CurrentRow.Cells[8].Value.ToString();
+                comboBoxUnidadPedidoCondiciones.SelectedItem = dataGridFletes.CurrentRow.Cells[9].Value.ToString();
+                txtBoxFleteOrigenCondiciones.Text = dataGridFletes.CurrentRow.Cells[10].Value.ToString();
+                txtBoxFleteDestinoCondiciones.Text = dataGridFletes.CurrentRow.Cells[11].Value.ToString();
+                txtBoxObservacionesFletes.Text = dataGridFletes.CurrentRow.Cells[12].Value.ToString();
+                if (dataGridFletes.CurrentRow.Cells[13].Value.ToString() == "1")
+                    lblFletePreferenciaFletes.Visible = true;
+                txtBoxCantidadCostoSucursalMatrizFletes.Text = dataGridFletes.CurrentRow.Cells[14].Value.ToString();
+                txtBoxCantidadCostoSucursalHipodromoFletes.Text = dataGridFletes.CurrentRow.Cells[15].Value.ToString();
+                txtBoxCantidadCostoSucursalSanPedroFletes.Text = dataGridFletes.CurrentRow.Cells[16].Value.ToString();
+                txtBoxCantidadCostoSucursalMagdalenaFletes.Text = dataGridFletes.CurrentRow.Cells[17].Value.ToString();
+                txtBoxCantidadCostoSucursalCabrocaFletes.Text = dataGridFletes.CurrentRow.Cells[18].Value.ToString();
+                txtBoxCantidadCostoSucursalCEDISFletes.Text = dataGridFletes.CurrentRow.Cells[19].Value.ToString();
+                txtBoxCantidadCostoSucursalCMAletes.Text = dataGridFletes.CurrentRow.Cells[20].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnAgregarFlete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Agregar";
+                string categoriaDato = "Flete";
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (txtBoxClaveProveedorFletes.Text == "" || txtBoxNombreFleteCondiciones.Text == "" || 
+                    Convert.ToString(comboBoxFormaEntregaFletes.SelectedItem) == "" || Convert.ToString(comboBoxTipoEnvioFletes.SelectedItem) == "")
+                {
+                    MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nLos campos requeridos son: \r\n*Nombre\r\n" +
+                        "*Clave\r\n*Forma de Entrega\r\n*Tipo de Envío", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return;
+                }
+
+                int valorAEntero;
+                if (!int.TryParse(txtBoxPedidoMinCondiciones.Text, out valorAEntero) || !int.TryParse(txtBoxPedidoMaxCondiciones.Text, out valorAEntero))
+                {
+                    MessageBox.Show("Los siguientes campos solo aceptan números: \r\n \r\n*Pedido Min\r\n" +
+                        "*Pedido Max", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return;
+                }
+
+                EProveedorFletes Flete = new EProveedorFletes()
+                {
+                    ClaveProveedor = eProveedorDatosPrim.ClaveProveedor,
+                    TipoEnvio = Convert.ToString(comboBoxTipoEnvioFletes.SelectedItem),
+                    FormaEntrega = Convert.ToString(comboBoxFormaEntregaFletes.SelectedItem),
+                    ClaveProveedorFlete = txtBoxClaveProveedorFletes.Text,
+                    NombreProveedor = txtBoxNombreFleteCondiciones.Text,
+                    DescripcionProveedor = "",
+                    PedidoMin = Convert.ToInt32(txtBoxPedidoMinCondiciones.Text),
+                    PedidoMax = Convert.ToInt32(txtBoxPedidoMaxCondiciones.Text),
+                    Unidad = Convert.ToString(comboBoxUnidadPedidoCondiciones.SelectedItem),
+                    Origen = txtBoxFleteOrigenCondiciones.Text,
+                    Destino = txtBoxFleteDestinoCondiciones.Text,
+                    EsPreferencia = false,
+                    Observaciones = txtBoxObservacionesFletes.Text,
+                    CostoFleteMatriz = txtBoxCantidadCostoSucursalMatrizFletes.Text,
+                    CostoFleteHipodromo = txtBoxCantidadCostoSucursalHipodromoFletes.Text,
+                    CostoFleteSanPedro = txtBoxCantidadCostoSucursalSanPedroFletes.Text,
+                    CostoFleteMagdalena = txtBoxCantidadCostoSucursalMagdalenaFletes.Text,
+                    CostoFleteCaborca = txtBoxCantidadCostoSucursalCabrocaFletes.Text,
+                    CostoFleteCEDIS = txtBoxCantidadCostoSucursalCEDISFletes.Text,
+                    CostoFleteCMA = txtBoxCantidadCostoSucursalCMAletes.Text
+                };
+
+                if (proveedorFletesBol.agregarFleteProveedor(Flete))
+                {
+                    proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    CargarCondiciones(eProveedorDatosPrim.ClaveProveedor);
+                    CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    MessageBox.Show(categoriaDato + " ha sido agregado exitosamente.", accionDato + " " + categoriaDato,
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(categoriaDato + " NO ha podido ser agregado. " + System.Environment.NewLine + proveedorDireccionesBol.mensajeRespuestaSP,
+                       accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void VerInformacionFletes_Click(object sender, EventArgs e)
         {
             try
             {
-                string clave = "60977";
+                string clave = txtBoxClaveProveedorFletes.Text;
                 frmCatalogoProveedores nuevaVentana = new frmCatalogoProveedores();
                 nuevaVentana.Show();
                 nuevaVentana.btnCerrar.Visible = false;
                 nuevaVentana.btnVerInformacionFletes.Visible = false;
                 //nuevaVentana.eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(clave);
-                //nuevaVentana.txtBoxClaveDatosPrimarios.Text = clave;
-                //nuevaVentana.btnBuscarClave_Click(nuevaVentana, e);
+                nuevaVentana.txtBoxClaveDatosPrimarios.Text = clave;
+                nuevaVentana.btnBuscarClave_Click(nuevaVentana, e);
             }
             catch (Exception ex)
             {
@@ -5294,7 +5514,16 @@ namespace ProveedorPrueba
         {
 
         }
-        
+
+        private void lblFormaEntregaCondiciones_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlCondicionesPagoEntrega_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         //private void btnSiguienteRutas_Click(object sender, EventArgs e)
         //{

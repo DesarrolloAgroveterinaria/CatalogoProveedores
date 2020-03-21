@@ -29,6 +29,7 @@
         public void InitializeComponent()
         {
             this.pnlBarraSuperior = new System.Windows.Forms.Panel();
+            this.btnMax = new System.Windows.Forms.Button();
             this.lblCatalogoDeProveedores = new System.Windows.Forms.Label();
             this.btnMin = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -270,8 +271,80 @@
             this.lblProveedorCondiciones = new System.Windows.Forms.Label();
             this.picBoxLogoCondiciones = new System.Windows.Forms.PictureBox();
             this.pnlCondiciones = new System.Windows.Forms.Panel();
+            this.lblCondicionesEntrega = new System.Windows.Forms.Label();
+            this.pnlPlazosCredito = new System.Windows.Forms.Panel();
+            this.lblObservacionesGeneralesPlazo = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesGeneralesPlazo = new System.Windows.Forms.TextBox();
+            this.checkBoxTieneProntoPago = new System.Windows.Forms.CheckBox();
+            this.btnLimpiarCamposPlazoCredito = new System.Windows.Forms.Button();
+            this.btnEditarPlazo = new System.Windows.Forms.Button();
+            this.btnAgregarPlazo = new System.Windows.Forms.Button();
+            this.btnDesactivarPlazo = new System.Windows.Forms.Button();
+            this.lblLineaPP4 = new System.Windows.Forms.Label();
+            this.lblLineaPP3 = new System.Windows.Forms.Label();
+            this.lblLineaPP2 = new System.Windows.Forms.Label();
+            this.lblLineaPP1 = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesProntoPago5 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesProntoPago4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesProntoPago3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesProntoPago2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesProntoPago1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtBoxDefinicionPlazoCredito = new System.Windows.Forms.TextBox();
+            this.lblDefinicionPlazos = new System.Windows.Forms.Label();
+            this.dataGridPlazosCredito = new System.Windows.Forms.DataGridView();
+            this.Plazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiasPlazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DefincionPlazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblProntosPagos = new System.Windows.Forms.Label();
+            this.comboBoxVencimientoPagoFactura5 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVencimientoPagoFactura4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVencimientoPagoFactura3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVencimientoPagoFactura1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVencimientoPagoFactura2 = new System.Windows.Forms.ComboBox();
+            this.lblVencimientoFacturaCondiciones = new System.Windows.Forms.Label();
+            this.lblProntoPago4Dias = new System.Windows.Forms.Label();
+            this.txtBoxProntoPago4Dias = new System.Windows.Forms.TextBox();
+            this.comboBoxDescProntoPago4 = new System.Windows.Forms.ComboBox();
+            this.lblPorc4 = new System.Windows.Forms.Label();
+            this.lblProntoPago4 = new System.Windows.Forms.Label();
+            this.lblProntoPago3Dias = new System.Windows.Forms.Label();
+            this.txtBoxProntoPago3Dias = new System.Windows.Forms.TextBox();
+            this.comboBoxDescProntoPago3 = new System.Windows.Forms.ComboBox();
+            this.lblPorc3 = new System.Windows.Forms.Label();
+            this.lblProntoPago3 = new System.Windows.Forms.Label();
+            this.lblProntoPago2Dias = new System.Windows.Forms.Label();
+            this.txtBoxProntoPago2Dias = new System.Windows.Forms.TextBox();
+            this.comboBoxDescProntoPago2 = new System.Windows.Forms.ComboBox();
+            this.lblPorc2 = new System.Windows.Forms.Label();
+            this.lblProntoPago2 = new System.Windows.Forms.Label();
+            this.lblProntoPago5Dias = new System.Windows.Forms.Label();
+            this.txtBoxProntoPago5Dias = new System.Windows.Forms.TextBox();
+            this.comboBoxDescProntoPago5 = new System.Windows.Forms.ComboBox();
+            this.lblPorc5 = new System.Windows.Forms.Label();
+            this.lblProntoPago5 = new System.Windows.Forms.Label();
+            this.lblProntoPago1Dias = new System.Windows.Forms.Label();
+            this.txtBoxProntoPago1Dias = new System.Windows.Forms.TextBox();
+            this.comboBoxDescProntoPago1 = new System.Windows.Forms.ComboBox();
+            this.lblPorc1 = new System.Windows.Forms.Label();
+            this.lblProntoPago1 = new System.Windows.Forms.Label();
+            this.lblDiasCondicionesCredito = new System.Windows.Forms.Label();
+            this.txtBoxCondicionesCreditoCondiciones = new System.Windows.Forms.TextBox();
+            this.lblCondicionesCreditoCondiciones = new System.Windows.Forms.Label();
             this.pnlRutasFletes = new System.Windows.Forms.Panel();
             this.pnlFleterosCondiciones = new System.Windows.Forms.Panel();
+            this.lblClaveProveedorFletes = new System.Windows.Forms.Label();
+            this.txtBoxClaveProveedorFletes = new System.Windows.Forms.TextBox();
+            this.txtBoxNombreFleteCondiciones = new System.Windows.Forms.TextBox();
+            this.lblNombreFleteCondiciones = new System.Windows.Forms.Label();
+            this.txtBoxObservacionesFletes = new System.Windows.Forms.TextBox();
+            this.lblObservacionesFletes = new System.Windows.Forms.Label();
+            this.comboBoxTipoEnvioFletes = new System.Windows.Forms.ComboBox();
+            this.lblMetodoEnvioFletes = new System.Windows.Forms.Label();
             this.btnEsPreferenciaFlete = new System.Windows.Forms.Button();
             this.lblFletePreferenciaFletes = new System.Windows.Forms.Label();
             this.lblSucursalCMAFletes = new System.Windows.Forms.Label();
@@ -311,15 +384,28 @@
             this.lblFormaEntregaFletes = new System.Windows.Forms.Label();
             this.btnLimpiarCamposFletes = new System.Windows.Forms.Button();
             this.pnlListaFletesCondiciones = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridFletes = new System.Windows.Forms.DataGridView();
             this.btnEditarFletes = new System.Windows.Forms.Button();
             this.btnAgregarFlete = new System.Windows.Forms.Button();
             this.btnEliminarFletes = new System.Windows.Forms.Button();
             this.lblFleteCondiciones = new System.Windows.Forms.Label();
-            this.txtBoxNombreFleteCondiciones = new System.Windows.Forms.TextBox();
-            this.lblNombreFleteCondiciones = new System.Windows.Forms.Label();
             this.lblRutasFletesCondiciones = new System.Windows.Forms.Label();
             this.pnlCondicionesPagoEntrega = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxTransporteCargaPagado = new System.Windows.Forms.CheckBox();
+            this.checkBoxTransporteCargaPorCobrar = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBoxPaqueteriaPagada = new System.Windows.Forms.CheckBox();
+            this.checkBoxPaqueteriaCobrar = new System.Windows.Forms.CheckBox();
+            this.checkBoxEntregaPersonalPagada = new System.Windows.Forms.CheckBox();
+            this.checkBoxEntregaPersonalPorCobrar = new System.Windows.Forms.CheckBox();
+            this.pnlTipoEnvio = new System.Windows.Forms.Panel();
+            this.checkBoxDomicilio = new System.Windows.Forms.CheckBox();
+            this.checkBoxCourierCondiciones = new System.Windows.Forms.CheckBox();
+            this.checkBoxTerrestreCondiciones = new System.Windows.Forms.CheckBox();
+            this.checkBoxAereoCondiciones = new System.Windows.Forms.CheckBox();
+            this.lblMetodoEnvioCondiciones = new System.Windows.Forms.Label();
             this.btnGuardarCambiosSeccionCondiciones2 = new System.Windows.Forms.Button();
             this.btnSeleccionarArchivoObservacionesFormaEntrega = new System.Windows.Forms.Button();
             this.lblSubirArchivoObservacionesTiempoFormaEntrega = new System.Windows.Forms.Label();
@@ -327,44 +413,6 @@
             this.btnEliminarArchivoObservacionesTiempoFormaEntrega = new System.Windows.Forms.Button();
             this.comboBoxListaObservacionesFormaEntrega = new System.Windows.Forms.ComboBox();
             this.btnAbrirArchivoObservacionesTiempoFormaEntrega = new System.Windows.Forms.Button();
-            this.pnlCheckBoxFormaEntrega = new System.Windows.Forms.Panel();
-            this.txtBoxOtraFormaEntrega = new System.Windows.Forms.TextBox();
-            this.lblOtraFormaEntrega = new System.Windows.Forms.Label();
-            this.checkBoxTransporteContratado = new System.Windows.Forms.CheckBox();
-            this.checkBoxTransporteProveedor = new System.Windows.Forms.CheckBox();
-            this.checkBoxPaqueteriaPagadaProveedor = new System.Windows.Forms.CheckBox();
-            this.checkBoxPaqueteriaPorCobrar = new System.Windows.Forms.CheckBox();
-            this.comboBoxVencimientoPagoFactura5 = new System.Windows.Forms.ComboBox();
-            this.comboBoxVencimientoPagoFactura4 = new System.Windows.Forms.ComboBox();
-            this.comboBoxVencimientoPagoFactura3 = new System.Windows.Forms.ComboBox();
-            this.comboBoxVencimientoPagoFactura1 = new System.Windows.Forms.ComboBox();
-            this.comboBoxVencimientoPagoFactura2 = new System.Windows.Forms.ComboBox();
-            this.lblVencimientoFacturaCondiciones = new System.Windows.Forms.Label();
-            this.lblProntoPago4Dias = new System.Windows.Forms.Label();
-            this.txtBoxProntoPago4Dias = new System.Windows.Forms.TextBox();
-            this.comboBoxDescProntoPago4 = new System.Windows.Forms.ComboBox();
-            this.lblPorc4 = new System.Windows.Forms.Label();
-            this.lblProntoPago4 = new System.Windows.Forms.Label();
-            this.lblProntoPago3Dias = new System.Windows.Forms.Label();
-            this.txtBoxProntoPago3Dias = new System.Windows.Forms.TextBox();
-            this.comboBoxDescProntoPago3 = new System.Windows.Forms.ComboBox();
-            this.lblPorc3 = new System.Windows.Forms.Label();
-            this.lblProntoPago3 = new System.Windows.Forms.Label();
-            this.lblProntoPago2Dias = new System.Windows.Forms.Label();
-            this.txtBoxProntoPago2Dias = new System.Windows.Forms.TextBox();
-            this.comboBoxDescProntoPago2 = new System.Windows.Forms.ComboBox();
-            this.lblPorc2 = new System.Windows.Forms.Label();
-            this.lblProntoPago2 = new System.Windows.Forms.Label();
-            this.lblProntoPago5Dias = new System.Windows.Forms.Label();
-            this.txtBoxProntoPago5Dias = new System.Windows.Forms.TextBox();
-            this.comboBoxDescProntoPago5 = new System.Windows.Forms.ComboBox();
-            this.lblPorc5 = new System.Windows.Forms.Label();
-            this.lblProntoPago5 = new System.Windows.Forms.Label();
-            this.lblProntoPago1Dias = new System.Windows.Forms.Label();
-            this.txtBoxProntoPago1Dias = new System.Windows.Forms.TextBox();
-            this.comboBoxDescProntoPago1 = new System.Windows.Forms.ComboBox();
-            this.lblPorc1 = new System.Windows.Forms.Label();
-            this.lblProntoPago1 = new System.Windows.Forms.Label();
             this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones = new System.Windows.Forms.Button();
             this.btnLimpiarCampoCondicionesEspecialesEntrega = new System.Windows.Forms.Button();
             this.txtBoxCondicionesEspecialesCondiciones = new System.Windows.Forms.TextBox();
@@ -393,11 +441,8 @@
             this.lblTiempoEntregaDias = new System.Windows.Forms.Label();
             this.txtBoxTiempoEntregaCondiciones = new System.Windows.Forms.TextBox();
             this.lblTiempoEntregaCondiciones = new System.Windows.Forms.Label();
-            this.lblDiasCondicionesCredito = new System.Windows.Forms.Label();
             this.lblObservacionesCondiciones = new System.Windows.Forms.Label();
-            this.txtBoxCondicionesCreditoCondiciones = new System.Windows.Forms.TextBox();
-            this.lblCondicionesCreditoCondiciones = new System.Windows.Forms.Label();
-            this.lblCondicionesPagoEntrega = new System.Windows.Forms.Label();
+            this.lblCondicionesPago = new System.Windows.Forms.Label();
             this.tabDatosGenerales = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlDatosGen = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimarios = new System.Windows.Forms.Panel();
@@ -435,22 +480,6 @@
             this.lblNumInteriorDirecciones = new System.Windows.Forms.Label();
             this.btnPriorizarDirecciones = new System.Windows.Forms.Button();
             this.btnLimpiarCamposDirecciones = new System.Windows.Forms.Button();
-            this.pnlListaDirecciones = new System.Windows.Forms.Panel();
-            this.dataGridDirecciones = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CalleAveBlvr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumExterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumInterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InfAdicional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Colonia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Poblacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarDireccion = new System.Windows.Forms.Button();
             this.btnAgregarDireccion = new System.Windows.Forms.Button();
             this.txtBoxEstadoDirecciones = new System.Windows.Forms.TextBox();
@@ -471,11 +500,6 @@
             this.pnlContacto1 = new System.Windows.Forms.Panel();
             this.checkBoxContactosRevisado = new System.Windows.Forms.CheckBox();
             this.btnPriorizarContacto = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.checkBox3Funciones = new System.Windows.Forms.CheckBox();
-            this.checkBox2Funciones = new System.Windows.Forms.CheckBox();
-            this.checkBox1Funciones = new System.Windows.Forms.CheckBox();
-            this.lblFuncionesContacto = new System.Windows.Forms.Label();
             this.txtBoxCel2Contactos = new System.Windows.Forms.TextBox();
             this.lblCel2Contactos = new System.Windows.Forms.Label();
             this.txtBoxCel1Contactos = new System.Windows.Forms.TextBox();
@@ -487,23 +511,6 @@
             this.txtBoxEmail2Contactos = new System.Windows.Forms.TextBox();
             this.lblEmail2Contactos = new System.Windows.Forms.Label();
             this.txtBoxCategoriaContactos = new System.Windows.Forms.TextBox();
-            this.pnlListaContactos = new System.Windows.Forms.Panel();
-            this.dataGridContactos = new System.Windows.Forms.DataGridView();
-            this.Contactoid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrioridadDeUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FuncionesContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoPrimario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExtensionTelefonoPrimario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TelefonoSecundario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExtensionTelefonoSecundario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Celular2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarContacto = new System.Windows.Forms.Button();
             this.btnLimpiarCamposContactos = new System.Windows.Forms.Button();
             this.btnAgregarContacto = new System.Windows.Forms.Button();
@@ -568,24 +575,6 @@
             this.lblNombreBancoDestinoEX = new System.Windows.Forms.Label();
             this.comboBoxDivisaCuentaBancariaEX = new System.Windows.Forms.ComboBox();
             this.lblDivisaCuentaBancariaEX = new System.Windows.Forms.Label();
-            this.pnlListaCuentasBancariasEX = new System.Windows.Forms.Panel();
-            this.dataGridDatosBancariosEX = new System.Windows.Forms.DataGridView();
-            this.BancoEXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreBancoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaveBancoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Divisa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MontoMaximoAPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreBancoIntermediario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaveBancoIntermediario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumIdDireccionDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vigencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDeVigencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoRelacionConDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MotivoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preferente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstatusActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiarCamposDatosBancariosEX = new System.Windows.Forms.Button();
             this.btnEditarCuentaEX = new System.Windows.Forms.Button();
             this.btnAgregarCuentaEX = new System.Windows.Forms.Button();
@@ -603,17 +592,6 @@
             this.lblNumeroCuentaMX = new System.Windows.Forms.Label();
             this.comboBoxDivisaCuentaBancariaMX = new System.Windows.Forms.ComboBox();
             this.lblDivisaCuentaBancariaMX = new System.Windows.Forms.Label();
-            this.pnlListaCuentasBancariasMX = new System.Windows.Forms.Panel();
-            this.dataGridViewDatosBancariosMX = new System.Windows.Forms.DataGridView();
-            this.BancoMXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EsPreferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroCuentaDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DivisaAPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstatusActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiarCamposDatosBancariosMX = new System.Windows.Forms.Button();
             this.btnEditarCuentaMX = new System.Windows.Forms.Button();
             this.btnAgregarCuentaMX = new System.Windows.Forms.Button();
@@ -643,6 +621,68 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabOpciones = new MetroFramework.Controls.MetroTabControl();
+            this.lblFuncionContacto = new System.Windows.Forms.Label();
+            this.comboBoxFuncionContacto = new System.Windows.Forms.ComboBox();
+            this.lblComentariosContacto = new System.Windows.Forms.Label();
+            this.txtBoxComentariosContacto = new System.Windows.Forms.TextBox();
+            this.dataGridContactos = new System.Windows.Forms.DataGridView();
+            this.Contactoid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrioridadDeUso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuncionesContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoPrimario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExtensionTelefonoPrimario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TelefonoSecundario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExtensionTelefonoSecundario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Celular2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comentarios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewDatosBancariosMX = new System.Windows.Forms.DataGridView();
+            this.BancoMXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EsPreferencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCuentaDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DivisaAPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstatusActivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridDatosBancariosEX = new System.Windows.Forms.DataGridView();
+            this.BancoEXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreBancoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaveBancoDestino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Divisa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MontoMaximoAPagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreBancoIntermediario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaveBancoIntermediario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumIdDireccionDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vigencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaDeVigencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoRelacionConDestinatario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MotivoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preferente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EstatusActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridDirecciones = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalleAveBlvr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumExterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumInterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InfAdicional = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Colonia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoPostal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Poblacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBarraSuperior.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tabExpediente.SuspendLayout();
@@ -675,12 +715,15 @@
             this.pnlDatosPrimCondiciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoCondiciones)).BeginInit();
             this.pnlCondiciones.SuspendLayout();
+            this.pnlPlazosCredito.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPlazosCredito)).BeginInit();
             this.pnlRutasFletes.SuspendLayout();
             this.pnlFleterosCondiciones.SuspendLayout();
             this.pnlListaFletesCondiciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFletes)).BeginInit();
             this.pnlCondicionesPagoEntrega.SuspendLayout();
-            this.pnlCheckBoxFormaEntrega.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnlTipoEnvio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLimiteCapacidad)).BeginInit();
             this.pnlCheckBoxSucursales.SuspendLayout();
             this.tabDatosGenerales.SuspendLayout();
@@ -689,36 +732,48 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoProveedor)).BeginInit();
             this.pnlDirecciones.SuspendLayout();
             this.pnlDireccion1.SuspendLayout();
-            this.pnlListaDirecciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDirecciones)).BeginInit();
             this.pnlContactos.SuspendLayout();
             this.pnlContacto1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.pnlListaContactos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridContactos)).BeginInit();
             this.pnlDatosBancarios.SuspendLayout();
             this.pnlDatosBancariosEX.SuspendLayout();
-            this.pnlListaCuentasBancariasEX.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDatosBancariosEX)).BeginInit();
             this.pnlDatosBancariosMX.SuspendLayout();
-            this.pnlListaCuentasBancariasMX.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatosBancariosMX)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridContactos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatosBancariosMX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDatosBancariosEX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDirecciones)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBarraSuperior
             // 
             this.pnlBarraSuperior.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.pnlBarraSuperior.Controls.Add(this.btnMax);
             this.pnlBarraSuperior.Controls.Add(this.lblCatalogoDeProveedores);
             this.pnlBarraSuperior.Controls.Add(this.btnMin);
             this.pnlBarraSuperior.Controls.Add(this.btnCerrar);
-            this.pnlBarraSuperior.Location = new System.Drawing.Point(-1, -2);
+            this.pnlBarraSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraSuperior.Name = "pnlBarraSuperior";
-            this.pnlBarraSuperior.Size = new System.Drawing.Size(1078, 31);
+            this.pnlBarraSuperior.Size = new System.Drawing.Size(1078, 39);
             this.pnlBarraSuperior.TabIndex = 2;
             this.pnlBarraSuperior.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraSuperior_Paint);
+            // 
+            // btnMax
+            // 
+            this.btnMax.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMax.FlatAppearance.BorderSize = 0;
+            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMax.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMax.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMax.Image = global::CatalogoDeProveedores.Properties.Resources.enlarge__1_;
+            this.btnMax.Location = new System.Drawing.Point(973, 0);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(35, 39);
+            this.btnMax.TabIndex = 5;
+            this.btnMax.Text = "-";
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
             // 
             // lblCatalogoDeProveedores
             // 
@@ -740,7 +795,7 @@
             this.btnMin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnMin.Location = new System.Drawing.Point(1008, 0);
             this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(35, 31);
+            this.btnMin.Size = new System.Drawing.Size(35, 39);
             this.btnMin.TabIndex = 4;
             this.btnMin.Text = "-";
             this.btnMin.UseVisualStyleBackColor = true;
@@ -755,7 +810,7 @@
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCerrar.Location = new System.Drawing.Point(1043, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(35, 31);
+            this.btnCerrar.Size = new System.Drawing.Size(35, 39);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "X";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -767,7 +822,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(23, 65);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1030, 76);
+            this.panel6.Size = new System.Drawing.Size(1030, 64);
             this.panel6.TabIndex = 0;
             // 
             // btnVerNotificaciones
@@ -2902,7 +2957,7 @@
             // 
             this.btnEliminarAtencionClientes.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarAtencionClientes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAtencionClientes.Location = new System.Drawing.Point(779, 78);
+            this.btnEliminarAtencionClientes.Location = new System.Drawing.Point(780, 27);
             this.btnEliminarAtencionClientes.Name = "btnEliminarAtencionClientes";
             this.btnEliminarAtencionClientes.Size = new System.Drawing.Size(148, 23);
             this.btnEliminarAtencionClientes.TabIndex = 21;
@@ -2915,7 +2970,7 @@
             this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.AutoSize = true;
             this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.Location = new System.Drawing.Point(628, 25);
+            this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.Location = new System.Drawing.Point(628, 9);
             this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.Name = "lblSAbrirEliminarArchivoAcuerdoAtencionClientes";
             this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.Size = new System.Drawing.Size(126, 15);
             this.lblSAbrirEliminarArchivoAcuerdoAtencionClientes.TabIndex = 77;
@@ -2956,7 +3011,7 @@
             // btnAbrirAcuerdoAtencionClientes
             // 
             this.btnAbrirAcuerdoAtencionClientes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirAcuerdoAtencionClientes.Location = new System.Drawing.Point(625, 78);
+            this.btnAbrirAcuerdoAtencionClientes.Location = new System.Drawing.Point(626, 27);
             this.btnAbrirAcuerdoAtencionClientes.Name = "btnAbrirAcuerdoAtencionClientes";
             this.btnAbrirAcuerdoAtencionClientes.Size = new System.Drawing.Size(148, 23);
             this.btnAbrirAcuerdoAtencionClientes.TabIndex = 20;
@@ -3028,7 +3083,7 @@
             // 
             this.btnEliminarAcuerdoVentaPublico.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarAcuerdoVentaPublico.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAcuerdoVentaPublico.Location = new System.Drawing.Point(779, 78);
+            this.btnEliminarAcuerdoVentaPublico.Location = new System.Drawing.Point(780, 25);
             this.btnEliminarAcuerdoVentaPublico.Name = "btnEliminarAcuerdoVentaPublico";
             this.btnEliminarAcuerdoVentaPublico.Size = new System.Drawing.Size(148, 23);
             this.btnEliminarAcuerdoVentaPublico.TabIndex = 15;
@@ -3041,7 +3096,7 @@
             this.lblAbrirEliminarArchivoAcuerdoVentaPublico.AutoSize = true;
             this.lblAbrirEliminarArchivoAcuerdoVentaPublico.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbrirEliminarArchivoAcuerdoVentaPublico.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAbrirEliminarArchivoAcuerdoVentaPublico.Location = new System.Drawing.Point(628, 24);
+            this.lblAbrirEliminarArchivoAcuerdoVentaPublico.Location = new System.Drawing.Point(628, 4);
             this.lblAbrirEliminarArchivoAcuerdoVentaPublico.Name = "lblAbrirEliminarArchivoAcuerdoVentaPublico";
             this.lblAbrirEliminarArchivoAcuerdoVentaPublico.Size = new System.Drawing.Size(126, 15);
             this.lblAbrirEliminarArchivoAcuerdoVentaPublico.TabIndex = 75;
@@ -3082,7 +3137,7 @@
             // btnAbrirAcuerdoVentaPublico
             // 
             this.btnAbrirAcuerdoVentaPublico.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirAcuerdoVentaPublico.Location = new System.Drawing.Point(625, 78);
+            this.btnAbrirAcuerdoVentaPublico.Location = new System.Drawing.Point(626, 25);
             this.btnAbrirAcuerdoVentaPublico.Name = "btnAbrirAcuerdoVentaPublico";
             this.btnAbrirAcuerdoVentaPublico.Size = new System.Drawing.Size(148, 23);
             this.btnAbrirAcuerdoVentaPublico.TabIndex = 14;
@@ -3156,7 +3211,7 @@
             // 
             this.btnEliminarAcuerdoCompra.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarAcuerdoCompra.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAcuerdoCompra.Location = new System.Drawing.Point(785, 78);
+            this.btnEliminarAcuerdoCompra.Location = new System.Drawing.Point(785, 24);
             this.btnEliminarAcuerdoCompra.Name = "btnEliminarAcuerdoCompra";
             this.btnEliminarAcuerdoCompra.Size = new System.Drawing.Size(148, 23);
             this.btnEliminarAcuerdoCompra.TabIndex = 9;
@@ -3169,7 +3224,7 @@
             this.lblAbrirEliminarArchivoAcuerdoDeCompra.AutoSize = true;
             this.lblAbrirEliminarArchivoAcuerdoDeCompra.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbrirEliminarArchivoAcuerdoDeCompra.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAbrirEliminarArchivoAcuerdoDeCompra.Location = new System.Drawing.Point(628, 25);
+            this.lblAbrirEliminarArchivoAcuerdoDeCompra.Location = new System.Drawing.Point(628, 6);
             this.lblAbrirEliminarArchivoAcuerdoDeCompra.Name = "lblAbrirEliminarArchivoAcuerdoDeCompra";
             this.lblAbrirEliminarArchivoAcuerdoDeCompra.Size = new System.Drawing.Size(126, 15);
             this.lblAbrirEliminarArchivoAcuerdoDeCompra.TabIndex = 73;
@@ -3289,7 +3344,7 @@
             // btnAbrirAcuerdoCompra
             // 
             this.btnAbrirAcuerdoCompra.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirAcuerdoCompra.Location = new System.Drawing.Point(625, 78);
+            this.btnAbrirAcuerdoCompra.Location = new System.Drawing.Point(625, 24);
             this.btnAbrirAcuerdoCompra.Name = "btnAbrirAcuerdoCompra";
             this.btnAbrirAcuerdoCompra.Size = new System.Drawing.Size(154, 23);
             this.btnAbrirAcuerdoCompra.TabIndex = 8;
@@ -3481,832 +3536,392 @@
             // 
             // pnlCondiciones
             // 
+            this.pnlCondiciones.Controls.Add(this.lblCondicionesEntrega);
+            this.pnlCondiciones.Controls.Add(this.pnlPlazosCredito);
             this.pnlCondiciones.Controls.Add(this.pnlRutasFletes);
             this.pnlCondiciones.Controls.Add(this.lblRutasFletesCondiciones);
             this.pnlCondiciones.Controls.Add(this.pnlCondicionesPagoEntrega);
-            this.pnlCondiciones.Controls.Add(this.lblCondicionesPagoEntrega);
+            this.pnlCondiciones.Controls.Add(this.lblCondicionesPago);
             this.pnlCondiciones.Location = new System.Drawing.Point(3, 180);
             this.pnlCondiciones.Name = "pnlCondiciones";
-            this.pnlCondiciones.Size = new System.Drawing.Size(996, 2021);
+            this.pnlCondiciones.Size = new System.Drawing.Size(996, 2418);
             this.pnlCondiciones.TabIndex = 32;
             this.pnlCondiciones.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // pnlRutasFletes
-            // 
-            this.pnlRutasFletes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlRutasFletes.Controls.Add(this.pnlFleterosCondiciones);
-            this.pnlRutasFletes.Location = new System.Drawing.Point(20, 1455);
-            this.pnlRutasFletes.Name = "pnlRutasFletes";
-            this.pnlRutasFletes.Size = new System.Drawing.Size(963, 548);
-            this.pnlRutasFletes.TabIndex = 63;
-            this.pnlRutasFletes.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pnlFleterosCondiciones
-            // 
-            this.pnlFleterosCondiciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFleterosCondiciones.Controls.Add(this.btnEsPreferenciaFlete);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblFletePreferenciaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalCMAFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalCEDISFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalCaborcaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalMagdalenaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalSanPedroFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalHipodromoFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalMatrizFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalCMAFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalCMAletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalCEDISFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalCEDISFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalCaborcaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalCabrocaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalMagdalenaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalMagdalenaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalSanPedroFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalSanPedroFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalHipodromoFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalHipodromoFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.btnVerInformacionFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalMatrizFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalMatrizFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblCostoFletePorSucursalCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.comboBoxUnidadPedidoCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxFleteDestinoCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblFleteDestinoCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblFleteOrigenCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxFleteOrigenCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblUnidadPedidoCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxPedidoMaxCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblPedidoMaxCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxPedidoMinCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblPedidoMinCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.comboBoxFormaEntregaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblFormaEntregaFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.btnLimpiarCamposFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.pnlListaFletesCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.btnEditarFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.btnAgregarFlete);
-            this.pnlFleterosCondiciones.Controls.Add(this.btnEliminarFletes);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblFleteCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxNombreFleteCondiciones);
-            this.pnlFleterosCondiciones.Controls.Add(this.lblNombreFleteCondiciones);
-            this.pnlFleterosCondiciones.Location = new System.Drawing.Point(28, 29);
-            this.pnlFleterosCondiciones.Name = "pnlFleterosCondiciones";
-            this.pnlFleterosCondiciones.Size = new System.Drawing.Size(917, 501);
-            this.pnlFleterosCondiciones.TabIndex = 81;
-            this.pnlFleterosCondiciones.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFleterosCondiciones_Paint);
-            // 
-            // btnEsPreferenciaFlete
-            // 
-            this.btnEsPreferenciaFlete.BackColor = System.Drawing.Color.Gold;
-            this.btnEsPreferenciaFlete.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEsPreferenciaFlete.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEsPreferenciaFlete.Location = new System.Drawing.Point(523, 34);
-            this.btnEsPreferenciaFlete.Name = "btnEsPreferenciaFlete";
-            this.btnEsPreferenciaFlete.Size = new System.Drawing.Size(354, 28);
-            this.btnEsPreferenciaFlete.TabIndex = 223;
-            this.btnEsPreferenciaFlete.Text = "Marcar Como Preferente";
-            this.btnEsPreferenciaFlete.UseVisualStyleBackColor = false;
-            // 
-            // lblFletePreferenciaFletes
-            // 
-            this.lblFletePreferenciaFletes.AutoSize = true;
-            this.lblFletePreferenciaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFletePreferenciaFletes.ForeColor = System.Drawing.Color.Red;
-            this.lblFletePreferenciaFletes.Location = new System.Drawing.Point(160, 24);
-            this.lblFletePreferenciaFletes.Name = "lblFletePreferenciaFletes";
-            this.lblFletePreferenciaFletes.Size = new System.Drawing.Size(290, 38);
-            this.lblFletePreferenciaFletes.TabIndex = 222;
-            this.lblFletePreferenciaFletes.Text = "Flete de Preferencia";
-            // 
-            // lblSucursalCMAFletes
-            // 
-            this.lblSucursalCMAFletes.AutoSize = true;
-            this.lblSucursalCMAFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalCMAFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalCMAFletes.Location = new System.Drawing.Point(43, 442);
-            this.lblSucursalCMAFletes.Name = "lblSucursalCMAFletes";
-            this.lblSucursalCMAFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalCMAFletes.Size = new System.Drawing.Size(36, 17);
-            this.lblSucursalCMAFletes.TabIndex = 221;
-            this.lblSucursalCMAFletes.Text = "CMA";
-            // 
-            // lblSucursalCEDISFletes
-            // 
-            this.lblSucursalCEDISFletes.AutoSize = true;
-            this.lblSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalCEDISFletes.Location = new System.Drawing.Point(763, 386);
-            this.lblSucursalCEDISFletes.Name = "lblSucursalCEDISFletes";
-            this.lblSucursalCEDISFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalCEDISFletes.Size = new System.Drawing.Size(42, 17);
-            this.lblSucursalCEDISFletes.TabIndex = 220;
-            this.lblSucursalCEDISFletes.Text = "CEDIS";
-            // 
-            // lblSucursalCaborcaFletes
-            // 
-            this.lblSucursalCaborcaFletes.AutoSize = true;
-            this.lblSucursalCaborcaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalCaborcaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalCaborcaFletes.Location = new System.Drawing.Point(616, 386);
-            this.lblSucursalCaborcaFletes.Name = "lblSucursalCaborcaFletes";
-            this.lblSucursalCaborcaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalCaborcaFletes.Size = new System.Drawing.Size(57, 17);
-            this.lblSucursalCaborcaFletes.TabIndex = 219;
-            this.lblSucursalCaborcaFletes.Text = "Caborca";
-            // 
-            // lblSucursalMagdalenaFletes
-            // 
-            this.lblSucursalMagdalenaFletes.AutoSize = true;
-            this.lblSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalMagdalenaFletes.Location = new System.Drawing.Point(474, 386);
-            this.lblSucursalMagdalenaFletes.Name = "lblSucursalMagdalenaFletes";
-            this.lblSucursalMagdalenaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalMagdalenaFletes.Size = new System.Drawing.Size(74, 17);
-            this.lblSucursalMagdalenaFletes.TabIndex = 218;
-            this.lblSucursalMagdalenaFletes.Text = "Magdalena";
-            // 
-            // lblSucursalSanPedroFletes
-            // 
-            this.lblSucursalSanPedroFletes.AutoSize = true;
-            this.lblSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalSanPedroFletes.Location = new System.Drawing.Point(331, 386);
-            this.lblSucursalSanPedroFletes.Name = "lblSucursalSanPedroFletes";
-            this.lblSucursalSanPedroFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalSanPedroFletes.Size = new System.Drawing.Size(68, 17);
-            this.lblSucursalSanPedroFletes.TabIndex = 217;
-            this.lblSucursalSanPedroFletes.Text = "San Pedro";
-            // 
-            // lblSucursalHipodromoFletes
-            // 
-            this.lblSucursalHipodromoFletes.AutoSize = true;
-            this.lblSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalHipodromoFletes.Location = new System.Drawing.Point(182, 386);
-            this.lblSucursalHipodromoFletes.Name = "lblSucursalHipodromoFletes";
-            this.lblSucursalHipodromoFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalHipodromoFletes.Size = new System.Drawing.Size(76, 17);
-            this.lblSucursalHipodromoFletes.TabIndex = 216;
-            this.lblSucursalHipodromoFletes.Text = "Hipódromo";
-            // 
-            // lblSucursalMatrizFletes
-            // 
-            this.lblSucursalMatrizFletes.AutoSize = true;
-            this.lblSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalMatrizFletes.Location = new System.Drawing.Point(43, 386);
-            this.lblSucursalMatrizFletes.Name = "lblSucursalMatrizFletes";
-            this.lblSucursalMatrizFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblSucursalMatrizFletes.Size = new System.Drawing.Size(45, 17);
-            this.lblSucursalMatrizFletes.TabIndex = 215;
-            this.lblSucursalMatrizFletes.Text = "Matriz";
-            // 
-            // lblCantidadCostoSucursalCMAFletes
-            // 
-            this.lblCantidadCostoSucursalCMAFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalCMAFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalCMAFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalCMAFletes.Location = new System.Drawing.Point(22, 462);
-            this.lblCantidadCostoSucursalCMAFletes.Name = "lblCantidadCostoSucursalCMAFletes";
-            this.lblCantidadCostoSucursalCMAFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalCMAFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalCMAFletes.TabIndex = 214;
-            this.lblCantidadCostoSucursalCMAFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalCMAletes
-            // 
-            this.txtBoxCantidadCostoSucursalCMAletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalCMAletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalCMAletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalCMAletes.Location = new System.Drawing.Point(43, 462);
-            this.txtBoxCantidadCostoSucursalCMAletes.Name = "txtBoxCantidadCostoSucursalCMAletes";
-            this.txtBoxCantidadCostoSucursalCMAletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalCMAletes.TabIndex = 57;
-            // 
-            // lblCantidadCostoSucursalCEDISFletes
-            // 
-            this.lblCantidadCostoSucursalCEDISFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(744, 406);
-            this.lblCantidadCostoSucursalCEDISFletes.Name = "lblCantidadCostoSucursalCEDISFletes";
-            this.lblCantidadCostoSucursalCEDISFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalCEDISFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalCEDISFletes.TabIndex = 212;
-            this.lblCantidadCostoSucursalCEDISFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalCEDISFletes
-            // 
-            this.txtBoxCantidadCostoSucursalCEDISFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(765, 406);
-            this.txtBoxCantidadCostoSucursalCEDISFletes.Name = "txtBoxCantidadCostoSucursalCEDISFletes";
-            this.txtBoxCantidadCostoSucursalCEDISFletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalCEDISFletes.TabIndex = 56;
-            this.txtBoxCantidadCostoSucursalCEDISFletes.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // lblCantidadCostoSucursalCaborcaFletes
-            // 
-            this.lblCantidadCostoSucursalCaborcaFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalCaborcaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalCaborcaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalCaborcaFletes.Location = new System.Drawing.Point(598, 406);
-            this.lblCantidadCostoSucursalCaborcaFletes.Name = "lblCantidadCostoSucursalCaborcaFletes";
-            this.lblCantidadCostoSucursalCaborcaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalCaborcaFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalCaborcaFletes.TabIndex = 210;
-            this.lblCantidadCostoSucursalCaborcaFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalCabrocaFletes
-            // 
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.Location = new System.Drawing.Point(619, 406);
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.Name = "txtBoxCantidadCostoSucursalCabrocaFletes";
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.TabIndex = 55;
-            // 
-            // lblCantidadCostoSucursalMagdalenaFletes
-            // 
-            this.lblCantidadCostoSucursalMagdalenaFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(453, 406);
-            this.lblCantidadCostoSucursalMagdalenaFletes.Name = "lblCantidadCostoSucursalMagdalenaFletes";
-            this.lblCantidadCostoSucursalMagdalenaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalMagdalenaFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalMagdalenaFletes.TabIndex = 207;
-            this.lblCantidadCostoSucursalMagdalenaFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalMagdalenaFletes
-            // 
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(474, 406);
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Name = "txtBoxCantidadCostoSucursalMagdalenaFletes";
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.TabIndex = 54;
-            // 
-            // lblCantidadCostoSucursalSanPedroFletes
-            // 
-            this.lblCantidadCostoSucursalSanPedroFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(307, 406);
-            this.lblCantidadCostoSucursalSanPedroFletes.Name = "lblCantidadCostoSucursalSanPedroFletes";
-            this.lblCantidadCostoSucursalSanPedroFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalSanPedroFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalSanPedroFletes.TabIndex = 205;
-            this.lblCantidadCostoSucursalSanPedroFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalSanPedroFletes
-            // 
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(328, 406);
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.Name = "txtBoxCantidadCostoSucursalSanPedroFletes";
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.TabIndex = 53;
-            // 
-            // lblCantidadCostoSucursalHipodromoFletes
-            // 
-            this.lblCantidadCostoSucursalHipodromoFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(164, 406);
-            this.lblCantidadCostoSucursalHipodromoFletes.Name = "lblCantidadCostoSucursalHipodromoFletes";
-            this.lblCantidadCostoSucursalHipodromoFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalHipodromoFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalHipodromoFletes.TabIndex = 203;
-            this.lblCantidadCostoSucursalHipodromoFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalHipodromoFletes
-            // 
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(185, 406);
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.Name = "txtBoxCantidadCostoSucursalHipodromoFletes";
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.TabIndex = 52;
-            // 
-            // btnVerInformacionFletes
-            // 
-            this.btnVerInformacionFletes.BackColor = System.Drawing.Color.MistyRose;
-            this.btnVerInformacionFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerInformacionFletes.Location = new System.Drawing.Point(660, 462);
-            this.btnVerInformacionFletes.Name = "btnVerInformacionFletes";
-            this.btnVerInformacionFletes.Size = new System.Drawing.Size(229, 25);
-            this.btnVerInformacionFletes.TabIndex = 58;
-            this.btnVerInformacionFletes.Text = "Más detalles";
-            this.btnVerInformacionFletes.UseVisualStyleBackColor = false;
-            this.btnVerInformacionFletes.Click += new System.EventHandler(this.VerInformacionFletes_Click);
-            // 
-            // lblCantidadCostoSucursalMatrizFletes
-            // 
-            this.lblCantidadCostoSucursalMatrizFletes.AutoSize = true;
-            this.lblCantidadCostoSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadCostoSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(22, 406);
-            this.lblCantidadCostoSucursalMatrizFletes.Name = "lblCantidadCostoSucursalMatrizFletes";
-            this.lblCantidadCostoSucursalMatrizFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCantidadCostoSucursalMatrizFletes.Size = new System.Drawing.Size(15, 17);
-            this.lblCantidadCostoSucursalMatrizFletes.TabIndex = 198;
-            this.lblCantidadCostoSucursalMatrizFletes.Text = "$";
-            // 
-            // txtBoxCantidadCostoSucursalMatrizFletes
-            // 
-            this.txtBoxCantidadCostoSucursalMatrizFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCantidadCostoSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCantidadCostoSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(43, 406);
-            this.txtBoxCantidadCostoSucursalMatrizFletes.Name = "txtBoxCantidadCostoSucursalMatrizFletes";
-            this.txtBoxCantidadCostoSucursalMatrizFletes.Size = new System.Drawing.Size(107, 21);
-            this.txtBoxCantidadCostoSucursalMatrizFletes.TabIndex = 51;
-            // 
-            // lblCostoFletePorSucursalCondiciones
-            // 
-            this.lblCostoFletePorSucursalCondiciones.AutoSize = true;
-            this.lblCostoFletePorSucursalCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCostoFletePorSucursalCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCostoFletePorSucursalCondiciones.Location = new System.Drawing.Point(22, 347);
-            this.lblCostoFletePorSucursalCondiciones.Name = "lblCostoFletePorSucursalCondiciones";
-            this.lblCostoFletePorSucursalCondiciones.Size = new System.Drawing.Size(176, 17);
-            this.lblCostoFletePorSucursalCondiciones.TabIndex = 183;
-            this.lblCostoFletePorSucursalCondiciones.Text = "Costo de Flete por Sucursal";
-            // 
-            // comboBoxUnidadPedidoCondiciones
-            // 
-            this.comboBoxUnidadPedidoCondiciones.FormattingEnabled = true;
-            this.comboBoxUnidadPedidoCondiciones.Items.AddRange(new object[] {
-            "Caja",
-            "Kg",
-            "Pieza",
-            "Servicio",
-            "Tonelada",
-            "Caja 10",
-            "Caja 12"});
-            this.comboBoxUnidadPedidoCondiciones.Location = new System.Drawing.Point(183, 222);
-            this.comboBoxUnidadPedidoCondiciones.Name = "comboBoxUnidadPedidoCondiciones";
-            this.comboBoxUnidadPedidoCondiciones.Size = new System.Drawing.Size(164, 22);
-            this.comboBoxUnidadPedidoCondiciones.TabIndex = 48;
-            // 
-            // txtBoxFleteDestinoCondiciones
-            // 
-            this.txtBoxFleteDestinoCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxFleteDestinoCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxFleteDestinoCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxFleteDestinoCondiciones.Location = new System.Drawing.Point(121, 285);
-            this.txtBoxFleteDestinoCondiciones.Name = "txtBoxFleteDestinoCondiciones";
-            this.txtBoxFleteDestinoCondiciones.Size = new System.Drawing.Size(332, 21);
-            this.txtBoxFleteDestinoCondiciones.TabIndex = 50;
-            // 
-            // lblFleteDestinoCondiciones
-            // 
-            this.lblFleteDestinoCondiciones.AutoSize = true;
-            this.lblFleteDestinoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFleteDestinoCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFleteDestinoCondiciones.Location = new System.Drawing.Point(54, 285);
-            this.lblFleteDestinoCondiciones.Name = "lblFleteDestinoCondiciones";
-            this.lblFleteDestinoCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFleteDestinoCondiciones.Size = new System.Drawing.Size(52, 17);
-            this.lblFleteDestinoCondiciones.TabIndex = 180;
-            this.lblFleteDestinoCondiciones.Text = "Destino";
-            // 
-            // lblFleteOrigenCondiciones
-            // 
-            this.lblFleteOrigenCondiciones.AutoSize = true;
-            this.lblFleteOrigenCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFleteOrigenCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFleteOrigenCondiciones.Location = new System.Drawing.Point(54, 253);
-            this.lblFleteOrigenCondiciones.Name = "lblFleteOrigenCondiciones";
-            this.lblFleteOrigenCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFleteOrigenCondiciones.Size = new System.Drawing.Size(48, 17);
-            this.lblFleteOrigenCondiciones.TabIndex = 179;
-            this.lblFleteOrigenCondiciones.Text = "Origen";
-            // 
-            // txtBoxFleteOrigenCondiciones
-            // 
-            this.txtBoxFleteOrigenCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxFleteOrigenCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxFleteOrigenCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxFleteOrigenCondiciones.Location = new System.Drawing.Point(121, 253);
-            this.txtBoxFleteOrigenCondiciones.Name = "txtBoxFleteOrigenCondiciones";
-            this.txtBoxFleteOrigenCondiciones.Size = new System.Drawing.Size(332, 21);
-            this.txtBoxFleteOrigenCondiciones.TabIndex = 49;
-            // 
-            // lblUnidadPedidoCondiciones
-            // 
-            this.lblUnidadPedidoCondiciones.AutoSize = true;
-            this.lblUnidadPedidoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidadPedidoCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblUnidadPedidoCondiciones.Location = new System.Drawing.Point(120, 222);
-            this.lblUnidadPedidoCondiciones.Name = "lblUnidadPedidoCondiciones";
-            this.lblUnidadPedidoCondiciones.Size = new System.Drawing.Size(52, 17);
-            this.lblUnidadPedidoCondiciones.TabIndex = 176;
-            this.lblUnidadPedidoCondiciones.Text = "Unidad";
-            // 
-            // txtBoxPedidoMaxCondiciones
-            // 
-            this.txtBoxPedidoMaxCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxPedidoMaxCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPedidoMaxCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPedidoMaxCondiciones.Location = new System.Drawing.Point(347, 191);
-            this.txtBoxPedidoMaxCondiciones.Name = "txtBoxPedidoMaxCondiciones";
-            this.txtBoxPedidoMaxCondiciones.Size = new System.Drawing.Size(109, 21);
-            this.txtBoxPedidoMaxCondiciones.TabIndex = 47;
-            // 
-            // lblPedidoMaxCondiciones
-            // 
-            this.lblPedidoMaxCondiciones.AutoSize = true;
-            this.lblPedidoMaxCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedidoMaxCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPedidoMaxCondiciones.Location = new System.Drawing.Point(242, 191);
-            this.lblPedidoMaxCondiciones.Name = "lblPedidoMaxCondiciones";
-            this.lblPedidoMaxCondiciones.Size = new System.Drawing.Size(105, 17);
-            this.lblPedidoMaxCondiciones.TabIndex = 174;
-            this.lblPedidoMaxCondiciones.Text = "Pedido Máximo";
-            // 
-            // txtBoxPedidoMinCondiciones
-            // 
-            this.txtBoxPedidoMinCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxPedidoMinCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPedidoMinCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPedidoMinCondiciones.Location = new System.Drawing.Point(134, 191);
-            this.txtBoxPedidoMinCondiciones.Name = "txtBoxPedidoMinCondiciones";
-            this.txtBoxPedidoMinCondiciones.Size = new System.Drawing.Size(89, 21);
-            this.txtBoxPedidoMinCondiciones.TabIndex = 46;
-            // 
-            // lblPedidoMinCondiciones
-            // 
-            this.lblPedidoMinCondiciones.AutoSize = true;
-            this.lblPedidoMinCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedidoMinCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPedidoMinCondiciones.Location = new System.Drawing.Point(29, 191);
-            this.lblPedidoMinCondiciones.Name = "lblPedidoMinCondiciones";
-            this.lblPedidoMinCondiciones.Size = new System.Drawing.Size(103, 17);
-            this.lblPedidoMinCondiciones.TabIndex = 172;
-            this.lblPedidoMinCondiciones.Text = "Pedido Mínimo";
-            // 
-            // comboBoxFormaEntregaFletes
-            // 
-            this.comboBoxFormaEntregaFletes.FormattingEnabled = true;
-            this.comboBoxFormaEntregaFletes.Items.AddRange(new object[] {
-            "Paqueteria por Cobrar",
-            "Paqueteria Pagada por Proveedor",
-            "Transporte de Proveedor",
-            "Transporte Contratado"});
-            this.comboBoxFormaEntregaFletes.Location = new System.Drawing.Point(133, 69);
-            this.comboBoxFormaEntregaFletes.Name = "comboBoxFormaEntregaFletes";
-            this.comboBoxFormaEntregaFletes.Size = new System.Drawing.Size(331, 22);
-            this.comboBoxFormaEntregaFletes.TabIndex = 44;
-            // 
-            // lblFormaEntregaFletes
-            // 
-            this.lblFormaEntregaFletes.AutoSize = true;
-            this.lblFormaEntregaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormaEntregaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFormaEntregaFletes.Location = new System.Drawing.Point(19, 69);
-            this.lblFormaEntregaFletes.Name = "lblFormaEntregaFletes";
-            this.lblFormaEntregaFletes.Size = new System.Drawing.Size(113, 17);
-            this.lblFormaEntregaFletes.TabIndex = 98;
-            this.lblFormaEntregaFletes.Text = "Forma de Entrega";
-            // 
-            // btnLimpiarCamposFletes
-            // 
-            this.btnLimpiarCamposFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposFletes.Location = new System.Drawing.Point(509, 319);
-            this.btnLimpiarCamposFletes.Name = "btnLimpiarCamposFletes";
-            this.btnLimpiarCamposFletes.Size = new System.Drawing.Size(354, 28);
-            this.btnLimpiarCamposFletes.TabIndex = 63;
-            this.btnLimpiarCamposFletes.Text = "Limpiar Campos\r\n";
-            this.btnLimpiarCamposFletes.UseVisualStyleBackColor = true;
-            this.btnLimpiarCamposFletes.Click += new System.EventHandler(this.btnLimpiarCamposFletes_Click);
-            // 
-            // pnlListaFletesCondiciones
-            // 
-            this.pnlListaFletesCondiciones.AutoScroll = true;
-            this.pnlListaFletesCondiciones.Controls.Add(this.dataGridView1);
-            this.pnlListaFletesCondiciones.Location = new System.Drawing.Point(487, 68);
-            this.pnlListaFletesCondiciones.Name = "pnlListaFletesCondiciones";
-            this.pnlListaFletesCondiciones.Size = new System.Drawing.Size(405, 198);
-            this.pnlListaFletesCondiciones.TabIndex = 94;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 198);
-            this.dataGridView1.TabIndex = 59;
-            // 
-            // btnEditarFletes
-            // 
-            this.btnEditarFletes.BackColor = System.Drawing.Color.Wheat;
-            this.btnEditarFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarFletes.Location = new System.Drawing.Point(784, 285);
-            this.btnEditarFletes.Name = "btnEditarFletes";
-            this.btnEditarFletes.Size = new System.Drawing.Size(108, 23);
-            this.btnEditarFletes.TabIndex = 62;
-            this.btnEditarFletes.Text = "Editar Flete";
-            this.btnEditarFletes.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregarFlete
-            // 
-            this.btnAgregarFlete.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnAgregarFlete.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarFlete.Location = new System.Drawing.Point(487, 285);
-            this.btnAgregarFlete.Name = "btnAgregarFlete";
-            this.btnAgregarFlete.Size = new System.Drawing.Size(108, 23);
-            this.btnAgregarFlete.TabIndex = 60;
-            this.btnAgregarFlete.Text = "Agregar Flete";
-            this.btnAgregarFlete.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarFletes
-            // 
-            this.btnEliminarFletes.BackColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarFletes.Location = new System.Drawing.Point(634, 285);
-            this.btnEliminarFletes.Name = "btnEliminarFletes";
-            this.btnEliminarFletes.Size = new System.Drawing.Size(108, 23);
-            this.btnEliminarFletes.TabIndex = 61;
-            this.btnEliminarFletes.Text = "Eliminar Flete";
-            this.btnEliminarFletes.UseVisualStyleBackColor = false;
-            // 
-            // lblFleteCondiciones
-            // 
-            this.lblFleteCondiciones.AutoSize = true;
-            this.lblFleteCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFleteCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFleteCondiciones.Location = new System.Drawing.Point(15, 9);
-            this.lblFleteCondiciones.Name = "lblFleteCondiciones";
-            this.lblFleteCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFleteCondiciones.Size = new System.Drawing.Size(38, 17);
-            this.lblFleteCondiciones.TabIndex = 57;
-            this.lblFleteCondiciones.Text = "Flete";
-            // 
-            // txtBoxNombreFleteCondiciones
-            // 
-            this.txtBoxNombreFleteCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxNombreFleteCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNombreFleteCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxNombreFleteCondiciones.Location = new System.Drawing.Point(132, 106);
-            this.txtBoxNombreFleteCondiciones.Multiline = true;
-            this.txtBoxNombreFleteCondiciones.Name = "txtBoxNombreFleteCondiciones";
-            this.txtBoxNombreFleteCondiciones.Size = new System.Drawing.Size(332, 69);
-            this.txtBoxNombreFleteCondiciones.TabIndex = 45;
-            // 
-            // lblNombreFleteCondiciones
-            // 
-            this.lblNombreFleteCondiciones.AutoSize = true;
-            this.lblNombreFleteCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreFleteCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblNombreFleteCondiciones.Location = new System.Drawing.Point(40, 106);
-            this.lblNombreFleteCondiciones.Name = "lblNombreFleteCondiciones";
-            this.lblNombreFleteCondiciones.Size = new System.Drawing.Size(86, 34);
-            this.lblNombreFleteCondiciones.TabIndex = 40;
-            this.lblNombreFleteCondiciones.Text = "Nombre\r\ny Descripción";
-            // 
-            // lblRutasFletesCondiciones
-            // 
-            this.lblRutasFletesCondiciones.AutoSize = true;
-            this.lblRutasFletesCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRutasFletesCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblRutasFletesCondiciones.Location = new System.Drawing.Point(3, 1418);
-            this.lblRutasFletesCondiciones.Name = "lblRutasFletesCondiciones";
-            this.lblRutasFletesCondiciones.Size = new System.Drawing.Size(160, 31);
-            this.lblRutasFletesCondiciones.TabIndex = 62;
-            this.lblRutasFletesCondiciones.Text = "Rutas y Fletes";
-            // 
-            // pnlCondicionesPagoEntrega
-            // 
-            this.pnlCondicionesPagoEntrega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnGuardarCambiosSeccionCondiciones2);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnSeleccionarArchivoObservacionesFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblSubirArchivoObservacionesTiempoFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnEliminarArchivoObservacionesTiempoFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxListaObservacionesFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnAbrirArchivoObservacionesTiempoFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.pnlCheckBoxFormaEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxVencimientoPagoFactura5);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxVencimientoPagoFactura4);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxVencimientoPagoFactura3);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxVencimientoPagoFactura1);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxVencimientoPagoFactura2);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblVencimientoFacturaCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago4Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxProntoPago4Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxDescProntoPago4);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblPorc4);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago4);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago3Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxProntoPago3Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxDescProntoPago3);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblPorc3);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago3);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago2Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxProntoPago2Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxDescProntoPago2);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblPorc2);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago2);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago5Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxProntoPago5Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxDescProntoPago5);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblPorc5);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago5);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago1Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxProntoPago1Dias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxDescProntoPago1);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblPorc1);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblProntoPago1);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnLimpiarCampoCondicionesEspecialesEntrega);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxCondicionesEspecialesCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblCondicionesEspecialesCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.dataGridLimiteCapacidad);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblLimiteCapacidadCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.pnlCheckBoxSucursales);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblSucursalesEntregaCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxObservacionesCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblFormaEntregaCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblTiempoEntregaDias);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxTiempoEntregaCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblTiempoEntregaCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblDiasCondicionesCredito);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblObservacionesCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxCondicionesCreditoCondiciones);
-            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblCondicionesCreditoCondiciones);
-            this.pnlCondicionesPagoEntrega.Location = new System.Drawing.Point(20, 53);
-            this.pnlCondicionesPagoEntrega.Name = "pnlCondicionesPagoEntrega";
-            this.pnlCondicionesPagoEntrega.Size = new System.Drawing.Size(963, 1324);
-            this.pnlCondicionesPagoEntrega.TabIndex = 50;
-            // 
-            // btnGuardarCambiosSeccionCondiciones2
-            // 
-            this.btnGuardarCambiosSeccionCondiciones2.BackColor = System.Drawing.Color.Wheat;
-            this.btnGuardarCambiosSeccionCondiciones2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionCondiciones2.Location = new System.Drawing.Point(415, 1266);
-            this.btnGuardarCambiosSeccionCondiciones2.Name = "btnGuardarCambiosSeccionCondiciones2";
-            this.btnGuardarCambiosSeccionCondiciones2.Size = new System.Drawing.Size(155, 40);
-            this.btnGuardarCambiosSeccionCondiciones2.TabIndex = 43;
-            this.btnGuardarCambiosSeccionCondiciones2.Text = "Guardar Cambios";
-            this.btnGuardarCambiosSeccionCondiciones2.UseVisualStyleBackColor = false;
-            this.btnGuardarCambiosSeccionCondiciones2.Click += new System.EventHandler(this.btnGuardarCambiosSeccionCondiciones2_Click);
-            // 
-            // btnSeleccionarArchivoObservacionesFormaEntrega
-            // 
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.Location = new System.Drawing.Point(535, 760);
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.Name = "btnSeleccionarArchivoObservacionesFormaEntrega";
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.Size = new System.Drawing.Size(309, 21);
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.TabIndex = 39;
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.Text = "Seleccionar Archivo";
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.UseVisualStyleBackColor = true;
-            this.btnSeleccionarArchivoObservacionesFormaEntrega.Click += new System.EventHandler(this.btnSeleccionarArchivoObservacionesFormaEntrega_Click);
-            // 
-            // lblSubirArchivoObservacionesTiempoFormaEntrega
-            // 
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.AutoSize = true;
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(537, 742);
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Name = "lblSubirArchivoObservacionesTiempoFormaEntrega";
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(80, 15);
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.TabIndex = 173;
-            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Text = "Subir Archivo:";
-            // 
-            // lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega
-            // 
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.AutoSize = true;
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(537, 636);
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Name = "lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega";
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(126, 15);
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.TabIndex = 172;
-            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Text = "Abrir/Eliminar Archivo:";
-            // 
-            // btnEliminarArchivoObservacionesTiempoFormaEntrega
-            // 
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.BackColor = System.Drawing.Color.LightCoral;
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(694, 692);
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Name = "btnEliminarArchivoObservacionesTiempoFormaEntrega";
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(148, 23);
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.TabIndex = 38;
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Text = "Eliminar";
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.UseVisualStyleBackColor = false;
-            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Click += new System.EventHandler(this.btnEliminarArchivoObservacionesTiempoFormaEntrega_Click);
-            // 
-            // comboBoxListaObservacionesFormaEntrega
-            // 
-            this.comboBoxListaObservacionesFormaEntrega.FormattingEnabled = true;
-            this.comboBoxListaObservacionesFormaEntrega.Location = new System.Drawing.Point(535, 664);
-            this.comboBoxListaObservacionesFormaEntrega.Name = "comboBoxListaObservacionesFormaEntrega";
-            this.comboBoxListaObservacionesFormaEntrega.Size = new System.Drawing.Size(307, 22);
-            this.comboBoxListaObservacionesFormaEntrega.TabIndex = 36;
-            // 
-            // btnAbrirArchivoObservacionesTiempoFormaEntrega
-            // 
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(535, 692);
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Name = "btnAbrirArchivoObservacionesTiempoFormaEntrega";
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(148, 23);
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.TabIndex = 37;
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Text = "Abrir";
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.UseVisualStyleBackColor = true;
-            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Click += new System.EventHandler(this.btnAbrirArchivoObservacionesTiempoFormaEntrega_Click);
-            // 
-            // pnlCheckBoxFormaEntrega
-            // 
-            this.pnlCheckBoxFormaEntrega.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlCheckBoxFormaEntrega.Controls.Add(this.txtBoxOtraFormaEntrega);
-            this.pnlCheckBoxFormaEntrega.Controls.Add(this.lblOtraFormaEntrega);
-            this.pnlCheckBoxFormaEntrega.Controls.Add(this.checkBoxTransporteContratado);
-            this.pnlCheckBoxFormaEntrega.Controls.Add(this.checkBoxTransporteProveedor);
-            this.pnlCheckBoxFormaEntrega.Controls.Add(this.checkBoxPaqueteriaPagadaProveedor);
-            this.pnlCheckBoxFormaEntrega.Controls.Add(this.checkBoxPaqueteriaPorCobrar);
-            this.pnlCheckBoxFormaEntrega.Location = new System.Drawing.Point(135, 452);
-            this.pnlCheckBoxFormaEntrega.Name = "pnlCheckBoxFormaEntrega";
-            this.pnlCheckBoxFormaEntrega.Size = new System.Drawing.Size(358, 111);
-            this.pnlCheckBoxFormaEntrega.TabIndex = 84;
-            // 
-            // txtBoxOtraFormaEntrega
-            // 
-            this.txtBoxOtraFormaEntrega.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxOtraFormaEntrega.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxOtraFormaEntrega.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxOtraFormaEntrega.Location = new System.Drawing.Point(220, 32);
-            this.txtBoxOtraFormaEntrega.Multiline = true;
-            this.txtBoxOtraFormaEntrega.Name = "txtBoxOtraFormaEntrega";
-            this.txtBoxOtraFormaEntrega.Size = new System.Drawing.Size(124, 42);
-            this.txtBoxOtraFormaEntrega.TabIndex = 26;
-            // 
-            // lblOtraFormaEntrega
-            // 
-            this.lblOtraFormaEntrega.AutoSize = true;
-            this.lblOtraFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOtraFormaEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblOtraFormaEntrega.Location = new System.Drawing.Point(222, 15);
-            this.lblOtraFormaEntrega.Name = "lblOtraFormaEntrega";
-            this.lblOtraFormaEntrega.Size = new System.Drawing.Size(37, 14);
-            this.lblOtraFormaEntrega.TabIndex = 186;
-            this.lblOtraFormaEntrega.Text = "OTRA:";
-            // 
-            // checkBoxTransporteContratado
-            // 
-            this.checkBoxTransporteContratado.AutoSize = true;
-            this.checkBoxTransporteContratado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTransporteContratado.Location = new System.Drawing.Point(10, 92);
-            this.checkBoxTransporteContratado.Name = "checkBoxTransporteContratado";
-            this.checkBoxTransporteContratado.Size = new System.Drawing.Size(137, 18);
-            this.checkBoxTransporteContratado.TabIndex = 25;
-            this.checkBoxTransporteContratado.Text = "Transporte Contratado";
-            this.checkBoxTransporteContratado.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxTransporteProveedor
-            // 
-            this.checkBoxTransporteProveedor.AutoSize = true;
-            this.checkBoxTransporteProveedor.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTransporteProveedor.Location = new System.Drawing.Point(10, 64);
-            this.checkBoxTransporteProveedor.Name = "checkBoxTransporteProveedor";
-            this.checkBoxTransporteProveedor.Size = new System.Drawing.Size(146, 18);
-            this.checkBoxTransporteProveedor.TabIndex = 24;
-            this.checkBoxTransporteProveedor.Text = "Transporte de Proveedor";
-            this.checkBoxTransporteProveedor.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxPaqueteriaPagadaProveedor
-            // 
-            this.checkBoxPaqueteriaPagadaProveedor.AutoSize = true;
-            this.checkBoxPaqueteriaPagadaProveedor.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPaqueteriaPagadaProveedor.Location = new System.Drawing.Point(10, 34);
-            this.checkBoxPaqueteriaPagadaProveedor.Name = "checkBoxPaqueteriaPagadaProveedor";
-            this.checkBoxPaqueteriaPagadaProveedor.Size = new System.Drawing.Size(189, 18);
-            this.checkBoxPaqueteriaPagadaProveedor.TabIndex = 23;
-            this.checkBoxPaqueteriaPagadaProveedor.Text = "Paqueteria Pagada por Proveedor";
-            this.checkBoxPaqueteriaPagadaProveedor.UseVisualStyleBackColor = true;
-            this.checkBoxPaqueteriaPagadaProveedor.CheckedChanged += new System.EventHandler(this.checkBoxPaqueteriaPagadaProveedor_CheckedChanged);
-            // 
-            // checkBoxPaqueteriaPorCobrar
-            // 
-            this.checkBoxPaqueteriaPorCobrar.AutoSize = true;
-            this.checkBoxPaqueteriaPorCobrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPaqueteriaPorCobrar.Location = new System.Drawing.Point(10, 6);
-            this.checkBoxPaqueteriaPorCobrar.Name = "checkBoxPaqueteriaPorCobrar";
-            this.checkBoxPaqueteriaPorCobrar.Size = new System.Drawing.Size(134, 18);
-            this.checkBoxPaqueteriaPorCobrar.TabIndex = 22;
-            this.checkBoxPaqueteriaPorCobrar.Text = "Paqueteria por Cobrar";
-            this.checkBoxPaqueteriaPorCobrar.UseVisualStyleBackColor = true;
+            // lblCondicionesEntrega
+            // 
+            this.lblCondicionesEntrega.AutoSize = true;
+            this.lblCondicionesEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondicionesEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCondicionesEntrega.Location = new System.Drawing.Point(29, 678);
+            this.lblCondicionesEntrega.Name = "lblCondicionesEntrega";
+            this.lblCondicionesEntrega.Size = new System.Drawing.Size(270, 31);
+            this.lblCondicionesEntrega.TabIndex = 65;
+            this.lblCondicionesEntrega.Text = "Condiciones De Entrega";
+            // 
+            // pnlPlazosCredito
+            // 
+            this.pnlPlazosCredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPlazosCredito.Controls.Add(this.lblObservacionesGeneralesPlazo);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesGeneralesPlazo);
+            this.pnlPlazosCredito.Controls.Add(this.checkBoxTieneProntoPago);
+            this.pnlPlazosCredito.Controls.Add(this.btnLimpiarCamposPlazoCredito);
+            this.pnlPlazosCredito.Controls.Add(this.btnEditarPlazo);
+            this.pnlPlazosCredito.Controls.Add(this.btnAgregarPlazo);
+            this.pnlPlazosCredito.Controls.Add(this.btnDesactivarPlazo);
+            this.pnlPlazosCredito.Controls.Add(this.lblLineaPP4);
+            this.pnlPlazosCredito.Controls.Add(this.lblLineaPP3);
+            this.pnlPlazosCredito.Controls.Add(this.lblLineaPP2);
+            this.pnlPlazosCredito.Controls.Add(this.lblLineaPP1);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesProntoPago5);
+            this.pnlPlazosCredito.Controls.Add(this.label8);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesProntoPago4);
+            this.pnlPlazosCredito.Controls.Add(this.label7);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesProntoPago3);
+            this.pnlPlazosCredito.Controls.Add(this.label6);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesProntoPago2);
+            this.pnlPlazosCredito.Controls.Add(this.label5);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesProntoPago1);
+            this.pnlPlazosCredito.Controls.Add(this.label4);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxDefinicionPlazoCredito);
+            this.pnlPlazosCredito.Controls.Add(this.lblDefinicionPlazos);
+            this.pnlPlazosCredito.Controls.Add(this.dataGridPlazosCredito);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntosPagos);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxVencimientoPagoFactura5);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxVencimientoPagoFactura4);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxVencimientoPagoFactura3);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxVencimientoPagoFactura1);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxVencimientoPagoFactura2);
+            this.pnlPlazosCredito.Controls.Add(this.lblVencimientoFacturaCondiciones);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago4Dias);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxProntoPago4Dias);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxDescProntoPago4);
+            this.pnlPlazosCredito.Controls.Add(this.lblPorc4);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago4);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago3Dias);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxProntoPago3Dias);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxDescProntoPago3);
+            this.pnlPlazosCredito.Controls.Add(this.lblPorc3);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago3);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago2Dias);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxProntoPago2Dias);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxDescProntoPago2);
+            this.pnlPlazosCredito.Controls.Add(this.lblPorc2);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago2);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago5Dias);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxProntoPago5Dias);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxDescProntoPago5);
+            this.pnlPlazosCredito.Controls.Add(this.lblPorc5);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago5);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago1Dias);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxProntoPago1Dias);
+            this.pnlPlazosCredito.Controls.Add(this.comboBoxDescProntoPago1);
+            this.pnlPlazosCredito.Controls.Add(this.lblPorc1);
+            this.pnlPlazosCredito.Controls.Add(this.lblProntoPago1);
+            this.pnlPlazosCredito.Controls.Add(this.lblDiasCondicionesCredito);
+            this.pnlPlazosCredito.Controls.Add(this.txtBoxCondicionesCreditoCondiciones);
+            this.pnlPlazosCredito.Controls.Add(this.lblCondicionesCreditoCondiciones);
+            this.pnlPlazosCredito.Location = new System.Drawing.Point(20, 63);
+            this.pnlPlazosCredito.Name = "pnlPlazosCredito";
+            this.pnlPlazosCredito.Size = new System.Drawing.Size(958, 599);
+            this.pnlPlazosCredito.TabIndex = 64;
+            // 
+            // lblObservacionesGeneralesPlazo
+            // 
+            this.lblObservacionesGeneralesPlazo.AutoSize = true;
+            this.lblObservacionesGeneralesPlazo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservacionesGeneralesPlazo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblObservacionesGeneralesPlazo.Location = new System.Drawing.Point(591, 434);
+            this.lblObservacionesGeneralesPlazo.Name = "lblObservacionesGeneralesPlazo";
+            this.lblObservacionesGeneralesPlazo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblObservacionesGeneralesPlazo.Size = new System.Drawing.Size(217, 17);
+            this.lblObservacionesGeneralesPlazo.TabIndex = 289;
+            this.lblObservacionesGeneralesPlazo.Text = "Observaciones Generales de Plazo";
+            // 
+            // txtBoxObservacionesGeneralesPlazo
+            // 
+            this.txtBoxObservacionesGeneralesPlazo.Location = new System.Drawing.Point(594, 454);
+            this.txtBoxObservacionesGeneralesPlazo.Multiline = true;
+            this.txtBoxObservacionesGeneralesPlazo.Name = "txtBoxObservacionesGeneralesPlazo";
+            this.txtBoxObservacionesGeneralesPlazo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesGeneralesPlazo.Size = new System.Drawing.Size(348, 124);
+            this.txtBoxObservacionesGeneralesPlazo.TabIndex = 65;
+            // 
+            // checkBoxTieneProntoPago
+            // 
+            this.checkBoxTieneProntoPago.AutoSize = true;
+            this.checkBoxTieneProntoPago.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTieneProntoPago.Location = new System.Drawing.Point(392, 20);
+            this.checkBoxTieneProntoPago.Name = "checkBoxTieneProntoPago";
+            this.checkBoxTieneProntoPago.Size = new System.Drawing.Size(230, 35);
+            this.checkBoxTieneProntoPago.TabIndex = 288;
+            this.checkBoxTieneProntoPago.Text = "Tiene Pronto Pago";
+            this.checkBoxTieneProntoPago.UseVisualStyleBackColor = true;
+            // 
+            // btnLimpiarCamposPlazoCredito
+            // 
+            this.btnLimpiarCamposPlazoCredito.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCamposPlazoCredito.Location = new System.Drawing.Point(591, 363);
+            this.btnLimpiarCamposPlazoCredito.Name = "btnLimpiarCamposPlazoCredito";
+            this.btnLimpiarCamposPlazoCredito.Size = new System.Drawing.Size(351, 28);
+            this.btnLimpiarCamposPlazoCredito.TabIndex = 287;
+            this.btnLimpiarCamposPlazoCredito.Text = "Limpiar Campos\r\n";
+            this.btnLimpiarCamposPlazoCredito.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarPlazo
+            // 
+            this.btnEditarPlazo.BackColor = System.Drawing.Color.Wheat;
+            this.btnEditarPlazo.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarPlazo.Location = new System.Drawing.Point(834, 326);
+            this.btnEditarPlazo.Name = "btnEditarPlazo";
+            this.btnEditarPlazo.Size = new System.Drawing.Size(108, 23);
+            this.btnEditarPlazo.TabIndex = 286;
+            this.btnEditarPlazo.Text = "Editar Plazo";
+            this.btnEditarPlazo.UseVisualStyleBackColor = false;
+            this.btnEditarPlazo.Visible = false;
+            // 
+            // btnAgregarPlazo
+            // 
+            this.btnAgregarPlazo.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAgregarPlazo.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarPlazo.Location = new System.Drawing.Point(590, 326);
+            this.btnAgregarPlazo.Name = "btnAgregarPlazo";
+            this.btnAgregarPlazo.Size = new System.Drawing.Size(108, 23);
+            this.btnAgregarPlazo.TabIndex = 284;
+            this.btnAgregarPlazo.Text = "Agregar Plazo";
+            this.btnAgregarPlazo.UseVisualStyleBackColor = false;
+            // 
+            // btnDesactivarPlazo
+            // 
+            this.btnDesactivarPlazo.BackColor = System.Drawing.Color.LightCoral;
+            this.btnDesactivarPlazo.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesactivarPlazo.Location = new System.Drawing.Point(709, 326);
+            this.btnDesactivarPlazo.Name = "btnDesactivarPlazo";
+            this.btnDesactivarPlazo.Size = new System.Drawing.Size(108, 23);
+            this.btnDesactivarPlazo.TabIndex = 285;
+            this.btnDesactivarPlazo.Text = "Desactivar Plazo";
+            this.btnDesactivarPlazo.UseVisualStyleBackColor = false;
+            this.btnDesactivarPlazo.Visible = false;
+            // 
+            // lblLineaPP4
+            // 
+            this.lblLineaPP4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLineaPP4.Location = new System.Drawing.Point(39, 511);
+            this.lblLineaPP4.Name = "lblLineaPP4";
+            this.lblLineaPP4.Size = new System.Drawing.Size(500, 2);
+            this.lblLineaPP4.TabIndex = 283;
+            // 
+            // lblLineaPP3
+            // 
+            this.lblLineaPP3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLineaPP3.Location = new System.Drawing.Point(39, 431);
+            this.lblLineaPP3.Name = "lblLineaPP3";
+            this.lblLineaPP3.Size = new System.Drawing.Size(500, 2);
+            this.lblLineaPP3.TabIndex = 282;
+            // 
+            // lblLineaPP2
+            // 
+            this.lblLineaPP2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLineaPP2.Location = new System.Drawing.Point(39, 338);
+            this.lblLineaPP2.Name = "lblLineaPP2";
+            this.lblLineaPP2.Size = new System.Drawing.Size(500, 2);
+            this.lblLineaPP2.TabIndex = 281;
+            // 
+            // lblLineaPP1
+            // 
+            this.lblLineaPP1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblLineaPP1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblLineaPP1.Location = new System.Drawing.Point(39, 248);
+            this.lblLineaPP1.Name = "lblLineaPP1";
+            this.lblLineaPP1.Size = new System.Drawing.Size(500, 2);
+            this.lblLineaPP1.TabIndex = 280;
+            // 
+            // txtBoxObservacionesProntoPago5
+            // 
+            this.txtBoxObservacionesProntoPago5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxObservacionesProntoPago5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxObservacionesProntoPago5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxObservacionesProntoPago5.Location = new System.Drawing.Point(142, 553);
+            this.txtBoxObservacionesProntoPago5.Multiline = true;
+            this.txtBoxObservacionesProntoPago5.Name = "txtBoxObservacionesProntoPago5";
+            this.txtBoxObservacionesProntoPago5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesProntoPago5.Size = new System.Drawing.Size(411, 25);
+            this.txtBoxObservacionesProntoPago5.TabIndex = 278;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(41, 553);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label8.Size = new System.Drawing.Size(94, 17);
+            this.label8.TabIndex = 279;
+            this.label8.Text = "Observaciones";
+            // 
+            // txtBoxObservacionesProntoPago4
+            // 
+            this.txtBoxObservacionesProntoPago4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxObservacionesProntoPago4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxObservacionesProntoPago4.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxObservacionesProntoPago4.Location = new System.Drawing.Point(142, 471);
+            this.txtBoxObservacionesProntoPago4.Multiline = true;
+            this.txtBoxObservacionesProntoPago4.Name = "txtBoxObservacionesProntoPago4";
+            this.txtBoxObservacionesProntoPago4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesProntoPago4.Size = new System.Drawing.Size(411, 25);
+            this.txtBoxObservacionesProntoPago4.TabIndex = 276;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label7.Location = new System.Drawing.Point(41, 471);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label7.Size = new System.Drawing.Size(94, 17);
+            this.label7.TabIndex = 277;
+            this.label7.Text = "Observaciones";
+            // 
+            // txtBoxObservacionesProntoPago3
+            // 
+            this.txtBoxObservacionesProntoPago3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxObservacionesProntoPago3.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxObservacionesProntoPago3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxObservacionesProntoPago3.Location = new System.Drawing.Point(141, 391);
+            this.txtBoxObservacionesProntoPago3.Multiline = true;
+            this.txtBoxObservacionesProntoPago3.Name = "txtBoxObservacionesProntoPago3";
+            this.txtBoxObservacionesProntoPago3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesProntoPago3.Size = new System.Drawing.Size(412, 25);
+            this.txtBoxObservacionesProntoPago3.TabIndex = 274;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(40, 391);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(94, 17);
+            this.label6.TabIndex = 275;
+            this.label6.Text = "Observaciones";
+            // 
+            // txtBoxObservacionesProntoPago2
+            // 
+            this.txtBoxObservacionesProntoPago2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxObservacionesProntoPago2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxObservacionesProntoPago2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxObservacionesProntoPago2.Location = new System.Drawing.Point(141, 298);
+            this.txtBoxObservacionesProntoPago2.Multiline = true;
+            this.txtBoxObservacionesProntoPago2.Name = "txtBoxObservacionesProntoPago2";
+            this.txtBoxObservacionesProntoPago2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesProntoPago2.Size = new System.Drawing.Size(412, 25);
+            this.txtBoxObservacionesProntoPago2.TabIndex = 272;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(40, 298);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label5.Size = new System.Drawing.Size(94, 17);
+            this.label5.TabIndex = 273;
+            this.label5.Text = "Observaciones";
+            // 
+            // txtBoxObservacionesProntoPago1
+            // 
+            this.txtBoxObservacionesProntoPago1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxObservacionesProntoPago1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxObservacionesProntoPago1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxObservacionesProntoPago1.Location = new System.Drawing.Point(139, 210);
+            this.txtBoxObservacionesProntoPago1.Multiline = true;
+            this.txtBoxObservacionesProntoPago1.Name = "txtBoxObservacionesProntoPago1";
+            this.txtBoxObservacionesProntoPago1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesProntoPago1.Size = new System.Drawing.Size(414, 25);
+            this.txtBoxObservacionesProntoPago1.TabIndex = 270;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(38, 210);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label4.Size = new System.Drawing.Size(94, 17);
+            this.label4.TabIndex = 271;
+            this.label4.Text = "Observaciones";
+            // 
+            // txtBoxDefinicionPlazoCredito
+            // 
+            this.txtBoxDefinicionPlazoCredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxDefinicionPlazoCredito.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDefinicionPlazoCredito.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxDefinicionPlazoCredito.Location = new System.Drawing.Point(166, 61);
+            this.txtBoxDefinicionPlazoCredito.Name = "txtBoxDefinicionPlazoCredito";
+            this.txtBoxDefinicionPlazoCredito.Size = new System.Drawing.Size(776, 55);
+            this.txtBoxDefinicionPlazoCredito.TabIndex = 268;
+            // 
+            // lblDefinicionPlazos
+            // 
+            this.lblDefinicionPlazos.AutoSize = true;
+            this.lblDefinicionPlazos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefinicionPlazos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblDefinicionPlazos.Location = new System.Drawing.Point(166, 41);
+            this.lblDefinicionPlazos.Name = "lblDefinicionPlazos";
+            this.lblDefinicionPlazos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDefinicionPlazos.Size = new System.Drawing.Size(128, 17);
+            this.lblDefinicionPlazos.TabIndex = 269;
+            this.lblDefinicionPlazos.Text = "Definición de Plazo";
+            // 
+            // dataGridPlazosCredito
+            // 
+            this.dataGridPlazosCredito.AllowUserToAddRows = false;
+            this.dataGridPlazosCredito.AllowUserToDeleteRows = false;
+            this.dataGridPlazosCredito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPlazosCredito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Plazo,
+            this.DiasPlazo,
+            this.DefincionPlazo});
+            this.dataGridPlazosCredito.Location = new System.Drawing.Point(590, 139);
+            this.dataGridPlazosCredito.Name = "dataGridPlazosCredito";
+            this.dataGridPlazosCredito.ReadOnly = true;
+            this.dataGridPlazosCredito.Size = new System.Drawing.Size(352, 160);
+            this.dataGridPlazosCredito.TabIndex = 267;
+            // 
+            // Plazo
+            // 
+            this.Plazo.HeaderText = "PlazoCreditoid";
+            this.Plazo.Name = "Plazo";
+            this.Plazo.ReadOnly = true;
+            // 
+            // DiasPlazo
+            // 
+            this.DiasPlazo.HeaderText = "Días de Plazo";
+            this.DiasPlazo.Name = "DiasPlazo";
+            this.DiasPlazo.ReadOnly = true;
+            // 
+            // DefincionPlazo
+            // 
+            this.DefincionPlazo.HeaderText = "Definición de Plazo";
+            this.DefincionPlazo.Name = "DefincionPlazo";
+            this.DefincionPlazo.ReadOnly = true;
+            // 
+            // lblProntosPagos
+            // 
+            this.lblProntosPagos.AutoSize = true;
+            this.lblProntosPagos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProntosPagos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblProntosPagos.Location = new System.Drawing.Point(30, 139);
+            this.lblProntosPagos.Name = "lblProntosPagos";
+            this.lblProntosPagos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblProntosPagos.Size = new System.Drawing.Size(85, 17);
+            this.lblProntosPagos.TabIndex = 266;
+            this.lblProntosPagos.Text = "Pronto Pago";
             // 
             // comboBoxVencimientoPagoFactura5
             // 
@@ -4314,10 +3929,10 @@
             this.comboBoxVencimientoPagoFactura5.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura5.Location = new System.Drawing.Point(446, 268);
+            this.comboBoxVencimientoPagoFactura5.Location = new System.Drawing.Point(272, 524);
             this.comboBoxVencimientoPagoFactura5.Name = "comboBoxVencimientoPagoFactura5";
-            this.comboBoxVencimientoPagoFactura5.Size = new System.Drawing.Size(208, 22);
-            this.comboBoxVencimientoPagoFactura5.TabIndex = 20;
+            this.comboBoxVencimientoPagoFactura5.Size = new System.Drawing.Size(281, 22);
+            this.comboBoxVencimientoPagoFactura5.TabIndex = 247;
             // 
             // comboBoxVencimientoPagoFactura4
             // 
@@ -4325,10 +3940,10 @@
             this.comboBoxVencimientoPagoFactura4.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura4.Location = new System.Drawing.Point(446, 225);
+            this.comboBoxVencimientoPagoFactura4.Location = new System.Drawing.Point(272, 442);
             this.comboBoxVencimientoPagoFactura4.Name = "comboBoxVencimientoPagoFactura4";
-            this.comboBoxVencimientoPagoFactura4.Size = new System.Drawing.Size(208, 22);
-            this.comboBoxVencimientoPagoFactura4.TabIndex = 17;
+            this.comboBoxVencimientoPagoFactura4.Size = new System.Drawing.Size(281, 22);
+            this.comboBoxVencimientoPagoFactura4.TabIndex = 244;
             // 
             // comboBoxVencimientoPagoFactura3
             // 
@@ -4336,10 +3951,10 @@
             this.comboBoxVencimientoPagoFactura3.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura3.Location = new System.Drawing.Point(446, 179);
+            this.comboBoxVencimientoPagoFactura3.Location = new System.Drawing.Point(268, 356);
             this.comboBoxVencimientoPagoFactura3.Name = "comboBoxVencimientoPagoFactura3";
-            this.comboBoxVencimientoPagoFactura3.Size = new System.Drawing.Size(208, 22);
-            this.comboBoxVencimientoPagoFactura3.TabIndex = 14;
+            this.comboBoxVencimientoPagoFactura3.Size = new System.Drawing.Size(285, 22);
+            this.comboBoxVencimientoPagoFactura3.TabIndex = 241;
             // 
             // comboBoxVencimientoPagoFactura1
             // 
@@ -4347,10 +3962,10 @@
             this.comboBoxVencimientoPagoFactura1.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura1.Location = new System.Drawing.Point(446, 90);
+            this.comboBoxVencimientoPagoFactura1.Location = new System.Drawing.Point(269, 172);
             this.comboBoxVencimientoPagoFactura1.Name = "comboBoxVencimientoPagoFactura1";
-            this.comboBoxVencimientoPagoFactura1.Size = new System.Drawing.Size(208, 22);
-            this.comboBoxVencimientoPagoFactura1.TabIndex = 8;
+            this.comboBoxVencimientoPagoFactura1.Size = new System.Drawing.Size(284, 22);
+            this.comboBoxVencimientoPagoFactura1.TabIndex = 235;
             // 
             // comboBoxVencimientoPagoFactura2
             // 
@@ -4358,21 +3973,21 @@
             this.comboBoxVencimientoPagoFactura2.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura2.Location = new System.Drawing.Point(446, 132);
+            this.comboBoxVencimientoPagoFactura2.Location = new System.Drawing.Point(268, 264);
             this.comboBoxVencimientoPagoFactura2.Name = "comboBoxVencimientoPagoFactura2";
-            this.comboBoxVencimientoPagoFactura2.Size = new System.Drawing.Size(208, 22);
-            this.comboBoxVencimientoPagoFactura2.TabIndex = 11;
+            this.comboBoxVencimientoPagoFactura2.Size = new System.Drawing.Size(285, 22);
+            this.comboBoxVencimientoPagoFactura2.TabIndex = 238;
             // 
             // lblVencimientoFacturaCondiciones
             // 
             this.lblVencimientoFacturaCondiciones.AutoSize = true;
             this.lblVencimientoFacturaCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVencimientoFacturaCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblVencimientoFacturaCondiciones.Location = new System.Drawing.Point(465, 63);
+            this.lblVencimientoFacturaCondiciones.Location = new System.Drawing.Point(259, 139);
             this.lblVencimientoFacturaCondiciones.Name = "lblVencimientoFacturaCondiciones";
             this.lblVencimientoFacturaCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblVencimientoFacturaCondiciones.Size = new System.Drawing.Size(189, 17);
-            this.lblVencimientoFacturaCondiciones.TabIndex = 158;
+            this.lblVencimientoFacturaCondiciones.TabIndex = 265;
             this.lblVencimientoFacturaCondiciones.Text = "Vencimiento de Pago Factura";
             // 
             // lblProntoPago4Dias
@@ -4380,11 +3995,11 @@
             this.lblProntoPago4Dias.AutoSize = true;
             this.lblProntoPago4Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago4Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago4Dias.Location = new System.Drawing.Point(281, 226);
+            this.lblProntoPago4Dias.Location = new System.Drawing.Point(131, 443);
             this.lblProntoPago4Dias.Name = "lblProntoPago4Dias";
             this.lblProntoPago4Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago4Dias.Size = new System.Drawing.Size(32, 17);
-            this.lblProntoPago4Dias.TabIndex = 157;
+            this.lblProntoPago4Dias.TabIndex = 264;
             this.lblProntoPago4Dias.Text = "días";
             // 
             // txtBoxProntoPago4Dias
@@ -4392,10 +4007,10 @@
             this.txtBoxProntoPago4Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago4Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago4Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago4Dias.Location = new System.Drawing.Point(214, 226);
+            this.txtBoxProntoPago4Dias.Location = new System.Drawing.Point(64, 443);
             this.txtBoxProntoPago4Dias.Name = "txtBoxProntoPago4Dias";
             this.txtBoxProntoPago4Dias.Size = new System.Drawing.Size(61, 21);
-            this.txtBoxProntoPago4Dias.TabIndex = 15;
+            this.txtBoxProntoPago4Dias.TabIndex = 242;
             // 
             // comboBoxDescProntoPago4
             // 
@@ -4502,21 +4117,21 @@
             "98 ",
             "99 ",
             "100 "});
-            this.comboBoxDescProntoPago4.Location = new System.Drawing.Point(326, 226);
+            this.comboBoxDescProntoPago4.Location = new System.Drawing.Point(176, 443);
             this.comboBoxDescProntoPago4.Name = "comboBoxDescProntoPago4";
             this.comboBoxDescProntoPago4.Size = new System.Drawing.Size(61, 22);
-            this.comboBoxDescProntoPago4.TabIndex = 16;
+            this.comboBoxDescProntoPago4.TabIndex = 243;
             // 
             // lblPorc4
             // 
             this.lblPorc4.AutoSize = true;
             this.lblPorc4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc4.Location = new System.Drawing.Point(393, 226);
+            this.lblPorc4.Location = new System.Drawing.Point(243, 443);
             this.lblPorc4.Name = "lblPorc4";
             this.lblPorc4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc4.Size = new System.Drawing.Size(19, 17);
-            this.lblPorc4.TabIndex = 154;
+            this.lblPorc4.TabIndex = 263;
             this.lblPorc4.Text = "%";
             // 
             // lblProntoPago4
@@ -4524,23 +4139,23 @@
             this.lblProntoPago4.AutoSize = true;
             this.lblProntoPago4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago4.Location = new System.Drawing.Point(94, 226);
+            this.lblProntoPago4.Location = new System.Drawing.Point(33, 441);
             this.lblProntoPago4.Name = "lblProntoPago4";
             this.lblProntoPago4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblProntoPago4.Size = new System.Drawing.Size(96, 17);
-            this.lblProntoPago4.TabIndex = 153;
-            this.lblProntoPago4.Text = "Pronto Pago 4";
+            this.lblProntoPago4.Size = new System.Drawing.Size(15, 17);
+            this.lblProntoPago4.TabIndex = 262;
+            this.lblProntoPago4.Text = "4";
             // 
             // lblProntoPago3Dias
             // 
             this.lblProntoPago3Dias.AutoSize = true;
             this.lblProntoPago3Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago3Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago3Dias.Location = new System.Drawing.Point(281, 180);
+            this.lblProntoPago3Dias.Location = new System.Drawing.Point(130, 357);
             this.lblProntoPago3Dias.Name = "lblProntoPago3Dias";
             this.lblProntoPago3Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago3Dias.Size = new System.Drawing.Size(32, 17);
-            this.lblProntoPago3Dias.TabIndex = 152;
+            this.lblProntoPago3Dias.TabIndex = 261;
             this.lblProntoPago3Dias.Text = "días";
             // 
             // txtBoxProntoPago3Dias
@@ -4548,10 +4163,10 @@
             this.txtBoxProntoPago3Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago3Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago3Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago3Dias.Location = new System.Drawing.Point(214, 180);
+            this.txtBoxProntoPago3Dias.Location = new System.Drawing.Point(63, 357);
             this.txtBoxProntoPago3Dias.Name = "txtBoxProntoPago3Dias";
             this.txtBoxProntoPago3Dias.Size = new System.Drawing.Size(61, 21);
-            this.txtBoxProntoPago3Dias.TabIndex = 12;
+            this.txtBoxProntoPago3Dias.TabIndex = 239;
             // 
             // comboBoxDescProntoPago3
             // 
@@ -4658,21 +4273,21 @@
             "98 ",
             "99 ",
             "100 "});
-            this.comboBoxDescProntoPago3.Location = new System.Drawing.Point(326, 180);
+            this.comboBoxDescProntoPago3.Location = new System.Drawing.Point(175, 357);
             this.comboBoxDescProntoPago3.Name = "comboBoxDescProntoPago3";
             this.comboBoxDescProntoPago3.Size = new System.Drawing.Size(61, 22);
-            this.comboBoxDescProntoPago3.TabIndex = 13;
+            this.comboBoxDescProntoPago3.TabIndex = 240;
             // 
             // lblPorc3
             // 
             this.lblPorc3.AutoSize = true;
             this.lblPorc3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc3.Location = new System.Drawing.Point(393, 180);
+            this.lblPorc3.Location = new System.Drawing.Point(242, 357);
             this.lblPorc3.Name = "lblPorc3";
             this.lblPorc3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc3.Size = new System.Drawing.Size(19, 17);
-            this.lblPorc3.TabIndex = 149;
+            this.lblPorc3.TabIndex = 260;
             this.lblPorc3.Text = "%";
             // 
             // lblProntoPago3
@@ -4680,23 +4295,23 @@
             this.lblProntoPago3.AutoSize = true;
             this.lblProntoPago3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago3.Location = new System.Drawing.Point(94, 180);
+            this.lblProntoPago3.Location = new System.Drawing.Point(32, 355);
             this.lblProntoPago3.Name = "lblProntoPago3";
             this.lblProntoPago3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblProntoPago3.Size = new System.Drawing.Size(96, 17);
-            this.lblProntoPago3.TabIndex = 148;
-            this.lblProntoPago3.Text = "Pronto Pago 3";
+            this.lblProntoPago3.Size = new System.Drawing.Size(15, 17);
+            this.lblProntoPago3.TabIndex = 259;
+            this.lblProntoPago3.Text = "3";
             // 
             // lblProntoPago2Dias
             // 
             this.lblProntoPago2Dias.AutoSize = true;
             this.lblProntoPago2Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago2Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago2Dias.Location = new System.Drawing.Point(281, 132);
+            this.lblProntoPago2Dias.Location = new System.Drawing.Point(130, 264);
             this.lblProntoPago2Dias.Name = "lblProntoPago2Dias";
             this.lblProntoPago2Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago2Dias.Size = new System.Drawing.Size(32, 17);
-            this.lblProntoPago2Dias.TabIndex = 147;
+            this.lblProntoPago2Dias.TabIndex = 258;
             this.lblProntoPago2Dias.Text = "días";
             // 
             // txtBoxProntoPago2Dias
@@ -4704,10 +4319,10 @@
             this.txtBoxProntoPago2Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago2Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago2Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago2Dias.Location = new System.Drawing.Point(214, 132);
+            this.txtBoxProntoPago2Dias.Location = new System.Drawing.Point(63, 264);
             this.txtBoxProntoPago2Dias.Name = "txtBoxProntoPago2Dias";
             this.txtBoxProntoPago2Dias.Size = new System.Drawing.Size(61, 21);
-            this.txtBoxProntoPago2Dias.TabIndex = 9;
+            this.txtBoxProntoPago2Dias.TabIndex = 236;
             // 
             // comboBoxDescProntoPago2
             // 
@@ -4814,21 +4429,21 @@
             "98 ",
             "99 ",
             "100 "});
-            this.comboBoxDescProntoPago2.Location = new System.Drawing.Point(326, 132);
+            this.comboBoxDescProntoPago2.Location = new System.Drawing.Point(175, 264);
             this.comboBoxDescProntoPago2.Name = "comboBoxDescProntoPago2";
             this.comboBoxDescProntoPago2.Size = new System.Drawing.Size(61, 22);
-            this.comboBoxDescProntoPago2.TabIndex = 10;
+            this.comboBoxDescProntoPago2.TabIndex = 237;
             // 
             // lblPorc2
             // 
             this.lblPorc2.AutoSize = true;
             this.lblPorc2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc2.Location = new System.Drawing.Point(393, 132);
+            this.lblPorc2.Location = new System.Drawing.Point(242, 264);
             this.lblPorc2.Name = "lblPorc2";
             this.lblPorc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc2.Size = new System.Drawing.Size(19, 17);
-            this.lblPorc2.TabIndex = 144;
+            this.lblPorc2.TabIndex = 257;
             this.lblPorc2.Text = "%";
             // 
             // lblProntoPago2
@@ -4836,23 +4451,23 @@
             this.lblProntoPago2.AutoSize = true;
             this.lblProntoPago2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago2.Location = new System.Drawing.Point(94, 132);
+            this.lblProntoPago2.Location = new System.Drawing.Point(32, 262);
             this.lblProntoPago2.Name = "lblProntoPago2";
             this.lblProntoPago2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblProntoPago2.Size = new System.Drawing.Size(96, 17);
-            this.lblProntoPago2.TabIndex = 143;
-            this.lblProntoPago2.Text = "Pronto Pago 2";
+            this.lblProntoPago2.Size = new System.Drawing.Size(15, 17);
+            this.lblProntoPago2.TabIndex = 256;
+            this.lblProntoPago2.Text = "2";
             // 
             // lblProntoPago5Dias
             // 
             this.lblProntoPago5Dias.AutoSize = true;
             this.lblProntoPago5Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago5Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago5Dias.Location = new System.Drawing.Point(281, 269);
+            this.lblProntoPago5Dias.Location = new System.Drawing.Point(131, 525);
             this.lblProntoPago5Dias.Name = "lblProntoPago5Dias";
             this.lblProntoPago5Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago5Dias.Size = new System.Drawing.Size(32, 17);
-            this.lblProntoPago5Dias.TabIndex = 142;
+            this.lblProntoPago5Dias.TabIndex = 255;
             this.lblProntoPago5Dias.Text = "días";
             // 
             // txtBoxProntoPago5Dias
@@ -4860,10 +4475,10 @@
             this.txtBoxProntoPago5Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago5Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago5Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago5Dias.Location = new System.Drawing.Point(214, 269);
+            this.txtBoxProntoPago5Dias.Location = new System.Drawing.Point(64, 525);
             this.txtBoxProntoPago5Dias.Name = "txtBoxProntoPago5Dias";
             this.txtBoxProntoPago5Dias.Size = new System.Drawing.Size(61, 21);
-            this.txtBoxProntoPago5Dias.TabIndex = 18;
+            this.txtBoxProntoPago5Dias.TabIndex = 245;
             // 
             // comboBoxDescProntoPago5
             // 
@@ -4970,21 +4585,21 @@
             "98 ",
             "99 ",
             "100 "});
-            this.comboBoxDescProntoPago5.Location = new System.Drawing.Point(326, 269);
+            this.comboBoxDescProntoPago5.Location = new System.Drawing.Point(176, 525);
             this.comboBoxDescProntoPago5.Name = "comboBoxDescProntoPago5";
             this.comboBoxDescProntoPago5.Size = new System.Drawing.Size(61, 22);
-            this.comboBoxDescProntoPago5.TabIndex = 19;
+            this.comboBoxDescProntoPago5.TabIndex = 246;
             // 
             // lblPorc5
             // 
             this.lblPorc5.AutoSize = true;
             this.lblPorc5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc5.Location = new System.Drawing.Point(393, 269);
+            this.lblPorc5.Location = new System.Drawing.Point(243, 525);
             this.lblPorc5.Name = "lblPorc5";
             this.lblPorc5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc5.Size = new System.Drawing.Size(19, 17);
-            this.lblPorc5.TabIndex = 139;
+            this.lblPorc5.TabIndex = 254;
             this.lblPorc5.Text = "%";
             // 
             // lblProntoPago5
@@ -4992,23 +4607,23 @@
             this.lblProntoPago5.AutoSize = true;
             this.lblProntoPago5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago5.Location = new System.Drawing.Point(94, 269);
+            this.lblProntoPago5.Location = new System.Drawing.Point(33, 523);
             this.lblProntoPago5.Name = "lblProntoPago5";
             this.lblProntoPago5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblProntoPago5.Size = new System.Drawing.Size(96, 17);
-            this.lblProntoPago5.TabIndex = 138;
-            this.lblProntoPago5.Text = "Pronto Pago 5";
+            this.lblProntoPago5.Size = new System.Drawing.Size(15, 17);
+            this.lblProntoPago5.TabIndex = 253;
+            this.lblProntoPago5.Text = "5";
             // 
             // lblProntoPago1Dias
             // 
             this.lblProntoPago1Dias.AutoSize = true;
             this.lblProntoPago1Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago1Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago1Dias.Location = new System.Drawing.Point(280, 91);
+            this.lblProntoPago1Dias.Location = new System.Drawing.Point(130, 173);
             this.lblProntoPago1Dias.Name = "lblProntoPago1Dias";
             this.lblProntoPago1Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago1Dias.Size = new System.Drawing.Size(32, 17);
-            this.lblProntoPago1Dias.TabIndex = 137;
+            this.lblProntoPago1Dias.TabIndex = 252;
             this.lblProntoPago1Dias.Text = "días";
             // 
             // txtBoxProntoPago1Dias
@@ -5016,10 +4631,10 @@
             this.txtBoxProntoPago1Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago1Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago1Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago1Dias.Location = new System.Drawing.Point(213, 91);
+            this.txtBoxProntoPago1Dias.Location = new System.Drawing.Point(63, 173);
             this.txtBoxProntoPago1Dias.Name = "txtBoxProntoPago1Dias";
             this.txtBoxProntoPago1Dias.Size = new System.Drawing.Size(61, 21);
-            this.txtBoxProntoPago1Dias.TabIndex = 6;
+            this.txtBoxProntoPago1Dias.TabIndex = 233;
             // 
             // comboBoxDescProntoPago1
             // 
@@ -5126,21 +4741,21 @@
             "98 ",
             "99 ",
             "100 "});
-            this.comboBoxDescProntoPago1.Location = new System.Drawing.Point(325, 91);
+            this.comboBoxDescProntoPago1.Location = new System.Drawing.Point(175, 173);
             this.comboBoxDescProntoPago1.Name = "comboBoxDescProntoPago1";
             this.comboBoxDescProntoPago1.Size = new System.Drawing.Size(61, 22);
-            this.comboBoxDescProntoPago1.TabIndex = 7;
+            this.comboBoxDescProntoPago1.TabIndex = 234;
             // 
             // lblPorc1
             // 
             this.lblPorc1.AutoSize = true;
             this.lblPorc1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc1.Location = new System.Drawing.Point(392, 91);
+            this.lblPorc1.Location = new System.Drawing.Point(242, 173);
             this.lblPorc1.Name = "lblPorc1";
             this.lblPorc1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc1.Size = new System.Drawing.Size(19, 17);
-            this.lblPorc1.TabIndex = 134;
+            this.lblPorc1.TabIndex = 251;
             this.lblPorc1.Text = "%";
             // 
             // lblProntoPago1
@@ -5148,17 +4763,1010 @@
             this.lblProntoPago1.AutoSize = true;
             this.lblProntoPago1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago1.Location = new System.Drawing.Point(93, 91);
+            this.lblProntoPago1.Location = new System.Drawing.Point(32, 171);
             this.lblProntoPago1.Name = "lblProntoPago1";
             this.lblProntoPago1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblProntoPago1.Size = new System.Drawing.Size(96, 17);
-            this.lblProntoPago1.TabIndex = 133;
-            this.lblProntoPago1.Text = "Pronto Pago 1";
+            this.lblProntoPago1.Size = new System.Drawing.Size(15, 17);
+            this.lblProntoPago1.TabIndex = 250;
+            this.lblProntoPago1.Text = "1";
+            // 
+            // lblDiasCondicionesCredito
+            // 
+            this.lblDiasCondicionesCredito.AutoSize = true;
+            this.lblDiasCondicionesCredito.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiasCondicionesCredito.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblDiasCondicionesCredito.Location = new System.Drawing.Point(124, 61);
+            this.lblDiasCondicionesCredito.Name = "lblDiasCondicionesCredito";
+            this.lblDiasCondicionesCredito.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblDiasCondicionesCredito.Size = new System.Drawing.Size(32, 17);
+            this.lblDiasCondicionesCredito.TabIndex = 249;
+            this.lblDiasCondicionesCredito.Text = "días";
+            // 
+            // txtBoxCondicionesCreditoCondiciones
+            // 
+            this.txtBoxCondicionesCreditoCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCondicionesCreditoCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCondicionesCreditoCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCondicionesCreditoCondiciones.Location = new System.Drawing.Point(24, 61);
+            this.txtBoxCondicionesCreditoCondiciones.Name = "txtBoxCondicionesCreditoCondiciones";
+            this.txtBoxCondicionesCreditoCondiciones.Size = new System.Drawing.Size(94, 21);
+            this.txtBoxCondicionesCreditoCondiciones.TabIndex = 232;
+            // 
+            // lblCondicionesCreditoCondiciones
+            // 
+            this.lblCondicionesCreditoCondiciones.AutoSize = true;
+            this.lblCondicionesCreditoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondicionesCreditoCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCondicionesCreditoCondiciones.Location = new System.Drawing.Point(23, 41);
+            this.lblCondicionesCreditoCondiciones.Name = "lblCondicionesCreditoCondiciones";
+            this.lblCondicionesCreditoCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCondicionesCreditoCondiciones.Size = new System.Drawing.Size(109, 17);
+            this.lblCondicionesCreditoCondiciones.TabIndex = 248;
+            this.lblCondicionesCreditoCondiciones.Text = "Plazo de Crédito";
+            // 
+            // pnlRutasFletes
+            // 
+            this.pnlRutasFletes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlRutasFletes.Controls.Add(this.pnlFleterosCondiciones);
+            this.pnlRutasFletes.Location = new System.Drawing.Point(20, 1692);
+            this.pnlRutasFletes.Name = "pnlRutasFletes";
+            this.pnlRutasFletes.Size = new System.Drawing.Size(963, 726);
+            this.pnlRutasFletes.TabIndex = 63;
+            this.pnlRutasFletes.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pnlFleterosCondiciones
+            // 
+            this.pnlFleterosCondiciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFleterosCondiciones.Controls.Add(this.lblClaveProveedorFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxClaveProveedorFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxNombreFleteCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblNombreFleteCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxObservacionesFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblObservacionesFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.comboBoxTipoEnvioFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblMetodoEnvioFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.btnEsPreferenciaFlete);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblFletePreferenciaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalCMAFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalCEDISFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalCaborcaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalMagdalenaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalSanPedroFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalHipodromoFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblSucursalMatrizFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalCMAFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalCMAletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalCEDISFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalCEDISFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalCaborcaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalCabrocaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalMagdalenaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalMagdalenaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalSanPedroFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalSanPedroFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalHipodromoFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalHipodromoFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.btnVerInformacionFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCantidadCostoSucursalMatrizFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxCantidadCostoSucursalMatrizFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblCostoFletePorSucursalCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.comboBoxUnidadPedidoCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxFleteDestinoCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblFleteDestinoCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblFleteOrigenCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxFleteOrigenCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblUnidadPedidoCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxPedidoMaxCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblPedidoMaxCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.txtBoxPedidoMinCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblPedidoMinCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.comboBoxFormaEntregaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblFormaEntregaFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.btnLimpiarCamposFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.pnlListaFletesCondiciones);
+            this.pnlFleterosCondiciones.Controls.Add(this.btnEditarFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.btnAgregarFlete);
+            this.pnlFleterosCondiciones.Controls.Add(this.btnEliminarFletes);
+            this.pnlFleterosCondiciones.Controls.Add(this.lblFleteCondiciones);
+            this.pnlFleterosCondiciones.Location = new System.Drawing.Point(28, 29);
+            this.pnlFleterosCondiciones.Name = "pnlFleterosCondiciones";
+            this.pnlFleterosCondiciones.Size = new System.Drawing.Size(917, 675);
+            this.pnlFleterosCondiciones.TabIndex = 81;
+            this.pnlFleterosCondiciones.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFleterosCondiciones_Paint);
+            // 
+            // lblClaveProveedorFletes
+            // 
+            this.lblClaveProveedorFletes.AutoSize = true;
+            this.lblClaveProveedorFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaveProveedorFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblClaveProveedorFletes.Location = new System.Drawing.Point(91, 87);
+            this.lblClaveProveedorFletes.Name = "lblClaveProveedorFletes";
+            this.lblClaveProveedorFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblClaveProveedorFletes.Size = new System.Drawing.Size(39, 17);
+            this.lblClaveProveedorFletes.TabIndex = 233;
+            this.lblClaveProveedorFletes.Text = "Clave";
+            // 
+            // txtBoxClaveProveedorFletes
+            // 
+            this.txtBoxClaveProveedorFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxClaveProveedorFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxClaveProveedorFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxClaveProveedorFletes.Location = new System.Drawing.Point(136, 87);
+            this.txtBoxClaveProveedorFletes.Name = "txtBoxClaveProveedorFletes";
+            this.txtBoxClaveProveedorFletes.Size = new System.Drawing.Size(126, 21);
+            this.txtBoxClaveProveedorFletes.TabIndex = 42;
+            // 
+            // txtBoxNombreFleteCondiciones
+            // 
+            this.txtBoxNombreFleteCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxNombreFleteCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNombreFleteCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxNombreFleteCondiciones.Location = new System.Drawing.Point(137, 118);
+            this.txtBoxNombreFleteCondiciones.Name = "txtBoxNombreFleteCondiciones";
+            this.txtBoxNombreFleteCondiciones.Size = new System.Drawing.Size(332, 21);
+            this.txtBoxNombreFleteCondiciones.TabIndex = 43;
+            // 
+            // lblNombreFleteCondiciones
+            // 
+            this.lblNombreFleteCondiciones.AutoSize = true;
+            this.lblNombreFleteCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreFleteCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblNombreFleteCondiciones.Location = new System.Drawing.Point(74, 118);
+            this.lblNombreFleteCondiciones.Name = "lblNombreFleteCondiciones";
+            this.lblNombreFleteCondiciones.Size = new System.Drawing.Size(57, 17);
+            this.lblNombreFleteCondiciones.TabIndex = 230;
+            this.lblNombreFleteCondiciones.Text = "Nombre\r\n";
+            // 
+            // txtBoxObservacionesFletes
+            // 
+            this.txtBoxObservacionesFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxObservacionesFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxObservacionesFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxObservacionesFletes.Location = new System.Drawing.Point(136, 365);
+            this.txtBoxObservacionesFletes.Multiline = true;
+            this.txtBoxObservacionesFletes.Name = "txtBoxObservacionesFletes";
+            this.txtBoxObservacionesFletes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxObservacionesFletes.Size = new System.Drawing.Size(332, 114);
+            this.txtBoxObservacionesFletes.TabIndex = 51;
+            // 
+            // lblObservacionesFletes
+            // 
+            this.lblObservacionesFletes.AutoSize = true;
+            this.lblObservacionesFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservacionesFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblObservacionesFletes.Location = new System.Drawing.Point(35, 365);
+            this.lblObservacionesFletes.Name = "lblObservacionesFletes";
+            this.lblObservacionesFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblObservacionesFletes.Size = new System.Drawing.Size(94, 17);
+            this.lblObservacionesFletes.TabIndex = 229;
+            this.lblObservacionesFletes.Text = "Observaciones";
+            // 
+            // comboBoxTipoEnvioFletes
+            // 
+            this.comboBoxTipoEnvioFletes.FormattingEnabled = true;
+            this.comboBoxTipoEnvioFletes.Items.AddRange(new object[] {
+            "Aéreo",
+            "Terrestre",
+            "Courier",
+            "Domicilio"});
+            this.comboBoxTipoEnvioFletes.Location = new System.Drawing.Point(136, 191);
+            this.comboBoxTipoEnvioFletes.Name = "comboBoxTipoEnvioFletes";
+            this.comboBoxTipoEnvioFletes.Size = new System.Drawing.Size(331, 22);
+            this.comboBoxTipoEnvioFletes.TabIndex = 45;
+            // 
+            // lblMetodoEnvioFletes
+            // 
+            this.lblMetodoEnvioFletes.AutoSize = true;
+            this.lblMetodoEnvioFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetodoEnvioFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblMetodoEnvioFletes.Location = new System.Drawing.Point(16, 191);
+            this.lblMetodoEnvioFletes.Name = "lblMetodoEnvioFletes";
+            this.lblMetodoEnvioFletes.Size = new System.Drawing.Size(109, 17);
+            this.lblMetodoEnvioFletes.TabIndex = 225;
+            this.lblMetodoEnvioFletes.Text = "Método de Envío";
+            // 
+            // btnEsPreferenciaFlete
+            // 
+            this.btnEsPreferenciaFlete.BackColor = System.Drawing.Color.Gold;
+            this.btnEsPreferenciaFlete.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEsPreferenciaFlete.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnEsPreferenciaFlete.Location = new System.Drawing.Point(523, 34);
+            this.btnEsPreferenciaFlete.Name = "btnEsPreferenciaFlete";
+            this.btnEsPreferenciaFlete.Size = new System.Drawing.Size(354, 28);
+            this.btnEsPreferenciaFlete.TabIndex = 223;
+            this.btnEsPreferenciaFlete.Text = "Marcar Como Preferente";
+            this.btnEsPreferenciaFlete.UseVisualStyleBackColor = false;
+            this.btnEsPreferenciaFlete.Visible = false;
+            // 
+            // lblFletePreferenciaFletes
+            // 
+            this.lblFletePreferenciaFletes.AutoSize = true;
+            this.lblFletePreferenciaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFletePreferenciaFletes.ForeColor = System.Drawing.Color.Red;
+            this.lblFletePreferenciaFletes.Location = new System.Drawing.Point(152, 34);
+            this.lblFletePreferenciaFletes.Name = "lblFletePreferenciaFletes";
+            this.lblFletePreferenciaFletes.Size = new System.Drawing.Size(290, 38);
+            this.lblFletePreferenciaFletes.TabIndex = 222;
+            this.lblFletePreferenciaFletes.Text = "Flete de Preferencia";
+            // 
+            // lblSucursalCMAFletes
+            // 
+            this.lblSucursalCMAFletes.AutoSize = true;
+            this.lblSucursalCMAFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalCMAFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalCMAFletes.Location = new System.Drawing.Point(56, 609);
+            this.lblSucursalCMAFletes.Name = "lblSucursalCMAFletes";
+            this.lblSucursalCMAFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalCMAFletes.Size = new System.Drawing.Size(36, 17);
+            this.lblSucursalCMAFletes.TabIndex = 221;
+            this.lblSucursalCMAFletes.Text = "CMA";
+            // 
+            // lblSucursalCEDISFletes
+            // 
+            this.lblSucursalCEDISFletes.AutoSize = true;
+            this.lblSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalCEDISFletes.Location = new System.Drawing.Point(776, 553);
+            this.lblSucursalCEDISFletes.Name = "lblSucursalCEDISFletes";
+            this.lblSucursalCEDISFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalCEDISFletes.Size = new System.Drawing.Size(42, 17);
+            this.lblSucursalCEDISFletes.TabIndex = 220;
+            this.lblSucursalCEDISFletes.Text = "CEDIS";
+            // 
+            // lblSucursalCaborcaFletes
+            // 
+            this.lblSucursalCaborcaFletes.AutoSize = true;
+            this.lblSucursalCaborcaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalCaborcaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalCaborcaFletes.Location = new System.Drawing.Point(629, 553);
+            this.lblSucursalCaborcaFletes.Name = "lblSucursalCaborcaFletes";
+            this.lblSucursalCaborcaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalCaborcaFletes.Size = new System.Drawing.Size(57, 17);
+            this.lblSucursalCaborcaFletes.TabIndex = 219;
+            this.lblSucursalCaborcaFletes.Text = "Caborca";
+            // 
+            // lblSucursalMagdalenaFletes
+            // 
+            this.lblSucursalMagdalenaFletes.AutoSize = true;
+            this.lblSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalMagdalenaFletes.Location = new System.Drawing.Point(487, 553);
+            this.lblSucursalMagdalenaFletes.Name = "lblSucursalMagdalenaFletes";
+            this.lblSucursalMagdalenaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalMagdalenaFletes.Size = new System.Drawing.Size(74, 17);
+            this.lblSucursalMagdalenaFletes.TabIndex = 218;
+            this.lblSucursalMagdalenaFletes.Text = "Magdalena";
+            // 
+            // lblSucursalSanPedroFletes
+            // 
+            this.lblSucursalSanPedroFletes.AutoSize = true;
+            this.lblSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalSanPedroFletes.Location = new System.Drawing.Point(344, 553);
+            this.lblSucursalSanPedroFletes.Name = "lblSucursalSanPedroFletes";
+            this.lblSucursalSanPedroFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalSanPedroFletes.Size = new System.Drawing.Size(68, 17);
+            this.lblSucursalSanPedroFletes.TabIndex = 217;
+            this.lblSucursalSanPedroFletes.Text = "San Pedro";
+            // 
+            // lblSucursalHipodromoFletes
+            // 
+            this.lblSucursalHipodromoFletes.AutoSize = true;
+            this.lblSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalHipodromoFletes.Location = new System.Drawing.Point(195, 553);
+            this.lblSucursalHipodromoFletes.Name = "lblSucursalHipodromoFletes";
+            this.lblSucursalHipodromoFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalHipodromoFletes.Size = new System.Drawing.Size(76, 17);
+            this.lblSucursalHipodromoFletes.TabIndex = 216;
+            this.lblSucursalHipodromoFletes.Text = "Hipódromo";
+            // 
+            // lblSucursalMatrizFletes
+            // 
+            this.lblSucursalMatrizFletes.AutoSize = true;
+            this.lblSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSucursalMatrizFletes.Location = new System.Drawing.Point(56, 553);
+            this.lblSucursalMatrizFletes.Name = "lblSucursalMatrizFletes";
+            this.lblSucursalMatrizFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblSucursalMatrizFletes.Size = new System.Drawing.Size(45, 17);
+            this.lblSucursalMatrizFletes.TabIndex = 215;
+            this.lblSucursalMatrizFletes.Text = "Matriz";
+            // 
+            // lblCantidadCostoSucursalCMAFletes
+            // 
+            this.lblCantidadCostoSucursalCMAFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalCMAFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalCMAFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalCMAFletes.Location = new System.Drawing.Point(35, 629);
+            this.lblCantidadCostoSucursalCMAFletes.Name = "lblCantidadCostoSucursalCMAFletes";
+            this.lblCantidadCostoSucursalCMAFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalCMAFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalCMAFletes.TabIndex = 214;
+            this.lblCantidadCostoSucursalCMAFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalCMAletes
+            // 
+            this.txtBoxCantidadCostoSucursalCMAletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalCMAletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalCMAletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalCMAletes.Location = new System.Drawing.Point(56, 629);
+            this.txtBoxCantidadCostoSucursalCMAletes.Name = "txtBoxCantidadCostoSucursalCMAletes";
+            this.txtBoxCantidadCostoSucursalCMAletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalCMAletes.TabIndex = 57;
+            // 
+            // lblCantidadCostoSucursalCEDISFletes
+            // 
+            this.lblCantidadCostoSucursalCEDISFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(757, 573);
+            this.lblCantidadCostoSucursalCEDISFletes.Name = "lblCantidadCostoSucursalCEDISFletes";
+            this.lblCantidadCostoSucursalCEDISFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalCEDISFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalCEDISFletes.TabIndex = 212;
+            this.lblCantidadCostoSucursalCEDISFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalCEDISFletes
+            // 
+            this.txtBoxCantidadCostoSucursalCEDISFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(778, 573);
+            this.txtBoxCantidadCostoSucursalCEDISFletes.Name = "txtBoxCantidadCostoSucursalCEDISFletes";
+            this.txtBoxCantidadCostoSucursalCEDISFletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalCEDISFletes.TabIndex = 56;
+            this.txtBoxCantidadCostoSucursalCEDISFletes.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // lblCantidadCostoSucursalCaborcaFletes
+            // 
+            this.lblCantidadCostoSucursalCaborcaFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalCaborcaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalCaborcaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalCaborcaFletes.Location = new System.Drawing.Point(611, 573);
+            this.lblCantidadCostoSucursalCaborcaFletes.Name = "lblCantidadCostoSucursalCaborcaFletes";
+            this.lblCantidadCostoSucursalCaborcaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalCaborcaFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalCaborcaFletes.TabIndex = 210;
+            this.lblCantidadCostoSucursalCaborcaFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalCabrocaFletes
+            // 
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.Location = new System.Drawing.Point(632, 573);
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.Name = "txtBoxCantidadCostoSucursalCabrocaFletes";
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.TabIndex = 55;
+            // 
+            // lblCantidadCostoSucursalMagdalenaFletes
+            // 
+            this.lblCantidadCostoSucursalMagdalenaFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(466, 573);
+            this.lblCantidadCostoSucursalMagdalenaFletes.Name = "lblCantidadCostoSucursalMagdalenaFletes";
+            this.lblCantidadCostoSucursalMagdalenaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalMagdalenaFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalMagdalenaFletes.TabIndex = 207;
+            this.lblCantidadCostoSucursalMagdalenaFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalMagdalenaFletes
+            // 
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(487, 573);
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Name = "txtBoxCantidadCostoSucursalMagdalenaFletes";
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.TabIndex = 54;
+            // 
+            // lblCantidadCostoSucursalSanPedroFletes
+            // 
+            this.lblCantidadCostoSucursalSanPedroFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(320, 573);
+            this.lblCantidadCostoSucursalSanPedroFletes.Name = "lblCantidadCostoSucursalSanPedroFletes";
+            this.lblCantidadCostoSucursalSanPedroFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalSanPedroFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalSanPedroFletes.TabIndex = 205;
+            this.lblCantidadCostoSucursalSanPedroFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalSanPedroFletes
+            // 
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(341, 573);
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.Name = "txtBoxCantidadCostoSucursalSanPedroFletes";
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.TabIndex = 53;
+            // 
+            // lblCantidadCostoSucursalHipodromoFletes
+            // 
+            this.lblCantidadCostoSucursalHipodromoFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(177, 573);
+            this.lblCantidadCostoSucursalHipodromoFletes.Name = "lblCantidadCostoSucursalHipodromoFletes";
+            this.lblCantidadCostoSucursalHipodromoFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalHipodromoFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalHipodromoFletes.TabIndex = 203;
+            this.lblCantidadCostoSucursalHipodromoFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalHipodromoFletes
+            // 
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(198, 573);
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.Name = "txtBoxCantidadCostoSucursalHipodromoFletes";
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.TabIndex = 52;
+            // 
+            // btnVerInformacionFletes
+            // 
+            this.btnVerInformacionFletes.BackColor = System.Drawing.Color.MistyRose;
+            this.btnVerInformacionFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerInformacionFletes.Location = new System.Drawing.Point(186, 6);
+            this.btnVerInformacionFletes.Name = "btnVerInformacionFletes";
+            this.btnVerInformacionFletes.Size = new System.Drawing.Size(229, 25);
+            this.btnVerInformacionFletes.TabIndex = 58;
+            this.btnVerInformacionFletes.Text = "Mostrar más detalles";
+            this.btnVerInformacionFletes.UseVisualStyleBackColor = false;
+            this.btnVerInformacionFletes.Click += new System.EventHandler(this.VerInformacionFletes_Click);
+            // 
+            // lblCantidadCostoSucursalMatrizFletes
+            // 
+            this.lblCantidadCostoSucursalMatrizFletes.AutoSize = true;
+            this.lblCantidadCostoSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCostoSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(35, 573);
+            this.lblCantidadCostoSucursalMatrizFletes.Name = "lblCantidadCostoSucursalMatrizFletes";
+            this.lblCantidadCostoSucursalMatrizFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCantidadCostoSucursalMatrizFletes.Size = new System.Drawing.Size(15, 17);
+            this.lblCantidadCostoSucursalMatrizFletes.TabIndex = 198;
+            this.lblCantidadCostoSucursalMatrizFletes.Text = "$";
+            // 
+            // txtBoxCantidadCostoSucursalMatrizFletes
+            // 
+            this.txtBoxCantidadCostoSucursalMatrizFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxCantidadCostoSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCantidadCostoSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(56, 573);
+            this.txtBoxCantidadCostoSucursalMatrizFletes.Name = "txtBoxCantidadCostoSucursalMatrizFletes";
+            this.txtBoxCantidadCostoSucursalMatrizFletes.Size = new System.Drawing.Size(107, 21);
+            this.txtBoxCantidadCostoSucursalMatrizFletes.TabIndex = 51;
+            // 
+            // lblCostoFletePorSucursalCondiciones
+            // 
+            this.lblCostoFletePorSucursalCondiciones.AutoSize = true;
+            this.lblCostoFletePorSucursalCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCostoFletePorSucursalCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCostoFletePorSucursalCondiciones.Location = new System.Drawing.Point(35, 514);
+            this.lblCostoFletePorSucursalCondiciones.Name = "lblCostoFletePorSucursalCondiciones";
+            this.lblCostoFletePorSucursalCondiciones.Size = new System.Drawing.Size(176, 17);
+            this.lblCostoFletePorSucursalCondiciones.TabIndex = 183;
+            this.lblCostoFletePorSucursalCondiciones.Text = "Costo de Flete por Sucursal";
+            // 
+            // comboBoxUnidadPedidoCondiciones
+            // 
+            this.comboBoxUnidadPedidoCondiciones.FormattingEnabled = true;
+            this.comboBoxUnidadPedidoCondiciones.Items.AddRange(new object[] {
+            "Caja",
+            "Kg",
+            "Pieza",
+            "Servicio",
+            "Tonelada",
+            "Caja 10",
+            "Caja 12"});
+            this.comboBoxUnidadPedidoCondiciones.Location = new System.Drawing.Point(198, 262);
+            this.comboBoxUnidadPedidoCondiciones.Name = "comboBoxUnidadPedidoCondiciones";
+            this.comboBoxUnidadPedidoCondiciones.Size = new System.Drawing.Size(164, 22);
+            this.comboBoxUnidadPedidoCondiciones.TabIndex = 48;
+            // 
+            // txtBoxFleteDestinoCondiciones
+            // 
+            this.txtBoxFleteDestinoCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxFleteDestinoCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxFleteDestinoCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxFleteDestinoCondiciones.Location = new System.Drawing.Point(136, 325);
+            this.txtBoxFleteDestinoCondiciones.Name = "txtBoxFleteDestinoCondiciones";
+            this.txtBoxFleteDestinoCondiciones.Size = new System.Drawing.Size(332, 21);
+            this.txtBoxFleteDestinoCondiciones.TabIndex = 50;
+            // 
+            // lblFleteDestinoCondiciones
+            // 
+            this.lblFleteDestinoCondiciones.AutoSize = true;
+            this.lblFleteDestinoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFleteDestinoCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFleteDestinoCondiciones.Location = new System.Drawing.Point(69, 325);
+            this.lblFleteDestinoCondiciones.Name = "lblFleteDestinoCondiciones";
+            this.lblFleteDestinoCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFleteDestinoCondiciones.Size = new System.Drawing.Size(52, 17);
+            this.lblFleteDestinoCondiciones.TabIndex = 180;
+            this.lblFleteDestinoCondiciones.Text = "Destino";
+            // 
+            // lblFleteOrigenCondiciones
+            // 
+            this.lblFleteOrigenCondiciones.AutoSize = true;
+            this.lblFleteOrigenCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFleteOrigenCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFleteOrigenCondiciones.Location = new System.Drawing.Point(69, 293);
+            this.lblFleteOrigenCondiciones.Name = "lblFleteOrigenCondiciones";
+            this.lblFleteOrigenCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFleteOrigenCondiciones.Size = new System.Drawing.Size(48, 17);
+            this.lblFleteOrigenCondiciones.TabIndex = 179;
+            this.lblFleteOrigenCondiciones.Text = "Origen";
+            // 
+            // txtBoxFleteOrigenCondiciones
+            // 
+            this.txtBoxFleteOrigenCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxFleteOrigenCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxFleteOrigenCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxFleteOrigenCondiciones.Location = new System.Drawing.Point(136, 293);
+            this.txtBoxFleteOrigenCondiciones.Name = "txtBoxFleteOrigenCondiciones";
+            this.txtBoxFleteOrigenCondiciones.Size = new System.Drawing.Size(332, 21);
+            this.txtBoxFleteOrigenCondiciones.TabIndex = 49;
+            // 
+            // lblUnidadPedidoCondiciones
+            // 
+            this.lblUnidadPedidoCondiciones.AutoSize = true;
+            this.lblUnidadPedidoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnidadPedidoCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblUnidadPedidoCondiciones.Location = new System.Drawing.Point(135, 262);
+            this.lblUnidadPedidoCondiciones.Name = "lblUnidadPedidoCondiciones";
+            this.lblUnidadPedidoCondiciones.Size = new System.Drawing.Size(52, 17);
+            this.lblUnidadPedidoCondiciones.TabIndex = 176;
+            this.lblUnidadPedidoCondiciones.Text = "Unidad";
+            // 
+            // txtBoxPedidoMaxCondiciones
+            // 
+            this.txtBoxPedidoMaxCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxPedidoMaxCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPedidoMaxCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxPedidoMaxCondiciones.Location = new System.Drawing.Point(362, 231);
+            this.txtBoxPedidoMaxCondiciones.Name = "txtBoxPedidoMaxCondiciones";
+            this.txtBoxPedidoMaxCondiciones.Size = new System.Drawing.Size(109, 21);
+            this.txtBoxPedidoMaxCondiciones.TabIndex = 47;
+            // 
+            // lblPedidoMaxCondiciones
+            // 
+            this.lblPedidoMaxCondiciones.AutoSize = true;
+            this.lblPedidoMaxCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedidoMaxCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblPedidoMaxCondiciones.Location = new System.Drawing.Point(257, 231);
+            this.lblPedidoMaxCondiciones.Name = "lblPedidoMaxCondiciones";
+            this.lblPedidoMaxCondiciones.Size = new System.Drawing.Size(105, 17);
+            this.lblPedidoMaxCondiciones.TabIndex = 174;
+            this.lblPedidoMaxCondiciones.Text = "Pedido Máximo";
+            // 
+            // txtBoxPedidoMinCondiciones
+            // 
+            this.txtBoxPedidoMinCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxPedidoMinCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPedidoMinCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxPedidoMinCondiciones.Location = new System.Drawing.Point(138, 231);
+            this.txtBoxPedidoMinCondiciones.Name = "txtBoxPedidoMinCondiciones";
+            this.txtBoxPedidoMinCondiciones.Size = new System.Drawing.Size(108, 21);
+            this.txtBoxPedidoMinCondiciones.TabIndex = 46;
+            // 
+            // lblPedidoMinCondiciones
+            // 
+            this.lblPedidoMinCondiciones.AutoSize = true;
+            this.lblPedidoMinCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedidoMinCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblPedidoMinCondiciones.Location = new System.Drawing.Point(26, 231);
+            this.lblPedidoMinCondiciones.Name = "lblPedidoMinCondiciones";
+            this.lblPedidoMinCondiciones.Size = new System.Drawing.Size(103, 17);
+            this.lblPedidoMinCondiciones.TabIndex = 172;
+            this.lblPedidoMinCondiciones.Text = "Pedido Mínimo";
+            // 
+            // comboBoxFormaEntregaFletes
+            // 
+            this.comboBoxFormaEntregaFletes.FormattingEnabled = true;
+            this.comboBoxFormaEntregaFletes.Items.AddRange(new object[] {
+            "Entrega Personal Por Cobrar",
+            "Entrega Personal Pagada",
+            "Paquetería Por Cobrar",
+            "Paquetería Pagada",
+            "Transporte de Carga Por Cobrar",
+            "Transporte de Carga Pagado"});
+            this.comboBoxFormaEntregaFletes.Location = new System.Drawing.Point(137, 153);
+            this.comboBoxFormaEntregaFletes.Name = "comboBoxFormaEntregaFletes";
+            this.comboBoxFormaEntregaFletes.Size = new System.Drawing.Size(331, 22);
+            this.comboBoxFormaEntregaFletes.TabIndex = 44;
+            // 
+            // lblFormaEntregaFletes
+            // 
+            this.lblFormaEntregaFletes.AutoSize = true;
+            this.lblFormaEntregaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormaEntregaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFormaEntregaFletes.Location = new System.Drawing.Point(16, 153);
+            this.lblFormaEntregaFletes.Name = "lblFormaEntregaFletes";
+            this.lblFormaEntregaFletes.Size = new System.Drawing.Size(113, 17);
+            this.lblFormaEntregaFletes.TabIndex = 98;
+            this.lblFormaEntregaFletes.Text = "Forma de Entrega";
+            // 
+            // btnLimpiarCamposFletes
+            // 
+            this.btnLimpiarCamposFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCamposFletes.Location = new System.Drawing.Point(516, 322);
+            this.btnLimpiarCamposFletes.Name = "btnLimpiarCamposFletes";
+            this.btnLimpiarCamposFletes.Size = new System.Drawing.Size(354, 28);
+            this.btnLimpiarCamposFletes.TabIndex = 63;
+            this.btnLimpiarCamposFletes.Text = "Limpiar Campos\r\n";
+            this.btnLimpiarCamposFletes.UseVisualStyleBackColor = true;
+            this.btnLimpiarCamposFletes.Click += new System.EventHandler(this.btnLimpiarCamposFletes_Click);
+            // 
+            // pnlListaFletesCondiciones
+            // 
+            this.pnlListaFletesCondiciones.AutoScroll = true;
+            this.pnlListaFletesCondiciones.Controls.Add(this.dataGridFletes);
+            this.pnlListaFletesCondiciones.Location = new System.Drawing.Point(487, 68);
+            this.pnlListaFletesCondiciones.Name = "pnlListaFletesCondiciones";
+            this.pnlListaFletesCondiciones.Size = new System.Drawing.Size(405, 198);
+            this.pnlListaFletesCondiciones.TabIndex = 94;
+            // 
+            // dataGridFletes
+            // 
+            this.dataGridFletes.AllowUserToAddRows = false;
+            this.dataGridFletes.AllowUserToDeleteRows = false;
+            this.dataGridFletes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFletes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridFletes.Location = new System.Drawing.Point(0, 0);
+            this.dataGridFletes.Name = "dataGridFletes";
+            this.dataGridFletes.ReadOnly = true;
+            this.dataGridFletes.Size = new System.Drawing.Size(405, 198);
+            this.dataGridFletes.TabIndex = 59;
+            this.dataGridFletes.Click += new System.EventHandler(this.dataGridFletes_Click);
+            // 
+            // btnEditarFletes
+            // 
+            this.btnEditarFletes.BackColor = System.Drawing.Color.Wheat;
+            this.btnEditarFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarFletes.Location = new System.Drawing.Point(784, 285);
+            this.btnEditarFletes.Name = "btnEditarFletes";
+            this.btnEditarFletes.Size = new System.Drawing.Size(108, 23);
+            this.btnEditarFletes.TabIndex = 62;
+            this.btnEditarFletes.Text = "Editar Flete";
+            this.btnEditarFletes.UseVisualStyleBackColor = false;
+            this.btnEditarFletes.Visible = false;
+            // 
+            // btnAgregarFlete
+            // 
+            this.btnAgregarFlete.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAgregarFlete.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarFlete.Location = new System.Drawing.Point(487, 285);
+            this.btnAgregarFlete.Name = "btnAgregarFlete";
+            this.btnAgregarFlete.Size = new System.Drawing.Size(108, 23);
+            this.btnAgregarFlete.TabIndex = 60;
+            this.btnAgregarFlete.Text = "Agregar Flete";
+            this.btnAgregarFlete.UseVisualStyleBackColor = false;
+            this.btnAgregarFlete.Click += new System.EventHandler(this.btnAgregarFlete_Click);
+            // 
+            // btnEliminarFletes
+            // 
+            this.btnEliminarFletes.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminarFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarFletes.Location = new System.Drawing.Point(634, 285);
+            this.btnEliminarFletes.Name = "btnEliminarFletes";
+            this.btnEliminarFletes.Size = new System.Drawing.Size(108, 23);
+            this.btnEliminarFletes.TabIndex = 61;
+            this.btnEliminarFletes.Text = "Eliminar Flete";
+            this.btnEliminarFletes.UseVisualStyleBackColor = false;
+            this.btnEliminarFletes.Visible = false;
+            // 
+            // lblFleteCondiciones
+            // 
+            this.lblFleteCondiciones.AutoSize = true;
+            this.lblFleteCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFleteCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFleteCondiciones.Location = new System.Drawing.Point(15, 9);
+            this.lblFleteCondiciones.Name = "lblFleteCondiciones";
+            this.lblFleteCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFleteCondiciones.Size = new System.Drawing.Size(38, 17);
+            this.lblFleteCondiciones.TabIndex = 57;
+            this.lblFleteCondiciones.Text = "Flete";
+            // 
+            // lblRutasFletesCondiciones
+            // 
+            this.lblRutasFletesCondiciones.AutoSize = true;
+            this.lblRutasFletesCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRutasFletesCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblRutasFletesCondiciones.Location = new System.Drawing.Point(10, 1650);
+            this.lblRutasFletesCondiciones.Name = "lblRutasFletesCondiciones";
+            this.lblRutasFletesCondiciones.Size = new System.Drawing.Size(160, 31);
+            this.lblRutasFletesCondiciones.TabIndex = 62;
+            this.lblRutasFletesCondiciones.Text = "Rutas y Fletes";
+            // 
+            // pnlCondicionesPagoEntrega
+            // 
+            this.pnlCondicionesPagoEntrega.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.panel1);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.pnlTipoEnvio);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblMetodoEnvioCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnGuardarCambiosSeccionCondiciones2);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnSeleccionarArchivoObservacionesFormaEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblSubirArchivoObservacionesTiempoFormaEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnEliminarArchivoObservacionesTiempoFormaEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.comboBoxListaObservacionesFormaEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnAbrirArchivoObservacionesTiempoFormaEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.btnLimpiarCampoCondicionesEspecialesEntrega);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxCondicionesEspecialesCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblCondicionesEspecialesCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.dataGridLimiteCapacidad);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblLimiteCapacidadCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.pnlCheckBoxSucursales);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblSucursalesEntregaCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxObservacionesCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblFormaEntregaCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblTiempoEntregaDias);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.txtBoxTiempoEntregaCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblTiempoEntregaCondiciones);
+            this.pnlCondicionesPagoEntrega.Controls.Add(this.lblObservacionesCondiciones);
+            this.pnlCondicionesPagoEntrega.Location = new System.Drawing.Point(20, 718);
+            this.pnlCondicionesPagoEntrega.Name = "pnlCondicionesPagoEntrega";
+            this.pnlCondicionesPagoEntrega.Size = new System.Drawing.Size(958, 898);
+            this.pnlCondicionesPagoEntrega.TabIndex = 50;
+            this.pnlCondicionesPagoEntrega.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCondicionesPagoEntrega_Paint);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.checkBoxTransporteCargaPagado);
+            this.panel1.Controls.Add(this.checkBoxTransporteCargaPorCobrar);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.checkBoxPaqueteriaPagada);
+            this.panel1.Controls.Add(this.checkBoxPaqueteriaCobrar);
+            this.panel1.Controls.Add(this.checkBoxEntregaPersonalPagada);
+            this.panel1.Controls.Add(this.checkBoxEntregaPersonalPorCobrar);
+            this.panel1.Location = new System.Drawing.Point(281, 52);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(383, 165);
+            this.panel1.TabIndex = 187;
+            // 
+            // checkBoxTransporteCargaPagado
+            // 
+            this.checkBoxTransporteCargaPagado.AutoSize = true;
+            this.checkBoxTransporteCargaPagado.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTransporteCargaPagado.Location = new System.Drawing.Point(180, 32);
+            this.checkBoxTransporteCargaPagado.Name = "checkBoxTransporteCargaPagado";
+            this.checkBoxTransporteCargaPagado.Size = new System.Drawing.Size(165, 18);
+            this.checkBoxTransporteCargaPagado.TabIndex = 188;
+            this.checkBoxTransporteCargaPagado.Text = "Transporte de Carga Pagado";
+            this.checkBoxTransporteCargaPagado.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTransporteCargaPorCobrar
+            // 
+            this.checkBoxTransporteCargaPorCobrar.AutoSize = true;
+            this.checkBoxTransporteCargaPorCobrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTransporteCargaPorCobrar.Location = new System.Drawing.Point(180, 6);
+            this.checkBoxTransporteCargaPorCobrar.Name = "checkBoxTransporteCargaPorCobrar";
+            this.checkBoxTransporteCargaPorCobrar.Size = new System.Drawing.Size(181, 18);
+            this.checkBoxTransporteCargaPorCobrar.TabIndex = 187;
+            this.checkBoxTransporteCargaPorCobrar.Text = "Transporte de Carga Por Cobrar";
+            this.checkBoxTransporteCargaPorCobrar.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox2.Location = new System.Drawing.Point(185, 81);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(160, 71);
+            this.textBox2.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(186, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 14);
+            this.label3.TabIndex = 186;
+            this.label3.Text = "OTRA:";
+            // 
+            // checkBoxPaqueteriaPagada
+            // 
+            this.checkBoxPaqueteriaPagada.AutoSize = true;
+            this.checkBoxPaqueteriaPagada.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPaqueteriaPagada.Location = new System.Drawing.Point(10, 92);
+            this.checkBoxPaqueteriaPagada.Name = "checkBoxPaqueteriaPagada";
+            this.checkBoxPaqueteriaPagada.Size = new System.Drawing.Size(118, 18);
+            this.checkBoxPaqueteriaPagada.TabIndex = 25;
+            this.checkBoxPaqueteriaPagada.Text = "Paquetería Pagada";
+            this.checkBoxPaqueteriaPagada.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxPaqueteriaCobrar
+            // 
+            this.checkBoxPaqueteriaCobrar.AutoSize = true;
+            this.checkBoxPaqueteriaCobrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxPaqueteriaCobrar.Location = new System.Drawing.Point(10, 64);
+            this.checkBoxPaqueteriaCobrar.Name = "checkBoxPaqueteriaCobrar";
+            this.checkBoxPaqueteriaCobrar.Size = new System.Drawing.Size(134, 18);
+            this.checkBoxPaqueteriaCobrar.TabIndex = 24;
+            this.checkBoxPaqueteriaCobrar.Text = "Paquetería Por Cobrar";
+            this.checkBoxPaqueteriaCobrar.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEntregaPersonalPagada
+            // 
+            this.checkBoxEntregaPersonalPagada.AutoSize = true;
+            this.checkBoxEntregaPersonalPagada.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEntregaPersonalPagada.Location = new System.Drawing.Point(10, 34);
+            this.checkBoxEntregaPersonalPagada.Name = "checkBoxEntregaPersonalPagada";
+            this.checkBoxEntregaPersonalPagada.Size = new System.Drawing.Size(148, 18);
+            this.checkBoxEntregaPersonalPagada.TabIndex = 23;
+            this.checkBoxEntregaPersonalPagada.Text = "Entrega Personal Pagada";
+            this.checkBoxEntregaPersonalPagada.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEntregaPersonalPorCobrar
+            // 
+            this.checkBoxEntregaPersonalPorCobrar.AutoSize = true;
+            this.checkBoxEntregaPersonalPorCobrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxEntregaPersonalPorCobrar.Location = new System.Drawing.Point(9, 6);
+            this.checkBoxEntregaPersonalPorCobrar.Name = "checkBoxEntregaPersonalPorCobrar";
+            this.checkBoxEntregaPersonalPorCobrar.Size = new System.Drawing.Size(164, 18);
+            this.checkBoxEntregaPersonalPorCobrar.TabIndex = 22;
+            this.checkBoxEntregaPersonalPorCobrar.Text = "Entrega Personal Por Cobrar";
+            this.checkBoxEntregaPersonalPorCobrar.UseVisualStyleBackColor = true;
+            // 
+            // pnlTipoEnvio
+            // 
+            this.pnlTipoEnvio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTipoEnvio.Controls.Add(this.checkBoxDomicilio);
+            this.pnlTipoEnvio.Controls.Add(this.checkBoxCourierCondiciones);
+            this.pnlTipoEnvio.Controls.Add(this.checkBoxTerrestreCondiciones);
+            this.pnlTipoEnvio.Controls.Add(this.checkBoxAereoCondiciones);
+            this.pnlTipoEnvio.Location = new System.Drawing.Point(26, 50);
+            this.pnlTipoEnvio.Name = "pnlTipoEnvio";
+            this.pnlTipoEnvio.Size = new System.Drawing.Size(224, 117);
+            this.pnlTipoEnvio.TabIndex = 188;
+            // 
+            // checkBoxDomicilio
+            // 
+            this.checkBoxDomicilio.AutoSize = true;
+            this.checkBoxDomicilio.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDomicilio.Location = new System.Drawing.Point(121, 6);
+            this.checkBoxDomicilio.Name = "checkBoxDomicilio";
+            this.checkBoxDomicilio.Size = new System.Drawing.Size(72, 18);
+            this.checkBoxDomicilio.TabIndex = 25;
+            this.checkBoxDomicilio.Text = "Domicilio";
+            this.checkBoxDomicilio.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCourierCondiciones
+            // 
+            this.checkBoxCourierCondiciones.AutoSize = true;
+            this.checkBoxCourierCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCourierCondiciones.Location = new System.Drawing.Point(10, 64);
+            this.checkBoxCourierCondiciones.Name = "checkBoxCourierCondiciones";
+            this.checkBoxCourierCondiciones.Size = new System.Drawing.Size(62, 18);
+            this.checkBoxCourierCondiciones.TabIndex = 24;
+            this.checkBoxCourierCondiciones.Text = "Courier";
+            this.checkBoxCourierCondiciones.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxTerrestreCondiciones
+            // 
+            this.checkBoxTerrestreCondiciones.AutoSize = true;
+            this.checkBoxTerrestreCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxTerrestreCondiciones.Location = new System.Drawing.Point(10, 34);
+            this.checkBoxTerrestreCondiciones.Name = "checkBoxTerrestreCondiciones";
+            this.checkBoxTerrestreCondiciones.Size = new System.Drawing.Size(71, 18);
+            this.checkBoxTerrestreCondiciones.TabIndex = 23;
+            this.checkBoxTerrestreCondiciones.Text = "Terrestre";
+            this.checkBoxTerrestreCondiciones.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxAereoCondiciones
+            // 
+            this.checkBoxAereoCondiciones.AutoSize = true;
+            this.checkBoxAereoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAereoCondiciones.Location = new System.Drawing.Point(10, 6);
+            this.checkBoxAereoCondiciones.Name = "checkBoxAereoCondiciones";
+            this.checkBoxAereoCondiciones.Size = new System.Drawing.Size(55, 18);
+            this.checkBoxAereoCondiciones.TabIndex = 22;
+            this.checkBoxAereoCondiciones.Text = "Aéreo";
+            this.checkBoxAereoCondiciones.UseVisualStyleBackColor = true;
+            // 
+            // lblMetodoEnvioCondiciones
+            // 
+            this.lblMetodoEnvioCondiciones.AutoSize = true;
+            this.lblMetodoEnvioCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMetodoEnvioCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblMetodoEnvioCondiciones.Location = new System.Drawing.Point(23, 28);
+            this.lblMetodoEnvioCondiciones.Name = "lblMetodoEnvioCondiciones";
+            this.lblMetodoEnvioCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblMetodoEnvioCondiciones.Size = new System.Drawing.Size(113, 17);
+            this.lblMetodoEnvioCondiciones.TabIndex = 174;
+            this.lblMetodoEnvioCondiciones.Text = "Método de Envío";
+            // 
+            // btnGuardarCambiosSeccionCondiciones2
+            // 
+            this.btnGuardarCambiosSeccionCondiciones2.BackColor = System.Drawing.Color.Wheat;
+            this.btnGuardarCambiosSeccionCondiciones2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambiosSeccionCondiciones2.Location = new System.Drawing.Point(772, 820);
+            this.btnGuardarCambiosSeccionCondiciones2.Name = "btnGuardarCambiosSeccionCondiciones2";
+            this.btnGuardarCambiosSeccionCondiciones2.Size = new System.Drawing.Size(155, 40);
+            this.btnGuardarCambiosSeccionCondiciones2.TabIndex = 43;
+            this.btnGuardarCambiosSeccionCondiciones2.Text = "Guardar Cambios";
+            this.btnGuardarCambiosSeccionCondiciones2.UseVisualStyleBackColor = false;
+            this.btnGuardarCambiosSeccionCondiciones2.Click += new System.EventHandler(this.btnGuardarCambiosSeccionCondiciones2_Click);
+            // 
+            // btnSeleccionarArchivoObservacionesFormaEntrega
+            // 
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.Location = new System.Drawing.Point(611, 415);
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.Name = "btnSeleccionarArchivoObservacionesFormaEntrega";
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.Size = new System.Drawing.Size(309, 21);
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.TabIndex = 39;
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.Text = "Seleccionar Archivo";
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.UseVisualStyleBackColor = true;
+            this.btnSeleccionarArchivoObservacionesFormaEntrega.Click += new System.EventHandler(this.btnSeleccionarArchivoObservacionesFormaEntrega_Click);
+            // 
+            // lblSubirArchivoObservacionesTiempoFormaEntrega
+            // 
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.AutoSize = true;
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(613, 397);
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Name = "lblSubirArchivoObservacionesTiempoFormaEntrega";
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(80, 15);
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.TabIndex = 173;
+            this.lblSubirArchivoObservacionesTiempoFormaEntrega.Text = "Subir Archivo:";
+            // 
+            // lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega
+            // 
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.AutoSize = true;
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(609, 297);
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Name = "lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega";
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(126, 15);
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.TabIndex = 172;
+            this.lblAbrirEliminarArchivoObservacionesTiempoFormaEntrega.Text = "Abrir/Eliminar Archivo:";
+            // 
+            // btnEliminarArchivoObservacionesTiempoFormaEntrega
+            // 
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(768, 315);
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Name = "btnEliminarArchivoObservacionesTiempoFormaEntrega";
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(148, 23);
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.TabIndex = 38;
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Text = "Eliminar";
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.UseVisualStyleBackColor = false;
+            this.btnEliminarArchivoObservacionesTiempoFormaEntrega.Click += new System.EventHandler(this.btnEliminarArchivoObservacionesTiempoFormaEntrega_Click);
+            // 
+            // comboBoxListaObservacionesFormaEntrega
+            // 
+            this.comboBoxListaObservacionesFormaEntrega.FormattingEnabled = true;
+            this.comboBoxListaObservacionesFormaEntrega.Location = new System.Drawing.Point(607, 344);
+            this.comboBoxListaObservacionesFormaEntrega.Name = "comboBoxListaObservacionesFormaEntrega";
+            this.comboBoxListaObservacionesFormaEntrega.Size = new System.Drawing.Size(307, 22);
+            this.comboBoxListaObservacionesFormaEntrega.TabIndex = 36;
+            // 
+            // btnAbrirArchivoObservacionesTiempoFormaEntrega
+            // 
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Location = new System.Drawing.Point(609, 315);
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Name = "btnAbrirArchivoObservacionesTiempoFormaEntrega";
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Size = new System.Drawing.Size(148, 23);
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.TabIndex = 37;
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Text = "Abrir";
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.UseVisualStyleBackColor = true;
+            this.btnAbrirArchivoObservacionesTiempoFormaEntrega.Click += new System.EventHandler(this.btnAbrirArchivoObservacionesTiempoFormaEntrega_Click);
             // 
             // btnLimpiarCampoObservacionesTiempoEntregaCondiciones
             // 
             this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones.Location = new System.Drawing.Point(92, 734);
+            this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones.Location = new System.Drawing.Point(35, 397);
             this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones.Name = "btnLimpiarCampoObservacionesTiempoEntregaCondiciones";
             this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones.Size = new System.Drawing.Size(271, 21);
             this.btnLimpiarCampoObservacionesTiempoEntregaCondiciones.TabIndex = 35;
@@ -5169,9 +5777,9 @@
             // btnLimpiarCampoCondicionesEspecialesEntrega
             // 
             this.btnLimpiarCampoCondicionesEspecialesEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCampoCondicionesEspecialesEntrega.Location = new System.Drawing.Point(22, 1198);
+            this.btnLimpiarCampoCondicionesEspecialesEntrega.Location = new System.Drawing.Point(34, 824);
             this.btnLimpiarCampoCondicionesEspecialesEntrega.Name = "btnLimpiarCampoCondicionesEspecialesEntrega";
-            this.btnLimpiarCampoCondicionesEspecialesEntrega.Size = new System.Drawing.Size(271, 28);
+            this.btnLimpiarCampoCondicionesEspecialesEntrega.Size = new System.Drawing.Size(274, 28);
             this.btnLimpiarCampoCondicionesEspecialesEntrega.TabIndex = 42;
             this.btnLimpiarCampoCondicionesEspecialesEntrega.Text = "Limpiar Campo";
             this.btnLimpiarCampoCondicionesEspecialesEntrega.UseVisualStyleBackColor = true;
@@ -5182,11 +5790,11 @@
             this.txtBoxCondicionesEspecialesCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCondicionesEspecialesCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCondicionesEspecialesCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(24, 1089);
+            this.txtBoxCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(34, 722);
             this.txtBoxCondicionesEspecialesCondiciones.Multiline = true;
             this.txtBoxCondicionesEspecialesCondiciones.Name = "txtBoxCondicionesEspecialesCondiciones";
             this.txtBoxCondicionesEspecialesCondiciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxCondicionesEspecialesCondiciones.Size = new System.Drawing.Size(565, 102);
+            this.txtBoxCondicionesEspecialesCondiciones.Size = new System.Drawing.Size(518, 90);
             this.txtBoxCondicionesEspecialesCondiciones.TabIndex = 41;
             // 
             // lblCondicionesEspecialesCondiciones
@@ -5194,7 +5802,7 @@
             this.lblCondicionesEspecialesCondiciones.AutoSize = true;
             this.lblCondicionesEspecialesCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCondicionesEspecialesCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(21, 1068);
+            this.lblCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(31, 701);
             this.lblCondicionesEspecialesCondiciones.Name = "lblCondicionesEspecialesCondiciones";
             this.lblCondicionesEspecialesCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCondicionesEspecialesCondiciones.Size = new System.Drawing.Size(219, 17);
@@ -5213,9 +5821,10 @@
             this.dataGridViewTextBoxColumn20,
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
-            this.dataGridLimiteCapacidad.Location = new System.Drawing.Point(12, 850);
+            this.dataGridLimiteCapacidad.Enabled = false;
+            this.dataGridLimiteCapacidad.Location = new System.Drawing.Point(20, 504);
             this.dataGridLimiteCapacidad.Name = "dataGridLimiteCapacidad";
-            this.dataGridLimiteCapacidad.Size = new System.Drawing.Size(929, 195);
+            this.dataGridLimiteCapacidad.Size = new System.Drawing.Size(929, 165);
             this.dataGridLimiteCapacidad.TabIndex = 40;
             // 
             // dataGridViewTextBoxColumn15
@@ -5281,7 +5890,7 @@
             this.lblLimiteCapacidadCondiciones.AutoSize = true;
             this.lblLimiteCapacidadCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLimiteCapacidadCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblLimiteCapacidadCondiciones.Location = new System.Drawing.Point(45, 828);
+            this.lblLimiteCapacidadCondiciones.Location = new System.Drawing.Point(53, 482);
             this.lblLimiteCapacidadCondiciones.Name = "lblLimiteCapacidadCondiciones";
             this.lblLimiteCapacidadCondiciones.Size = new System.Drawing.Size(268, 17);
             this.lblLimiteCapacidadCondiciones.TabIndex = 89;
@@ -5297,9 +5906,9 @@
             this.pnlCheckBoxSucursales.Controls.Add(this.checkBoxSanPedro);
             this.pnlCheckBoxSucursales.Controls.Add(this.checkBoxHipodromo);
             this.pnlCheckBoxSucursales.Controls.Add(this.checkBoxMatriz);
-            this.pnlCheckBoxSucursales.Location = new System.Drawing.Point(540, 452);
+            this.pnlCheckBoxSucursales.Location = new System.Drawing.Point(687, 55);
             this.pnlCheckBoxSucursales.Name = "pnlCheckBoxSucursales";
-            this.pnlCheckBoxSucursales.Size = new System.Drawing.Size(307, 111);
+            this.pnlCheckBoxSucursales.Size = new System.Drawing.Size(264, 111);
             this.pnlCheckBoxSucursales.TabIndex = 83;
             // 
             // checkBoxCMA
@@ -5385,7 +5994,7 @@
             this.lblSucursalesEntregaCondiciones.AutoSize = true;
             this.lblSucursalesEntregaCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalesEntregaCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalesEntregaCondiciones.Location = new System.Drawing.Point(539, 425);
+            this.lblSucursalesEntregaCondiciones.Location = new System.Drawing.Point(684, 28);
             this.lblSucursalesEntregaCondiciones.Name = "lblSucursalesEntregaCondiciones";
             this.lblSucursalesEntregaCondiciones.Size = new System.Drawing.Size(142, 17);
             this.lblSucursalesEntregaCondiciones.TabIndex = 82;
@@ -5396,11 +6005,11 @@
             this.txtBoxObservacionesCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObservacionesCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxObservacionesCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxObservacionesCondiciones.Location = new System.Drawing.Point(92, 654);
+            this.txtBoxObservacionesCondiciones.Location = new System.Drawing.Point(31, 316);
             this.txtBoxObservacionesCondiciones.Multiline = true;
             this.txtBoxObservacionesCondiciones.Name = "txtBoxObservacionesCondiciones";
             this.txtBoxObservacionesCondiciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxObservacionesCondiciones.Size = new System.Drawing.Size(410, 74);
+            this.txtBoxObservacionesCondiciones.Size = new System.Drawing.Size(521, 74);
             this.txtBoxObservacionesCondiciones.TabIndex = 34;
             // 
             // lblFormaEntregaCondiciones
@@ -5408,19 +6017,20 @@
             this.lblFormaEntregaCondiciones.AutoSize = true;
             this.lblFormaEntregaCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFormaEntregaCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFormaEntregaCondiciones.Location = new System.Drawing.Point(132, 425);
+            this.lblFormaEntregaCondiciones.Location = new System.Drawing.Point(279, 28);
             this.lblFormaEntregaCondiciones.Name = "lblFormaEntregaCondiciones";
             this.lblFormaEntregaCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFormaEntregaCondiciones.Size = new System.Drawing.Size(117, 17);
+            this.lblFormaEntregaCondiciones.Size = new System.Drawing.Size(217, 17);
             this.lblFormaEntregaCondiciones.TabIndex = 77;
-            this.lblFormaEntregaCondiciones.Text = "Forma de Entrega";
+            this.lblFormaEntregaCondiciones.Text = "Forma de Entrega y Tipo de Envío";
+            this.lblFormaEntregaCondiciones.Click += new System.EventHandler(this.lblFormaEntregaCondiciones_Click);
             // 
             // lblTiempoEntregaDias
             // 
             this.lblTiempoEntregaDias.AutoSize = true;
             this.lblTiempoEntregaDias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempoEntregaDias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTiempoEntregaDias.Location = new System.Drawing.Point(461, 365);
+            this.lblTiempoEntregaDias.Location = new System.Drawing.Point(520, 239);
             this.lblTiempoEntregaDias.Name = "lblTiempoEntregaDias";
             this.lblTiempoEntregaDias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblTiempoEntregaDias.Size = new System.Drawing.Size(32, 17);
@@ -5432,7 +6042,7 @@
             this.txtBoxTiempoEntregaCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxTiempoEntregaCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTiempoEntregaCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxTiempoEntregaCondiciones.Location = new System.Drawing.Point(398, 365);
+            this.txtBoxTiempoEntregaCondiciones.Location = new System.Drawing.Point(457, 239);
             this.txtBoxTiempoEntregaCondiciones.Name = "txtBoxTiempoEntregaCondiciones";
             this.txtBoxTiempoEntregaCondiciones.Size = new System.Drawing.Size(61, 21);
             this.txtBoxTiempoEntregaCondiciones.TabIndex = 21;
@@ -5443,7 +6053,7 @@
             this.lblTiempoEntregaCondiciones.AutoSize = true;
             this.lblTiempoEntregaCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempoEntregaCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTiempoEntregaCondiciones.Location = new System.Drawing.Point(271, 365);
+            this.lblTiempoEntregaCondiciones.Location = new System.Drawing.Point(330, 239);
             this.lblTiempoEntregaCondiciones.Name = "lblTiempoEntregaCondiciones";
             this.lblTiempoEntregaCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblTiempoEntregaCondiciones.Size = new System.Drawing.Size(125, 17);
@@ -5451,64 +6061,29 @@
             this.lblTiempoEntregaCondiciones.Text = "Tiempo de Entrega";
             this.lblTiempoEntregaCondiciones.Click += new System.EventHandler(this.label36_Click);
             // 
-            // lblDiasCondicionesCredito
-            // 
-            this.lblDiasCondicionesCredito.AutoSize = true;
-            this.lblDiasCondicionesCredito.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiasCondicionesCredito.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDiasCondicionesCredito.Location = new System.Drawing.Point(317, 27);
-            this.lblDiasCondicionesCredito.Name = "lblDiasCondicionesCredito";
-            this.lblDiasCondicionesCredito.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblDiasCondicionesCredito.Size = new System.Drawing.Size(32, 17);
-            this.lblDiasCondicionesCredito.TabIndex = 65;
-            this.lblDiasCondicionesCredito.Text = "días";
-            // 
             // lblObservacionesCondiciones
             // 
             this.lblObservacionesCondiciones.AutoSize = true;
             this.lblObservacionesCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObservacionesCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblObservacionesCondiciones.Location = new System.Drawing.Point(89, 634);
+            this.lblObservacionesCondiciones.Location = new System.Drawing.Point(35, 296);
             this.lblObservacionesCondiciones.Name = "lblObservacionesCondiciones";
             this.lblObservacionesCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblObservacionesCondiciones.Size = new System.Drawing.Size(291, 17);
             this.lblObservacionesCondiciones.TabIndex = 62;
             this.lblObservacionesCondiciones.Text = "Observaciones en Tiempo y Forma de Entrega";
             // 
-            // txtBoxCondicionesCreditoCondiciones
+            // lblCondicionesPago
             // 
-            this.txtBoxCondicionesCreditoCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBoxCondicionesCreditoCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCondicionesCreditoCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCondicionesCreditoCondiciones.Location = new System.Drawing.Point(250, 27);
-            this.txtBoxCondicionesCreditoCondiciones.Name = "txtBoxCondicionesCreditoCondiciones";
-            this.txtBoxCondicionesCreditoCondiciones.Size = new System.Drawing.Size(61, 21);
-            this.txtBoxCondicionesCreditoCondiciones.TabIndex = 5;
-            this.txtBoxCondicionesCreditoCondiciones.TextChanged += new System.EventHandler(this.txtBoxCondicionesCreditoCondiciones_TextChanged);
-            // 
-            // lblCondicionesCreditoCondiciones
-            // 
-            this.lblCondicionesCreditoCondiciones.AutoSize = true;
-            this.lblCondicionesCreditoCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCondicionesCreditoCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCondicionesCreditoCondiciones.Location = new System.Drawing.Point(89, 27);
-            this.lblCondicionesCreditoCondiciones.Name = "lblCondicionesCreditoCondiciones";
-            this.lblCondicionesCreditoCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCondicionesCreditoCondiciones.Size = new System.Drawing.Size(151, 17);
-            this.lblCondicionesCreditoCondiciones.TabIndex = 56;
-            this.lblCondicionesCreditoCondiciones.Text = "Condiciones de Crédito";
-            // 
-            // lblCondicionesPagoEntrega
-            // 
-            this.lblCondicionesPagoEntrega.AutoSize = true;
-            this.lblCondicionesPagoEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCondicionesPagoEntrega.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCondicionesPagoEntrega.Location = new System.Drawing.Point(10, 19);
-            this.lblCondicionesPagoEntrega.Name = "lblCondicionesPagoEntrega";
-            this.lblCondicionesPagoEntrega.Size = new System.Drawing.Size(349, 31);
-            this.lblCondicionesPagoEntrega.TabIndex = 41;
-            this.lblCondicionesPagoEntrega.Text = "Condiciones De Pago y Entrega";
-            this.lblCondicionesPagoEntrega.Click += new System.EventHandler(this.label22_Click);
+            this.lblCondicionesPago.AutoSize = true;
+            this.lblCondicionesPago.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondicionesPago.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblCondicionesPago.Location = new System.Drawing.Point(10, 29);
+            this.lblCondicionesPago.Name = "lblCondicionesPago";
+            this.lblCondicionesPago.Size = new System.Drawing.Size(242, 31);
+            this.lblCondicionesPago.TabIndex = 41;
+            this.lblCondicionesPago.Text = "Condiciones De Pago";
+            this.lblCondicionesPago.Click += new System.EventHandler(this.label22_Click);
             // 
             // tabDatosGenerales
             // 
@@ -5812,6 +6387,7 @@
             // pnlDireccion1
             // 
             this.pnlDireccion1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDireccion1.Controls.Add(this.dataGridDirecciones);
             this.pnlDireccion1.Controls.Add(this.checkBoxDireccionesRevisado);
             this.pnlDireccion1.Controls.Add(this.comboBoxConceptoUsoDirecciones);
             this.pnlDireccion1.Controls.Add(this.lblConceptoUsoDirecciones);
@@ -5823,7 +6399,6 @@
             this.pnlDireccion1.Controls.Add(this.lblNumInteriorDirecciones);
             this.pnlDireccion1.Controls.Add(this.btnPriorizarDirecciones);
             this.pnlDireccion1.Controls.Add(this.btnLimpiarCamposDirecciones);
-            this.pnlDireccion1.Controls.Add(this.pnlListaDirecciones);
             this.pnlDireccion1.Controls.Add(this.btnEditarDireccion);
             this.pnlDireccion1.Controls.Add(this.btnAgregarDireccion);
             this.pnlDireccion1.Controls.Add(this.txtBoxEstadoDirecciones);
@@ -5887,7 +6462,7 @@
             this.txtBoxPaisDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPaisDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPaisDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPaisDirecciones.Location = new System.Drawing.Point(134, 353);
+            this.txtBoxPaisDirecciones.Location = new System.Drawing.Point(134, 388);
             this.txtBoxPaisDirecciones.Name = "txtBoxPaisDirecciones";
             this.txtBoxPaisDirecciones.Size = new System.Drawing.Size(225, 21);
             this.txtBoxPaisDirecciones.TabIndex = 23;
@@ -5898,7 +6473,7 @@
             this.lblPaisDirecciones.AutoSize = true;
             this.lblPaisDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaisDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPaisDirecciones.Location = new System.Drawing.Point(80, 353);
+            this.lblPaisDirecciones.Location = new System.Drawing.Point(80, 388);
             this.lblPaisDirecciones.Name = "lblPaisDirecciones";
             this.lblPaisDirecciones.Size = new System.Drawing.Size(33, 17);
             this.lblPaisDirecciones.TabIndex = 88;
@@ -5969,155 +6544,6 @@
             this.btnLimpiarCamposDirecciones.UseVisualStyleBackColor = true;
             this.btnLimpiarCamposDirecciones.Click += new System.EventHandler(this.btnLimpiarCamposDirecciones_Click);
             // 
-            // pnlListaDirecciones
-            // 
-            this.pnlListaDirecciones.AutoScroll = true;
-            this.pnlListaDirecciones.Controls.Add(this.dataGridDirecciones);
-            this.pnlListaDirecciones.Location = new System.Drawing.Point(565, 38);
-            this.pnlListaDirecciones.Name = "pnlListaDirecciones";
-            this.pnlListaDirecciones.Size = new System.Drawing.Size(367, 260);
-            this.pnlListaDirecciones.TabIndex = 54;
-            // 
-            // dataGridDirecciones
-            // 
-            this.dataGridDirecciones.AllowUserToAddRows = false;
-            this.dataGridDirecciones.AllowUserToDeleteRows = false;
-            this.dataGridDirecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDirecciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Prioridad,
-            this.dataGridViewTextBoxColumn14,
-            this.CalleAveBlvr,
-            this.NumExterior,
-            this.NumInterior,
-            this.InfAdicional,
-            this.Colonia,
-            this.CodigoPostal,
-            this.Poblacion,
-            this.Estado,
-            this.Pais,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30});
-            this.dataGridDirecciones.Location = new System.Drawing.Point(3, 3);
-            this.dataGridDirecciones.Name = "dataGridDirecciones";
-            this.dataGridDirecciones.ReadOnly = true;
-            this.dataGridDirecciones.Size = new System.Drawing.Size(592, 237);
-            this.dataGridDirecciones.TabIndex = 29;
-            this.dataGridDirecciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDirecciones_CellContentClick);
-            this.dataGridDirecciones.Click += new System.EventHandler(this.dataGridDirecciones_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "NumIdDireccion";
-            this.ID.HeaderText = "id";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 50;
-            // 
-            // Prioridad
-            // 
-            this.Prioridad.DataPropertyName = "PrioridadUso";
-            this.Prioridad.HeaderText = "Prioridad";
-            this.Prioridad.Name = "Prioridad";
-            this.Prioridad.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "ConceptoUso";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Concepto de Uso";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 120;
-            // 
-            // CalleAveBlvr
-            // 
-            this.CalleAveBlvr.DataPropertyName = "CalleAveBlvr";
-            this.CalleAveBlvr.HeaderText = "CalleAveBlvr";
-            this.CalleAveBlvr.Name = "CalleAveBlvr";
-            this.CalleAveBlvr.ReadOnly = true;
-            this.CalleAveBlvr.Visible = false;
-            // 
-            // NumExterior
-            // 
-            this.NumExterior.DataPropertyName = "NumExterior";
-            this.NumExterior.HeaderText = "NumExterior";
-            this.NumExterior.Name = "NumExterior";
-            this.NumExterior.ReadOnly = true;
-            this.NumExterior.Visible = false;
-            // 
-            // NumInterior
-            // 
-            this.NumInterior.DataPropertyName = "NumInterior";
-            this.NumInterior.HeaderText = "NumInterior";
-            this.NumInterior.Name = "NumInterior";
-            this.NumInterior.ReadOnly = true;
-            this.NumInterior.Visible = false;
-            // 
-            // InfAdicional
-            // 
-            this.InfAdicional.DataPropertyName = "InfAdicional";
-            this.InfAdicional.HeaderText = "InfAdicional";
-            this.InfAdicional.Name = "InfAdicional";
-            this.InfAdicional.ReadOnly = true;
-            this.InfAdicional.Visible = false;
-            // 
-            // Colonia
-            // 
-            this.Colonia.DataPropertyName = "Colonia";
-            this.Colonia.HeaderText = "Colonia";
-            this.Colonia.Name = "Colonia";
-            this.Colonia.ReadOnly = true;
-            this.Colonia.Visible = false;
-            // 
-            // CodigoPostal
-            // 
-            this.CodigoPostal.DataPropertyName = "CodigoPostal";
-            this.CodigoPostal.HeaderText = "CodigoPostal";
-            this.CodigoPostal.Name = "CodigoPostal";
-            this.CodigoPostal.ReadOnly = true;
-            this.CodigoPostal.Visible = false;
-            // 
-            // Poblacion
-            // 
-            this.Poblacion.DataPropertyName = "Poblacion";
-            this.Poblacion.HeaderText = "Poblacion";
-            this.Poblacion.Name = "Poblacion";
-            this.Poblacion.ReadOnly = true;
-            this.Poblacion.Visible = false;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Visible = false;
-            // 
-            // Pais
-            // 
-            this.Pais.DataPropertyName = "Pais";
-            this.Pais.HeaderText = "Pais";
-            this.Pais.Name = "Pais";
-            this.Pais.ReadOnly = true;
-            this.Pais.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Dirección";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Dirección";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            this.dataGridViewTextBoxColumn29.Width = 250;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Ubicación";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Ubicación";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.ReadOnly = true;
-            this.dataGridViewTextBoxColumn30.Width = 175;
-            // 
             // btnEditarDireccion
             // 
             this.btnEditarDireccion.BackColor = System.Drawing.Color.Wheat;
@@ -6147,7 +6573,7 @@
             this.txtBoxEstadoDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxEstadoDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEstadoDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxEstadoDirecciones.Location = new System.Drawing.Point(134, 317);
+            this.txtBoxEstadoDirecciones.Location = new System.Drawing.Point(134, 352);
             this.txtBoxEstadoDirecciones.Name = "txtBoxEstadoDirecciones";
             this.txtBoxEstadoDirecciones.Size = new System.Drawing.Size(225, 21);
             this.txtBoxEstadoDirecciones.TabIndex = 22;
@@ -6157,7 +6583,7 @@
             this.lblEstadoDirecciones.AutoSize = true;
             this.lblEstadoDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblEstadoDirecciones.Location = new System.Drawing.Point(64, 316);
+            this.lblEstadoDirecciones.Location = new System.Drawing.Point(64, 351);
             this.lblEstadoDirecciones.Name = "lblEstadoDirecciones";
             this.lblEstadoDirecciones.Size = new System.Drawing.Size(49, 17);
             this.lblEstadoDirecciones.TabIndex = 51;
@@ -6168,7 +6594,7 @@
             this.txtBoxPoblacionDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPoblacionDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPoblacionDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPoblacionDirecciones.Location = new System.Drawing.Point(134, 283);
+            this.txtBoxPoblacionDirecciones.Location = new System.Drawing.Point(134, 318);
             this.txtBoxPoblacionDirecciones.Name = "txtBoxPoblacionDirecciones";
             this.txtBoxPoblacionDirecciones.Size = new System.Drawing.Size(225, 21);
             this.txtBoxPoblacionDirecciones.TabIndex = 21;
@@ -6178,7 +6604,7 @@
             this.txtBoxCPDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCPDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCPDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCPDirecciones.Location = new System.Drawing.Point(135, 246);
+            this.txtBoxCPDirecciones.Location = new System.Drawing.Point(135, 281);
             this.txtBoxCPDirecciones.Name = "txtBoxCPDirecciones";
             this.txtBoxCPDirecciones.Size = new System.Drawing.Size(88, 21);
             this.txtBoxCPDirecciones.TabIndex = 20;
@@ -6188,7 +6614,7 @@
             this.lblPoblacionDirecciones.AutoSize = true;
             this.lblPoblacionDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPoblacionDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPoblacionDirecciones.Location = new System.Drawing.Point(44, 281);
+            this.lblPoblacionDirecciones.Location = new System.Drawing.Point(44, 316);
             this.lblPoblacionDirecciones.Name = "lblPoblacionDirecciones";
             this.lblPoblacionDirecciones.Size = new System.Drawing.Size(69, 17);
             this.lblPoblacionDirecciones.TabIndex = 48;
@@ -6199,7 +6625,7 @@
             this.lblCPDirecciones.AutoSize = true;
             this.lblCPDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCPDirecciones.Location = new System.Drawing.Point(19, 246);
+            this.lblCPDirecciones.Location = new System.Drawing.Point(19, 281);
             this.lblCPDirecciones.Name = "lblCPDirecciones";
             this.lblCPDirecciones.Size = new System.Drawing.Size(94, 17);
             this.lblCPDirecciones.TabIndex = 46;
@@ -6211,8 +6637,10 @@
             this.txtBoxInfAdicionalDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxInfAdicionalDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxInfAdicionalDirecciones.Location = new System.Drawing.Point(134, 210);
+            this.txtBoxInfAdicionalDirecciones.Multiline = true;
             this.txtBoxInfAdicionalDirecciones.Name = "txtBoxInfAdicionalDirecciones";
-            this.txtBoxInfAdicionalDirecciones.Size = new System.Drawing.Size(400, 21);
+            this.txtBoxInfAdicionalDirecciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxInfAdicionalDirecciones.Size = new System.Drawing.Size(400, 54);
             this.txtBoxInfAdicionalDirecciones.TabIndex = 19;
             this.txtBoxInfAdicionalDirecciones.Text = "EJ. ENTRE CALLES; REFERENCIAS LOCALES";
             // 
@@ -6298,17 +6726,20 @@
             this.pnlContactos.Controls.Add(this.lblContactos);
             this.pnlContactos.Location = new System.Drawing.Point(3, 797);
             this.pnlContactos.Name = "pnlContactos";
-            this.pnlContactos.Size = new System.Drawing.Size(999, 501);
+            this.pnlContactos.Size = new System.Drawing.Size(999, 604);
             this.pnlContactos.TabIndex = 30;
             this.pnlContactos.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContactos_Paint);
             // 
             // pnlContacto1
             // 
             this.pnlContacto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContacto1.Controls.Add(this.dataGridContactos);
+            this.pnlContacto1.Controls.Add(this.txtBoxComentariosContacto);
+            this.pnlContacto1.Controls.Add(this.lblComentariosContacto);
+            this.pnlContacto1.Controls.Add(this.comboBoxFuncionContacto);
+            this.pnlContacto1.Controls.Add(this.lblFuncionContacto);
             this.pnlContacto1.Controls.Add(this.checkBoxContactosRevisado);
             this.pnlContacto1.Controls.Add(this.btnPriorizarContacto);
-            this.pnlContacto1.Controls.Add(this.panel3);
-            this.pnlContacto1.Controls.Add(this.lblFuncionesContacto);
             this.pnlContacto1.Controls.Add(this.txtBoxCel2Contactos);
             this.pnlContacto1.Controls.Add(this.lblCel2Contactos);
             this.pnlContacto1.Controls.Add(this.txtBoxCel1Contactos);
@@ -6320,7 +6751,6 @@
             this.pnlContacto1.Controls.Add(this.txtBoxEmail2Contactos);
             this.pnlContacto1.Controls.Add(this.lblEmail2Contactos);
             this.pnlContacto1.Controls.Add(this.txtBoxCategoriaContactos);
-            this.pnlContacto1.Controls.Add(this.pnlListaContactos);
             this.pnlContacto1.Controls.Add(this.btnEditarContacto);
             this.pnlContacto1.Controls.Add(this.btnLimpiarCamposContactos);
             this.pnlContacto1.Controls.Add(this.btnAgregarContacto);
@@ -6338,7 +6768,7 @@
             this.pnlContacto1.Controls.Add(this.btnDesactivarContacto);
             this.pnlContacto1.Location = new System.Drawing.Point(16, 49);
             this.pnlContacto1.Name = "pnlContacto1";
-            this.pnlContacto1.Size = new System.Drawing.Size(945, 427);
+            this.pnlContacto1.Size = new System.Drawing.Size(945, 552);
             this.pnlContacto1.TabIndex = 30;
             this.pnlContacto1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContacto1_Paint);
             // 
@@ -6366,67 +6796,12 @@
             this.btnPriorizarContacto.UseVisualStyleBackColor = false;
             this.btnPriorizarContacto.Click += new System.EventHandler(this.btnPriorizarContacto_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.checkBox3Funciones);
-            this.panel3.Controls.Add(this.checkBox2Funciones);
-            this.panel3.Controls.Add(this.checkBox1Funciones);
-            this.panel3.Location = new System.Drawing.Point(29, 390);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(501, 28);
-            this.panel3.TabIndex = 93;
-            // 
-            // checkBox3Funciones
-            // 
-            this.checkBox3Funciones.AutoSize = true;
-            this.checkBox3Funciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3Funciones.Location = new System.Drawing.Point(182, 6);
-            this.checkBox3Funciones.Name = "checkBox3Funciones";
-            this.checkBox3Funciones.Size = new System.Drawing.Size(32, 18);
-            this.checkBox3Funciones.TabIndex = 44;
-            this.checkBox3Funciones.Text = "3";
-            this.checkBox3Funciones.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2Funciones
-            // 
-            this.checkBox2Funciones.AutoSize = true;
-            this.checkBox2Funciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2Funciones.Location = new System.Drawing.Point(102, 6);
-            this.checkBox2Funciones.Name = "checkBox2Funciones";
-            this.checkBox2Funciones.Size = new System.Drawing.Size(32, 18);
-            this.checkBox2Funciones.TabIndex = 43;
-            this.checkBox2Funciones.Text = "2";
-            this.checkBox2Funciones.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1Funciones
-            // 
-            this.checkBox1Funciones.AutoSize = true;
-            this.checkBox1Funciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1Funciones.Location = new System.Drawing.Point(10, 6);
-            this.checkBox1Funciones.Name = "checkBox1Funciones";
-            this.checkBox1Funciones.Size = new System.Drawing.Size(32, 18);
-            this.checkBox1Funciones.TabIndex = 42;
-            this.checkBox1Funciones.Text = "1";
-            this.checkBox1Funciones.UseVisualStyleBackColor = true;
-            // 
-            // lblFuncionesContacto
-            // 
-            this.lblFuncionesContacto.AutoSize = true;
-            this.lblFuncionesContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionesContacto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFuncionesContacto.Location = new System.Drawing.Point(29, 370);
-            this.lblFuncionesContacto.Name = "lblFuncionesContacto";
-            this.lblFuncionesContacto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblFuncionesContacto.Size = new System.Drawing.Size(148, 17);
-            this.lblFuncionesContacto.TabIndex = 92;
-            this.lblFuncionesContacto.Text = "Funciones de Contacto";
-            // 
             // txtBoxCel2Contactos
             // 
             this.txtBoxCel2Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCel2Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCel2Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCel2Contactos.Location = new System.Drawing.Point(126, 270);
+            this.txtBoxCel2Contactos.Location = new System.Drawing.Point(103, 354);
             this.txtBoxCel2Contactos.Name = "txtBoxCel2Contactos";
             this.txtBoxCel2Contactos.Size = new System.Drawing.Size(199, 21);
             this.txtBoxCel2Contactos.TabIndex = 39;
@@ -6436,7 +6811,7 @@
             this.lblCel2Contactos.AutoSize = true;
             this.lblCel2Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCel2Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCel2Contactos.Location = new System.Drawing.Point(29, 270);
+            this.lblCel2Contactos.Location = new System.Drawing.Point(36, 354);
             this.lblCel2Contactos.Name = "lblCel2Contactos";
             this.lblCel2Contactos.Size = new System.Drawing.Size(38, 17);
             this.lblCel2Contactos.TabIndex = 90;
@@ -6447,7 +6822,7 @@
             this.txtBoxCel1Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCel1Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCel1Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCel1Contactos.Location = new System.Drawing.Point(126, 236);
+            this.txtBoxCel1Contactos.Location = new System.Drawing.Point(103, 320);
             this.txtBoxCel1Contactos.Name = "txtBoxCel1Contactos";
             this.txtBoxCel1Contactos.Size = new System.Drawing.Size(199, 21);
             this.txtBoxCel1Contactos.TabIndex = 38;
@@ -6457,7 +6832,7 @@
             this.lblCel1Contactos.AutoSize = true;
             this.lblCel1Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCel1Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCel1Contactos.Location = new System.Drawing.Point(29, 236);
+            this.lblCel1Contactos.Location = new System.Drawing.Point(36, 320);
             this.lblCel1Contactos.Name = "lblCel1Contactos";
             this.lblCel1Contactos.Size = new System.Drawing.Size(38, 17);
             this.lblCel1Contactos.TabIndex = 88;
@@ -6468,7 +6843,7 @@
             this.txtBoxExt2Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxExt2Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxExt2Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxExt2Contactos.Location = new System.Drawing.Point(395, 198);
+            this.txtBoxExt2Contactos.Location = new System.Drawing.Point(372, 282);
             this.txtBoxExt2Contactos.Name = "txtBoxExt2Contactos";
             this.txtBoxExt2Contactos.Size = new System.Drawing.Size(96, 21);
             this.txtBoxExt2Contactos.TabIndex = 37;
@@ -6478,7 +6853,7 @@
             this.lblExt2Contactos.AutoSize = true;
             this.lblExt2Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExt2Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblExt2Contactos.Location = new System.Drawing.Point(346, 202);
+            this.lblExt2Contactos.Location = new System.Drawing.Point(323, 286);
             this.lblExt2Contactos.Name = "lblExt2Contactos";
             this.lblExt2Contactos.Size = new System.Drawing.Size(31, 17);
             this.lblExt2Contactos.TabIndex = 86;
@@ -6489,7 +6864,7 @@
             this.txtBoxExt1Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxExt1Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxExt1Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxExt1Contactos.Location = new System.Drawing.Point(395, 162);
+            this.txtBoxExt1Contactos.Location = new System.Drawing.Point(372, 246);
             this.txtBoxExt1Contactos.Name = "txtBoxExt1Contactos";
             this.txtBoxExt1Contactos.Size = new System.Drawing.Size(96, 21);
             this.txtBoxExt1Contactos.TabIndex = 35;
@@ -6499,7 +6874,7 @@
             this.lblExt1Contactos.AutoSize = true;
             this.lblExt1Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExt1Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblExt1Contactos.Location = new System.Drawing.Point(346, 166);
+            this.lblExt1Contactos.Location = new System.Drawing.Point(323, 250);
             this.lblExt1Contactos.Name = "lblExt1Contactos";
             this.lblExt1Contactos.Size = new System.Drawing.Size(31, 17);
             this.lblExt1Contactos.TabIndex = 84;
@@ -6510,9 +6885,9 @@
             this.txtBoxEmail2Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxEmail2Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmail2Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxEmail2Contactos.Location = new System.Drawing.Point(126, 337);
+            this.txtBoxEmail2Contactos.Location = new System.Drawing.Point(103, 421);
             this.txtBoxEmail2Contactos.Name = "txtBoxEmail2Contactos";
-            this.txtBoxEmail2Contactos.Size = new System.Drawing.Size(199, 21);
+            this.txtBoxEmail2Contactos.Size = new System.Drawing.Size(365, 21);
             this.txtBoxEmail2Contactos.TabIndex = 41;
             // 
             // lblEmail2Contactos
@@ -6520,7 +6895,7 @@
             this.lblEmail2Contactos.AutoSize = true;
             this.lblEmail2Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail2Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblEmail2Contactos.Location = new System.Drawing.Point(29, 337);
+            this.lblEmail2Contactos.Location = new System.Drawing.Point(36, 421);
             this.lblEmail2Contactos.Name = "lblEmail2Contactos";
             this.lblEmail2Contactos.Size = new System.Drawing.Size(53, 17);
             this.lblEmail2Contactos.TabIndex = 82;
@@ -6531,166 +6906,11 @@
             this.txtBoxCategoriaContactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCategoriaContactos.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCategoriaContactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCategoriaContactos.Location = new System.Drawing.Point(127, 34);
+            this.txtBoxCategoriaContactos.Location = new System.Drawing.Point(104, 118);
             this.txtBoxCategoriaContactos.Name = "txtBoxCategoriaContactos";
+            this.txtBoxCategoriaContactos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtBoxCategoriaContactos.Size = new System.Drawing.Size(360, 55);
             this.txtBoxCategoriaContactos.TabIndex = 31;
-            // 
-            // pnlListaContactos
-            // 
-            this.pnlListaContactos.AutoScroll = true;
-            this.pnlListaContactos.Controls.Add(this.dataGridContactos);
-            this.pnlListaContactos.Location = new System.Drawing.Point(551, 57);
-            this.pnlListaContactos.Name = "pnlListaContactos";
-            this.pnlListaContactos.Size = new System.Drawing.Size(367, 260);
-            this.pnlListaContactos.TabIndex = 57;
-            // 
-            // dataGridContactos
-            // 
-            this.dataGridContactos.AllowUserToAddRows = false;
-            this.dataGridContactos.AllowUserToDeleteRows = false;
-            this.dataGridContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridContactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Contactoid,
-            this.PrioridadDeUso,
-            this.NombreCompleto,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn31,
-            this.FuncionesContacto,
-            this.TelefonoPrimario,
-            this.ExtensionTelefonoPrimario,
-            this.TelefonoSecundario,
-            this.ExtensionTelefonoSecundario,
-            this.Celular1,
-            this.Celular2,
-            this.Email1,
-            this.Email2,
-            this.Comentarios});
-            this.dataGridContactos.Location = new System.Drawing.Point(0, 0);
-            this.dataGridContactos.Name = "dataGridContactos";
-            this.dataGridContactos.ReadOnly = true;
-            this.dataGridContactos.Size = new System.Drawing.Size(598, 240);
-            this.dataGridContactos.TabIndex = 50;
-            this.dataGridContactos.Click += new System.EventHandler(this.dataGridContactos_Click);
-            // 
-            // Contactoid
-            // 
-            this.Contactoid.DataPropertyName = "Contactoid";
-            this.Contactoid.HeaderText = "Contactoid";
-            this.Contactoid.Name = "Contactoid";
-            this.Contactoid.ReadOnly = true;
-            this.Contactoid.Visible = false;
-            // 
-            // PrioridadDeUso
-            // 
-            this.PrioridadDeUso.DataPropertyName = "PrioridadDeUso";
-            this.PrioridadDeUso.HeaderText = "Prioridad";
-            this.PrioridadDeUso.Name = "PrioridadDeUso";
-            this.PrioridadDeUso.ReadOnly = true;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.DataPropertyName = "NombreCompleto";
-            this.NombreCompleto.HeaderText = "NombreCompleto";
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "Puesto";
-            this.dataGridViewTextBoxColumn33.HeaderText = "Puesto";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.ReadOnly = true;
-            this.dataGridViewTextBoxColumn33.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "Categoria";
-            this.dataGridViewTextBoxColumn31.HeaderText = "Categoria";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.ReadOnly = true;
-            this.dataGridViewTextBoxColumn31.Width = 150;
-            // 
-            // FuncionesContacto
-            // 
-            this.FuncionesContacto.DataPropertyName = "FuncionesContacto";
-            this.FuncionesContacto.HeaderText = "Funciones Contacto";
-            this.FuncionesContacto.Name = "FuncionesContacto";
-            this.FuncionesContacto.ReadOnly = true;
-            this.FuncionesContacto.Width = 200;
-            // 
-            // TelefonoPrimario
-            // 
-            this.TelefonoPrimario.DataPropertyName = "TelefonoPrimario";
-            this.TelefonoPrimario.HeaderText = "TelefonoPrimario";
-            this.TelefonoPrimario.Name = "TelefonoPrimario";
-            this.TelefonoPrimario.ReadOnly = true;
-            this.TelefonoPrimario.Visible = false;
-            // 
-            // ExtensionTelefonoPrimario
-            // 
-            this.ExtensionTelefonoPrimario.DataPropertyName = "ExtensionTelefonoPrimario";
-            this.ExtensionTelefonoPrimario.HeaderText = "ExtensionTelefonoPrimario";
-            this.ExtensionTelefonoPrimario.Name = "ExtensionTelefonoPrimario";
-            this.ExtensionTelefonoPrimario.ReadOnly = true;
-            this.ExtensionTelefonoPrimario.Visible = false;
-            // 
-            // TelefonoSecundario
-            // 
-            this.TelefonoSecundario.DataPropertyName = "TelefonoSecundario";
-            this.TelefonoSecundario.HeaderText = "TelefonoSecundario";
-            this.TelefonoSecundario.Name = "TelefonoSecundario";
-            this.TelefonoSecundario.ReadOnly = true;
-            this.TelefonoSecundario.Visible = false;
-            // 
-            // ExtensionTelefonoSecundario
-            // 
-            this.ExtensionTelefonoSecundario.DataPropertyName = "ExtensionTelefonoSecundario";
-            this.ExtensionTelefonoSecundario.HeaderText = "ExtensionTelefonoSecundario";
-            this.ExtensionTelefonoSecundario.Name = "ExtensionTelefonoSecundario";
-            this.ExtensionTelefonoSecundario.ReadOnly = true;
-            this.ExtensionTelefonoSecundario.Visible = false;
-            // 
-            // Celular1
-            // 
-            this.Celular1.DataPropertyName = "Celular1";
-            this.Celular1.HeaderText = "Celular1";
-            this.Celular1.Name = "Celular1";
-            this.Celular1.ReadOnly = true;
-            this.Celular1.Visible = false;
-            // 
-            // Celular2
-            // 
-            this.Celular2.DataPropertyName = "Celular2";
-            this.Celular2.HeaderText = "Celular2";
-            this.Celular2.Name = "Celular2";
-            this.Celular2.ReadOnly = true;
-            this.Celular2.Visible = false;
-            // 
-            // Email1
-            // 
-            this.Email1.DataPropertyName = "Email1";
-            this.Email1.HeaderText = "Email1";
-            this.Email1.Name = "Email1";
-            this.Email1.ReadOnly = true;
-            this.Email1.Visible = false;
-            // 
-            // Email2
-            // 
-            this.Email2.DataPropertyName = "Email2";
-            this.Email2.HeaderText = "Email2";
-            this.Email2.Name = "Email2";
-            this.Email2.ReadOnly = true;
-            this.Email2.Visible = false;
-            // 
-            // Comentarios
-            // 
-            this.Comentarios.DataPropertyName = "Comentarios";
-            this.Comentarios.HeaderText = "Comentarios";
-            this.Comentarios.Name = "Comentarios";
-            this.Comentarios.ReadOnly = true;
-            this.Comentarios.Visible = false;
             // 
             // btnEditarContacto
             // 
@@ -6732,20 +6952,20 @@
             this.lblCategoriaContactos.AutoSize = true;
             this.lblCategoriaContactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoriaContactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCategoriaContactos.Location = new System.Drawing.Point(31, 44);
+            this.lblCategoriaContactos.Location = new System.Drawing.Point(102, 98);
             this.lblCategoriaContactos.Name = "lblCategoriaContactos";
-            this.lblCategoriaContactos.Size = new System.Drawing.Size(67, 17);
+            this.lblCategoriaContactos.Size = new System.Drawing.Size(213, 17);
             this.lblCategoriaContactos.TabIndex = 51;
-            this.lblCategoriaContactos.Text = "Categoria";
+            this.lblCategoriaContactos.Text = "Corresponde a Departamento de:";
             // 
             // txtBoxEmail1Contactos
             // 
             this.txtBoxEmail1Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxEmail1Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmail1Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxEmail1Contactos.Location = new System.Drawing.Point(126, 303);
+            this.txtBoxEmail1Contactos.Location = new System.Drawing.Point(103, 387);
             this.txtBoxEmail1Contactos.Name = "txtBoxEmail1Contactos";
-            this.txtBoxEmail1Contactos.Size = new System.Drawing.Size(199, 21);
+            this.txtBoxEmail1Contactos.Size = new System.Drawing.Size(365, 21);
             this.txtBoxEmail1Contactos.TabIndex = 40;
             // 
             // txtBoxTel2Contactos
@@ -6753,7 +6973,7 @@
             this.txtBoxTel2Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxTel2Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTel2Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxTel2Contactos.Location = new System.Drawing.Point(127, 202);
+            this.txtBoxTel2Contactos.Location = new System.Drawing.Point(104, 286);
             this.txtBoxTel2Contactos.Name = "txtBoxTel2Contactos";
             this.txtBoxTel2Contactos.Size = new System.Drawing.Size(198, 21);
             this.txtBoxTel2Contactos.TabIndex = 36;
@@ -6763,7 +6983,7 @@
             this.lblEmail1Contactos.AutoSize = true;
             this.lblEmail1Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail1Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblEmail1Contactos.Location = new System.Drawing.Point(29, 303);
+            this.lblEmail1Contactos.Location = new System.Drawing.Point(36, 387);
             this.lblEmail1Contactos.Name = "lblEmail1Contactos";
             this.lblEmail1Contactos.Size = new System.Drawing.Size(53, 17);
             this.lblEmail1Contactos.TabIndex = 48;
@@ -6774,7 +6994,7 @@
             this.lblTel2Contactos.AutoSize = true;
             this.lblTel2Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel2Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTel2Contactos.Location = new System.Drawing.Point(29, 202);
+            this.lblTel2Contactos.Location = new System.Drawing.Point(36, 286);
             this.lblTel2Contactos.Name = "lblTel2Contactos";
             this.lblTel2Contactos.Size = new System.Drawing.Size(42, 17);
             this.lblTel2Contactos.TabIndex = 46;
@@ -6785,7 +7005,7 @@
             this.txtBoxTel1Contactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxTel1Contactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTel1Contactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxTel1Contactos.Location = new System.Drawing.Point(126, 166);
+            this.txtBoxTel1Contactos.Location = new System.Drawing.Point(103, 250);
             this.txtBoxTel1Contactos.Name = "txtBoxTel1Contactos";
             this.txtBoxTel1Contactos.Size = new System.Drawing.Size(199, 21);
             this.txtBoxTel1Contactos.TabIndex = 34;
@@ -6795,8 +7015,9 @@
             this.txtBoxPuestoContactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPuestoContactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPuestoContactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPuestoContactos.Location = new System.Drawing.Point(126, 134);
+            this.txtBoxPuestoContactos.Location = new System.Drawing.Point(103, 218);
             this.txtBoxPuestoContactos.Name = "txtBoxPuestoContactos";
+            this.txtBoxPuestoContactos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtBoxPuestoContactos.Size = new System.Drawing.Size(362, 21);
             this.txtBoxPuestoContactos.TabIndex = 33;
             this.txtBoxPuestoContactos.Text = "PUESTO EJECUTIVO EN EMPRESA";
@@ -6806,7 +7027,7 @@
             this.txtBoxNombreContactos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxNombreContactos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNombreContactos.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxNombreContactos.Location = new System.Drawing.Point(126, 99);
+            this.txtBoxNombreContactos.Location = new System.Drawing.Point(103, 183);
             this.txtBoxNombreContactos.Name = "txtBoxNombreContactos";
             this.txtBoxNombreContactos.Size = new System.Drawing.Size(362, 21);
             this.txtBoxNombreContactos.TabIndex = 32;
@@ -6817,7 +7038,7 @@
             this.lblPuestoContactos.AutoSize = true;
             this.lblPuestoContactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuestoContactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPuestoContactos.Location = new System.Drawing.Point(29, 134);
+            this.lblPuestoContactos.Location = new System.Drawing.Point(36, 218);
             this.lblPuestoContactos.Name = "lblPuestoContactos";
             this.lblPuestoContactos.Size = new System.Drawing.Size(50, 17);
             this.lblPuestoContactos.TabIndex = 42;
@@ -6828,7 +7049,7 @@
             this.lblTel1Contactos.AutoSize = true;
             this.lblTel1Contactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel1Contactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTel1Contactos.Location = new System.Drawing.Point(29, 166);
+            this.lblTel1Contactos.Location = new System.Drawing.Point(36, 250);
             this.lblTel1Contactos.Name = "lblTel1Contactos";
             this.lblTel1Contactos.Size = new System.Drawing.Size(42, 17);
             this.lblTel1Contactos.TabIndex = 41;
@@ -6839,7 +7060,7 @@
             this.lblNombreContactos.AutoSize = true;
             this.lblNombreContactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreContactos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblNombreContactos.Location = new System.Drawing.Point(28, 99);
+            this.lblNombreContactos.Location = new System.Drawing.Point(35, 183);
             this.lblNombreContactos.Name = "lblNombreContactos";
             this.lblNombreContactos.Size = new System.Drawing.Size(58, 17);
             this.lblNombreContactos.TabIndex = 40;
@@ -6874,7 +7095,7 @@
             this.pnlDatosBancarios.Controls.Add(this.lblDatosBancariosEX);
             this.pnlDatosBancarios.Controls.Add(this.pnlDatosBancariosMX);
             this.pnlDatosBancarios.Controls.Add(this.lblDatosBancariosMX);
-            this.pnlDatosBancarios.Location = new System.Drawing.Point(3, 1304);
+            this.pnlDatosBancarios.Location = new System.Drawing.Point(3, 1407);
             this.pnlDatosBancarios.Name = "pnlDatosBancarios";
             this.pnlDatosBancarios.Size = new System.Drawing.Size(999, 1406);
             this.pnlDatosBancarios.TabIndex = 51;
@@ -6883,6 +7104,7 @@
             // pnlDatosBancariosEX
             // 
             this.pnlDatosBancariosEX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDatosBancariosEX.Controls.Add(this.dataGridDatosBancariosEX);
             this.pnlDatosBancariosEX.Controls.Add(this.checkBoxDatosBancariosEXRevisado);
             this.pnlDatosBancariosEX.Controls.Add(this.btnEsPreferenciaDatosBancariosEX);
             this.pnlDatosBancariosEX.Controls.Add(this.lblCuentaDePreferenciaClienteEX);
@@ -6929,7 +7151,6 @@
             this.pnlDatosBancariosEX.Controls.Add(this.lblNombreBancoDestinoEX);
             this.pnlDatosBancariosEX.Controls.Add(this.comboBoxDivisaCuentaBancariaEX);
             this.pnlDatosBancariosEX.Controls.Add(this.lblDivisaCuentaBancariaEX);
-            this.pnlDatosBancariosEX.Controls.Add(this.pnlListaCuentasBancariasEX);
             this.pnlDatosBancariosEX.Controls.Add(this.btnLimpiarCamposDatosBancariosEX);
             this.pnlDatosBancariosEX.Controls.Add(this.btnEditarCuentaEX);
             this.pnlDatosBancariosEX.Controls.Add(this.btnAgregarCuentaEX);
@@ -6939,7 +7160,7 @@
             this.pnlDatosBancariosEX.Controls.Add(this.btnEliminarCuentaEX);
             this.pnlDatosBancariosEX.Location = new System.Drawing.Point(17, 531);
             this.pnlDatosBancariosEX.Name = "pnlDatosBancariosEX";
-            this.pnlDatosBancariosEX.Size = new System.Drawing.Size(945, 832);
+            this.pnlDatosBancariosEX.Size = new System.Drawing.Size(945, 859);
             this.pnlDatosBancariosEX.TabIndex = 64;
             this.pnlDatosBancariosEX.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_2);
             // 
@@ -7093,9 +7314,9 @@
             this.txtBoxPaisDatosBancariosEX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPaisDatosBancariosEX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPaisDatosBancariosEX.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPaisDatosBancariosEX.Location = new System.Drawing.Point(432, 749);
+            this.txtBoxPaisDatosBancariosEX.Location = new System.Drawing.Point(124, 817);
             this.txtBoxPaisDatosBancariosEX.Name = "txtBoxPaisDatosBancariosEX";
-            this.txtBoxPaisDatosBancariosEX.Size = new System.Drawing.Size(90, 21);
+            this.txtBoxPaisDatosBancariosEX.Size = new System.Drawing.Size(225, 21);
             this.txtBoxPaisDatosBancariosEX.TabIndex = 86;
             // 
             // lblPaisDatosBancariosEX
@@ -7103,7 +7324,7 @@
             this.lblPaisDatosBancariosEX.AutoSize = true;
             this.lblPaisDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaisDatosBancariosEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPaisDatosBancariosEX.Location = new System.Drawing.Point(393, 749);
+            this.lblPaisDatosBancariosEX.Location = new System.Drawing.Point(30, 820);
             this.lblPaisDatosBancariosEX.Name = "lblPaisDatosBancariosEX";
             this.lblPaisDatosBancariosEX.Size = new System.Drawing.Size(33, 17);
             this.lblPaisDatosBancariosEX.TabIndex = 106;
@@ -7156,7 +7377,7 @@
             this.txtBoxEstadoDatosBancariosEX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxEstadoDatosBancariosEX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEstadoDatosBancariosEX.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxEstadoDatosBancariosEX.Location = new System.Drawing.Point(122, 749);
+            this.txtBoxEstadoDatosBancariosEX.Location = new System.Drawing.Point(124, 780);
             this.txtBoxEstadoDatosBancariosEX.Name = "txtBoxEstadoDatosBancariosEX";
             this.txtBoxEstadoDatosBancariosEX.Size = new System.Drawing.Size(225, 21);
             this.txtBoxEstadoDatosBancariosEX.TabIndex = 85;
@@ -7166,7 +7387,7 @@
             this.lblEstadoDatosBancariosEX.AutoSize = true;
             this.lblEstadoDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoDatosBancariosEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblEstadoDatosBancariosEX.Location = new System.Drawing.Point(25, 749);
+            this.lblEstadoDatosBancariosEX.Location = new System.Drawing.Point(27, 780);
             this.lblEstadoDatosBancariosEX.Name = "lblEstadoDatosBancariosEX";
             this.lblEstadoDatosBancariosEX.Size = new System.Drawing.Size(49, 17);
             this.lblEstadoDatosBancariosEX.TabIndex = 100;
@@ -7177,7 +7398,7 @@
             this.txtBoxPoblacionDatosBancariosEX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPoblacionDatosBancariosEX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPoblacionDatosBancariosEX.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPoblacionDatosBancariosEX.Location = new System.Drawing.Point(122, 715);
+            this.txtBoxPoblacionDatosBancariosEX.Location = new System.Drawing.Point(124, 746);
             this.txtBoxPoblacionDatosBancariosEX.Name = "txtBoxPoblacionDatosBancariosEX";
             this.txtBoxPoblacionDatosBancariosEX.Size = new System.Drawing.Size(225, 21);
             this.txtBoxPoblacionDatosBancariosEX.TabIndex = 84;
@@ -7187,7 +7408,7 @@
             this.txtBoxCPDatosBancariosEX.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCPDatosBancariosEX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCPDatosBancariosEX.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCPDatosBancariosEX.Location = new System.Drawing.Point(123, 678);
+            this.txtBoxCPDatosBancariosEX.Location = new System.Drawing.Point(125, 709);
             this.txtBoxCPDatosBancariosEX.Name = "txtBoxCPDatosBancariosEX";
             this.txtBoxCPDatosBancariosEX.Size = new System.Drawing.Size(88, 21);
             this.txtBoxCPDatosBancariosEX.TabIndex = 83;
@@ -7197,7 +7418,7 @@
             this.lblPoblacionDatosBancariosEX.AutoSize = true;
             this.lblPoblacionDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPoblacionDatosBancariosEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPoblacionDatosBancariosEX.Location = new System.Drawing.Point(25, 715);
+            this.lblPoblacionDatosBancariosEX.Location = new System.Drawing.Point(27, 746);
             this.lblPoblacionDatosBancariosEX.Name = "lblPoblacionDatosBancariosEX";
             this.lblPoblacionDatosBancariosEX.Size = new System.Drawing.Size(69, 17);
             this.lblPoblacionDatosBancariosEX.TabIndex = 97;
@@ -7208,7 +7429,7 @@
             this.lblCPDatosBancariosEX.AutoSize = true;
             this.lblCPDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPDatosBancariosEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCPDatosBancariosEX.Location = new System.Drawing.Point(25, 678);
+            this.lblCPDatosBancariosEX.Location = new System.Drawing.Point(27, 709);
             this.lblCPDatosBancariosEX.Name = "lblCPDatosBancariosEX";
             this.lblCPDatosBancariosEX.Size = new System.Drawing.Size(94, 17);
             this.lblCPDatosBancariosEX.TabIndex = 96;
@@ -7220,8 +7441,10 @@
             this.txtBoxInfAdicionalDatosBancariosEX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxInfAdicionalDatosBancariosEX.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxInfAdicionalDatosBancariosEX.Location = new System.Drawing.Point(122, 642);
+            this.txtBoxInfAdicionalDatosBancariosEX.Multiline = true;
             this.txtBoxInfAdicionalDatosBancariosEX.Name = "txtBoxInfAdicionalDatosBancariosEX";
-            this.txtBoxInfAdicionalDatosBancariosEX.Size = new System.Drawing.Size(400, 21);
+            this.txtBoxInfAdicionalDatosBancariosEX.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxInfAdicionalDatosBancariosEX.Size = new System.Drawing.Size(400, 54);
             this.txtBoxInfAdicionalDatosBancariosEX.TabIndex = 82;
             this.txtBoxInfAdicionalDatosBancariosEX.Text = "EJ. ENTRE CALLES; REFERENCIAS LOCALES";
             // 
@@ -7444,176 +7667,10 @@
             this.lblDivisaCuentaBancariaEX.TabIndex = 61;
             this.lblDivisaCuentaBancariaEX.Text = "Divisa Cuenta Bancaria";
             // 
-            // pnlListaCuentasBancariasEX
-            // 
-            this.pnlListaCuentasBancariasEX.AutoScroll = true;
-            this.pnlListaCuentasBancariasEX.Controls.Add(this.dataGridDatosBancariosEX);
-            this.pnlListaCuentasBancariasEX.Location = new System.Drawing.Point(551, 62);
-            this.pnlListaCuentasBancariasEX.Name = "pnlListaCuentasBancariasEX";
-            this.pnlListaCuentasBancariasEX.Size = new System.Drawing.Size(367, 208);
-            this.pnlListaCuentasBancariasEX.TabIndex = 60;
-            // 
-            // dataGridDatosBancariosEX
-            // 
-            this.dataGridDatosBancariosEX.AllowUserToAddRows = false;
-            this.dataGridDatosBancariosEX.AllowUserToDeleteRows = false;
-            this.dataGridDatosBancariosEX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDatosBancariosEX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BancoEXid,
-            this.NombreBancoDestino,
-            this.ClaveBancoDestino,
-            this.NombreDestinatario,
-            this.NumeroCuenta,
-            this.Divisa,
-            this.MontoMaximoAPagar,
-            this.NombreBancoIntermediario,
-            this.ClaveBancoIntermediario,
-            this.NumIdDireccionDestinatario,
-            this.Vigencia,
-            this.FechaDeVigencia,
-            this.TipoRelacionConDestinatario,
-            this.MotivoPago,
-            this.Preferente,
-            this.EstatusActividad});
-            this.dataGridDatosBancariosEX.Location = new System.Drawing.Point(-1, 0);
-            this.dataGridDatosBancariosEX.Name = "dataGridDatosBancariosEX";
-            this.dataGridDatosBancariosEX.ReadOnly = true;
-            this.dataGridDatosBancariosEX.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridDatosBancariosEX.Size = new System.Drawing.Size(746, 190);
-            this.dataGridDatosBancariosEX.TabIndex = 92;
-            this.dataGridDatosBancariosEX.Click += new System.EventHandler(this.dataGridDatosBancariosEX_Click);
-            // 
-            // BancoEXid
-            // 
-            this.BancoEXid.DataPropertyName = "BancoEXid";
-            this.BancoEXid.HeaderText = "BancoEXid";
-            this.BancoEXid.Name = "BancoEXid";
-            this.BancoEXid.ReadOnly = true;
-            this.BancoEXid.Visible = false;
-            // 
-            // NombreBancoDestino
-            // 
-            this.NombreBancoDestino.DataPropertyName = "NombreBancoDestino";
-            this.NombreBancoDestino.HeaderText = "Nombre Banco Destino";
-            this.NombreBancoDestino.Name = "NombreBancoDestino";
-            this.NombreBancoDestino.ReadOnly = true;
-            this.NombreBancoDestino.Width = 150;
-            // 
-            // ClaveBancoDestino
-            // 
-            this.ClaveBancoDestino.DataPropertyName = "ClaveBancoDestino";
-            this.ClaveBancoDestino.HeaderText = "Clave Banco Destino";
-            this.ClaveBancoDestino.Name = "ClaveBancoDestino";
-            this.ClaveBancoDestino.ReadOnly = true;
-            this.ClaveBancoDestino.Width = 150;
-            // 
-            // NombreDestinatario
-            // 
-            this.NombreDestinatario.DataPropertyName = "NombreDestinatario";
-            this.NombreDestinatario.HeaderText = "Nombre Destinatario";
-            this.NombreDestinatario.Name = "NombreDestinatario";
-            this.NombreDestinatario.ReadOnly = true;
-            this.NombreDestinatario.Width = 150;
-            // 
-            // NumeroCuenta
-            // 
-            this.NumeroCuenta.DataPropertyName = "NumeroCuenta";
-            this.NumeroCuenta.HeaderText = "Numero Cuenta";
-            this.NumeroCuenta.Name = "NumeroCuenta";
-            this.NumeroCuenta.ReadOnly = true;
-            this.NumeroCuenta.Width = 150;
-            // 
-            // Divisa
-            // 
-            this.Divisa.DataPropertyName = "Divisa";
-            this.Divisa.HeaderText = "Divisa";
-            this.Divisa.Name = "Divisa";
-            this.Divisa.ReadOnly = true;
-            this.Divisa.Visible = false;
-            // 
-            // MontoMaximoAPagar
-            // 
-            this.MontoMaximoAPagar.DataPropertyName = "MontoMaximoAPagar";
-            this.MontoMaximoAPagar.HeaderText = "MontoMaximoAPagar";
-            this.MontoMaximoAPagar.Name = "MontoMaximoAPagar";
-            this.MontoMaximoAPagar.ReadOnly = true;
-            this.MontoMaximoAPagar.Visible = false;
-            // 
-            // NombreBancoIntermediario
-            // 
-            this.NombreBancoIntermediario.DataPropertyName = "NombreBancoIntermediario";
-            this.NombreBancoIntermediario.HeaderText = "NombreBancoIntermediario";
-            this.NombreBancoIntermediario.Name = "NombreBancoIntermediario";
-            this.NombreBancoIntermediario.ReadOnly = true;
-            this.NombreBancoIntermediario.Visible = false;
-            // 
-            // ClaveBancoIntermediario
-            // 
-            this.ClaveBancoIntermediario.DataPropertyName = "ClaveBancoIntermediario";
-            this.ClaveBancoIntermediario.HeaderText = "ClaveBancoIntermediario";
-            this.ClaveBancoIntermediario.Name = "ClaveBancoIntermediario";
-            this.ClaveBancoIntermediario.ReadOnly = true;
-            this.ClaveBancoIntermediario.Visible = false;
-            // 
-            // NumIdDireccionDestinatario
-            // 
-            this.NumIdDireccionDestinatario.DataPropertyName = "NumIdDireccionDestinatario";
-            this.NumIdDireccionDestinatario.HeaderText = "NumIdDireccionDestinatario";
-            this.NumIdDireccionDestinatario.Name = "NumIdDireccionDestinatario";
-            this.NumIdDireccionDestinatario.ReadOnly = true;
-            this.NumIdDireccionDestinatario.Visible = false;
-            // 
-            // Vigencia
-            // 
-            this.Vigencia.DataPropertyName = "Vigencia";
-            this.Vigencia.HeaderText = "Vigencia";
-            this.Vigencia.Name = "Vigencia";
-            this.Vigencia.ReadOnly = true;
-            this.Vigencia.Visible = false;
-            // 
-            // FechaDeVigencia
-            // 
-            this.FechaDeVigencia.DataPropertyName = "FechaDeVigencia";
-            this.FechaDeVigencia.HeaderText = "FechaDeVigencia";
-            this.FechaDeVigencia.Name = "FechaDeVigencia";
-            this.FechaDeVigencia.ReadOnly = true;
-            this.FechaDeVigencia.Visible = false;
-            // 
-            // TipoRelacionConDestinatario
-            // 
-            this.TipoRelacionConDestinatario.DataPropertyName = "TipoRelacionConDestinatario";
-            this.TipoRelacionConDestinatario.HeaderText = "TipoRelacionConDestinatario";
-            this.TipoRelacionConDestinatario.Name = "TipoRelacionConDestinatario";
-            this.TipoRelacionConDestinatario.ReadOnly = true;
-            this.TipoRelacionConDestinatario.Visible = false;
-            // 
-            // MotivoPago
-            // 
-            this.MotivoPago.DataPropertyName = "MotivoPago";
-            this.MotivoPago.HeaderText = "MotivoPago";
-            this.MotivoPago.Name = "MotivoPago";
-            this.MotivoPago.ReadOnly = true;
-            this.MotivoPago.Visible = false;
-            // 
-            // Preferente
-            // 
-            this.Preferente.DataPropertyName = "Preferente";
-            this.Preferente.HeaderText = "Preferente";
-            this.Preferente.Name = "Preferente";
-            this.Preferente.ReadOnly = true;
-            // 
-            // EstatusActividad
-            // 
-            this.EstatusActividad.DataPropertyName = "EstatusActividad";
-            this.EstatusActividad.HeaderText = "EstatusActividad";
-            this.EstatusActividad.Name = "EstatusActividad";
-            this.EstatusActividad.ReadOnly = true;
-            this.EstatusActividad.Visible = false;
-            // 
             // btnLimpiarCamposDatosBancariosEX
             // 
             this.btnLimpiarCamposDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposDatosBancariosEX.Location = new System.Drawing.Point(554, 352);
+            this.btnLimpiarCamposDatosBancariosEX.Location = new System.Drawing.Point(525, 312);
             this.btnLimpiarCamposDatosBancariosEX.Name = "btnLimpiarCamposDatosBancariosEX";
             this.btnLimpiarCamposDatosBancariosEX.Size = new System.Drawing.Size(354, 28);
             this.btnLimpiarCamposDatosBancariosEX.TabIndex = 90;
@@ -7625,7 +7682,7 @@
             // 
             this.btnEditarCuentaEX.BackColor = System.Drawing.Color.Wheat;
             this.btnEditarCuentaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCuentaEX.Location = new System.Drawing.Point(829, 318);
+            this.btnEditarCuentaEX.Location = new System.Drawing.Point(800, 278);
             this.btnEditarCuentaEX.Name = "btnEditarCuentaEX";
             this.btnEditarCuentaEX.Size = new System.Drawing.Size(108, 23);
             this.btnEditarCuentaEX.TabIndex = 89;
@@ -7637,7 +7694,7 @@
             // 
             this.btnAgregarCuentaEX.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAgregarCuentaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCuentaEX.Location = new System.Drawing.Point(535, 318);
+            this.btnAgregarCuentaEX.Location = new System.Drawing.Point(506, 278);
             this.btnAgregarCuentaEX.Name = "btnAgregarCuentaEX";
             this.btnAgregarCuentaEX.Size = new System.Drawing.Size(108, 23);
             this.btnAgregarCuentaEX.TabIndex = 87;
@@ -7682,7 +7739,7 @@
             // 
             this.btnEliminarCuentaEX.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarCuentaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCuentaEX.Location = new System.Drawing.Point(679, 318);
+            this.btnEliminarCuentaEX.Location = new System.Drawing.Point(650, 278);
             this.btnEliminarCuentaEX.Name = "btnEliminarCuentaEX";
             this.btnEliminarCuentaEX.Size = new System.Drawing.Size(108, 23);
             this.btnEliminarCuentaEX.TabIndex = 88;
@@ -7704,6 +7761,7 @@
             // pnlDatosBancariosMX
             // 
             this.pnlDatosBancariosMX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDatosBancariosMX.Controls.Add(this.dataGridViewDatosBancariosMX);
             this.pnlDatosBancariosMX.Controls.Add(this.checkBoxDatosBancariosMXRevisado);
             this.pnlDatosBancariosMX.Controls.Add(this.btnEsPreferenciaDatosBancariosMX);
             this.pnlDatosBancariosMX.Controls.Add(this.comboBoxBancoDatosBancariosMX);
@@ -7712,7 +7770,6 @@
             this.pnlDatosBancariosMX.Controls.Add(this.lblNumeroCuentaMX);
             this.pnlDatosBancariosMX.Controls.Add(this.comboBoxDivisaCuentaBancariaMX);
             this.pnlDatosBancariosMX.Controls.Add(this.lblDivisaCuentaBancariaMX);
-            this.pnlDatosBancariosMX.Controls.Add(this.pnlListaCuentasBancariasMX);
             this.pnlDatosBancariosMX.Controls.Add(this.btnLimpiarCamposDatosBancariosMX);
             this.pnlDatosBancariosMX.Controls.Add(this.btnEditarCuentaMX);
             this.pnlDatosBancariosMX.Controls.Add(this.btnAgregarCuentaMX);
@@ -7824,111 +7881,6 @@
             this.lblDivisaCuentaBancariaMX.Size = new System.Drawing.Size(149, 17);
             this.lblDivisaCuentaBancariaMX.TabIndex = 79;
             this.lblDivisaCuentaBancariaMX.Text = "Divisa Cuenta Bancaria";
-            // 
-            // pnlListaCuentasBancariasMX
-            // 
-            this.pnlListaCuentasBancariasMX.AutoScroll = true;
-            this.pnlListaCuentasBancariasMX.Controls.Add(this.dataGridViewDatosBancariosMX);
-            this.pnlListaCuentasBancariasMX.Location = new System.Drawing.Point(551, 42);
-            this.pnlListaCuentasBancariasMX.Name = "pnlListaCuentasBancariasMX";
-            this.pnlListaCuentasBancariasMX.Size = new System.Drawing.Size(367, 260);
-            this.pnlListaCuentasBancariasMX.TabIndex = 60;
-            // 
-            // dataGridViewDatosBancariosMX
-            // 
-            this.dataGridViewDatosBancariosMX.AllowUserToAddRows = false;
-            this.dataGridViewDatosBancariosMX.AllowUserToDeleteRows = false;
-            this.dataGridViewDatosBancariosMX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDatosBancariosMX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BancoMXid,
-            this.EsPreferencia,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn50,
-            this.NumeroCuentaDestinatario,
-            this.Sucursal,
-            this.DivisaAPagar,
-            this.EstatusActivo});
-            this.dataGridViewDatosBancariosMX.Location = new System.Drawing.Point(1, 0);
-            this.dataGridViewDatosBancariosMX.Name = "dataGridViewDatosBancariosMX";
-            this.dataGridViewDatosBancariosMX.ReadOnly = true;
-            this.dataGridViewDatosBancariosMX.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewDatosBancariosMX.Size = new System.Drawing.Size(432, 238);
-            this.dataGridViewDatosBancariosMX.TabIndex = 63;
-            this.dataGridViewDatosBancariosMX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-            this.dataGridViewDatosBancariosMX.Click += new System.EventHandler(this.dataGridViewDatosBancariosMX_Click);
-            // 
-            // BancoMXid
-            // 
-            this.BancoMXid.DataPropertyName = "BancoMXid";
-            this.BancoMXid.HeaderText = "BancoMXid";
-            this.BancoMXid.Name = "BancoMXid";
-            this.BancoMXid.ReadOnly = true;
-            this.BancoMXid.Visible = false;
-            // 
-            // EsPreferencia
-            // 
-            this.EsPreferencia.DataPropertyName = "EsPreferencia";
-            this.EsPreferencia.HeaderText = "Preferencia";
-            this.EsPreferencia.Name = "EsPreferencia";
-            this.EsPreferencia.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "PrioridadDeUso";
-            this.dataGridViewTextBoxColumn34.HeaderText = "PrioridadDeUso";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.ReadOnly = true;
-            this.dataGridViewTextBoxColumn34.Visible = false;
-            this.dataGridViewTextBoxColumn34.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "NombreBancoDestino";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Banco";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.ReadOnly = true;
-            this.dataGridViewTextBoxColumn35.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.DataPropertyName = "CLABE";
-            this.dataGridViewTextBoxColumn50.HeaderText = "CLABE";
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.ReadOnly = true;
-            this.dataGridViewTextBoxColumn50.Width = 175;
-            // 
-            // NumeroCuentaDestinatario
-            // 
-            this.NumeroCuentaDestinatario.DataPropertyName = "NumeroCuentaDestinatario";
-            this.NumeroCuentaDestinatario.HeaderText = "NumeroCuentaDestinatario";
-            this.NumeroCuentaDestinatario.Name = "NumeroCuentaDestinatario";
-            this.NumeroCuentaDestinatario.ReadOnly = true;
-            this.NumeroCuentaDestinatario.Visible = false;
-            // 
-            // Sucursal
-            // 
-            this.Sucursal.DataPropertyName = "Sucursal";
-            this.Sucursal.HeaderText = "Sucursal";
-            this.Sucursal.Name = "Sucursal";
-            this.Sucursal.ReadOnly = true;
-            this.Sucursal.Visible = false;
-            // 
-            // DivisaAPagar
-            // 
-            this.DivisaAPagar.DataPropertyName = "DivisaAPagar";
-            this.DivisaAPagar.HeaderText = "DivisaAPagar";
-            this.DivisaAPagar.Name = "DivisaAPagar";
-            this.DivisaAPagar.ReadOnly = true;
-            this.DivisaAPagar.Visible = false;
-            // 
-            // EstatusActivo
-            // 
-            this.EstatusActivo.DataPropertyName = "EstatusActivo";
-            this.EstatusActivo.HeaderText = "EstatusActivo";
-            this.EstatusActivo.Name = "EstatusActivo";
-            this.EstatusActivo.ReadOnly = true;
-            this.EstatusActivo.Visible = false;
             // 
             // btnLimpiarCamposDatosBancariosMX
             // 
@@ -8246,16 +8198,597 @@
             // tabOpciones
             // 
             this.tabOpciones.Controls.Add(this.tabDatosGenerales);
-            this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabCondiciones);
-            this.tabOpciones.Controls.Add(this.tabExpediente);
+            this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabAcuerdos);
-            this.tabOpciones.Location = new System.Drawing.Point(33, 147);
+            this.tabOpciones.Controls.Add(this.tabExpediente);
+            this.tabOpciones.Location = new System.Drawing.Point(23, 132);
+            this.tabOpciones.MaximumSize = new System.Drawing.Size(1060, 516);
+            this.tabOpciones.MinimumSize = new System.Drawing.Size(1030, 516);
             this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 4;
+            this.tabOpciones.SelectedIndex = 1;
             this.tabOpciones.Size = new System.Drawing.Size(1030, 516);
-            this.tabOpciones.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabOpciones.TabIndex = 1;
+            // 
+            // lblFuncionContacto
+            // 
+            this.lblFuncionContacto.AutoSize = true;
+            this.lblFuncionContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuncionContacto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblFuncionContacto.Location = new System.Drawing.Point(102, 15);
+            this.lblFuncionContacto.Name = "lblFuncionContacto";
+            this.lblFuncionContacto.Size = new System.Drawing.Size(135, 17);
+            this.lblFuncionContacto.TabIndex = 95;
+            this.lblFuncionContacto.Text = "Función de Contacto";
+            // 
+            // comboBoxFuncionContacto
+            // 
+            this.comboBoxFuncionContacto.Font = new System.Drawing.Font("Microsoft Tai Le", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFuncionContacto.FormattingEnabled = true;
+            this.comboBoxFuncionContacto.Items.AddRange(new object[] {
+            "Bodega",
+            "Fiscal",
+            "Sucursal",
+            "Cuenta Bancaria"});
+            this.comboBoxFuncionContacto.Location = new System.Drawing.Point(103, 37);
+            this.comboBoxFuncionContacto.Name = "comboBoxFuncionContacto";
+            this.comboBoxFuncionContacto.Size = new System.Drawing.Size(365, 49);
+            this.comboBoxFuncionContacto.TabIndex = 96;
+            // 
+            // lblComentariosContacto
+            // 
+            this.lblComentariosContacto.AutoSize = true;
+            this.lblComentariosContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComentariosContacto.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblComentariosContacto.Location = new System.Drawing.Point(100, 451);
+            this.lblComentariosContacto.Name = "lblComentariosContacto";
+            this.lblComentariosContacto.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblComentariosContacto.Size = new System.Drawing.Size(208, 17);
+            this.lblComentariosContacto.TabIndex = 291;
+            this.lblComentariosContacto.Text = "Comentarios Acerca de Contacto";
+            // 
+            // txtBoxComentariosContacto
+            // 
+            this.txtBoxComentariosContacto.Location = new System.Drawing.Point(104, 471);
+            this.txtBoxComentariosContacto.Multiline = true;
+            this.txtBoxComentariosContacto.Name = "txtBoxComentariosContacto";
+            this.txtBoxComentariosContacto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxComentariosContacto.Size = new System.Drawing.Size(364, 74);
+            this.txtBoxComentariosContacto.TabIndex = 292;
+            // 
+            // dataGridContactos
+            // 
+            this.dataGridContactos.AllowUserToAddRows = false;
+            this.dataGridContactos.AllowUserToDeleteRows = false;
+            this.dataGridContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridContactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Contactoid,
+            this.PrioridadDeUso,
+            this.NombreCompleto,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn31,
+            this.FuncionesContacto,
+            this.TelefonoPrimario,
+            this.ExtensionTelefonoPrimario,
+            this.TelefonoSecundario,
+            this.ExtensionTelefonoSecundario,
+            this.Celular1,
+            this.Celular2,
+            this.Email1,
+            this.Email2,
+            this.Comentarios});
+            this.dataGridContactos.Location = new System.Drawing.Point(547, 67);
+            this.dataGridContactos.Name = "dataGridContactos";
+            this.dataGridContactos.ReadOnly = true;
+            this.dataGridContactos.Size = new System.Drawing.Size(384, 240);
+            this.dataGridContactos.TabIndex = 293;
+            // 
+            // Contactoid
+            // 
+            this.Contactoid.DataPropertyName = "Contactoid";
+            this.Contactoid.HeaderText = "Contactoid";
+            this.Contactoid.Name = "Contactoid";
+            this.Contactoid.ReadOnly = true;
+            this.Contactoid.Visible = false;
+            // 
+            // PrioridadDeUso
+            // 
+            this.PrioridadDeUso.DataPropertyName = "PrioridadDeUso";
+            this.PrioridadDeUso.HeaderText = "Prioridad";
+            this.PrioridadDeUso.Name = "PrioridadDeUso";
+            this.PrioridadDeUso.ReadOnly = true;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.DataPropertyName = "NombreCompleto";
+            this.NombreCompleto.HeaderText = "NombreCompleto";
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
+            this.NombreCompleto.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "Puesto";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Puesto";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            this.dataGridViewTextBoxColumn33.Width = 175;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn31.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.Width = 150;
+            // 
+            // FuncionesContacto
+            // 
+            this.FuncionesContacto.DataPropertyName = "FuncionesContacto";
+            this.FuncionesContacto.HeaderText = "Función Contacto";
+            this.FuncionesContacto.Name = "FuncionesContacto";
+            this.FuncionesContacto.ReadOnly = true;
+            this.FuncionesContacto.Width = 200;
+            // 
+            // TelefonoPrimario
+            // 
+            this.TelefonoPrimario.DataPropertyName = "TelefonoPrimario";
+            this.TelefonoPrimario.HeaderText = "TelefonoPrimario";
+            this.TelefonoPrimario.Name = "TelefonoPrimario";
+            this.TelefonoPrimario.ReadOnly = true;
+            this.TelefonoPrimario.Visible = false;
+            // 
+            // ExtensionTelefonoPrimario
+            // 
+            this.ExtensionTelefonoPrimario.DataPropertyName = "ExtensionTelefonoPrimario";
+            this.ExtensionTelefonoPrimario.HeaderText = "ExtensionTelefonoPrimario";
+            this.ExtensionTelefonoPrimario.Name = "ExtensionTelefonoPrimario";
+            this.ExtensionTelefonoPrimario.ReadOnly = true;
+            this.ExtensionTelefonoPrimario.Visible = false;
+            // 
+            // TelefonoSecundario
+            // 
+            this.TelefonoSecundario.DataPropertyName = "TelefonoSecundario";
+            this.TelefonoSecundario.HeaderText = "TelefonoSecundario";
+            this.TelefonoSecundario.Name = "TelefonoSecundario";
+            this.TelefonoSecundario.ReadOnly = true;
+            this.TelefonoSecundario.Visible = false;
+            // 
+            // ExtensionTelefonoSecundario
+            // 
+            this.ExtensionTelefonoSecundario.DataPropertyName = "ExtensionTelefonoSecundario";
+            this.ExtensionTelefonoSecundario.HeaderText = "ExtensionTelefonoSecundario";
+            this.ExtensionTelefonoSecundario.Name = "ExtensionTelefonoSecundario";
+            this.ExtensionTelefonoSecundario.ReadOnly = true;
+            this.ExtensionTelefonoSecundario.Visible = false;
+            // 
+            // Celular1
+            // 
+            this.Celular1.DataPropertyName = "Celular1";
+            this.Celular1.HeaderText = "Celular1";
+            this.Celular1.Name = "Celular1";
+            this.Celular1.ReadOnly = true;
+            this.Celular1.Visible = false;
+            // 
+            // Celular2
+            // 
+            this.Celular2.DataPropertyName = "Celular2";
+            this.Celular2.HeaderText = "Celular2";
+            this.Celular2.Name = "Celular2";
+            this.Celular2.ReadOnly = true;
+            this.Celular2.Visible = false;
+            // 
+            // Email1
+            // 
+            this.Email1.DataPropertyName = "Email1";
+            this.Email1.HeaderText = "Email1";
+            this.Email1.Name = "Email1";
+            this.Email1.ReadOnly = true;
+            this.Email1.Visible = false;
+            // 
+            // Email2
+            // 
+            this.Email2.DataPropertyName = "Email2";
+            this.Email2.HeaderText = "Email2";
+            this.Email2.Name = "Email2";
+            this.Email2.ReadOnly = true;
+            this.Email2.Visible = false;
+            // 
+            // Comentarios
+            // 
+            this.Comentarios.DataPropertyName = "Comentarios";
+            this.Comentarios.HeaderText = "Comentarios";
+            this.Comentarios.Name = "Comentarios";
+            this.Comentarios.ReadOnly = true;
+            this.Comentarios.Visible = false;
+            // 
+            // dataGridViewDatosBancariosMX
+            // 
+            this.dataGridViewDatosBancariosMX.AllowUserToAddRows = false;
+            this.dataGridViewDatosBancariosMX.AllowUserToDeleteRows = false;
+            this.dataGridViewDatosBancariosMX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDatosBancariosMX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BancoMXid,
+            this.EsPreferencia,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn50,
+            this.NumeroCuentaDestinatario,
+            this.Sucursal,
+            this.DivisaAPagar,
+            this.EstatusActivo});
+            this.dataGridViewDatosBancariosMX.Location = new System.Drawing.Point(536, 54);
+            this.dataGridViewDatosBancariosMX.Name = "dataGridViewDatosBancariosMX";
+            this.dataGridViewDatosBancariosMX.ReadOnly = true;
+            this.dataGridViewDatosBancariosMX.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridViewDatosBancariosMX.Size = new System.Drawing.Size(383, 238);
+            this.dataGridViewDatosBancariosMX.TabIndex = 83;
+            // 
+            // BancoMXid
+            // 
+            this.BancoMXid.DataPropertyName = "BancoMXid";
+            this.BancoMXid.HeaderText = "BancoMXid";
+            this.BancoMXid.Name = "BancoMXid";
+            this.BancoMXid.ReadOnly = true;
+            this.BancoMXid.Visible = false;
+            // 
+            // EsPreferencia
+            // 
+            this.EsPreferencia.DataPropertyName = "EsPreferencia";
+            this.EsPreferencia.HeaderText = "Preferencia";
+            this.EsPreferencia.Name = "EsPreferencia";
+            this.EsPreferencia.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "PrioridadDeUso";
+            this.dataGridViewTextBoxColumn34.HeaderText = "PrioridadDeUso";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            this.dataGridViewTextBoxColumn34.Visible = false;
+            this.dataGridViewTextBoxColumn34.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "NombreBancoDestino";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Banco";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
+            this.dataGridViewTextBoxColumn35.Width = 175;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "CLABE";
+            this.dataGridViewTextBoxColumn50.HeaderText = "CLABE";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.ReadOnly = true;
+            this.dataGridViewTextBoxColumn50.Width = 175;
+            // 
+            // NumeroCuentaDestinatario
+            // 
+            this.NumeroCuentaDestinatario.DataPropertyName = "NumeroCuentaDestinatario";
+            this.NumeroCuentaDestinatario.HeaderText = "NumeroCuentaDestinatario";
+            this.NumeroCuentaDestinatario.Name = "NumeroCuentaDestinatario";
+            this.NumeroCuentaDestinatario.ReadOnly = true;
+            this.NumeroCuentaDestinatario.Visible = false;
+            // 
+            // Sucursal
+            // 
+            this.Sucursal.DataPropertyName = "Sucursal";
+            this.Sucursal.HeaderText = "Sucursal";
+            this.Sucursal.Name = "Sucursal";
+            this.Sucursal.ReadOnly = true;
+            this.Sucursal.Visible = false;
+            // 
+            // DivisaAPagar
+            // 
+            this.DivisaAPagar.DataPropertyName = "DivisaAPagar";
+            this.DivisaAPagar.HeaderText = "DivisaAPagar";
+            this.DivisaAPagar.Name = "DivisaAPagar";
+            this.DivisaAPagar.ReadOnly = true;
+            this.DivisaAPagar.Visible = false;
+            // 
+            // EstatusActivo
+            // 
+            this.EstatusActivo.DataPropertyName = "EstatusActivo";
+            this.EstatusActivo.HeaderText = "EstatusActivo";
+            this.EstatusActivo.Name = "EstatusActivo";
+            this.EstatusActivo.ReadOnly = true;
+            this.EstatusActivo.Visible = false;
+            // 
+            // dataGridDatosBancariosEX
+            // 
+            this.dataGridDatosBancariosEX.AllowUserToAddRows = false;
+            this.dataGridDatosBancariosEX.AllowUserToDeleteRows = false;
+            this.dataGridDatosBancariosEX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDatosBancariosEX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BancoEXid,
+            this.NombreBancoDestino,
+            this.ClaveBancoDestino,
+            this.NombreDestinatario,
+            this.NumeroCuenta,
+            this.Divisa,
+            this.MontoMaximoAPagar,
+            this.NombreBancoIntermediario,
+            this.ClaveBancoIntermediario,
+            this.NumIdDireccionDestinatario,
+            this.Vigencia,
+            this.FechaDeVigencia,
+            this.TipoRelacionConDestinatario,
+            this.MotivoPago,
+            this.Preferente,
+            this.EstatusActividad});
+            this.dataGridDatosBancariosEX.Location = new System.Drawing.Point(500, 76);
+            this.dataGridDatosBancariosEX.Name = "dataGridDatosBancariosEX";
+            this.dataGridDatosBancariosEX.ReadOnly = true;
+            this.dataGridDatosBancariosEX.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dataGridDatosBancariosEX.Size = new System.Drawing.Size(420, 190);
+            this.dataGridDatosBancariosEX.TabIndex = 118;
+            // 
+            // BancoEXid
+            // 
+            this.BancoEXid.DataPropertyName = "BancoEXid";
+            this.BancoEXid.HeaderText = "BancoEXid";
+            this.BancoEXid.Name = "BancoEXid";
+            this.BancoEXid.ReadOnly = true;
+            this.BancoEXid.Visible = false;
+            // 
+            // NombreBancoDestino
+            // 
+            this.NombreBancoDestino.DataPropertyName = "NombreBancoDestino";
+            this.NombreBancoDestino.HeaderText = "Nombre Banco Destino";
+            this.NombreBancoDestino.Name = "NombreBancoDestino";
+            this.NombreBancoDestino.ReadOnly = true;
+            this.NombreBancoDestino.Width = 150;
+            // 
+            // ClaveBancoDestino
+            // 
+            this.ClaveBancoDestino.DataPropertyName = "ClaveBancoDestino";
+            this.ClaveBancoDestino.HeaderText = "Clave Banco Destino";
+            this.ClaveBancoDestino.Name = "ClaveBancoDestino";
+            this.ClaveBancoDestino.ReadOnly = true;
+            this.ClaveBancoDestino.Width = 150;
+            // 
+            // NombreDestinatario
+            // 
+            this.NombreDestinatario.DataPropertyName = "NombreDestinatario";
+            this.NombreDestinatario.HeaderText = "Nombre Destinatario";
+            this.NombreDestinatario.Name = "NombreDestinatario";
+            this.NombreDestinatario.ReadOnly = true;
+            this.NombreDestinatario.Width = 150;
+            // 
+            // NumeroCuenta
+            // 
+            this.NumeroCuenta.DataPropertyName = "NumeroCuenta";
+            this.NumeroCuenta.HeaderText = "Numero Cuenta";
+            this.NumeroCuenta.Name = "NumeroCuenta";
+            this.NumeroCuenta.ReadOnly = true;
+            this.NumeroCuenta.Width = 150;
+            // 
+            // Divisa
+            // 
+            this.Divisa.DataPropertyName = "Divisa";
+            this.Divisa.HeaderText = "Divisa";
+            this.Divisa.Name = "Divisa";
+            this.Divisa.ReadOnly = true;
+            this.Divisa.Visible = false;
+            // 
+            // MontoMaximoAPagar
+            // 
+            this.MontoMaximoAPagar.DataPropertyName = "MontoMaximoAPagar";
+            this.MontoMaximoAPagar.HeaderText = "MontoMaximoAPagar";
+            this.MontoMaximoAPagar.Name = "MontoMaximoAPagar";
+            this.MontoMaximoAPagar.ReadOnly = true;
+            this.MontoMaximoAPagar.Visible = false;
+            // 
+            // NombreBancoIntermediario
+            // 
+            this.NombreBancoIntermediario.DataPropertyName = "NombreBancoIntermediario";
+            this.NombreBancoIntermediario.HeaderText = "NombreBancoIntermediario";
+            this.NombreBancoIntermediario.Name = "NombreBancoIntermediario";
+            this.NombreBancoIntermediario.ReadOnly = true;
+            this.NombreBancoIntermediario.Visible = false;
+            // 
+            // ClaveBancoIntermediario
+            // 
+            this.ClaveBancoIntermediario.DataPropertyName = "ClaveBancoIntermediario";
+            this.ClaveBancoIntermediario.HeaderText = "ClaveBancoIntermediario";
+            this.ClaveBancoIntermediario.Name = "ClaveBancoIntermediario";
+            this.ClaveBancoIntermediario.ReadOnly = true;
+            this.ClaveBancoIntermediario.Visible = false;
+            // 
+            // NumIdDireccionDestinatario
+            // 
+            this.NumIdDireccionDestinatario.DataPropertyName = "NumIdDireccionDestinatario";
+            this.NumIdDireccionDestinatario.HeaderText = "NumIdDireccionDestinatario";
+            this.NumIdDireccionDestinatario.Name = "NumIdDireccionDestinatario";
+            this.NumIdDireccionDestinatario.ReadOnly = true;
+            this.NumIdDireccionDestinatario.Visible = false;
+            // 
+            // Vigencia
+            // 
+            this.Vigencia.DataPropertyName = "Vigencia";
+            this.Vigencia.HeaderText = "Vigencia";
+            this.Vigencia.Name = "Vigencia";
+            this.Vigencia.ReadOnly = true;
+            this.Vigencia.Visible = false;
+            // 
+            // FechaDeVigencia
+            // 
+            this.FechaDeVigencia.DataPropertyName = "FechaDeVigencia";
+            this.FechaDeVigencia.HeaderText = "FechaDeVigencia";
+            this.FechaDeVigencia.Name = "FechaDeVigencia";
+            this.FechaDeVigencia.ReadOnly = true;
+            this.FechaDeVigencia.Visible = false;
+            // 
+            // TipoRelacionConDestinatario
+            // 
+            this.TipoRelacionConDestinatario.DataPropertyName = "TipoRelacionConDestinatario";
+            this.TipoRelacionConDestinatario.HeaderText = "TipoRelacionConDestinatario";
+            this.TipoRelacionConDestinatario.Name = "TipoRelacionConDestinatario";
+            this.TipoRelacionConDestinatario.ReadOnly = true;
+            this.TipoRelacionConDestinatario.Visible = false;
+            // 
+            // MotivoPago
+            // 
+            this.MotivoPago.DataPropertyName = "MotivoPago";
+            this.MotivoPago.HeaderText = "MotivoPago";
+            this.MotivoPago.Name = "MotivoPago";
+            this.MotivoPago.ReadOnly = true;
+            this.MotivoPago.Visible = false;
+            // 
+            // Preferente
+            // 
+            this.Preferente.DataPropertyName = "Preferente";
+            this.Preferente.HeaderText = "Preferente";
+            this.Preferente.Name = "Preferente";
+            this.Preferente.ReadOnly = true;
+            // 
+            // EstatusActividad
+            // 
+            this.EstatusActividad.DataPropertyName = "EstatusActividad";
+            this.EstatusActividad.HeaderText = "EstatusActividad";
+            this.EstatusActividad.Name = "EstatusActividad";
+            this.EstatusActividad.ReadOnly = true;
+            this.EstatusActividad.Visible = false;
+            // 
+            // dataGridDirecciones
+            // 
+            this.dataGridDirecciones.AllowUserToAddRows = false;
+            this.dataGridDirecciones.AllowUserToDeleteRows = false;
+            this.dataGridDirecciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDirecciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Prioridad,
+            this.dataGridViewTextBoxColumn14,
+            this.CalleAveBlvr,
+            this.NumExterior,
+            this.NumInterior,
+            this.InfAdicional,
+            this.Colonia,
+            this.CodigoPostal,
+            this.Poblacion,
+            this.Estado,
+            this.Pais,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30});
+            this.dataGridDirecciones.Location = new System.Drawing.Point(550, 40);
+            this.dataGridDirecciones.Name = "dataGridDirecciones";
+            this.dataGridDirecciones.ReadOnly = true;
+            this.dataGridDirecciones.Size = new System.Drawing.Size(381, 237);
+            this.dataGridDirecciones.TabIndex = 91;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "NumIdDireccion";
+            this.ID.HeaderText = "id";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 50;
+            // 
+            // Prioridad
+            // 
+            this.Prioridad.DataPropertyName = "PrioridadUso";
+            this.Prioridad.HeaderText = "Prioridad";
+            this.Prioridad.Name = "Prioridad";
+            this.Prioridad.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "ConceptoUso";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Concepto de Uso";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 120;
+            // 
+            // CalleAveBlvr
+            // 
+            this.CalleAveBlvr.DataPropertyName = "CalleAveBlvr";
+            this.CalleAveBlvr.HeaderText = "CalleAveBlvr";
+            this.CalleAveBlvr.Name = "CalleAveBlvr";
+            this.CalleAveBlvr.ReadOnly = true;
+            this.CalleAveBlvr.Visible = false;
+            // 
+            // NumExterior
+            // 
+            this.NumExterior.DataPropertyName = "NumExterior";
+            this.NumExterior.HeaderText = "NumExterior";
+            this.NumExterior.Name = "NumExterior";
+            this.NumExterior.ReadOnly = true;
+            this.NumExterior.Visible = false;
+            // 
+            // NumInterior
+            // 
+            this.NumInterior.DataPropertyName = "NumInterior";
+            this.NumInterior.HeaderText = "NumInterior";
+            this.NumInterior.Name = "NumInterior";
+            this.NumInterior.ReadOnly = true;
+            this.NumInterior.Visible = false;
+            // 
+            // InfAdicional
+            // 
+            this.InfAdicional.DataPropertyName = "InfAdicional";
+            this.InfAdicional.HeaderText = "InfAdicional";
+            this.InfAdicional.Name = "InfAdicional";
+            this.InfAdicional.ReadOnly = true;
+            this.InfAdicional.Visible = false;
+            // 
+            // Colonia
+            // 
+            this.Colonia.DataPropertyName = "Colonia";
+            this.Colonia.HeaderText = "Colonia";
+            this.Colonia.Name = "Colonia";
+            this.Colonia.ReadOnly = true;
+            this.Colonia.Visible = false;
+            // 
+            // CodigoPostal
+            // 
+            this.CodigoPostal.DataPropertyName = "CodigoPostal";
+            this.CodigoPostal.HeaderText = "CodigoPostal";
+            this.CodigoPostal.Name = "CodigoPostal";
+            this.CodigoPostal.ReadOnly = true;
+            this.CodigoPostal.Visible = false;
+            // 
+            // Poblacion
+            // 
+            this.Poblacion.DataPropertyName = "Poblacion";
+            this.Poblacion.HeaderText = "Poblacion";
+            this.Poblacion.Name = "Poblacion";
+            this.Poblacion.ReadOnly = true;
+            this.Poblacion.Visible = false;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            // 
+            // Pais
+            // 
+            this.Pais.DataPropertyName = "Pais";
+            this.Pais.HeaderText = "Pais";
+            this.Pais.Name = "Pais";
+            this.Pais.ReadOnly = true;
+            this.Pais.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Dirección";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Dirección";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Ubicación";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Ubicación";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
+            this.dataGridViewTextBoxColumn30.Width = 175;
             // 
             // frmCatalogoProveedores
             // 
@@ -8270,6 +8803,7 @@
             this.Name = "frmCatalogoProveedores";
             this.Padding = new System.Windows.Forms.Padding(23, 65, 23, 22);
             this.Resizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmCatalogoProveedores_Load);
             this.pnlBarraSuperior.ResumeLayout(false);
             this.pnlBarraSuperior.PerformLayout();
@@ -8321,15 +8855,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoCondiciones)).EndInit();
             this.pnlCondiciones.ResumeLayout(false);
             this.pnlCondiciones.PerformLayout();
+            this.pnlPlazosCredito.ResumeLayout(false);
+            this.pnlPlazosCredito.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPlazosCredito)).EndInit();
             this.pnlRutasFletes.ResumeLayout(false);
             this.pnlFleterosCondiciones.ResumeLayout(false);
             this.pnlFleterosCondiciones.PerformLayout();
             this.pnlListaFletesCondiciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFletes)).EndInit();
             this.pnlCondicionesPagoEntrega.ResumeLayout(false);
             this.pnlCondicionesPagoEntrega.PerformLayout();
-            this.pnlCheckBoxFormaEntrega.ResumeLayout(false);
-            this.pnlCheckBoxFormaEntrega.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.pnlTipoEnvio.ResumeLayout(false);
+            this.pnlTipoEnvio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLimiteCapacidad)).EndInit();
             this.pnlCheckBoxSucursales.ResumeLayout(false);
             this.pnlCheckBoxSucursales.PerformLayout();
@@ -8342,31 +8881,25 @@
             this.pnlDirecciones.PerformLayout();
             this.pnlDireccion1.ResumeLayout(false);
             this.pnlDireccion1.PerformLayout();
-            this.pnlListaDirecciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDirecciones)).EndInit();
             this.pnlContactos.ResumeLayout(false);
             this.pnlContactos.PerformLayout();
             this.pnlContacto1.ResumeLayout(false);
             this.pnlContacto1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.pnlListaContactos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridContactos)).EndInit();
             this.pnlDatosBancarios.ResumeLayout(false);
             this.pnlDatosBancarios.PerformLayout();
             this.pnlDatosBancariosEX.ResumeLayout(false);
             this.pnlDatosBancariosEX.PerformLayout();
-            this.pnlListaCuentasBancariasEX.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDatosBancariosEX)).EndInit();
             this.pnlDatosBancariosMX.ResumeLayout(false);
             this.pnlDatosBancariosMX.PerformLayout();
-            this.pnlListaCuentasBancariasMX.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatosBancariosMX)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tabOpciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridContactos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDatosBancariosMX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDatosBancariosEX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDirecciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -8662,13 +9195,11 @@
         private System.Windows.Forms.Label lblFormaEntregaFletes;
         private System.Windows.Forms.Button btnLimpiarCamposFletes;
         private System.Windows.Forms.Panel pnlListaFletesCondiciones;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridFletes;
         private System.Windows.Forms.Button btnEditarFletes;
         private System.Windows.Forms.Button btnAgregarFlete;
         private System.Windows.Forms.Button btnEliminarFletes;
         private System.Windows.Forms.Label lblFleteCondiciones;
-        private System.Windows.Forms.TextBox txtBoxNombreFleteCondiciones;
-        private System.Windows.Forms.Label lblNombreFleteCondiciones;
         private System.Windows.Forms.Label lblRutasFletesCondiciones;
         private System.Windows.Forms.Panel pnlCondicionesPagoEntrega;
         private System.Windows.Forms.Button btnGuardarCambiosSeccionCondiciones2;
@@ -8678,44 +9209,6 @@
         private System.Windows.Forms.Button btnEliminarArchivoObservacionesTiempoFormaEntrega;
         private System.Windows.Forms.ComboBox comboBoxListaObservacionesFormaEntrega;
         private System.Windows.Forms.Button btnAbrirArchivoObservacionesTiempoFormaEntrega;
-        private System.Windows.Forms.Panel pnlCheckBoxFormaEntrega;
-        private System.Windows.Forms.TextBox txtBoxOtraFormaEntrega;
-        private System.Windows.Forms.Label lblOtraFormaEntrega;
-        private System.Windows.Forms.CheckBox checkBoxTransporteContratado;
-        private System.Windows.Forms.CheckBox checkBoxTransporteProveedor;
-        private System.Windows.Forms.CheckBox checkBoxPaqueteriaPagadaProveedor;
-        private System.Windows.Forms.CheckBox checkBoxPaqueteriaPorCobrar;
-        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura5;
-        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura4;
-        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura3;
-        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura1;
-        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura2;
-        private System.Windows.Forms.Label lblVencimientoFacturaCondiciones;
-        private System.Windows.Forms.Label lblProntoPago4Dias;
-        private System.Windows.Forms.TextBox txtBoxProntoPago4Dias;
-        private System.Windows.Forms.ComboBox comboBoxDescProntoPago4;
-        private System.Windows.Forms.Label lblPorc4;
-        private System.Windows.Forms.Label lblProntoPago4;
-        private System.Windows.Forms.Label lblProntoPago3Dias;
-        private System.Windows.Forms.TextBox txtBoxProntoPago3Dias;
-        private System.Windows.Forms.ComboBox comboBoxDescProntoPago3;
-        private System.Windows.Forms.Label lblPorc3;
-        private System.Windows.Forms.Label lblProntoPago3;
-        private System.Windows.Forms.Label lblProntoPago2Dias;
-        private System.Windows.Forms.TextBox txtBoxProntoPago2Dias;
-        private System.Windows.Forms.ComboBox comboBoxDescProntoPago2;
-        private System.Windows.Forms.Label lblPorc2;
-        private System.Windows.Forms.Label lblProntoPago2;
-        private System.Windows.Forms.Label lblProntoPago5Dias;
-        private System.Windows.Forms.TextBox txtBoxProntoPago5Dias;
-        private System.Windows.Forms.ComboBox comboBoxDescProntoPago5;
-        private System.Windows.Forms.Label lblPorc5;
-        private System.Windows.Forms.Label lblProntoPago5;
-        private System.Windows.Forms.Label lblProntoPago1Dias;
-        private System.Windows.Forms.TextBox txtBoxProntoPago1Dias;
-        private System.Windows.Forms.ComboBox comboBoxDescProntoPago1;
-        private System.Windows.Forms.Label lblPorc1;
-        private System.Windows.Forms.Label lblProntoPago1;
         private System.Windows.Forms.Button btnLimpiarCampoObservacionesTiempoEntregaCondiciones;
         private System.Windows.Forms.Button btnLimpiarCampoCondicionesEspecialesEntrega;
         private System.Windows.Forms.TextBox txtBoxCondicionesEspecialesCondiciones;
@@ -8744,11 +9237,8 @@
         private System.Windows.Forms.Label lblTiempoEntregaDias;
         private System.Windows.Forms.TextBox txtBoxTiempoEntregaCondiciones;
         private System.Windows.Forms.Label lblTiempoEntregaCondiciones;
-        private System.Windows.Forms.Label lblDiasCondicionesCredito;
         private System.Windows.Forms.Label lblObservacionesCondiciones;
-        private System.Windows.Forms.TextBox txtBoxCondicionesCreditoCondiciones;
-        private System.Windows.Forms.Label lblCondicionesCreditoCondiciones;
-        private System.Windows.Forms.Label lblCondicionesPagoEntrega;
+        private System.Windows.Forms.Label lblCondicionesPago;
         private MetroFramework.Controls.MetroTabPage tabDatosGenerales;
         private System.Windows.Forms.FlowLayoutPanel flowPnlDatosGen;
         private System.Windows.Forms.Panel pnlDatosPrimarios;
@@ -8785,22 +9275,6 @@
         private System.Windows.Forms.Label lblNumInteriorDirecciones;
         private System.Windows.Forms.Button btnPriorizarDirecciones;
         private System.Windows.Forms.Button btnLimpiarCamposDirecciones;
-        private System.Windows.Forms.Panel pnlListaDirecciones;
-        private System.Windows.Forms.DataGridView dataGridDirecciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CalleAveBlvr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumExterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumInterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InfAdicional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Colonia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Poblacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.Button btnEditarDireccion;
         private System.Windows.Forms.Button btnAgregarDireccion;
         private System.Windows.Forms.TextBox txtBoxEstadoDirecciones;
@@ -8820,11 +9294,6 @@
         private System.Windows.Forms.Panel pnlContactos;
         private System.Windows.Forms.Panel pnlContacto1;
         private System.Windows.Forms.Button btnPriorizarContacto;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckBox checkBox3Funciones;
-        private System.Windows.Forms.CheckBox checkBox2Funciones;
-        private System.Windows.Forms.CheckBox checkBox1Funciones;
-        private System.Windows.Forms.Label lblFuncionesContacto;
         private System.Windows.Forms.TextBox txtBoxCel2Contactos;
         private System.Windows.Forms.Label lblCel2Contactos;
         private System.Windows.Forms.TextBox txtBoxCel1Contactos;
@@ -8836,23 +9305,6 @@
         private System.Windows.Forms.TextBox txtBoxEmail2Contactos;
         private System.Windows.Forms.Label lblEmail2Contactos;
         private System.Windows.Forms.TextBox txtBoxCategoriaContactos;
-        private System.Windows.Forms.Panel pnlListaContactos;
-        private System.Windows.Forms.DataGridView dataGridContactos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contactoid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrioridadDeUso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FuncionesContacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoPrimario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExtensionTelefonoPrimario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoSecundario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExtensionTelefonoSecundario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Celular1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Celular2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comentarios;
         private System.Windows.Forms.Button btnEditarContacto;
         private System.Windows.Forms.Button btnLimpiarCamposContactos;
         private System.Windows.Forms.Button btnAgregarContacto;
@@ -8916,24 +9368,6 @@
         private System.Windows.Forms.Label lblNombreBancoDestinoEX;
         private System.Windows.Forms.ComboBox comboBoxDivisaCuentaBancariaEX;
         private System.Windows.Forms.Label lblDivisaCuentaBancariaEX;
-        private System.Windows.Forms.Panel pnlListaCuentasBancariasEX;
-        private System.Windows.Forms.DataGridView dataGridDatosBancariosEX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BancoEXid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBancoDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveBancoDestino;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDestinatario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCuenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Divisa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MontoMaximoAPagar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBancoIntermediario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveBancoIntermediario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumIdDireccionDestinatario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vigencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDeVigencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoRelacionConDestinatario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preferente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActividad;
         private System.Windows.Forms.Button btnLimpiarCamposDatosBancariosEX;
         private System.Windows.Forms.Button btnEditarCuentaEX;
         private System.Windows.Forms.Button btnAgregarCuentaEX;
@@ -8950,17 +9384,6 @@
         private System.Windows.Forms.Label lblNumeroCuentaMX;
         private System.Windows.Forms.ComboBox comboBoxDivisaCuentaBancariaMX;
         private System.Windows.Forms.Label lblDivisaCuentaBancariaMX;
-        private System.Windows.Forms.Panel pnlListaCuentasBancariasMX;
-        private System.Windows.Forms.DataGridView dataGridViewDatosBancariosMX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BancoMXid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EsPreferencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCuentaDestinatario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DivisaAPagar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActivo;
         private System.Windows.Forms.Button btnLimpiarCamposDatosBancariosMX;
         private System.Windows.Forms.Button btnEditarCuentaMX;
         private System.Windows.Forms.Button btnAgregarCuentaMX;
@@ -8998,5 +9421,155 @@
         private System.Windows.Forms.CheckBox checkBoxContactosRevisado;
         private System.Windows.Forms.CheckBox checkBoxDatosBancariosEXRevisado;
         private System.Windows.Forms.CheckBox checkBoxDatosBancariosMXRevisado;
+        private System.Windows.Forms.Button btnMax;
+        private System.Windows.Forms.TextBox txtBoxObservacionesFletes;
+        private System.Windows.Forms.Label lblObservacionesFletes;
+        private System.Windows.Forms.ComboBox comboBoxTipoEnvioFletes;
+        private System.Windows.Forms.Label lblMetodoEnvioFletes;
+        private System.Windows.Forms.Label lblClaveProveedorFletes;
+        private System.Windows.Forms.TextBox txtBoxClaveProveedorFletes;
+        private System.Windows.Forms.TextBox txtBoxNombreFleteCondiciones;
+        private System.Windows.Forms.Label lblNombreFleteCondiciones;
+        private System.Windows.Forms.Panel pnlTipoEnvio;
+        private System.Windows.Forms.CheckBox checkBoxCourierCondiciones;
+        private System.Windows.Forms.CheckBox checkBoxTerrestreCondiciones;
+        private System.Windows.Forms.CheckBox checkBoxAereoCondiciones;
+        private System.Windows.Forms.Label lblMetodoEnvioCondiciones;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox checkBoxPaqueteriaPagada;
+        private System.Windows.Forms.CheckBox checkBoxPaqueteriaCobrar;
+        private System.Windows.Forms.CheckBox checkBoxEntregaPersonalPagada;
+        private System.Windows.Forms.CheckBox checkBoxEntregaPersonalPorCobrar;
+        private System.Windows.Forms.CheckBox checkBoxDomicilio;
+        private System.Windows.Forms.CheckBox checkBoxTransporteCargaPagado;
+        private System.Windows.Forms.CheckBox checkBoxTransporteCargaPorCobrar;
+        private System.Windows.Forms.Panel pnlPlazosCredito;
+        private System.Windows.Forms.Button btnLimpiarCamposPlazoCredito;
+        private System.Windows.Forms.Button btnEditarPlazo;
+        private System.Windows.Forms.Button btnAgregarPlazo;
+        private System.Windows.Forms.Button btnDesactivarPlazo;
+        private System.Windows.Forms.Label lblLineaPP4;
+        private System.Windows.Forms.Label lblLineaPP3;
+        private System.Windows.Forms.Label lblLineaPP2;
+        private System.Windows.Forms.Label lblLineaPP1;
+        private System.Windows.Forms.TextBox txtBoxObservacionesProntoPago5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtBoxObservacionesProntoPago4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtBoxObservacionesProntoPago3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtBoxObservacionesProntoPago2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtBoxObservacionesProntoPago1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBoxDefinicionPlazoCredito;
+        private System.Windows.Forms.Label lblDefinicionPlazos;
+        private System.Windows.Forms.DataGridView dataGridPlazosCredito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Plazo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiasPlazo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DefincionPlazo;
+        private System.Windows.Forms.Label lblProntosPagos;
+        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura5;
+        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura4;
+        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura3;
+        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura1;
+        private System.Windows.Forms.ComboBox comboBoxVencimientoPagoFactura2;
+        private System.Windows.Forms.Label lblVencimientoFacturaCondiciones;
+        private System.Windows.Forms.Label lblProntoPago4Dias;
+        private System.Windows.Forms.TextBox txtBoxProntoPago4Dias;
+        private System.Windows.Forms.ComboBox comboBoxDescProntoPago4;
+        private System.Windows.Forms.Label lblPorc4;
+        private System.Windows.Forms.Label lblProntoPago4;
+        private System.Windows.Forms.Label lblProntoPago3Dias;
+        private System.Windows.Forms.TextBox txtBoxProntoPago3Dias;
+        private System.Windows.Forms.ComboBox comboBoxDescProntoPago3;
+        private System.Windows.Forms.Label lblPorc3;
+        private System.Windows.Forms.Label lblProntoPago3;
+        private System.Windows.Forms.Label lblProntoPago2Dias;
+        private System.Windows.Forms.TextBox txtBoxProntoPago2Dias;
+        private System.Windows.Forms.ComboBox comboBoxDescProntoPago2;
+        private System.Windows.Forms.Label lblPorc2;
+        private System.Windows.Forms.Label lblProntoPago2;
+        private System.Windows.Forms.Label lblProntoPago5Dias;
+        private System.Windows.Forms.TextBox txtBoxProntoPago5Dias;
+        private System.Windows.Forms.ComboBox comboBoxDescProntoPago5;
+        private System.Windows.Forms.Label lblPorc5;
+        private System.Windows.Forms.Label lblProntoPago5;
+        private System.Windows.Forms.Label lblProntoPago1Dias;
+        private System.Windows.Forms.TextBox txtBoxProntoPago1Dias;
+        private System.Windows.Forms.ComboBox comboBoxDescProntoPago1;
+        private System.Windows.Forms.Label lblPorc1;
+        private System.Windows.Forms.Label lblProntoPago1;
+        private System.Windows.Forms.Label lblDiasCondicionesCredito;
+        private System.Windows.Forms.TextBox txtBoxCondicionesCreditoCondiciones;
+        private System.Windows.Forms.Label lblCondicionesCreditoCondiciones;
+        private System.Windows.Forms.CheckBox checkBoxTieneProntoPago;
+        private System.Windows.Forms.Label lblObservacionesGeneralesPlazo;
+        private System.Windows.Forms.TextBox txtBoxObservacionesGeneralesPlazo;
+        private System.Windows.Forms.Label lblCondicionesEntrega;
+        private System.Windows.Forms.DataGridView dataGridDirecciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CalleAveBlvr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumExterior;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumInterior;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InfAdicional;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Colonia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoPostal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Poblacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridView dataGridContactos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contactoid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrioridadDeUso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuncionesContacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoPrimario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExtensionTelefonoPrimario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TelefonoSecundario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExtensionTelefonoSecundario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Celular1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Celular2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comentarios;
+        private System.Windows.Forms.TextBox txtBoxComentariosContacto;
+        private System.Windows.Forms.Label lblComentariosContacto;
+        private System.Windows.Forms.ComboBox comboBoxFuncionContacto;
+        private System.Windows.Forms.Label lblFuncionContacto;
+        private System.Windows.Forms.DataGridView dataGridDatosBancariosEX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BancoEXid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBancoDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveBancoDestino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreDestinatario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Divisa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MontoMaximoAPagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreBancoIntermediario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveBancoIntermediario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumIdDireccionDestinatario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vigencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaDeVigencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoRelacionConDestinatario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preferente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActividad;
+        private System.Windows.Forms.DataGridView dataGridViewDatosBancariosMX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BancoMXid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EsPreferencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCuentaDestinatario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DivisaAPagar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActivo;
     }
 }
