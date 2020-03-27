@@ -62,5 +62,10 @@ namespace ProveedorLogicaNegocio
             proveedorFletesDal.AgregarByClave(flete);
             return true;
         }
+
+        public void desactivarFleteByIdByClaveProveedorVal(int fleteid, string claveProveedor)
+        {
+            
+        }
     }
 }

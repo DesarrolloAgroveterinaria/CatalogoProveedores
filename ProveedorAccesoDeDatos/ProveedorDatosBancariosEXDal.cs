@@ -45,7 +45,8 @@ namespace ProveedorAccesoDeDatos
                             TipoRelacionConDestinatario = reader["TipoRelacionConDestinatario"] == DBNull.Value ? "" : Convert.ToString(reader["TipoRelacionConDestinatario"]),
                             MotivoPago = reader["MotivoPago"] == DBNull.Value ? "" : Convert.ToString(reader["MotivoPago"]),
                             EsPreferencia = Convert.ToBoolean(reader["EsPreferencia"]),
-                            EstatusActivo = Convert.ToBoolean(reader["EstatusActivo"])
+                            EstatusActivo = Convert.ToBoolean(reader["EstatusActivo"]),
+                            Revisado = reader["Revisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["Revisado"])
                         };
                         DLista.Add(D);
                     }

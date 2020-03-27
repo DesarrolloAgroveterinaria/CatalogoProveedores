@@ -26,5 +26,6 @@ namespace ProveedorEntidades
         public string Email2 { get; set; }
         public string Comentarios { get; set; }
         public bool EstatusActivo { get; set; }
+        public bool Revisado { get; set; }
     }
 }

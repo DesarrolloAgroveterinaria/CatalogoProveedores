@@ -27,6 +27,7 @@ namespace ProveedorEntidades
         public string MotivoPago { get; set; }
         public bool EsPreferencia { get; set; }
         public bool EstatusActivo { get; set; }
+        public bool Revisado { get; set; }
 
     }
 }

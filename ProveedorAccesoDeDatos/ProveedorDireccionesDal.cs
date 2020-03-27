@@ -42,7 +42,8 @@ namespace ProveedorAccesoDeDatos
                             Poblacion = Convert.ToString(reader["Poblacion"]),
                             Estado = Convert.ToString(reader["Estado"]),
                             Pais = Convert.ToString(reader["Pais"]),
-                            EstatusActivo = Convert.ToBoolean(reader["EstatusActivo"])
+                            EstatusActivo = Convert.ToBoolean(reader["EstatusActivo"]),
+                            Revisado = reader["Revisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["Revisado"])
                         };
                         DLista.Add(D);
                     }

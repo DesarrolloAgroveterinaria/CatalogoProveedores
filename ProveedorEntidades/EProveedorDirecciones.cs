@@ -22,5 +22,6 @@ namespace ProveedorEntidades
         public string Estado { get; set; }
         public string Pais { get; set; }
         public bool EstatusActivo { get; set; }
+        public bool Revisado { get; set; }
     }
 }

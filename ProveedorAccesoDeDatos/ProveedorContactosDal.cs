@@ -43,7 +43,8 @@ namespace ProveedorAccesoDeDatos
                             Email1 = Convert.ToString(reader["Email1"]),
                             Email2 = reader["Email2"] == DBNull.Value ? "" : Convert.ToString(reader["Email2"]),
                             Comentarios = reader["Comentarios"] == DBNull.Value ? "" : Convert.ToString(reader["Comentarios"]),
-                            EstatusActivo =  Convert.ToBoolean(reader["EstatusActivo"])
+                            EstatusActivo =  Convert.ToBoolean(reader["EstatusActivo"]),
+                            Revisado = reader["Revisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["Revisado"])
                         };
                         CLista.Add(C);
                     }

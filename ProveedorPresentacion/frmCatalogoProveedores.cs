@@ -20,7 +20,6 @@ namespace ProveedorPrueba
     public partial class frmCatalogoProveedores : MetroFramework.Forms.MetroForm
     {
         public int pnlBarraSuperior_Width = 1078;
-        public int tabOpciones_Width = 1030;
         frmNotificaciones notificaciones = new frmNotificaciones();
         //Crear instancias de Clase Entidad de todas las entidades a utilizar, así como listas para guardar datos 
         //public EProveedorUsuario eProveedorUsuario;
@@ -108,7 +107,7 @@ namespace ProveedorPrueba
                 checkBoxDatosBancariosMXRevisado.Enabled = true;
                 checkBoxDatosBancariosEXRevisado.Enabled = true;
             }
-            else if(EProveedorUsuario.Usuario == "ADRIANCITO")
+            else if(EProveedorUsuario.Usuario == "AMON")
             {
                 checkBoxDireccionesRevisado.Enabled = true;
             }
@@ -127,14 +126,15 @@ namespace ProveedorPrueba
         }
         private void btnMax_Click(object sender, EventArgs e)
         {
-            //double new_width = tabOpciones.MaximumSize.Width;
-            double new_width = this.Width;
+            
+        double new_width = this.Width;
             //normalises window
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
                 this.pnlBarraSuperior.Width = pnlBarraSuperior_Width;
-                tabOpciones.Width = tabOpciones_Width;                                             
+                pnlNotificaciones.Visible = true;
+                tabOpciones.Dock = DockStyle.None;                                        
             }
 
             //maximises window
@@ -142,7 +142,8 @@ namespace ProveedorPrueba
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.pnlBarraSuperior.Width = this.Width;
-                tabOpciones.Size = new Size(tabOpciones.Height, Convert.ToInt32(new_width));                
+                pnlNotificaciones.Visible = false;
+                tabOpciones.Dock = DockStyle.Fill;
                 this.CenterToScreen();
             }
         }
@@ -281,12 +282,12 @@ namespace ProveedorPrueba
                 if (checkBoxDireccionesRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -310,12 +311,12 @@ namespace ProveedorPrueba
                 if (checkBoxContactosRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -339,12 +340,12 @@ namespace ProveedorPrueba
                 if (checkBoxDatosBancariosMXRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -369,12 +370,12 @@ namespace ProveedorPrueba
                 if (checkBoxDatosBancariosEXRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -399,12 +400,12 @@ namespace ProveedorPrueba
                 if (checkBoxPoliticasRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                   //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -429,12 +430,12 @@ namespace ProveedorPrueba
                 if (checkBoxCondicionesRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -459,12 +460,12 @@ namespace ProveedorPrueba
                 if (checkBoxExpedienteRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -488,12 +489,12 @@ namespace ProveedorPrueba
                 if (checkBoxAcuerdosRevisado.Checked)
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
-                    MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
             }
             catch (Exception ex)
@@ -852,6 +853,7 @@ namespace ProveedorPrueba
                 tablaDatosBancariosEX.Columns.Add("MotivoPago");
                 tablaDatosBancariosEX.Columns.Add("Preferente");
                 tablaDatosBancariosEX.Columns.Add("EstatusActividad");
+                tablaDatosBancariosEX.Columns.Add("DatoBancarioEXRevisado");
 
 
                 foreach (var i in ListaDatosBancariosEX)
@@ -862,7 +864,7 @@ namespace ProveedorPrueba
                         i.NumeroCuentaDestinatario, i.DivisaAPagar, i.MontoMaximoAPagar, i.NombreBancoIntermediario,
                         i.ClaveBancoIntermediario, i.NumIdDireccionDestinatario, i.Vigencia, i.FechaDeVigencia,
                         i.TipoRelacionConDestinatario, i.MotivoPago, i.EsPreferencia ? "Preferente" : "No preferente",
-                        i.EstatusActivo});
+                        i.EstatusActivo, i.Revisado ? "Revisado" : "No Revisado" });
                     }
                 }
 
@@ -905,10 +907,16 @@ namespace ProveedorPrueba
                 txtBoxPoblacionDatosBancariosEX.Text = Convert.ToString(DireccionDatosBancariosEX.Poblacion);
                 txtBoxEstadoDatosBancariosEX.Text = Convert.ToString(DireccionDatosBancariosEX.Estado);
                 txtBoxPaisDatosBancariosEX.Text = Convert.ToString(DireccionDatosBancariosEX.Pais);
+
                 if (dataGridDatosBancariosEX.CurrentRow.Cells[14].Value.ToString() == "Preferente")
                     lblCuentaDePreferenciaClienteEX.Visible = true;
                 else
                     lblCuentaDePreferenciaClienteEX.Visible = false;
+
+                if (dataGridDatosBancariosEX.CurrentRow.Cells[16].Value.ToString() == "Revisado")
+                    checkBoxDatoBancarioEXItem.Checked = true;
+                else
+                    checkBoxDatoBancarioEXItem.Checked = false;
             }
             catch (Exception ex)
             {
@@ -936,6 +944,7 @@ namespace ProveedorPrueba
                 tablaDatosBancariosMX.Columns.Add("Sucursal");
                 tablaDatosBancariosMX.Columns.Add("DivisaAPagar");
                 tablaDatosBancariosMX.Columns.Add("EstatusActivo");
+                tablaDatosBancariosMX.Columns.Add("DatoBancarioMXRevisado");
 
 
                 foreach (var i in ListaDatosBancariosMX)
@@ -943,7 +952,8 @@ namespace ProveedorPrueba
                     if (i.EstatusActivo)
                     {
                         tablaDatosBancariosMX.Rows.Add(new object[] {i.BancoMXid, i.EsPreferencia ? "Preferente" : "No preferente",
-                    i.PrioridadDeUso, i.NombreBancoDestino, i.CLABE, i.NumeroCuentaDestinatario, i.Sucursal, i.DivisaAPagar,  i.EstatusActivo});
+                        i.PrioridadDeUso, i.NombreBancoDestino, i.CLABE, i.NumeroCuentaDestinatario, i.Sucursal, i.DivisaAPagar,  i.EstatusActivo,
+                        i.Revisado ? "Revisado" : "No Revisado"});
                     }
                 }
 
@@ -956,10 +966,17 @@ namespace ProveedorPrueba
                 txtBoxNumeroCuentaDestinatarioMX.Text = dataGridViewDatosBancariosMX.CurrentRow.Cells[5].Value.ToString();
                 txtBoxSucursalDatosBancariosMX.Text = dataGridViewDatosBancariosMX.CurrentRow.Cells[6].Value.ToString();
                 comboBoxDivisaCuentaBancariaMX.SelectedItem = dataGridViewDatosBancariosMX.CurrentRow.Cells[7].Value.ToString();
+
                 if (dataGridViewDatosBancariosMX.CurrentRow.Cells[1].Value.ToString() == "Preferente")
                     lblCuentaDePreferenciaClienteMX.Visible = true;
                 else
                     lblCuentaDePreferenciaClienteMX.Visible = false;
+
+                if (dataGridViewDatosBancariosMX.CurrentRow.Cells[9].Value.ToString() == "Revisado")
+                    checkBoxDatoBancarioItem.Checked = true;
+                else
+                    checkBoxDatoBancarioItem.Checked = false;
+
             }
             catch (Exception ex)
             {
@@ -994,6 +1011,7 @@ namespace ProveedorPrueba
                 tablaContactos.Columns.Add("Email1");
                 tablaContactos.Columns.Add("Email2");
                 tablaContactos.Columns.Add("Comentarios");
+                tablaContactos.Columns.Add("ContactoRevisado");
 
                 foreach (var i in ListaContactos)
                 {
@@ -1001,7 +1019,7 @@ namespace ProveedorPrueba
                     {
                         tablaContactos.Rows.Add(new object[] { i.Contactoid, i.PrioridadDeUso, i.NombreCompleto, i.Puesto,
                     i.Categoria, i.FuncionesContacto, i.TelefonoPrimario, i.ExtensionTelefonoPrimario, i.TelefonoSecundario,
-                    i.ExtensionTelefonoSecundario, i.Celular1, i.Celular2, i.Email1, i.Email2, i.Comentarios });
+                    i.ExtensionTelefonoSecundario, i.Celular1, i.Celular2, i.Email1, i.Email2, i.Comentarios, i.Revisado ? "Revisado" : "No Revisado"});
                     }
                 }
 
@@ -1020,12 +1038,12 @@ namespace ProveedorPrueba
                 txtBoxEmail1Contactos.Text = dataGridContactos.CurrentRow.Cells[12].Value.ToString();
                 txtBoxEmail2Contactos.Text = dataGridContactos.CurrentRow.Cells[13].Value.ToString();
                 txtBoxCategoriaContactos.Text = dataGridContactos.CurrentRow.Cells[4].Value.ToString();
-                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                //    checkBox1Funciones.Checked = true;
-                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                //    checkBox2Funciones.Checked = true;
-                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                //    checkBox3Funciones.Checked = true;
+                txtBoxComentariosContacto.Text = dataGridContactos.CurrentRow.Cells[14].Value.ToString();
+                comboBoxFuncionContacto.SelectedItem = dataGridContactos.CurrentRow.Cells[5].Value.ToString();
+                if (dataGridContactos.CurrentRow.Cells[15].Value.ToString() == "Revisado")
+                    checkBoxContactoItem.Checked = true;
+                else
+                    checkBoxContactoItem.Checked = false;
             }
             catch (Exception ex)
             {
@@ -1056,15 +1074,17 @@ namespace ProveedorPrueba
                 tablaDirecciones.Columns.Add("Poblacion");
                 tablaDirecciones.Columns.Add("Estado");
                 tablaDirecciones.Columns.Add("Pais");
+                tablaDirecciones.Columns.Add("DireccionRevisada");
                 tablaDirecciones.Columns.Add("Dirección");
                 tablaDirecciones.Columns.Add("Ubicación");
+                
 
                 foreach (var i in ListaDirecciones)
                 {
                     if (i.EstatusActivo)
                     {
                         tablaDirecciones.Rows.Add(new object[] { i.PrioridadDeUso, i.ConceptoUso, i.NumIdDireccion, i.CalleAveBlvr, i.NumExterior, i.NumInterior,
-                         i.InfAdicional, i.Colonia, i.CodigoPostal, i.Poblacion, i.Estado, i.Pais,
+                         i.InfAdicional, i.Colonia, i.CodigoPostal, i.Poblacion, i.Estado, i.Pais, i.Revisado ? "Revisado" : "No Revisado",
                         (i.CalleAveBlvr + "# " + (i.NumExterior == "" ? i.NumInterior + ", " : i.NumExterior + " " + i.NumInterior + ", ")),
                         (i.Poblacion + ", " + i.Estado + ", " + i.Pais) });
                     }
@@ -1084,6 +1104,10 @@ namespace ProveedorPrueba
                 txtBoxPoblacionDirecciones.Text = dataGridDirecciones.CurrentRow.Cells[9].Value.ToString();
                 txtBoxEstadoDirecciones.Text = dataGridDirecciones.CurrentRow.Cells[10].Value.ToString();
                 txtBoxPaisDirecciones.Text = dataGridDirecciones.CurrentRow.Cells[11].Value.ToString();
+                if (dataGridDirecciones.CurrentRow.Cells[12].Value.ToString() == "Revisado")
+                    checkBoxDireccionItem.Checked = true;
+                else
+                    checkBoxDireccionItem.Checked = false;
             }
             catch (Exception ex)
             {
@@ -1824,6 +1848,10 @@ namespace ProveedorPrueba
                 txtBoxPoblacionDirecciones.Text = dataGridDirecciones.CurrentRow.Cells[9].Value.ToString();
                 txtBoxEstadoDirecciones.Text = dataGridDirecciones.CurrentRow.Cells[10].Value.ToString();
                 txtBoxPaisDirecciones.Text = dataGridDirecciones.CurrentRow.Cells[11].Value.ToString();
+                if (dataGridDirecciones.CurrentRow.Cells[12].Value.ToString() == "Revisado")
+                    checkBoxDireccionItem.Checked = true;
+                else
+                    checkBoxDireccionItem.Checked = false;
             }
             catch (Exception ex)
             {
@@ -1944,15 +1972,7 @@ namespace ProveedorPrueba
                     MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nLos campos requeridos son: \r\n*Categoría\r\n" +
                         "*Nombre Completo\r\n*Puesto\r\n*Teléfono 1\r\n*Email 1", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
-                }                
-
-                StringBuilder funcionesContacto = new StringBuilder();
-                //if (checkBox1Funciones.Checked)
-                //    funcionesContacto.Append("");
-                //if (checkBox2Funciones.Checked)
-                //    funcionesContacto.Append("");
-                //if (checkBox3Funciones.Checked)
-                //    funcionesContacto.Append("");
+                }   
 
                 EProveedorContacto Contacto = new EProveedorContacto
                 {
@@ -1962,7 +1982,7 @@ namespace ProveedorPrueba
                     NombreCompleto = Convert.ToString(txtBoxNombreContactos.Text),
                     Puesto = Convert.ToString(txtBoxPuestoContactos.Text),
                     Categoria = Convert.ToString(txtBoxCategoriaContactos.Text),
-                    FuncionesContacto = Convert.ToString(funcionesContacto),
+                    FuncionesContacto = Convert.ToString(comboBoxFuncionContacto.SelectedItem),
                     TelefonoPrimario = Convert.ToString(txtBoxTel1Contactos.Text),
                     ExtensionTelefonoPrimario = Convert.ToString(txtBoxExt1Contactos.Text),
                     TelefonoSecundario = Convert.ToString(txtBoxTel2Contactos.Text),
@@ -1971,7 +1991,7 @@ namespace ProveedorPrueba
                     Celular2 = Convert.ToString(txtBoxCel2Contactos.Text),
                     Email1 = Convert.ToString(txtBoxEmail1Contactos.Text),
                     Email2 = Convert.ToString(txtBoxEmail2Contactos.Text),
-                    Comentarios = Convert.ToString(""),
+                    Comentarios = Convert.ToString(txtBoxComentariosContacto.Text),
                     EstatusActivo = Convert.ToBoolean(1)
                 };
 
@@ -2104,15 +2124,8 @@ namespace ProveedorPrueba
                     MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nLos campos requeridos son: \r\n*Categoría\r\n" +
                         "*Nombre Completo\r\n*Puesto\r\n*Teléfono 1\r\n*Email 1", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
-                }
+                }               
                 
-                StringBuilder funcionesContacto = new StringBuilder();
-                //if (checkBox1Funciones.Checked)
-                //    funcionesContacto.Append("");
-                //if (checkBox2Funciones.Checked)
-                //    funcionesContacto.Append("");
-                //if (checkBox3Funciones.Checked)
-                //    funcionesContacto.Append("");
 
                 EProveedorContacto Contacto = new EProveedorContacto
                 {
@@ -2122,7 +2135,7 @@ namespace ProveedorPrueba
                     NombreCompleto = Convert.ToString(txtBoxNombreContactos.Text),
                     Puesto = Convert.ToString(txtBoxPuestoContactos.Text),
                     Categoria = Convert.ToString(txtBoxCategoriaContactos.Text),
-                    FuncionesContacto = Convert.ToString(funcionesContacto),
+                    FuncionesContacto = Convert.ToString(comboBoxFuncionContacto.SelectedItem),
                     TelefonoPrimario = Convert.ToString(txtBoxTel1Contactos.Text),
                     ExtensionTelefonoPrimario = Convert.ToString(txtBoxExt1Contactos.Text),
                     TelefonoSecundario = Convert.ToString(txtBoxTel2Contactos.Text),
@@ -2131,7 +2144,7 @@ namespace ProveedorPrueba
                     Celular2 = Convert.ToString(txtBoxCel2Contactos.Text),
                     Email1 = Convert.ToString(txtBoxEmail1Contactos.Text),
                     Email2 = Convert.ToString(txtBoxEmail2Contactos.Text),
-                    Comentarios = Convert.ToString(""),
+                    Comentarios = Convert.ToString(txtBoxComentariosContacto.Text),
                     EstatusActivo = Convert.ToBoolean(1)
                 };
                 
@@ -2176,12 +2189,13 @@ namespace ProveedorPrueba
                 txtBoxEmail1Contactos.Text = dataGridContactos.CurrentRow.Cells[12].Value.ToString();
                 txtBoxEmail2Contactos.Text = dataGridContactos.CurrentRow.Cells[13].Value.ToString();
                 txtBoxCategoriaContactos.Text = dataGridContactos.CurrentRow.Cells[4].Value.ToString();
-                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                //    checkBox1Funciones.Checked = true;
-                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                //    checkBox2Funciones.Checked = true;
-                //if (dataGridContactos.CurrentRow.Cells[5].Value.ToString().Contains(""))
-                //    checkBox3Funciones.Checked = true;
+                txtBoxComentariosContacto.Text = dataGridContactos.CurrentRow.Cells[14].Value.ToString();
+                comboBoxFuncionContacto.SelectedItem = dataGridContactos.CurrentRow.Cells[5].Value.ToString();
+                if (dataGridContactos.CurrentRow.Cells[15].Value.ToString() == "Revisado")
+                    checkBoxContactoItem.Checked = true;
+                else
+                    checkBoxContactoItem.Checked = false;
+                
             }
             catch (Exception ex)
             {
@@ -2424,6 +2438,11 @@ namespace ProveedorPrueba
                     lblCuentaDePreferenciaClienteMX.Visible = true;
                 else
                     lblCuentaDePreferenciaClienteMX.Visible = false;
+
+                if (dataGridViewDatosBancariosMX.CurrentRow.Cells[9].Value.ToString() == "Revisado")
+                    checkBoxDatoBancarioItem.Checked = true;
+                else
+                    checkBoxDatoBancarioItem.Checked = false;
             }
             catch (Exception ex)
             {
@@ -2663,12 +2682,14 @@ namespace ProveedorPrueba
                     lblFechaVigenciaEX.Visible = true;
                     dateTimePickerDatosBancariosEX.Visible = true;
                     dateTimePickerDatosBancariosEX.Value = Convert.ToDateTime(dataGridDatosBancariosEX.CurrentRow.Cells[11].Value.ToString());
+
                 }
                 else
                 {
                     radioBtnNo.Checked = true;
                     lblFechaVigenciaEX.Visible = false;
                     dateTimePickerDatosBancariosEX.Visible = false;
+
                 }
                 txtBoxTipoRelacionConDestinatarioEX.Text = Convert.ToString(dataGridDatosBancariosEX.CurrentRow.Cells[12].Value.ToString());
                 txtBoxMotivoPagoEX.Text = Convert.ToString(dataGridDatosBancariosEX.CurrentRow.Cells[13].Value.ToString());
@@ -2682,10 +2703,16 @@ namespace ProveedorPrueba
                 txtBoxPoblacionDatosBancariosEX.Text = Convert.ToString(DireccionDatosBancariosEX.Poblacion);
                 txtBoxEstadoDatosBancariosEX.Text = Convert.ToString(DireccionDatosBancariosEX.Estado);
                 txtBoxPaisDatosBancariosEX.Text = Convert.ToString(DireccionDatosBancariosEX.Pais);
+
                 if (dataGridDatosBancariosEX.CurrentRow.Cells[14].Value.ToString() == "Preferente")
                     lblCuentaDePreferenciaClienteEX.Visible = true;
                 else
                     lblCuentaDePreferenciaClienteEX.Visible = false;
+
+                if (dataGridDatosBancariosEX.CurrentRow.Cells[16].Value.ToString() == "Revisado")
+                    checkBoxDatoBancarioEXItem.Checked = true;
+                else
+                    checkBoxDatoBancarioEXItem.Checked = false;
             }
             catch (Exception ex)
             {
@@ -4747,6 +4774,41 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnEliminarFletes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Desactivar";
+                string categoriaDato = "Flete";
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ListaFletes = proveedorFletesBol.consultarFletesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
+
+                foreach (var i in ListaFletes)
+                {
+                    if (Convert.ToInt32(dataGridFletes.CurrentRow.Cells[0].Value) == i.Fleteid)
+                    {
+                        proveedorFletesBol.desactivarFleteByIdByClaveProveedorVal(i.Fleteid, i.ClaveProveedor);
+                        MessageBox.Show(categoriaDato + " ha sido desactivada exitosamente.", accionDato + " " + categoriaDato,
+                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                        CargarCondiciones(eProveedorDatosPrim.ClaveProveedor);
+                        CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void VerInformacionFletes_Click(object sender, EventArgs e)
         {
             try
@@ -5524,6 +5586,8 @@ namespace ProveedorPrueba
         {
 
         }
+
+        
 
         //private void btnSiguienteRutas_Click(object sender, EventArgs e)
         //{

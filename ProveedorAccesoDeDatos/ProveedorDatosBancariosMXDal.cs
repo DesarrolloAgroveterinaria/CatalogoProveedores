@@ -37,7 +37,8 @@ namespace ProveedorAccesoDeDatos
                             CLABE = Convert.ToString(reader["CLABE"]),
                             Sucursal = reader["Sucursal"] == DBNull.Value ? "" : Convert.ToString(reader["Sucursal"]),
                             EsPreferencia = Convert.ToBoolean(reader["EsPreferencia"]),
-                            EstatusActivo = Convert.ToBoolean(reader["EstatusActivo"])
+                            EstatusActivo = Convert.ToBoolean(reader["EstatusActivo"]),
+                            Revisado = reader["Revisado"] == DBNull.Value ? false : Convert.ToBoolean(reader["Revisado"])
                         };
                         DLista.Add(D);
                     }
