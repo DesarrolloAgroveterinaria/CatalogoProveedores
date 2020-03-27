@@ -129,6 +129,29 @@ namespace ProveedorAccesoDeDatos
             }
         }
 
+        public void marcarDireccionRevisada(string claveProveedor, int idDireccion, string seccionDato, bool revisado)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))
+            {
+                conn.Open();
+
+                const string Query = @"EXEC AGROCatalogoProveedoresSP_EditarRevisionIndByClaveById @ClaveProveedor,
+                                    @NumIdDireccion, @Contactoid, @CuentaMXid, @CuentaEXid, @PlazoCreditoid
+                                    @Revisado";
+
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClaveProveedor", claveProveedor);                    
+                    cmd.Parameters.AddWithValue("@NumIdDireccion", idDireccion);
+                    cmd.Parameters.AddWithValue("@Contactoid", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CuentaMXid", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@CuentaEXid", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@PlazoCreditoid", DBNull.Value);
+                    cmd.Parameters.AddWithValue("@Revisado", revisado);
+                }
+            }
+        }
+
         public int ConsultarMaxId(string claveProveedor)
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))
@@ -166,7 +189,8 @@ namespace ProveedorAccesoDeDatos
 	                                @Poblacion,
 	                                @Estado,
 	                                @Pais,
-	                                @EstatusActivo";
+	                                @EstatusActivo,
+                                    @Revisado";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
@@ -183,6 +207,7 @@ namespace ProveedorAccesoDeDatos
                     cmd.Parameters.AddWithValue("@Estado", Direccion.Estado);
                     cmd.Parameters.AddWithValue("@Pais", Direccion.Pais);
                     cmd.Parameters.Add("@EstatusActivo", SqlDbType.Int).Value = valorActivacion;
+                    cmd.Parameters.AddWithValue("@Revisado", Direccion.Revisado);
                     cmd.ExecuteNonQuery();
                 }
             }

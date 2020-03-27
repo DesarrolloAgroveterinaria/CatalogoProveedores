@@ -121,7 +121,8 @@ namespace ProveedorAccesoDeDatos
 	                                @Email1,
                                     @Email2,
                                     @Comentarios,
-                                    @EstatusActivo";
+                                    @EstatusActivo,
+                                    @Revisado";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
@@ -142,6 +143,7 @@ namespace ProveedorAccesoDeDatos
                     cmd.Parameters.AddWithValue("@Email2", Contacto.Email2);
                     cmd.Parameters.AddWithValue("@Comentarios", Contacto.Comentarios);
                     cmd.Parameters.Add("@EstatusActivo", SqlDbType.Int).Value = Contacto.EstatusActivo;
+                    cmd.Parameters.AddWithValue("@Revisado", Contacto.Revisado);
                     cmd.ExecuteNonQuery();
                 }
             }

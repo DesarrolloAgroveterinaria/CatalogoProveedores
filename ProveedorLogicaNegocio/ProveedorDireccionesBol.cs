@@ -126,6 +126,11 @@ namespace ProveedorLogicaNegocio
             mensajeRespuestaSP.Clear();
             return proveedorDireccionesDal.ConsultarMaxId(claveProveedor);
         }
-        
+
+        public void marcarDireccionRevisada(string claveProveedor, int id, string seccionDato, bool revisado)
+        {
+            mensajeRespuestaSP.Clear();
+            proveedorDireccionesDal.marcarDireccionRevisada(claveProveedor, id, seccionDato, revisado);
+        }
     }
 }

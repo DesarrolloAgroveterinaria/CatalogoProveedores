@@ -112,7 +112,8 @@ namespace ProveedorAccesoDeDatos
                                     @Vigencia,
                                     @FechaDeVigencia,
                                     @TipoRelacionConDestinatario,
-                                    @MotivoPago";
+                                    @MotivoPago,
+                                    @Revisado";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
@@ -133,6 +134,7 @@ namespace ProveedorAccesoDeDatos
                         cmd.Parameters.AddWithValue("@FechaDeVigencia", cuentaEX.FechaDeVigencia);
                     cmd.Parameters.AddWithValue("@TipoRelacionConDestinatario", cuentaEX.TipoRelacionConDestinatario);
                     cmd.Parameters.AddWithValue("@MotivoPago", cuentaEX.MotivoPago);
+                    cmd.Parameters.AddWithValue("@Revisado", cuentaEX.Revisado);
                     cmd.ExecuteNonQuery();
                 }
             }

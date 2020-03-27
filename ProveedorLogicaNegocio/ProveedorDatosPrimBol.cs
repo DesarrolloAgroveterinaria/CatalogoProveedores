@@ -98,57 +98,7 @@ namespace ProveedorLogicaNegocio
 
 
             return mensajeRespuestaSP.Length == 0;
-        }
-
-        //Agregar Proveedor
-        public bool agregarProveedor(String nombreProveedor, String claveProveedor, String RFCProveedor, String categoriaProveedor)
-        {
-            //iniciar instancia de comando para querys de base de datos
-            //iniciar instancia de ingresarQuery String ingresarQuery = "INSERT INTO ";
-            //iniciar conexión
-            //agregar parametros de query
-            //abrir o iniciar conexión con base de datos
-            //if ejecutar 
-            //cerrar conexión con base de datos
-            return true;
-        }
-
-        //Editar Proveedor
-        public bool editarProveedor(String nombreProveedor, String claveProveedor, String RFCProveedor, String categoriaProveedor)
-        {
-            //iniciar instancia de comando para querys de base de datos
-            //iniciar instancia de ingresarQuery String ingresarQuery = "INSERT INTO ";
-            //iniciar conexión
-            //agregar parametros de query
-            //abrir o iniciar conexión con base de datos
-            //if ejecutar 
-            //cerrar conexión con base de datos
-            return true;
-        }
-        //Eliminar Proveedor
-        public bool eliminarProveedor(String nombreProveedor, String claveProveedor, String RFCProveedor, String categoriaProveedor)
-        {
-            //iniciar instancia de comando para querys de base de datos
-            //iniciar instancia de ingresarQuery String ingresarQuery = "INSERT INTO ";
-            //iniciar conexión
-            //agregar parametros de query
-            //abrir o iniciar conexión con base de datos
-            //if ejecutar 
-            //cerrar conexión con base de datos
-            return true;
-        }
-        //Obtener lista de Proveedores
-        public String getListaProveedor()
-        {
-            //iniciar instancia de comando para querys de base de datos
-            //iniciar instancia de ingresarQuery String ingresarQuery = "INSERT INTO ";
-            //iniciar conexión
-            //agregar parametros de query
-            //abrir o iniciar conexión con base de datos
-            //if ejecutar 
-            //cerrar conexión con base de datos
-            return "";
-        }       
+        }                
 
         //Obtener tabla de Proveedores
         //Obtener Ultima Actualizacion

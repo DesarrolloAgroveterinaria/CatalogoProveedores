@@ -30,7 +30,7 @@ namespace ProveedorLogicaNegocio
             {
                 foreach (var i in ListaCuentas)
                 {
-                    if (cuentaMX.CLABE == i.CLABE && cuentaMX.NumeroCuentaDestinatario == i.NumeroCuentaDestinatario)
+                    if (cuentaMX.CLABE == i.CLABE && cuentaMX.NumeroCuentaDestinatario == i.NumeroCuentaDestinatario && i.EstatusActivo)
                     {
                         mensajeRespuestaSP.Append("La Cuenta Bancaria ingresada ya existe.");
                         mensajeRespuestaSP.Append(System.Environment.NewLine);

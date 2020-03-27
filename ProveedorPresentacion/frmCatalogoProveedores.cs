@@ -24,6 +24,7 @@ namespace ProveedorPrueba
         //Crear instancias de Clase Entidad de todas las entidades a utilizar, así como listas para guardar datos 
         //public EProveedorUsuario eProveedorUsuario;
         private List<EProveedorUsuarioPermisos> eProveedorUsuarioPermisos;
+        private List<EClaveBanco> ListaBancos;
         //private EProveedorExpediente eProveedorExpediente;
         private EProveedorDatosPrimarios eProveedorDatosPrim;
         private EProveedorProv eProveedorProv;
@@ -48,6 +49,7 @@ namespace ProveedorPrueba
 
         private readonly ProveedorUsuariosBol proveedorUsuarioBol = new ProveedorUsuariosBol();
         private readonly ProveedorUsuarioPermisosBol proveedorUsuarioPermisosBol = new ProveedorUsuarioPermisosBol();
+        private readonly ClaveBancoBol claveBancoBol= new ClaveBancoBol();
         //private readonly ProveedorExpedienteBol proveedorExpedienteBol = new ProveedorExpedienteBol();
         private readonly ProveedorDatosPrimBol proveedorDatosPrimBol = new ProveedorDatosPrimBol();
         private readonly ProveedorProvBol proveedorProvBol = new ProveedorProvBol();
@@ -80,6 +82,16 @@ namespace ProveedorPrueba
             //{
             //    c.Enabled = false;
             //}
+
+            //Cargar Lista de Bancos en ComboBox
+            ListaBancos = claveBancoBol.getAllBancos();
+            foreach(var i in ListaBancos)
+            {
+                comboBoxBancoDatosBancariosMX.Items.Add(i.Banco);
+            }
+            comboBoxBancoDatosBancariosMX.Items.Add("Otro");
+
+            //Deshabilitar campos exclusivos a ciertos usuarios
             checkBoxDireccionesRevisado.Enabled = false;
             checkBoxContactosRevisado.Enabled = false;
             checkBoxDatosBancariosMXRevisado.Enabled = false;
@@ -89,6 +101,7 @@ namespace ProveedorPrueba
             checkBoxPoliticasRevisado.Enabled = false;
             checkBoxExpedienteRevisado.Enabled = false;
 
+            //Habilitar campos para ciertos usuarios
             if (EProveedorUsuario.Usuario == "FROMO")
             {
                 checkBoxDireccionesRevisado.Enabled = true;
@@ -110,11 +123,7 @@ namespace ProveedorPrueba
             else if(EProveedorUsuario.Usuario == "AMON")
             {
                 checkBoxDireccionesRevisado.Enabled = true;
-            }
-            //Expediente
-            //Acuerdos
-            //Condiciones
-            //Politicas
+            }            
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -1077,7 +1086,6 @@ namespace ProveedorPrueba
                 tablaDirecciones.Columns.Add("DireccionRevisada");
                 tablaDirecciones.Columns.Add("Dirección");
                 tablaDirecciones.Columns.Add("Ubicación");
-                
 
                 foreach (var i in ListaDirecciones)
                 {
@@ -1226,6 +1234,9 @@ namespace ProveedorPrueba
                 picBoxLogoCondiciones.ImageLocation = "";
 
                 //Condiciones 
+                dataGridPlazosCredito.DataSource = null;
+                dataGridPlazosCredito.Rows.Clear();
+
                 txtBoxCondicionesCreditoCondiciones.Clear();
                 txtBoxTiempoEntregaCondiciones.Clear();
                 txtBoxObservacionesCondiciones.Clear();
@@ -1332,6 +1343,7 @@ namespace ProveedorPrueba
 
                 //Direcciones
                 checkBoxDireccionesRevisado.Checked = false;
+                checkBoxDireccionItem.Checked = false;
                 comboBoxConceptoUsoDirecciones.SelectedIndex = -1;
                 dataGridDirecciones.DataSource = null;
                 dataGridDirecciones.Rows.Clear();
@@ -1347,6 +1359,7 @@ namespace ProveedorPrueba
 
                 //Contactos
                 checkBoxContactosRevisado.Checked = false;
+                checkBoxContactoItem.Checked = false;
                 dataGridContactos.DataSource = null;
                 dataGridContactos.Rows.Clear();
                 txtBoxNombreContactos.Clear();
@@ -1359,14 +1372,15 @@ namespace ProveedorPrueba
                 txtBoxCel2Contactos.Clear();
                 txtBoxEmail1Contactos.Clear();
                 txtBoxEmail2Contactos.Clear();
-                txtBoxCategoriaContactos.Clear();                
-                //checkBox1Funciones.Checked = false;               
-                //checkBox2Funciones.Checked = false;
-                //checkBox3Funciones.Checked = false;
+                txtBoxCategoriaContactos.Clear();
+                comboBoxFuncionContacto.SelectedIndex = -1;
+                txtBoxComentariosContacto.Clear();
+                
 
                 //Datos Bancarios MX
                 checkBoxDatosBancariosMXRevisado.Checked = false;
                 comboBoxBancoDatosBancariosMX.SelectedIndex = -1;
+                checkBoxDatoBancarioItem.Checked = false;
                 dataGridViewDatosBancariosMX.DataSource = null;
                 dataGridViewDatosBancariosMX.Rows.Clear();
                 txtBoxCLABEDatosBancariosMX.Clear();
@@ -1377,6 +1391,7 @@ namespace ProveedorPrueba
 
                 //Datos Bancarios EX
                 checkBoxDatosBancariosEXRevisado.Checked = false;
+                checkBoxDatoBancarioEXItem.Checked = false;
                 dataGridDatosBancariosEX.DataSource = null;
                 dataGridDatosBancariosEX.Rows.Clear();
                 txtBoxNombreBancoDestinoEX.Clear();
@@ -1899,6 +1914,7 @@ namespace ProveedorPrueba
             {
                 string accionDato = "Editar";
                 string categoriaDato = "Dirección";
+                bool revisado = false;
 
                 if (eProveedorDatosPrim == null)
                 {
@@ -1915,23 +1931,27 @@ namespace ProveedorPrueba
                         "*Colonia\r\n*Num Exterior\r\n*Código Postal\r\n*Población\r\n*Estado\r\n*País", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
                 }
-                
+
+                if (checkBoxDireccionItem.Checked)
+                    revisado = true;
+
                 EProveedorDirecciones Direccion = new EProveedorDirecciones
                 {
-                    ClaveProveedor = Convert.ToString(eProveedorDatosPrim.ClaveProveedor),
-                    //PrioridadDeUso = Convert.ToInt32(2),
-                    NumIdDireccion = Convert.ToInt32(dataGridDirecciones.CurrentRow.Cells[0].Value.ToString()),
-                    ConceptoUso = Convert.ToString(comboBoxConceptoUsoDirecciones.SelectedItem),
-                    CalleAveBlvr = Convert.ToString(txtBoxDireccionDirecciones.Text),
-                    NumExterior = Convert.ToString(txtBoxNumExteriorDirecciones.Text),
-                    NumInterior = Convert.ToString(txtBoxNumInteriorDirecciones.Text),
-                    InfAdicional = Convert.ToString(txtBoxInfAdicionalDirecciones.Text),
-                    Colonia = Convert.ToString(txtBoxColoniaDirecciones.Text),
-                    CodigoPostal = Convert.ToString(txtBoxCPDirecciones.Text),
-                    Poblacion = Convert.ToString(txtBoxPoblacionDirecciones.Text),
-                    Estado = Convert.ToString(txtBoxEstadoDirecciones.Text),
-                    Pais = Convert.ToString(txtBoxPaisDirecciones.Text),
-                    EstatusActivo = Convert.ToBoolean(1)
+                        ClaveProveedor = Convert.ToString(eProveedorDatosPrim.ClaveProveedor),
+                        //PrioridadDeUso = Convert.ToInt32(2),
+                        NumIdDireccion = Convert.ToInt32(dataGridDirecciones.CurrentRow.Cells[0].Value.ToString()),
+                        ConceptoUso = Convert.ToString(comboBoxConceptoUsoDirecciones.SelectedItem),
+                        CalleAveBlvr = Convert.ToString(txtBoxDireccionDirecciones.Text),
+                        NumExterior = Convert.ToString(txtBoxNumExteriorDirecciones.Text),
+                        NumInterior = Convert.ToString(txtBoxNumInteriorDirecciones.Text),
+                        InfAdicional = Convert.ToString(txtBoxInfAdicionalDirecciones.Text),
+                        Colonia = Convert.ToString(txtBoxColoniaDirecciones.Text),
+                        CodigoPostal = Convert.ToString(txtBoxCPDirecciones.Text),
+                        Poblacion = Convert.ToString(txtBoxPoblacionDirecciones.Text),
+                        Estado = Convert.ToString(txtBoxEstadoDirecciones.Text),
+                        Pais = Convert.ToString(txtBoxPaisDirecciones.Text),
+                        EstatusActivo = Convert.ToBoolean(1),
+                        Revisado = revisado
                 };               
 
                 if (proveedorDireccionesBol.editarDireccionesByIdByClaveProveedorVal(Direccion))
@@ -1953,6 +1973,7 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         private void btnAgregarContacto_Click(object sender, EventArgs e)
         {
             try
@@ -2111,6 +2132,8 @@ namespace ProveedorPrueba
             {
                 string accionDato = "Editar";
                 string categoriaDato = "Contacto";
+                bool revisado = false;
+
                 if (eProveedorDatosPrim == null)
                 {
                     MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
@@ -2124,8 +2147,10 @@ namespace ProveedorPrueba
                     MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nLos campos requeridos son: \r\n*Categoría\r\n" +
                         "*Nombre Completo\r\n*Puesto\r\n*Teléfono 1\r\n*Email 1", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
-                }               
-                
+                }
+
+                if (checkBoxContactoItem.Checked)
+                    revisado = true;
 
                 EProveedorContacto Contacto = new EProveedorContacto
                 {
@@ -2145,7 +2170,8 @@ namespace ProveedorPrueba
                     Email1 = Convert.ToString(txtBoxEmail1Contactos.Text),
                     Email2 = Convert.ToString(txtBoxEmail2Contactos.Text),
                     Comentarios = Convert.ToString(txtBoxComentariosContacto.Text),
-                    EstatusActivo = Convert.ToBoolean(1)
+                    EstatusActivo = Convert.ToBoolean(1),
+                    Revisado = revisado
                 };
                 
                 if (proveedorContactosBol.editarContactoByIdByClave(Contacto))
@@ -2351,6 +2377,7 @@ namespace ProveedorPrueba
             {
                 string accionDato = "Editar";
                 string categoriaDato = "Cuenta Bancaria MX";
+                bool revisado = false;
 
                 if (eProveedorDatosPrim == null)
                 {
@@ -2365,7 +2392,10 @@ namespace ProveedorPrueba
                     MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nLos campos requeridos son: \r\n*Nombre de Banco\r\n" +
                         "*CLABE\r\n*Número de Cuenta\r\n*Divisa", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
-                }                
+                }  
+                
+                if(checkBoxDatoBancarioItem.Checked)
+                    revisado = true;
 
                 EProveedorDatosBancariosMX Cuenta = new EProveedorDatosBancariosMX
                 {
@@ -2378,7 +2408,8 @@ namespace ProveedorPrueba
                     Sucursal = Convert.ToString(txtBoxSucursalDatosBancariosMX.Text),
                     DivisaAPagar = Convert.ToString(comboBoxDivisaCuentaBancariaMX.SelectedItem),
                     EsPreferencia = Convert.ToBoolean(dataGridViewDatosBancariosMX.CurrentRow.Cells[1].Value.ToString() == "Preferente" ? true : false),
-                    EstatusActivo = Convert.ToBoolean(1)
+                    EstatusActivo = Convert.ToBoolean(1),
+                    Revisado = revisado
                 };
 
                 if (proveedorDatosBancariosMXBol.editarCuentaByIdByClave(Cuenta))
@@ -2537,6 +2568,8 @@ namespace ProveedorPrueba
             {
                 string accionDato = "Editar";
                 string categoriaDato = "Cuenta Bancaria";
+                bool revisado = false;
+
                 if (eProveedorDatosPrim == null)
                 {
                     MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
@@ -2550,7 +2583,10 @@ namespace ProveedorPrueba
                     MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nLos campos requeridos son: \r\n*Nombre de Banco Destino\r\n" +
                         "*Número de Cuenta Destinatario\r\n*Clave de Banco\r\n*Divisa", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
-                }               
+                }
+
+                if (checkBoxDatoBancarioEXItem.Checked)
+                    revisado = true;
 
                 EProveedorDirecciones D = new EProveedorDirecciones
                 {
@@ -2568,6 +2604,7 @@ namespace ProveedorPrueba
                     Estado = Convert.ToString(txtBoxEstadoDatosBancariosEX.Text),
                     Pais = Convert.ToString(txtBoxPaisDatosBancariosEX.Text),
                     //EstatusActivo = Convert.ToBoolean(1)
+                    Revisado = revisado
                 };
                 EProveedorDatosBancariosEX CuentaEX = new EProveedorDatosBancariosEX
                 {
@@ -5224,6 +5261,11 @@ namespace ProveedorPrueba
         //
         //Funciones sin definición sin uso
         //
+
+        private void checkBoxDireccionItem_CheckedChanged(object sender, EventArgs e)
+        {
+            //sin uso
+        }
         private void btnCerrar2_Click(object sender, EventArgs e)
         {
             //sin uso
@@ -5587,7 +5629,14 @@ namespace ProveedorPrueba
 
         }
 
-        
+        private void pnlDireccion1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
 
         //private void btnSiguienteRutas_Click(object sender, EventArgs e)
         //{

@@ -273,6 +273,7 @@
             this.pnlCondiciones = new System.Windows.Forms.Panel();
             this.lblCondicionesEntrega = new System.Windows.Forms.Label();
             this.pnlPlazosCredito = new System.Windows.Forms.Panel();
+            this.lblPlazoCreditoNoActualizacion = new System.Windows.Forms.Label();
             this.checkBoxCondicionesItem = new System.Windows.Forms.CheckBox();
             this.lblObservacionesGeneralesPlazo = new System.Windows.Forms.Label();
             this.txtBoxObservacionesGeneralesPlazo = new System.Windows.Forms.TextBox();
@@ -694,11 +695,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabOpciones = new MetroFramework.Controls.MetroTabControl();
-            this.lblDireccionesNoActualizacion = new System.Windows.Forms.Label();
-            this.lblContactosNoActualizacion = new System.Windows.Forms.Label();
-            this.lblDatosBancariosMXNoActualizacion = new System.Windows.Forms.Label();
-            this.lblDatosBancariosEXNoActualizacion = new System.Windows.Forms.Label();
-            this.lblPlazoCreditoNoActualizacion = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlBarraSuperior.SuspendLayout();
             this.pnlNotificaciones.SuspendLayout();
             this.tabExpediente.SuspendLayout();
@@ -3393,6 +3390,7 @@
             // 
             // pnlDatosPrimCondiciones
             // 
+            this.pnlDatosPrimCondiciones.Controls.Add(this.label9);
             this.pnlDatosPrimCondiciones.Controls.Add(this.checkBoxCondicionesRevisado);
             this.pnlDatosPrimCondiciones.Controls.Add(this.btnGuardarCambiosSeccionCondiciones1);
             this.pnlDatosPrimCondiciones.Controls.Add(this.txtBoxCategoriaCondiciones);
@@ -3642,6 +3640,16 @@
             this.pnlPlazosCredito.Name = "pnlPlazosCredito";
             this.pnlPlazosCredito.Size = new System.Drawing.Size(958, 807);
             this.pnlPlazosCredito.TabIndex = 64;
+            // 
+            // lblPlazoCreditoNoActualizacion
+            // 
+            this.lblPlazoCreditoNoActualizacion.AutoSize = true;
+            this.lblPlazoCreditoNoActualizacion.ForeColor = System.Drawing.Color.Red;
+            this.lblPlazoCreditoNoActualizacion.Location = new System.Drawing.Point(465, 21);
+            this.lblPlazoCreditoNoActualizacion.Name = "lblPlazoCreditoNoActualizacion";
+            this.lblPlazoCreditoNoActualizacion.Size = new System.Drawing.Size(130, 14);
+            this.lblPlazoCreditoNoActualizacion.TabIndex = 296;
+            this.lblPlazoCreditoNoActualizacion.Text = "*No se puede actualizar";
             // 
             // checkBoxCondicionesItem
             // 
@@ -6453,7 +6461,6 @@
             // pnlDireccion1
             // 
             this.pnlDireccion1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDireccion1.Controls.Add(this.lblDireccionesNoActualizacion);
             this.pnlDireccion1.Controls.Add(this.checkBoxDireccionItem);
             this.pnlDireccion1.Controls.Add(this.dataGridDirecciones);
             this.pnlDireccion1.Controls.Add(this.comboBoxConceptoUsoDirecciones);
@@ -6483,8 +6490,9 @@
             this.pnlDireccion1.Controls.Add(this.btnDesactivarDireccion);
             this.pnlDireccion1.Location = new System.Drawing.Point(16, 51);
             this.pnlDireccion1.Name = "pnlDireccion1";
-            this.pnlDireccion1.Size = new System.Drawing.Size(946, 468);
+            this.pnlDireccion1.Size = new System.Drawing.Size(976, 468);
             this.pnlDireccion1.TabIndex = 13;
+            this.pnlDireccion1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDireccion1_Paint);
             // 
             // checkBoxDireccionItem
             // 
@@ -6496,6 +6504,7 @@
             this.checkBoxDireccionItem.TabIndex = 16;
             this.checkBoxDireccionItem.Text = "Información Verificada";
             this.checkBoxDireccionItem.UseVisualStyleBackColor = true;
+            this.checkBoxDireccionItem.CheckedChanged += new System.EventHandler(this.checkBoxDireccionItem_CheckedChanged);
             // 
             // dataGridDirecciones
             // 
@@ -6518,10 +6527,10 @@
             this.DireccionRevisada,
             this.dataGridViewTextBoxColumn29,
             this.dataGridViewTextBoxColumn30});
-            this.dataGridDirecciones.Location = new System.Drawing.Point(550, 40);
+            this.dataGridDirecciones.Location = new System.Drawing.Point(548, 54);
             this.dataGridDirecciones.Name = "dataGridDirecciones";
             this.dataGridDirecciones.ReadOnly = true;
-            this.dataGridDirecciones.Size = new System.Drawing.Size(381, 237);
+            this.dataGridDirecciones.Size = new System.Drawing.Size(411, 249);
             this.dataGridDirecciones.TabIndex = 91;
             this.dataGridDirecciones.Click += new System.EventHandler(this.dataGridDirecciones_Click);
             // 
@@ -6676,9 +6685,9 @@
             this.txtBoxPaisDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPaisDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPaisDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPaisDirecciones.Location = new System.Drawing.Point(134, 388);
+            this.txtBoxPaisDirecciones.Location = new System.Drawing.Point(134, 438);
             this.txtBoxPaisDirecciones.Name = "txtBoxPaisDirecciones";
-            this.txtBoxPaisDirecciones.Size = new System.Drawing.Size(225, 21);
+            this.txtBoxPaisDirecciones.Size = new System.Drawing.Size(160, 21);
             this.txtBoxPaisDirecciones.TabIndex = 26;
             this.txtBoxPaisDirecciones.TextChanged += new System.EventHandler(this.txtBoxPaisDirecciones_TextChanged);
             // 
@@ -6687,7 +6696,7 @@
             this.lblPaisDirecciones.AutoSize = true;
             this.lblPaisDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaisDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPaisDirecciones.Location = new System.Drawing.Point(80, 388);
+            this.lblPaisDirecciones.Location = new System.Drawing.Point(80, 438);
             this.lblPaisDirecciones.Name = "lblPaisDirecciones";
             this.lblPaisDirecciones.Size = new System.Drawing.Size(33, 17);
             this.lblPaisDirecciones.TabIndex = 88;
@@ -6698,9 +6707,9 @@
             this.txtBoxNumExteriorDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxNumExteriorDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNumExteriorDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxNumExteriorDirecciones.Location = new System.Drawing.Point(444, 143);
+            this.txtBoxNumExteriorDirecciones.Location = new System.Drawing.Point(134, 174);
             this.txtBoxNumExteriorDirecciones.Name = "txtBoxNumExteriorDirecciones";
-            this.txtBoxNumExteriorDirecciones.Size = new System.Drawing.Size(90, 21);
+            this.txtBoxNumExteriorDirecciones.Size = new System.Drawing.Size(107, 21);
             this.txtBoxNumExteriorDirecciones.TabIndex = 19;
             // 
             // txtBoxNumInteriorDirecciones
@@ -6708,9 +6717,9 @@
             this.txtBoxNumInteriorDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxNumInteriorDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNumInteriorDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxNumInteriorDirecciones.Location = new System.Drawing.Point(444, 178);
+            this.txtBoxNumInteriorDirecciones.Location = new System.Drawing.Point(345, 174);
             this.txtBoxNumInteriorDirecciones.Name = "txtBoxNumInteriorDirecciones";
-            this.txtBoxNumInteriorDirecciones.Size = new System.Drawing.Size(90, 21);
+            this.txtBoxNumInteriorDirecciones.Size = new System.Drawing.Size(121, 21);
             this.txtBoxNumInteriorDirecciones.TabIndex = 21;
             // 
             // lblNumExteriorDirecciones
@@ -6718,7 +6727,7 @@
             this.lblNumExteriorDirecciones.AutoSize = true;
             this.lblNumExteriorDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumExteriorDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblNumExteriorDirecciones.Location = new System.Drawing.Point(372, 143);
+            this.lblNumExteriorDirecciones.Location = new System.Drawing.Point(62, 174);
             this.lblNumExteriorDirecciones.Name = "lblNumExteriorDirecciones";
             this.lblNumExteriorDirecciones.Size = new System.Drawing.Size(68, 17);
             this.lblNumExteriorDirecciones.TabIndex = 85;
@@ -6729,7 +6738,7 @@
             this.lblNumInteriorDirecciones.AutoSize = true;
             this.lblNumInteriorDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumInteriorDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblNumInteriorDirecciones.Location = new System.Drawing.Point(372, 178);
+            this.lblNumInteriorDirecciones.Location = new System.Drawing.Point(273, 174);
             this.lblNumInteriorDirecciones.Name = "lblNumInteriorDirecciones";
             this.lblNumInteriorDirecciones.Size = new System.Drawing.Size(66, 17);
             this.lblNumInteriorDirecciones.TabIndex = 84;
@@ -6739,7 +6748,7 @@
             // 
             this.btnPriorizarDirecciones.BackColor = System.Drawing.Color.Gold;
             this.btnPriorizarDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPriorizarDirecciones.Location = new System.Drawing.Point(680, 8);
+            this.btnPriorizarDirecciones.Location = new System.Drawing.Point(689, 11);
             this.btnPriorizarDirecciones.Name = "btnPriorizarDirecciones";
             this.btnPriorizarDirecciones.Size = new System.Drawing.Size(108, 23);
             this.btnPriorizarDirecciones.TabIndex = 28;
@@ -6750,7 +6759,7 @@
             // btnLimpiarCamposDirecciones
             // 
             this.btnLimpiarCamposDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposDirecciones.Location = new System.Drawing.Point(555, 350);
+            this.btnLimpiarCamposDirecciones.Location = new System.Drawing.Point(565, 364);
             this.btnLimpiarCamposDirecciones.Name = "btnLimpiarCamposDirecciones";
             this.btnLimpiarCamposDirecciones.Size = new System.Drawing.Size(354, 28);
             this.btnLimpiarCamposDirecciones.TabIndex = 27;
@@ -6762,7 +6771,7 @@
             // 
             this.btnEditarDireccion.BackColor = System.Drawing.Color.Wheat;
             this.btnEditarDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarDireccion.Location = new System.Drawing.Point(830, 316);
+            this.btnEditarDireccion.Location = new System.Drawing.Point(840, 330);
             this.btnEditarDireccion.Name = "btnEditarDireccion";
             this.btnEditarDireccion.Size = new System.Drawing.Size(108, 23);
             this.btnEditarDireccion.TabIndex = 26;
@@ -6774,7 +6783,7 @@
             // 
             this.btnAgregarDireccion.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAgregarDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarDireccion.Location = new System.Drawing.Point(540, 316);
+            this.btnAgregarDireccion.Location = new System.Drawing.Point(550, 330);
             this.btnAgregarDireccion.Name = "btnAgregarDireccion";
             this.btnAgregarDireccion.Size = new System.Drawing.Size(108, 23);
             this.btnAgregarDireccion.TabIndex = 24;
@@ -6787,9 +6796,9 @@
             this.txtBoxEstadoDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxEstadoDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEstadoDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxEstadoDirecciones.Location = new System.Drawing.Point(134, 352);
+            this.txtBoxEstadoDirecciones.Location = new System.Drawing.Point(134, 402);
             this.txtBoxEstadoDirecciones.Name = "txtBoxEstadoDirecciones";
-            this.txtBoxEstadoDirecciones.Size = new System.Drawing.Size(225, 21);
+            this.txtBoxEstadoDirecciones.Size = new System.Drawing.Size(160, 21);
             this.txtBoxEstadoDirecciones.TabIndex = 25;
             // 
             // lblEstadoDirecciones
@@ -6797,7 +6806,7 @@
             this.lblEstadoDirecciones.AutoSize = true;
             this.lblEstadoDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblEstadoDirecciones.Location = new System.Drawing.Point(64, 351);
+            this.lblEstadoDirecciones.Location = new System.Drawing.Point(64, 401);
             this.lblEstadoDirecciones.Name = "lblEstadoDirecciones";
             this.lblEstadoDirecciones.Size = new System.Drawing.Size(49, 17);
             this.lblEstadoDirecciones.TabIndex = 51;
@@ -6808,9 +6817,9 @@
             this.txtBoxPoblacionDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPoblacionDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPoblacionDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPoblacionDirecciones.Location = new System.Drawing.Point(134, 318);
+            this.txtBoxPoblacionDirecciones.Location = new System.Drawing.Point(134, 368);
             this.txtBoxPoblacionDirecciones.Name = "txtBoxPoblacionDirecciones";
-            this.txtBoxPoblacionDirecciones.Size = new System.Drawing.Size(225, 21);
+            this.txtBoxPoblacionDirecciones.Size = new System.Drawing.Size(160, 21);
             this.txtBoxPoblacionDirecciones.TabIndex = 24;
             // 
             // txtBoxCPDirecciones
@@ -6818,9 +6827,9 @@
             this.txtBoxCPDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCPDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCPDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCPDirecciones.Location = new System.Drawing.Point(135, 281);
+            this.txtBoxCPDirecciones.Location = new System.Drawing.Point(135, 331);
             this.txtBoxCPDirecciones.Name = "txtBoxCPDirecciones";
-            this.txtBoxCPDirecciones.Size = new System.Drawing.Size(88, 21);
+            this.txtBoxCPDirecciones.Size = new System.Drawing.Size(101, 21);
             this.txtBoxCPDirecciones.TabIndex = 23;
             // 
             // lblPoblacionDirecciones
@@ -6828,7 +6837,7 @@
             this.lblPoblacionDirecciones.AutoSize = true;
             this.lblPoblacionDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPoblacionDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPoblacionDirecciones.Location = new System.Drawing.Point(44, 316);
+            this.lblPoblacionDirecciones.Location = new System.Drawing.Point(44, 366);
             this.lblPoblacionDirecciones.Name = "lblPoblacionDirecciones";
             this.lblPoblacionDirecciones.Size = new System.Drawing.Size(69, 17);
             this.lblPoblacionDirecciones.TabIndex = 48;
@@ -6839,7 +6848,7 @@
             this.lblCPDirecciones.AutoSize = true;
             this.lblCPDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCPDirecciones.Location = new System.Drawing.Point(19, 281);
+            this.lblCPDirecciones.Location = new System.Drawing.Point(19, 331);
             this.lblCPDirecciones.Name = "lblCPDirecciones";
             this.lblCPDirecciones.Size = new System.Drawing.Size(94, 17);
             this.lblCPDirecciones.TabIndex = 46;
@@ -6850,11 +6859,11 @@
             this.txtBoxInfAdicionalDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxInfAdicionalDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxInfAdicionalDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxInfAdicionalDirecciones.Location = new System.Drawing.Point(134, 210);
+            this.txtBoxInfAdicionalDirecciones.Location = new System.Drawing.Point(131, 244);
             this.txtBoxInfAdicionalDirecciones.Multiline = true;
             this.txtBoxInfAdicionalDirecciones.Name = "txtBoxInfAdicionalDirecciones";
             this.txtBoxInfAdicionalDirecciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxInfAdicionalDirecciones.Size = new System.Drawing.Size(400, 54);
+            this.txtBoxInfAdicionalDirecciones.Size = new System.Drawing.Size(335, 77);
             this.txtBoxInfAdicionalDirecciones.TabIndex = 22;
             this.txtBoxInfAdicionalDirecciones.Text = "EJ. ENTRE CALLES; REFERENCIAS LOCALES";
             // 
@@ -6863,9 +6872,9 @@
             this.txtBoxColoniaDirecciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxColoniaDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxColoniaDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxColoniaDirecciones.Location = new System.Drawing.Point(134, 178);
+            this.txtBoxColoniaDirecciones.Location = new System.Drawing.Point(134, 208);
             this.txtBoxColoniaDirecciones.Name = "txtBoxColoniaDirecciones";
-            this.txtBoxColoniaDirecciones.Size = new System.Drawing.Size(225, 21);
+            this.txtBoxColoniaDirecciones.Size = new System.Drawing.Size(332, 21);
             this.txtBoxColoniaDirecciones.TabIndex = 20;
             // 
             // txtBoxDireccionDirecciones
@@ -6874,7 +6883,7 @@
             this.txtBoxDireccionDirecciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtBoxDireccionDirecciones.Location = new System.Drawing.Point(134, 143);
             this.txtBoxDireccionDirecciones.Name = "txtBoxDireccionDirecciones";
-            this.txtBoxDireccionDirecciones.Size = new System.Drawing.Size(225, 21);
+            this.txtBoxDireccionDirecciones.Size = new System.Drawing.Size(333, 21);
             this.txtBoxDireccionDirecciones.TabIndex = 18;
             this.txtBoxDireccionDirecciones.Text = "NOMBRE DE CALLE, AVENIDA Ó BULEVAR";
             // 
@@ -6883,7 +6892,7 @@
             this.lblColoniaDirecciones.AutoSize = true;
             this.lblColoniaDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColoniaDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblColoniaDirecciones.Location = new System.Drawing.Point(58, 178);
+            this.lblColoniaDirecciones.Location = new System.Drawing.Point(58, 208);
             this.lblColoniaDirecciones.Name = "lblColoniaDirecciones";
             this.lblColoniaDirecciones.Size = new System.Drawing.Size(55, 17);
             this.lblColoniaDirecciones.TabIndex = 42;
@@ -6894,7 +6903,7 @@
             this.lblInfAdicionalDirecciones.AutoSize = true;
             this.lblInfAdicionalDirecciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfAdicionalDirecciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblInfAdicionalDirecciones.Location = new System.Drawing.Point(22, 210);
+            this.lblInfAdicionalDirecciones.Location = new System.Drawing.Point(19, 244);
             this.lblInfAdicionalDirecciones.Name = "lblInfAdicionalDirecciones";
             this.lblInfAdicionalDirecciones.Size = new System.Drawing.Size(91, 17);
             this.lblInfAdicionalDirecciones.TabIndex = 41;
@@ -6915,7 +6924,7 @@
             // 
             this.btnDesactivarDireccion.BackColor = System.Drawing.Color.LightCoral;
             this.btnDesactivarDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactivarDireccion.Location = new System.Drawing.Point(680, 316);
+            this.btnDesactivarDireccion.Location = new System.Drawing.Point(690, 330);
             this.btnDesactivarDireccion.Name = "btnDesactivarDireccion";
             this.btnDesactivarDireccion.Size = new System.Drawing.Size(108, 23);
             this.btnDesactivarDireccion.TabIndex = 25;
@@ -6960,7 +6969,6 @@
             // pnlContacto1
             // 
             this.pnlContacto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlContacto1.Controls.Add(this.lblContactosNoActualizacion);
             this.pnlContacto1.Controls.Add(this.checkBoxContactoItem);
             this.pnlContacto1.Controls.Add(this.dataGridContactos);
             this.pnlContacto1.Controls.Add(this.txtBoxComentariosContacto);
@@ -6996,7 +7004,7 @@
             this.pnlContacto1.Controls.Add(this.btnDesactivarContacto);
             this.pnlContacto1.Location = new System.Drawing.Point(16, 49);
             this.pnlContacto1.Name = "pnlContacto1";
-            this.pnlContacto1.Size = new System.Drawing.Size(945, 599);
+            this.pnlContacto1.Size = new System.Drawing.Size(976, 599);
             this.pnlContacto1.TabIndex = 30;
             this.pnlContacto1.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContacto1_Paint);
             // 
@@ -7004,7 +7012,7 @@
             // 
             this.checkBoxContactoItem.AutoSize = true;
             this.checkBoxContactoItem.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxContactoItem.Location = new System.Drawing.Point(99, 15);
+            this.checkBoxContactoItem.Location = new System.Drawing.Point(104, 14);
             this.checkBoxContactoItem.Name = "checkBoxContactoItem";
             this.checkBoxContactoItem.Size = new System.Drawing.Size(241, 31);
             this.checkBoxContactoItem.TabIndex = 28;
@@ -7036,7 +7044,7 @@
             this.dataGridContactos.Location = new System.Drawing.Point(547, 67);
             this.dataGridContactos.Name = "dataGridContactos";
             this.dataGridContactos.ReadOnly = true;
-            this.dataGridContactos.Size = new System.Drawing.Size(384, 240);
+            this.dataGridContactos.Size = new System.Drawing.Size(414, 240);
             this.dataGridContactos.TabIndex = 293;
             this.dataGridContactos.Click += new System.EventHandler(this.dataGridContactos_Click);
             // 
@@ -7221,7 +7229,7 @@
             // 
             this.btnPriorizarContacto.BackColor = System.Drawing.Color.Gold;
             this.btnPriorizarContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPriorizarContacto.Location = new System.Drawing.Point(680, 28);
+            this.btnPriorizarContacto.Location = new System.Drawing.Point(693, 22);
             this.btnPriorizarContacto.Name = "btnPriorizarContacto";
             this.btnPriorizarContacto.Size = new System.Drawing.Size(108, 23);
             this.btnPriorizarContacto.TabIndex = 49;
@@ -7349,7 +7357,7 @@
             // 
             this.btnEditarContacto.BackColor = System.Drawing.Color.Wheat;
             this.btnEditarContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarContacto.Location = new System.Drawing.Point(825, 333);
+            this.btnEditarContacto.Location = new System.Drawing.Point(843, 333);
             this.btnEditarContacto.Name = "btnEditarContacto";
             this.btnEditarContacto.Size = new System.Drawing.Size(108, 23);
             this.btnEditarContacto.TabIndex = 47;
@@ -7360,7 +7368,7 @@
             // btnLimpiarCamposContactos
             // 
             this.btnLimpiarCamposContactos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposContactos.Location = new System.Drawing.Point(550, 366);
+            this.btnLimpiarCamposContactos.Location = new System.Drawing.Point(568, 366);
             this.btnLimpiarCamposContactos.Name = "btnLimpiarCamposContactos";
             this.btnLimpiarCamposContactos.Size = new System.Drawing.Size(354, 28);
             this.btnLimpiarCamposContactos.TabIndex = 48;
@@ -7372,7 +7380,7 @@
             // 
             this.btnAgregarContacto.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAgregarContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarContacto.Location = new System.Drawing.Point(529, 333);
+            this.btnAgregarContacto.Location = new System.Drawing.Point(547, 333);
             this.btnAgregarContacto.Name = "btnAgregarContacto";
             this.btnAgregarContacto.Size = new System.Drawing.Size(108, 23);
             this.btnAgregarContacto.TabIndex = 45;
@@ -7503,7 +7511,7 @@
             // 
             this.btnDesactivarContacto.BackColor = System.Drawing.Color.LightCoral;
             this.btnDesactivarContacto.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDesactivarContacto.Location = new System.Drawing.Point(675, 333);
+            this.btnDesactivarContacto.Location = new System.Drawing.Point(693, 333);
             this.btnDesactivarContacto.Name = "btnDesactivarContacto";
             this.btnDesactivarContacto.Size = new System.Drawing.Size(108, 23);
             this.btnDesactivarContacto.TabIndex = 46;
@@ -7551,7 +7559,6 @@
             // pnlDatosBancariosEX
             // 
             this.pnlDatosBancariosEX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDatosBancariosEX.Controls.Add(this.lblDatosBancariosEXNoActualizacion);
             this.pnlDatosBancariosEX.Controls.Add(this.checkBoxDatoBancarioEXItem);
             this.pnlDatosBancariosEX.Controls.Add(this.dataGridDatosBancariosEX);
             this.pnlDatosBancariosEX.Controls.Add(this.btnEsPreferenciaDatosBancariosEX);
@@ -7607,7 +7614,7 @@
             this.pnlDatosBancariosEX.Controls.Add(this.btnEliminarCuentaEX);
             this.pnlDatosBancariosEX.Location = new System.Drawing.Point(19, 547);
             this.pnlDatosBancariosEX.Name = "pnlDatosBancariosEX";
-            this.pnlDatosBancariosEX.Size = new System.Drawing.Size(945, 892);
+            this.pnlDatosBancariosEX.Size = new System.Drawing.Size(973, 892);
             this.pnlDatosBancariosEX.TabIndex = 64;
             this.pnlDatosBancariosEX.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint_2);
             // 
@@ -7645,11 +7652,10 @@
             this.Preferente,
             this.EstatusActividad,
             this.DatoBancarioEXRevisado});
-            this.dataGridDatosBancariosEX.Location = new System.Drawing.Point(528, 76);
+            this.dataGridDatosBancariosEX.Location = new System.Drawing.Point(562, 76);
             this.dataGridDatosBancariosEX.Name = "dataGridDatosBancariosEX";
             this.dataGridDatosBancariosEX.ReadOnly = true;
-            this.dataGridDatosBancariosEX.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dataGridDatosBancariosEX.Size = new System.Drawing.Size(392, 190);
+            this.dataGridDatosBancariosEX.Size = new System.Drawing.Size(392, 214);
             this.dataGridDatosBancariosEX.TabIndex = 118;
             this.dataGridDatosBancariosEX.Click += new System.EventHandler(this.dataGridDatosBancariosEX_Click);
             // 
@@ -7793,7 +7799,7 @@
             this.btnEsPreferenciaDatosBancariosEX.BackColor = System.Drawing.Color.Gold;
             this.btnEsPreferenciaDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEsPreferenciaDatosBancariosEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEsPreferenciaDatosBancariosEX.Location = new System.Drawing.Point(609, 42);
+            this.btnEsPreferenciaDatosBancariosEX.Location = new System.Drawing.Point(649, 27);
             this.btnEsPreferenciaDatosBancariosEX.Name = "btnEsPreferenciaDatosBancariosEX";
             this.btnEsPreferenciaDatosBancariosEX.Size = new System.Drawing.Size(236, 28);
             this.btnEsPreferenciaDatosBancariosEX.TabIndex = 91;
@@ -7859,7 +7865,7 @@
             // dateTimePickerDatosBancariosEX
             // 
             this.dateTimePickerDatosBancariosEX.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDatosBancariosEX.Location = new System.Drawing.Point(257, 445);
+            this.dateTimePickerDatosBancariosEX.Location = new System.Drawing.Point(286, 443);
             this.dateTimePickerDatosBancariosEX.Name = "dateTimePickerDatosBancariosEX";
             this.dateTimePickerDatosBancariosEX.Size = new System.Drawing.Size(207, 21);
             this.dateTimePickerDatosBancariosEX.TabIndex = 75;
@@ -7869,7 +7875,7 @@
             this.lblFechaVigenciaEX.AutoSize = true;
             this.lblFechaVigenciaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaVigenciaEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblFechaVigenciaEX.Location = new System.Drawing.Point(258, 420);
+            this.lblFechaVigenciaEX.Location = new System.Drawing.Point(287, 418);
             this.lblFechaVigenciaEX.Name = "lblFechaVigenciaEX";
             this.lblFechaVigenciaEX.Size = new System.Drawing.Size(100, 15);
             this.lblFechaVigenciaEX.TabIndex = 112;
@@ -7878,7 +7884,7 @@
             // radioBtnNo
             // 
             this.radioBtnNo.AutoSize = true;
-            this.radioBtnNo.Location = new System.Drawing.Point(183, 448);
+            this.radioBtnNo.Location = new System.Drawing.Point(189, 448);
             this.radioBtnNo.Name = "radioBtnNo";
             this.radioBtnNo.Size = new System.Drawing.Size(41, 18);
             this.radioBtnNo.TabIndex = 74;
@@ -7890,7 +7896,7 @@
             // radioBtnSi
             // 
             this.radioBtnSi.AutoSize = true;
-            this.radioBtnSi.Location = new System.Drawing.Point(128, 448);
+            this.radioBtnSi.Location = new System.Drawing.Point(134, 448);
             this.radioBtnSi.Name = "radioBtnSi";
             this.radioBtnSi.Size = new System.Drawing.Size(34, 18);
             this.radioBtnSi.TabIndex = 73;
@@ -7904,7 +7910,7 @@
             this.lblVigenciaEX.AutoSize = true;
             this.lblVigenciaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVigenciaEX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblVigenciaEX.Location = new System.Drawing.Point(123, 418);
+            this.lblVigenciaEX.Location = new System.Drawing.Point(129, 418);
             this.lblVigenciaEX.Name = "lblVigenciaEX";
             this.lblVigenciaEX.Size = new System.Drawing.Size(111, 17);
             this.lblVigenciaEX.TabIndex = 109;
@@ -8282,7 +8288,7 @@
             // btnLimpiarCamposDatosBancariosEX
             // 
             this.btnLimpiarCamposDatosBancariosEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposDatosBancariosEX.Location = new System.Drawing.Point(536, 326);
+            this.btnLimpiarCamposDatosBancariosEX.Location = new System.Drawing.Point(581, 353);
             this.btnLimpiarCamposDatosBancariosEX.Name = "btnLimpiarCamposDatosBancariosEX";
             this.btnLimpiarCamposDatosBancariosEX.Size = new System.Drawing.Size(354, 28);
             this.btnLimpiarCamposDatosBancariosEX.TabIndex = 90;
@@ -8294,7 +8300,7 @@
             // 
             this.btnEditarCuentaEX.BackColor = System.Drawing.Color.Wheat;
             this.btnEditarCuentaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCuentaEX.Location = new System.Drawing.Point(811, 292);
+            this.btnEditarCuentaEX.Location = new System.Drawing.Point(856, 319);
             this.btnEditarCuentaEX.Name = "btnEditarCuentaEX";
             this.btnEditarCuentaEX.Size = new System.Drawing.Size(108, 23);
             this.btnEditarCuentaEX.TabIndex = 89;
@@ -8306,7 +8312,7 @@
             // 
             this.btnAgregarCuentaEX.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAgregarCuentaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCuentaEX.Location = new System.Drawing.Point(517, 292);
+            this.btnAgregarCuentaEX.Location = new System.Drawing.Point(562, 319);
             this.btnAgregarCuentaEX.Name = "btnAgregarCuentaEX";
             this.btnAgregarCuentaEX.Size = new System.Drawing.Size(108, 23);
             this.btnAgregarCuentaEX.TabIndex = 87;
@@ -8340,7 +8346,7 @@
             // 
             this.btnEliminarCuentaEX.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarCuentaEX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCuentaEX.Location = new System.Drawing.Point(661, 292);
+            this.btnEliminarCuentaEX.Location = new System.Drawing.Point(706, 319);
             this.btnEliminarCuentaEX.Name = "btnEliminarCuentaEX";
             this.btnEliminarCuentaEX.Size = new System.Drawing.Size(108, 23);
             this.btnEliminarCuentaEX.TabIndex = 88;
@@ -8386,7 +8392,6 @@
             // pnlDatosBancariosMX
             // 
             this.pnlDatosBancariosMX.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlDatosBancariosMX.Controls.Add(this.lblDatosBancariosMXNoActualizacion);
             this.pnlDatosBancariosMX.Controls.Add(this.checkBoxDatoBancarioItem);
             this.pnlDatosBancariosMX.Controls.Add(this.dataGridViewDatosBancariosMX);
             this.pnlDatosBancariosMX.Controls.Add(this.btnEsPreferenciaDatosBancariosMX);
@@ -8407,7 +8412,7 @@
             this.pnlDatosBancariosMX.Controls.Add(this.btnEliminarCuentaMX);
             this.pnlDatosBancariosMX.Location = new System.Drawing.Point(16, 49);
             this.pnlDatosBancariosMX.Name = "pnlDatosBancariosMX";
-            this.pnlDatosBancariosMX.Size = new System.Drawing.Size(945, 442);
+            this.pnlDatosBancariosMX.Size = new System.Drawing.Size(976, 442);
             this.pnlDatosBancariosMX.TabIndex = 53;
             // 
             // checkBoxDatoBancarioItem
@@ -8437,11 +8442,10 @@
             this.DivisaAPagar,
             this.EstatusActivo,
             this.DatoBancarioMXRevisado});
-            this.dataGridViewDatosBancariosMX.Location = new System.Drawing.Point(536, 54);
+            this.dataGridViewDatosBancariosMX.Location = new System.Drawing.Point(536, 67);
             this.dataGridViewDatosBancariosMX.Name = "dataGridViewDatosBancariosMX";
             this.dataGridViewDatosBancariosMX.ReadOnly = true;
-            this.dataGridViewDatosBancariosMX.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dataGridViewDatosBancariosMX.Size = new System.Drawing.Size(383, 238);
+            this.dataGridViewDatosBancariosMX.Size = new System.Drawing.Size(425, 238);
             this.dataGridViewDatosBancariosMX.TabIndex = 83;
             this.dataGridViewDatosBancariosMX.Click += new System.EventHandler(this.dataGridViewDatosBancariosMX_Click);
             // 
@@ -8530,7 +8534,7 @@
             this.btnEsPreferenciaDatosBancariosMX.BackColor = System.Drawing.Color.Gold;
             this.btnEsPreferenciaDatosBancariosMX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEsPreferenciaDatosBancariosMX.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnEsPreferenciaDatosBancariosMX.Location = new System.Drawing.Point(612, 14);
+            this.btnEsPreferenciaDatosBancariosMX.Location = new System.Drawing.Point(627, 23);
             this.btnEsPreferenciaDatosBancariosMX.Name = "btnEsPreferenciaDatosBancariosMX";
             this.btnEsPreferenciaDatosBancariosMX.Size = new System.Drawing.Size(244, 28);
             this.btnEsPreferenciaDatosBancariosMX.TabIndex = 62;
@@ -8614,7 +8618,7 @@
             // btnLimpiarCamposDatosBancariosMX
             // 
             this.btnLimpiarCamposDatosBancariosMX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposDatosBancariosMX.Location = new System.Drawing.Point(548, 356);
+            this.btnLimpiarCamposDatosBancariosMX.Location = new System.Drawing.Point(553, 368);
             this.btnLimpiarCamposDatosBancariosMX.Name = "btnLimpiarCamposDatosBancariosMX";
             this.btnLimpiarCamposDatosBancariosMX.Size = new System.Drawing.Size(354, 28);
             this.btnLimpiarCamposDatosBancariosMX.TabIndex = 61;
@@ -8626,7 +8630,7 @@
             // 
             this.btnEditarCuentaMX.BackColor = System.Drawing.Color.Wheat;
             this.btnEditarCuentaMX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCuentaMX.Location = new System.Drawing.Point(823, 322);
+            this.btnEditarCuentaMX.Location = new System.Drawing.Point(828, 334);
             this.btnEditarCuentaMX.Name = "btnEditarCuentaMX";
             this.btnEditarCuentaMX.Size = new System.Drawing.Size(108, 23);
             this.btnEditarCuentaMX.TabIndex = 60;
@@ -8638,7 +8642,7 @@
             // 
             this.btnAgregarCuentaMX.BackColor = System.Drawing.Color.PaleGreen;
             this.btnAgregarCuentaMX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarCuentaMX.Location = new System.Drawing.Point(529, 322);
+            this.btnAgregarCuentaMX.Location = new System.Drawing.Point(534, 334);
             this.btnAgregarCuentaMX.Name = "btnAgregarCuentaMX";
             this.btnAgregarCuentaMX.Size = new System.Drawing.Size(108, 23);
             this.btnAgregarCuentaMX.TabIndex = 58;
@@ -8704,7 +8708,7 @@
             // 
             this.btnEliminarCuentaMX.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarCuentaMX.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCuentaMX.Location = new System.Drawing.Point(673, 322);
+            this.btnEliminarCuentaMX.Location = new System.Drawing.Point(678, 334);
             this.btnEliminarCuentaMX.Name = "btnEliminarCuentaMX";
             this.btnEliminarCuentaMX.Size = new System.Drawing.Size(108, 23);
             this.btnEliminarCuentaMX.TabIndex = 59;
@@ -8933,59 +8937,19 @@
             this.tabOpciones.Controls.Add(this.tabExpediente);
             this.tabOpciones.Location = new System.Drawing.Point(9, 109);
             this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 1;
+            this.tabOpciones.SelectedIndex = 0;
             this.tabOpciones.Size = new System.Drawing.Size(1058, 569);
             this.tabOpciones.TabIndex = 1;
             // 
-            // lblDireccionesNoActualizacion
+            // label9
             // 
-            this.lblDireccionesNoActualizacion.AutoSize = true;
-            this.lblDireccionesNoActualizacion.ForeColor = System.Drawing.Color.Red;
-            this.lblDireccionesNoActualizacion.Location = new System.Drawing.Point(368, 24);
-            this.lblDireccionesNoActualizacion.Name = "lblDireccionesNoActualizacion";
-            this.lblDireccionesNoActualizacion.Size = new System.Drawing.Size(130, 14);
-            this.lblDireccionesNoActualizacion.TabIndex = 92;
-            this.lblDireccionesNoActualizacion.Text = "*No se puede actualizar";
-            // 
-            // lblContactosNoActualizacion
-            // 
-            this.lblContactosNoActualizacion.AutoSize = true;
-            this.lblContactosNoActualizacion.ForeColor = System.Drawing.Color.Red;
-            this.lblContactosNoActualizacion.Location = new System.Drawing.Point(333, 23);
-            this.lblContactosNoActualizacion.Name = "lblContactosNoActualizacion";
-            this.lblContactosNoActualizacion.Size = new System.Drawing.Size(130, 14);
-            this.lblContactosNoActualizacion.TabIndex = 294;
-            this.lblContactosNoActualizacion.Text = "*No se puede actualizar";
-            // 
-            // lblDatosBancariosMXNoActualizacion
-            // 
-            this.lblDatosBancariosMXNoActualizacion.AutoSize = true;
-            this.lblDatosBancariosMXNoActualizacion.ForeColor = System.Drawing.Color.Red;
-            this.lblDatosBancariosMXNoActualizacion.Location = new System.Drawing.Point(404, 31);
-            this.lblDatosBancariosMXNoActualizacion.Name = "lblDatosBancariosMXNoActualizacion";
-            this.lblDatosBancariosMXNoActualizacion.Size = new System.Drawing.Size(130, 14);
-            this.lblDatosBancariosMXNoActualizacion.TabIndex = 295;
-            this.lblDatosBancariosMXNoActualizacion.Text = "*No se puede actualizar";
-            // 
-            // lblDatosBancariosEXNoActualizacion
-            // 
-            this.lblDatosBancariosEXNoActualizacion.AutoSize = true;
-            this.lblDatosBancariosEXNoActualizacion.ForeColor = System.Drawing.Color.Red;
-            this.lblDatosBancariosEXNoActualizacion.Location = new System.Drawing.Point(365, 39);
-            this.lblDatosBancariosEXNoActualizacion.Name = "lblDatosBancariosEXNoActualizacion";
-            this.lblDatosBancariosEXNoActualizacion.Size = new System.Drawing.Size(130, 14);
-            this.lblDatosBancariosEXNoActualizacion.TabIndex = 296;
-            this.lblDatosBancariosEXNoActualizacion.Text = "*No se puede actualizar";
-            // 
-            // lblPlazoCreditoNoActualizacion
-            // 
-            this.lblPlazoCreditoNoActualizacion.AutoSize = true;
-            this.lblPlazoCreditoNoActualizacion.ForeColor = System.Drawing.Color.Red;
-            this.lblPlazoCreditoNoActualizacion.Location = new System.Drawing.Point(465, 21);
-            this.lblPlazoCreditoNoActualizacion.Name = "lblPlazoCreditoNoActualizacion";
-            this.lblPlazoCreditoNoActualizacion.Size = new System.Drawing.Size(130, 14);
-            this.lblPlazoCreditoNoActualizacion.TabIndex = 296;
-            this.lblPlazoCreditoNoActualizacion.Text = "*No se puede actualizar";
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(456, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(229, 14);
+            this.label9.TabIndex = 297;
+            this.label9.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // frmCatalogoProveedores
             // 
@@ -9779,10 +9743,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Preferente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActividad;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatoBancarioEXRevisado;
-        private System.Windows.Forms.Label lblDireccionesNoActualizacion;
-        private System.Windows.Forms.Label lblContactosNoActualizacion;
-        private System.Windows.Forms.Label lblDatosBancariosEXNoActualizacion;
-        private System.Windows.Forms.Label lblDatosBancariosMXNoActualizacion;
         private System.Windows.Forms.Label lblPlazoCreditoNoActualizacion;
+        private System.Windows.Forms.Label label9;
     }
 }

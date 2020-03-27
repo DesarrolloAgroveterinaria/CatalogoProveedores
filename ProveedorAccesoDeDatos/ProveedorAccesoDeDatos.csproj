@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaveBancoDal.cs" />
     <Compile Include="ProveedorAcuerdosDal.cs" />
     <Compile Include="ProveedorCategoriaPoliticasCompraDal.cs" />
     <Compile Include="ProveedorCondicionesDal.cs" />

@@ -94,7 +94,8 @@ namespace ProveedorAccesoDeDatos
                                     @Sucursal,
                                     @DivisaAPagar,
                                     @EsPreferencia,
-                                    @EstatusActivo";
+                                    @EstatusActivo,
+                                    @Revisado";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
@@ -108,6 +109,7 @@ namespace ProveedorAccesoDeDatos
                     cmd.Parameters.AddWithValue("@DivisaAPagar", cuentaMX.DivisaAPagar);
                     cmd.Parameters.AddWithValue("@EsPreferencia", cuentaMX.EsPreferencia);
                     cmd.Parameters.AddWithValue("@EstatusActivo", cuentaMX.EstatusActivo);
+                    cmd.Parameters.AddWithValue("@Revisado", cuentaMX.Revisado);
 
                     cmd.ExecuteNonQuery();
                 }

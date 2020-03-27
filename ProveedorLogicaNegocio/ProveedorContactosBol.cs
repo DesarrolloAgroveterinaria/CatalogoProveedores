@@ -24,41 +24,41 @@ namespace ProveedorLogicaNegocio
         public bool agregarContacto(EProveedorContacto Contacto)
         {
             mensajeRespuestaSP.Clear();
-            List<EProveedorContacto> ListaContactos = consultarContactosByClaveProveedorVal(Contacto.ClaveProveedor);
+            //List<EProveedorContacto> ListaContactos = consultarContactosByClaveProveedorVal(Contacto.ClaveProveedor);
 
-            if (ListaContactos.Count > 0)
-            {
-                foreach (var i in ListaContactos)
-                {
-                    if (Contacto.NombreCompleto == i.NombreCompleto || Contacto.NombreCompleto.Contains(i.NombreCompleto)
-                        || i.NombreCompleto.Contains(Contacto.NombreCompleto))
-                    {
-                        mensajeRespuestaSP.Append("El Contacto ya existe.");
-                        mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        mensajeRespuestaSP.Append("Si deseas actualizar el siguiente Contacto presiona el bóton Editar: ");
-                        mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        mensajeRespuestaSP.Append(i.NombreCompleto);
-                        mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        mensajeRespuestaSP.Append(i.Puesto);
-                        mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        mensajeRespuestaSP.Append(i.Categoria);
-                        mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        mensajeRespuestaSP.Append(i.TelefonoPrimario + ", " + i.Email1);
-                        mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append("... a la siguiente Dirección?");
-                        //mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.ConceptoUso);
-                        //mensajeRespuestaSP.Append(Direccion.CalleAveBlvr + System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.NumExterior + System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.NumInterior + System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.InfAdicional + System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.Colonia + System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.CodigoPostal + System.Environment.NewLine);
-                        //mensajeRespuestaSP.Append(Direccion.Poblacion + ", " + Direccion.Estado + ", " + Direccion.Pais);
-                        return false;
-                    }                   
-                }
-            }
+            //if (ListaContactos.Count > 0)
+            //{
+            //    foreach (var i in ListaContactos)
+            //    {
+            //        if (Contacto.NombreCompleto == i.NombreCompleto || Contacto.NombreCompleto.Contains(i.NombreCompleto)
+            //            || i.NombreCompleto.Contains(Contacto.NombreCompleto) && i.EstatusActivo)
+            //        {
+            //            mensajeRespuestaSP.Append("El Contacto ya existe.");
+            //            mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            mensajeRespuestaSP.Append("Si deseas actualizar el siguiente Contacto presiona el bóton Editar: ");
+            //            mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            mensajeRespuestaSP.Append(i.NombreCompleto);
+            //            mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            mensajeRespuestaSP.Append(i.Puesto);
+            //            mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            mensajeRespuestaSP.Append(i.Categoria);
+            //            mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            mensajeRespuestaSP.Append(i.TelefonoPrimario + ", " + i.Email1);
+            //            mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append("... a la siguiente Dirección?");
+            //            //mensajeRespuestaSP.Append(System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.ConceptoUso);
+            //            //mensajeRespuestaSP.Append(Direccion.CalleAveBlvr + System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.NumExterior + System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.NumInterior + System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.InfAdicional + System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.Colonia + System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.CodigoPostal + System.Environment.NewLine);
+            //            //mensajeRespuestaSP.Append(Direccion.Poblacion + ", " + Direccion.Estado + ", " + Direccion.Pais);
+            //            return false;
+            //        }                   
+            //    }
+            //}
             proveedorContactosDal.AgregarByClave(Contacto);
             return true;         
         }
