@@ -55,6 +55,7 @@
     <Compile Include="ProveedorDatosPrimDal.cs" />
     <Compile Include="ProveedorExpedienteDal.cs" />
     <Compile Include="ProveedorFletesDal.cs" />
+    <Compile Include="ProveedorPlazoCreditoDal.cs" />
     <Compile Include="ProveedorPoliticasDal.cs" />
     <Compile Include="ProveedorProvDal.cs" />
     <Compile Include="ProveedorSucursalEntregaDal.cs" />

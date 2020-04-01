@@ -38,6 +38,7 @@ namespace ProveedorPrueba
         private List<EProveedorCategoriaPoliticasCompra> ListaCategoriaPoliticasCompra;
         private EProveedorAcuerdos eProveedorAcuerdos;
         private EProveedorCondiciones eProveedorCondiciones;
+        private List<EProveedorPlazoCredito> ListaPlazoCredito;
         private List<EProveedorFletes> ListaFletes;
         //private List<EProveedorSucursalEntrega> ListaSucursalesEntrega;
         private List<EProveedorCostoFleteLimiteCapacidad> ListaCondicionesEntregaPorSucursal;
@@ -63,6 +64,7 @@ namespace ProveedorPrueba
         private readonly ProveedorCategoriaPoliticasCompraBol proveedorCategoriaPoliticasCompraBol = new ProveedorCategoriaPoliticasCompraBol();
         private readonly ProveedorAcuerdosBol proveedorAcuerdosBol = new ProveedorAcuerdosBol();
         private readonly ProveedorCondicionesBol proveedorCondicionesBol = new ProveedorCondicionesBol();
+        private readonly ProveedorPlazoCreditoBol proveedorPlazoCreditoBol = new ProveedorPlazoCreditoBol();
         private readonly ProveedorFletesBol proveedorFletesBol = new ProveedorFletesBol();
         //private readonly ProveedorSucursalEntregaBol proveedorSucursalEntregaBol = new ProveedorSucursalEntregaBol();
         private readonly ProveedorCostoFleteLimiteCapacidadBol proveedorCostoFleteLimiteCapacidadBol = new ProveedorCostoFleteLimiteCapacidadBol();
@@ -511,6 +513,103 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
             }
         }
+        private void CargarPlazosCredito(string claveProveedor)
+        {
+            try
+            {
+                //LimpiarDireccionesDatosGenerales();               
+                ListaPlazoCredito = proveedorPlazoCreditoBol.consultarPlazosByClaveProveedorVal(Convert.ToString(claveProveedor));
+
+                if (ListaPlazoCredito.Count == 0)
+                    return;
+
+                DataTable tablaPlazoCredito = new DataTable();
+                tablaPlazoCredito.Columns.Add("ClaveProveedor");
+                tablaPlazoCredito.Columns.Add("Plazoid");
+                tablaPlazoCredito.Columns.Add("PrioridadUso");
+                tablaPlazoCredito.Columns.Add("EstatusActivoPlazo");
+                tablaPlazoCredito.Columns.Add("RevisadoPlazo");
+                tablaPlazoCredito.Columns.Add("PlazoCreditoDias");
+                tablaPlazoCredito.Columns.Add("DefinicionPlazo");
+                tablaPlazoCredito.Columns.Add("ProntoPago1Dias");
+                tablaPlazoCredito.Columns.Add("ProntoPago1Descuento");
+                tablaPlazoCredito.Columns.Add("VencimientoPagoFactura1");
+                tablaPlazoCredito.Columns.Add("ObservacionesPP1");
+                tablaPlazoCredito.Columns.Add("ProntoPago2Dias");
+                tablaPlazoCredito.Columns.Add("ProntoPago2Descuento");
+                tablaPlazoCredito.Columns.Add("VencimientoPagoFactura2");
+                tablaPlazoCredito.Columns.Add("ObservacionesPP2");
+                tablaPlazoCredito.Columns.Add("ProntoPago3Dias");
+                tablaPlazoCredito.Columns.Add("ProntoPago3Descuento");
+                tablaPlazoCredito.Columns.Add("VencimientoPagoFactura3");
+                tablaPlazoCredito.Columns.Add("ObservacionesPP3");
+                tablaPlazoCredito.Columns.Add("ProntoPago4Dias");
+                tablaPlazoCredito.Columns.Add("ProntoPago4Descuento");
+                tablaPlazoCredito.Columns.Add("VencimientoPagoFactura4");
+                tablaPlazoCredito.Columns.Add("ObservacionesPP4");
+                tablaPlazoCredito.Columns.Add("ProntoPago5Dias");
+                tablaPlazoCredito.Columns.Add("ProntoPago5Descuento");
+                tablaPlazoCredito.Columns.Add("VencimientoPagoFactura5");
+                tablaPlazoCredito.Columns.Add("ObservacionesPP5");
+                tablaPlazoCredito.Columns.Add("ObservacionesGenerales");
+
+                foreach (var i in ListaPlazoCredito)
+                {
+                    if (i.EstatusActivo)
+                    {
+                        tablaPlazoCredito.Rows.Add(new object[] {i.ClaveProveedor, i.Plazoid, i.PrioridadDeUso, i.EstatusActivo ? "Activo" : "No activo", i.Revisado ? "Revisado": "No Revisado",
+                            i.PlazoCreditoDias, i.DefinicionPlazo, i.ProntoPago1Dias, i.ProntoPago1Descuento, i.VencimientoPagoFactura1, i.ObservacionesPP1,
+                            i.ProntoPago2Dias, i.ProntoPago2Descuento, i.VencimientoPagoFactura2, i.ObservacionesPP2,
+                            i.ProntoPago3Dias, i.ProntoPago3Descuento, i.VencimientoPagoFactura3, i.ObservacionesPP3,
+                            i.ProntoPago4Dias, i.ProntoPago4Descuento, i.VencimientoPagoFactura4, i.ObservacionesPP4,
+                            i.ProntoPago5Dias, i.ProntoPago5Descuento, i.VencimientoPagoFactura5, i.ObservacionesPP5, i.ObservacionesGenerales});
+                    }
+                }
+                dataGridPlazosCredito.DataSource = null;
+                dataGridPlazosCredito.Rows.Clear();
+                dataGridPlazosCredito.AutoGenerateColumns = false;
+                dataGridPlazosCredito.DataSource = tablaPlazoCredito; 
+
+                if (Convert.ToString(dataGridPlazosCredito.Rows[0].Cells[4].Value.ToString()) == "Revisado")
+                    checkBoxCondicionesItem.Checked = true;
+                else
+                    checkBoxCondicionesItem.Checked = false;
+
+                txtBoxCondicionesCreditoCondiciones.Text = dataGridPlazosCredito.Rows[0].Cells[5].Value.ToString();
+                txtBoxDefinicionPlazoCredito.Text = dataGridPlazosCredito.Rows[0].Cells[6].Value.ToString();
+                txtBoxProntoPago1Dias.Text = dataGridPlazosCredito.Rows[0].Cells[7].Value.ToString();
+                comboBoxDescProntoPago1.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[8].Value.ToString();
+                comboBoxVencimientoPagoFactura1.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[9].Value.ToString();
+                txtBoxObservacionesProntoPago1.Text = dataGridPlazosCredito.Rows[0].Cells[10].Value.ToString();
+                txtBoxProntoPago2Dias.Text = dataGridPlazosCredito.Rows[0].Cells[11].Value.ToString();
+                comboBoxDescProntoPago2.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[12].Value.ToString();
+                comboBoxVencimientoPagoFactura2.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[13].Value.ToString();
+                txtBoxObservacionesProntoPago2.Text = dataGridPlazosCredito.Rows[0].Cells[14].Value.ToString();
+                txtBoxProntoPago3Dias.Text = dataGridPlazosCredito.Rows[0].Cells[15].Value.ToString();
+                comboBoxDescProntoPago3.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[16].Value.ToString();
+                comboBoxVencimientoPagoFactura3.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[17].Value.ToString();
+                txtBoxObservacionesProntoPago3.Text = dataGridPlazosCredito.Rows[0].Cells[18].Value.ToString();
+                txtBoxProntoPago4Dias.Text = dataGridPlazosCredito.Rows[0].Cells[19].Value.ToString();
+                comboBoxDescProntoPago4.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[20].Value.ToString();
+                comboBoxVencimientoPagoFactura4.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[21].Value.ToString();
+                txtBoxObservacionesProntoPago4.Text = dataGridPlazosCredito.Rows[0].Cells[22].Value.ToString();
+                txtBoxProntoPago5Dias.Text = dataGridPlazosCredito.Rows[0].Cells[23].Value.ToString();
+                comboBoxDescProntoPago5.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[24].Value.ToString();
+                comboBoxVencimientoPagoFactura5.SelectedItem = dataGridPlazosCredito.Rows[0].Cells[25].Value.ToString();
+                txtBoxObservacionesProntoPago5.Text = dataGridPlazosCredito.Rows[0].Cells[26].Value.ToString();
+                txtBoxObservacionesGeneralesPlazo.Text = dataGridPlazosCredito.Rows[0].Cells[27].Value.ToString();
+
+                if (txtBoxProntoPago1Dias.Text != "" && txtBoxProntoPago2Dias.Text != "" && txtBoxProntoPago3Dias.Text != "" &&
+                txtBoxProntoPago4Dias.Text != "" && txtBoxProntoPago5Dias.Text != "")
+                    checkBoxTieneProntoPago.Checked = true;
+                else
+                    checkBoxTieneProntoPago.Checked = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
         private void CargarCondiciones(string claveP)
         {
             try
@@ -533,28 +632,14 @@ namespace ProveedorPrueba
                 if (eProveedorCondiciones == null)
                     return;
 
+                //Cargar Plazo de Cr+edito
+                CargarPlazosCredito(claveP);
                 //Condiciones 
-                txtBoxCondicionesCreditoCondiciones.Text = Convert.ToString(eProveedorCondiciones.CondicionesCreditoDias);
+                
                 txtBoxTiempoEntregaCondiciones.Text = Convert.ToString(eProveedorCondiciones.TiempoEntrega);
                 txtBoxObservacionesCondiciones.Text = Convert.ToString(eProveedorCondiciones.ObservacionesTiempoEntrega);
                 txtBoxCondicionesEspecialesCondiciones.Text = Convert.ToString(eProveedorCondiciones.CondicionesEspecialesEntrega);
-
-                //Pronto Pago
-                txtBoxProntoPago1Dias.Text = Convert.ToString(eProveedorCondiciones.ProntoPago1Dias);
-                comboBoxDescProntoPago1.SelectedItem = Convert.ToString(eProveedorCondiciones.ProntoPago1Descuento);
-                comboBoxVencimientoPagoFactura1.SelectedItem = Convert.ToString(eProveedorCondiciones.VencimientoPagoFactura1);
-                txtBoxProntoPago2Dias.Text = Convert.ToString(eProveedorCondiciones.ProntoPago2Dias);
-                comboBoxDescProntoPago2.SelectedItem = Convert.ToString(eProveedorCondiciones.ProntoPago2Descuento);
-                comboBoxVencimientoPagoFactura2.SelectedItem = Convert.ToString(eProveedorCondiciones.VencimientoPagoFactura2);
-                txtBoxProntoPago3Dias.Text = Convert.ToString(eProveedorCondiciones.ProntoPago3Dias);
-                comboBoxDescProntoPago3.SelectedItem = Convert.ToString(eProveedorCondiciones.ProntoPago3Descuento);
-                comboBoxVencimientoPagoFactura3.SelectedItem = Convert.ToString(eProveedorCondiciones.VencimientoPagoFactura3);
-                txtBoxProntoPago4Dias.Text = Convert.ToString(eProveedorCondiciones.ProntoPago4Dias);
-                comboBoxDescProntoPago4.SelectedItem = Convert.ToString(eProveedorCondiciones.ProntoPago4Descuento);
-                comboBoxVencimientoPagoFactura4.SelectedItem = Convert.ToString(eProveedorCondiciones.VencimientoPagoFactura4);
-                txtBoxProntoPago5Dias.Text = Convert.ToString(eProveedorCondiciones.ProntoPago5Dias);
-                comboBoxDescProntoPago5.SelectedItem = Convert.ToString(eProveedorCondiciones.ProntoPago5Descuento);
-                comboBoxVencimientoPagoFactura5.SelectedItem = Convert.ToString(eProveedorCondiciones.VencimientoPagoFactura5);
+                
 
                 //Sucursales de Entrega
                 if (eProveedorCondiciones.SucursalEntrega.Contains(" Matriz "))
@@ -759,8 +844,8 @@ namespace ProveedorPrueba
                         tablaCategorias.Rows.Add(new object[] { i.ImporteMensual, i.ImporteTrimestral, i.Beneficios });
                     }
 
-                    dataGridCategoriasPoliticasCompra.AutoGenerateColumns = false;
-                    dataGridCategoriasPoliticasCompra.DataSource = tablaCategorias;
+                    //dataGridCategoriasPoliticasCompra.AutoGenerateColumns = false;
+                    //dataGridCategoriasPoliticasCompra.DataSource = tablaCategorias;
                 }
 
                 if (Convert.ToString(eProveedorPoliticas.RecepcionSolicitudCompra) == "Diario")
@@ -1156,11 +1241,11 @@ namespace ProveedorPrueba
             try
             {
                 checkBoxPoliticasRevisado.Checked = false;
-                dataGridCategoriasPoliticasCompra.DataSource = null;
-                dataGridCategoriasPoliticasCompra.Rows.Clear();
-                txtBoxImporteMensualConvenioCompraPoliticas.Clear();
-                txtBoxImporteTrimestralConvenioCompraPoliticas.Clear();
-                txtBoxBeneficiosConvenioCompraPoliticas.Clear();
+                //dataGridCategoriasPoliticasCompra.DataSource = null;
+                //dataGridCategoriasPoliticasCompra.Rows.Clear();
+                //txtBoxImporteMensualConvenioCompraPoliticas.Clear();
+                //txtBoxImporteTrimestralConvenioCompraPoliticas.Clear();
+                //txtBoxBeneficiosConvenioCompraPoliticas.Clear();
                 txtBoxCompraMinPoliticas.Clear();
 
                 radioBtnDiarioPoliticas.Checked = false;
@@ -1237,27 +1322,35 @@ namespace ProveedorPrueba
                 dataGridPlazosCredito.DataSource = null;
                 dataGridPlazosCredito.Rows.Clear();
 
+                checkBoxCondicionesItem.Checked = false;
                 txtBoxCondicionesCreditoCondiciones.Clear();
-                txtBoxTiempoEntregaCondiciones.Clear();
-                txtBoxObservacionesCondiciones.Clear();
-                txtBoxCondicionesEspecialesCondiciones.Clear();
-
-                //Pronto Pago
+                txtBoxDefinicionPlazoCredito.Clear();
                 txtBoxProntoPago1Dias.Clear();
                 comboBoxDescProntoPago1.SelectedIndex = -1;
                 comboBoxVencimientoPagoFactura1.SelectedIndex = -1;
+                txtBoxObservacionesProntoPago1.Clear();
                 txtBoxProntoPago2Dias.Clear();
                 comboBoxDescProntoPago2.SelectedIndex = -1;
                 comboBoxVencimientoPagoFactura2.SelectedIndex = -1;
+                txtBoxObservacionesProntoPago2.Clear();
                 txtBoxProntoPago3Dias.Clear();
                 comboBoxDescProntoPago3.SelectedIndex = -1;
                 comboBoxVencimientoPagoFactura3.SelectedIndex = -1;
+                txtBoxObservacionesProntoPago3.Clear();
                 txtBoxProntoPago4Dias.Clear();
                 comboBoxDescProntoPago4.SelectedIndex = -1;
                 comboBoxVencimientoPagoFactura4.SelectedIndex = -1;
+                txtBoxObservacionesProntoPago4.Clear();
                 txtBoxProntoPago5Dias.Clear();
                 comboBoxDescProntoPago5.SelectedIndex = -1;
                 comboBoxVencimientoPagoFactura5.SelectedIndex = -1;
+                txtBoxObservacionesProntoPago5.Clear();
+                txtBoxObservacionesGeneralesPlazo.Clear();
+
+
+                txtBoxTiempoEntregaCondiciones.Clear();
+                txtBoxObservacionesCondiciones.Clear();
+                txtBoxCondicionesEspecialesCondiciones.Clear();                
 
                 //Sucursales de Entrega
                 checkBoxMatriz.Checked = false;
@@ -1543,7 +1636,7 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         //Seccion Datos Primarios Generales
         private void btnBuscarClave_Click(object sender, EventArgs e)
         {
@@ -4567,6 +4660,220 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void dataGridPlazosCredito_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToString(dataGridPlazosCredito.CurrentRow.Cells[4].Value.ToString()) == "Revisado")
+                    checkBoxCondicionesItem.Checked = true;
+                else
+                    checkBoxCondicionesItem.Checked = false;
+
+                txtBoxCondicionesCreditoCondiciones.Text = dataGridPlazosCredito.CurrentRow.Cells[5].Value.ToString();
+                txtBoxDefinicionPlazoCredito.Text = dataGridPlazosCredito.CurrentRow.Cells[6].Value.ToString();
+                txtBoxProntoPago1Dias.Text = dataGridPlazosCredito.CurrentRow.Cells[7].Value.ToString();
+                comboBoxDescProntoPago1.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[8].Value.ToString();
+                comboBoxVencimientoPagoFactura1.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[9].Value.ToString();
+                txtBoxObservacionesProntoPago1.Text = dataGridPlazosCredito.CurrentRow.Cells[10].Value.ToString();
+                txtBoxProntoPago2Dias.Text = dataGridPlazosCredito.CurrentRow.Cells[11].Value.ToString();
+                comboBoxDescProntoPago2.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[12].Value.ToString();
+                comboBoxVencimientoPagoFactura2.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[13].Value.ToString();
+                txtBoxObservacionesProntoPago2.Text = dataGridPlazosCredito.CurrentRow.Cells[14].Value.ToString();
+                txtBoxProntoPago3Dias.Text = dataGridPlazosCredito.CurrentRow.Cells[15].Value.ToString();
+                comboBoxDescProntoPago3.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[16].Value.ToString();
+                comboBoxVencimientoPagoFactura3.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[17].Value.ToString();
+                txtBoxObservacionesProntoPago3.Text = dataGridPlazosCredito.CurrentRow.Cells[18].Value.ToString();
+                txtBoxProntoPago4Dias.Text = dataGridPlazosCredito.CurrentRow.Cells[19].Value.ToString();
+                comboBoxDescProntoPago4.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[20].Value.ToString();
+                comboBoxVencimientoPagoFactura4.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[21].Value.ToString();
+                txtBoxObservacionesProntoPago4.Text = dataGridPlazosCredito.CurrentRow.Cells[22].Value.ToString();
+                txtBoxProntoPago5Dias.Text = dataGridPlazosCredito.CurrentRow.Cells[23].Value.ToString();
+                comboBoxDescProntoPago5.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[24].Value.ToString();
+                comboBoxVencimientoPagoFactura5.SelectedItem = dataGridPlazosCredito.CurrentRow.Cells[25].Value.ToString();
+                txtBoxObservacionesProntoPago5.Text = dataGridPlazosCredito.CurrentRow.Cells[26].Value.ToString();
+                txtBoxObservacionesGeneralesPlazo.Text = dataGridPlazosCredito.CurrentRow.Cells[27].Value.ToString();
+
+                if (txtBoxProntoPago1Dias.Text != "" && txtBoxProntoPago2Dias.Text != "" && txtBoxProntoPago3Dias.Text != "" &&
+                txtBoxProntoPago4Dias.Text != "" && txtBoxProntoPago5Dias.Text != "")
+                    checkBoxTieneProntoPago.Checked = true;
+                else
+                    checkBoxTieneProntoPago.Checked = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnAgregarPlazo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Agregar";
+                string categoriaDato = "Plazo de Crédito";
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (txtBoxCondicionesCreditoCondiciones.Text == "")
+                {
+                    MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nEl campo requerido es: \r\n*Días de Plazo de Crédito",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return;
+                }
+
+                EProveedorPlazoCredito Plazo = new EProveedorPlazoCredito
+                {            
+                    ClaveProveedor = eProveedorDatosPrim.ClaveProveedor,
+                    PlazoCreditoDias = txtBoxCondicionesCreditoCondiciones.Text,
+                    DefinicionPlazo = txtBoxDefinicionPlazoCredito.Text,
+                    ProntoPago1Dias = txtBoxProntoPago1Dias.Text,
+                    ProntoPago1Descuento = Convert.ToInt32(comboBoxDescProntoPago1.SelectedItem),
+                    VencimientoPagoFactura1 = Convert.ToString(comboBoxVencimientoPagoFactura1.SelectedItem),
+                    ObservacionesPP1 = txtBoxObservacionesProntoPago1.Text,
+                    ProntoPago2Dias = txtBoxProntoPago2Dias.Text,
+                    ProntoPago2Descuento = Convert.ToInt32(comboBoxDescProntoPago2.SelectedItem),
+                    VencimientoPagoFactura2 = Convert.ToString(comboBoxVencimientoPagoFactura2.SelectedItem),
+                    ObservacionesPP2 = txtBoxObservacionesProntoPago2.Text,
+                    ProntoPago3Dias = txtBoxProntoPago3Dias.Text,
+                    ProntoPago3Descuento = Convert.ToInt32(comboBoxDescProntoPago3.SelectedItem),
+                    VencimientoPagoFactura3 = Convert.ToString(comboBoxVencimientoPagoFactura3.SelectedItem),
+                    ObservacionesPP3 = txtBoxObservacionesProntoPago3.Text,
+                    ProntoPago4Dias = txtBoxProntoPago4Dias.Text,
+                    ProntoPago4Descuento = Convert.ToInt32(comboBoxDescProntoPago4.SelectedItem),
+                    VencimientoPagoFactura4 = Convert.ToString(comboBoxVencimientoPagoFactura4.SelectedItem),
+                    ObservacionesPP4 = txtBoxObservacionesProntoPago4.Text,
+                    ProntoPago5Dias = txtBoxProntoPago5Dias.Text,
+                    ProntoPago5Descuento = Convert.ToInt32(comboBoxDescProntoPago5.SelectedItem),
+                    VencimientoPagoFactura5 = Convert.ToString(comboBoxVencimientoPagoFactura5.SelectedItem),
+                    ObservacionesPP5 = txtBoxObservacionesProntoPago5.Text,
+                    ObservacionesGenerales = txtBoxObservacionesGeneralesPlazo.Text
+                };
+
+                if (proveedorPlazoCreditoBol.agregarPlazoProveedor(Plazo))
+                {
+                    proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    CargarPlazosCredito(eProveedorDatosPrim.ClaveProveedor);
+                    CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    MessageBox.Show(categoriaDato + " ha sido agregado exitosamente.", accionDato + " " + categoriaDato,
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(categoriaDato + " NO ha podido ser agregado. " + System.Environment.NewLine + proveedorDireccionesBol.mensajeRespuestaSP,
+                       accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnEditarPlazo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Editar";
+                string categoriaDato = "Plazo de Crédito";
+                bool revisado = false;
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (txtBoxCondicionesCreditoCondiciones.Text == "")
+                {
+                    MessageBox.Show("Alguno de los campos requeridos está vacio. \r\nEl campo requerido es: \r\n*Días de Plazo de Crédito",
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    return;
+                }
+
+                if (checkBoxCondicionesItem.Checked)
+                    revisado = true;
+
+                EProveedorPlazoCredito Plazo = new EProveedorPlazoCredito
+                {
+                    ClaveProveedor = eProveedorDatosPrim.ClaveProveedor,
+                    Plazoid = Convert.ToInt32(dataGridPlazosCredito.CurrentRow.Cells[1].Value.ToString()),
+                    Revisado = revisado,
+                    PlazoCreditoDias = txtBoxCondicionesCreditoCondiciones.Text,
+                    DefinicionPlazo = txtBoxDefinicionPlazoCredito.Text,
+                    ProntoPago1Dias = txtBoxProntoPago1Dias.Text,
+                    ProntoPago1Descuento = Convert.ToInt32(comboBoxDescProntoPago1.SelectedItem),
+                    VencimientoPagoFactura1 = Convert.ToString(comboBoxVencimientoPagoFactura1.SelectedItem),
+                    ObservacionesPP1 = txtBoxObservacionesProntoPago1.Text,
+                    ProntoPago2Dias = txtBoxProntoPago2Dias.Text,
+                    ProntoPago2Descuento = Convert.ToInt32(comboBoxDescProntoPago2.SelectedItem),
+                    VencimientoPagoFactura2 = Convert.ToString(comboBoxVencimientoPagoFactura2.SelectedItem),
+                    ObservacionesPP2 = txtBoxObservacionesProntoPago2.Text,
+                    ProntoPago3Dias = txtBoxProntoPago3Dias.Text,
+                    ProntoPago3Descuento = Convert.ToInt32(comboBoxDescProntoPago3.SelectedItem),
+                    VencimientoPagoFactura3 = Convert.ToString(comboBoxVencimientoPagoFactura3.SelectedItem),
+                    ObservacionesPP3 = txtBoxObservacionesProntoPago3.Text,
+                    ProntoPago4Dias = txtBoxProntoPago4Dias.Text,
+                    ProntoPago4Descuento = Convert.ToInt32(comboBoxDescProntoPago4.SelectedItem),
+                    VencimientoPagoFactura4 = Convert.ToString(comboBoxVencimientoPagoFactura4.SelectedItem),
+                    ObservacionesPP4 = txtBoxObservacionesProntoPago4.Text,
+                    ProntoPago5Dias = txtBoxProntoPago5Dias.Text,
+                    ProntoPago5Descuento = Convert.ToInt32(comboBoxDescProntoPago5.SelectedItem),
+                    VencimientoPagoFactura5 = Convert.ToString(comboBoxVencimientoPagoFactura5.SelectedItem),
+                    ObservacionesPP5 = txtBoxObservacionesProntoPago5.Text,
+                    ObservacionesGenerales = txtBoxObservacionesGeneralesPlazo.Text
+                };
+
+                if (proveedorPlazoCreditoBol.editarPlazoByIdByClaveProveedorVal(Plazo))
+                {
+                    proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    CargarPlazosCredito(eProveedorDatosPrim.ClaveProveedor);
+                    CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    MessageBox.Show(categoriaDato + " ha sido editado exitosamente.", accionDato + " " + categoriaDato,
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(categoriaDato + " NO ha podido ser editada. " + System.Environment.NewLine + proveedorDireccionesBol.mensajeRespuestaSP,
+                       accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnLimpiarCamposPlazoCredito_Click(object sender, EventArgs e)
+        {
+            checkBoxCondicionesItem.Checked = false;
+            checkBoxTieneProntoPago.Checked = false;
+            txtBoxCondicionesCreditoCondiciones.Clear();
+            txtBoxDefinicionPlazoCredito.Clear();
+            txtBoxProntoPago1Dias.Clear();
+            comboBoxDescProntoPago1.SelectedIndex = -1;
+            comboBoxVencimientoPagoFactura1.SelectedIndex = -1;
+            txtBoxObservacionesProntoPago1.Clear();
+            txtBoxProntoPago2Dias.Clear();
+            comboBoxDescProntoPago2.SelectedIndex = -1;
+            comboBoxVencimientoPagoFactura2.SelectedIndex = -1;
+            txtBoxObservacionesProntoPago2.Clear();
+            txtBoxProntoPago3Dias.Clear();
+            comboBoxDescProntoPago3.SelectedIndex = -1;
+            comboBoxVencimientoPagoFactura3.SelectedIndex = -1;
+            txtBoxObservacionesProntoPago3.Clear();
+            txtBoxProntoPago4Dias.Clear();
+            comboBoxDescProntoPago4.SelectedIndex = -1;
+            comboBoxVencimientoPagoFactura4.SelectedIndex = -1;
+            txtBoxObservacionesProntoPago4.Clear();
+            txtBoxProntoPago5Dias.Clear();
+            comboBoxDescProntoPago5.SelectedIndex = -1;
+            comboBoxVencimientoPagoFactura5.SelectedIndex = -1;
+            txtBoxObservacionesProntoPago5.Clear();
+            txtBoxObservacionesGeneralesPlazo.Clear();              
+        }
         private void btnLimpiarCampoObservacionesTiempoEntregaCondiciones_Click(object sender, EventArgs e)
         {
             try
@@ -5634,10 +5941,15 @@ namespace ProveedorPrueba
 
         }
 
+        private void dataGridPlazosCredito_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
 
+        private void checkBoxCondicionesItem_CheckedChanged(object sender, EventArgs e)
+        {
 
-
+        }
         //private void btnSiguienteRutas_Click(object sender, EventArgs e)
         //{
         //    if (iRutas == ListaRutas.Count - 1)
