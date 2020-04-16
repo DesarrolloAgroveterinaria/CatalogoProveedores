@@ -34,6 +34,8 @@
             this.btnMin = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pnlNotificaciones = new System.Windows.Forms.Panel();
+            this.linkLabelCatálogoProductos = new System.Windows.Forms.LinkLabel();
+            this.linkLabelTableroRevision = new System.Windows.Forms.LinkLabel();
             this.btnVerNotificaciones = new System.Windows.Forms.Button();
             this.tabExpediente = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlExpediente = new System.Windows.Forms.FlowLayoutPanel();
@@ -171,14 +173,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblArchivosDisponiblesConvenioCompra = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtBoxArchivosConvenioCompraPoliticas = new System.Windows.Forms.TextBox();
+            this.btnSubirArchivoConvenioCompra = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnLimpiarCampoConvenioCompraPoliticas = new System.Windows.Forms.Button();
+            this.btnEliminarConvenioCompra = new System.Windows.Forms.Button();
+            this.comboBoxListaConveniosCompra = new System.Windows.Forms.ComboBox();
+            this.txtBoxConvenioCompraPoliticas = new System.Windows.Forms.TextBox();
+            this.btnAbrirConvenioCompra = new System.Windows.Forms.Button();
             this.lblTablaCategoriaConvenioCompra = new System.Windows.Forms.Label();
             this.btnLimpiarCamposObservacionesSolicitudCompra = new System.Windows.Forms.Button();
             this.lblCompraMinMensualSimbolo = new System.Windows.Forms.Label();
@@ -254,7 +256,6 @@
             this.tabCondiciones = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlCondiciones = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimCondiciones = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.checkBoxCondicionesRevisado = new System.Windows.Forms.CheckBox();
             this.btnGuardarCambiosSeccionCondiciones1 = new System.Windows.Forms.Button();
             this.txtBoxCategoriaCondiciones = new System.Windows.Forms.TextBox();
@@ -269,9 +270,9 @@
             this.lblProveedorCondiciones = new System.Windows.Forms.Label();
             this.picBoxLogoCondiciones = new System.Windows.Forms.PictureBox();
             this.pnlCondiciones = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblCondicionesEntrega = new System.Windows.Forms.Label();
             this.pnlPlazosCredito = new System.Windows.Forms.Panel();
-            this.lblPlazoCreditoNoActualizacion = new System.Windows.Forms.Label();
             this.checkBoxCondicionesItem = new System.Windows.Forms.CheckBox();
             this.lblObservacionesGeneralesPlazo = new System.Windows.Forms.Label();
             this.txtBoxObservacionesGeneralesPlazo = new System.Windows.Forms.TextBox();
@@ -857,11 +858,35 @@
             // 
             // pnlNotificaciones
             // 
+            this.pnlNotificaciones.Controls.Add(this.linkLabelCatálogoProductos);
+            this.pnlNotificaciones.Controls.Add(this.linkLabelTableroRevision);
             this.pnlNotificaciones.Controls.Add(this.btnVerNotificaciones);
             this.pnlNotificaciones.Location = new System.Drawing.Point(20, 45);
             this.pnlNotificaciones.Name = "pnlNotificaciones";
             this.pnlNotificaciones.Size = new System.Drawing.Size(1030, 64);
             this.pnlNotificaciones.TabIndex = 0;
+            // 
+            // linkLabelCatálogoProductos
+            // 
+            this.linkLabelCatálogoProductos.AutoSize = true;
+            this.linkLabelCatálogoProductos.Location = new System.Drawing.Point(416, 27);
+            this.linkLabelCatálogoProductos.Name = "linkLabelCatálogoProductos";
+            this.linkLabelCatálogoProductos.Size = new System.Drawing.Size(126, 14);
+            this.linkLabelCatálogoProductos.TabIndex = 2;
+            this.linkLabelCatálogoProductos.TabStop = true;
+            this.linkLabelCatálogoProductos.Text = "Catálogo de Productos";
+            this.linkLabelCatálogoProductos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCatálogoProductos_LinkClicked);
+            // 
+            // linkLabelTableroRevision
+            // 
+            this.linkLabelTableroRevision.AutoSize = true;
+            this.linkLabelTableroRevision.Location = new System.Drawing.Point(677, 27);
+            this.linkLabelTableroRevision.Name = "linkLabelTableroRevision";
+            this.linkLabelTableroRevision.Size = new System.Drawing.Size(244, 14);
+            this.linkLabelTableroRevision.TabIndex = 1;
+            this.linkLabelTableroRevision.TabStop = true;
+            this.linkLabelTableroRevision.Text = "Tablero de Revisión y Captura de Información";
+            this.linkLabelTableroRevision.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelTableroRevision_LinkClicked);
             // 
             // btnVerNotificaciones
             // 
@@ -1201,6 +1226,7 @@
             // 
             // comboBoxListaPagare
             // 
+            this.comboBoxListaPagare.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaPagare.FormattingEnabled = true;
             this.comboBoxListaPagare.Location = new System.Drawing.Point(217, 572);
             this.comboBoxListaPagare.Name = "comboBoxListaPagare";
@@ -1673,6 +1699,7 @@
             // 
             // comboBoxListaAvisoPrivacidadExpediente
             // 
+            this.comboBoxListaAvisoPrivacidadExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaAvisoPrivacidadExpediente.FormattingEnabled = true;
             this.comboBoxListaAvisoPrivacidadExpediente.Location = new System.Drawing.Point(217, 490);
             this.comboBoxListaAvisoPrivacidadExpediente.Name = "comboBoxListaAvisoPrivacidadExpediente";
@@ -1682,6 +1709,7 @@
             // 
             // comboBoxListaCaratulaEdoCuentaExpediente
             // 
+            this.comboBoxListaCaratulaEdoCuentaExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaCaratulaEdoCuentaExpediente.FormattingEnabled = true;
             this.comboBoxListaCaratulaEdoCuentaExpediente.Location = new System.Drawing.Point(214, 407);
             this.comboBoxListaCaratulaEdoCuentaExpediente.Name = "comboBoxListaCaratulaEdoCuentaExpediente";
@@ -1691,6 +1719,7 @@
             // 
             // comboBoxListaCedulaRFCExpediente
             // 
+            this.comboBoxListaCedulaRFCExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaCedulaRFCExpediente.FormattingEnabled = true;
             this.comboBoxListaCedulaRFCExpediente.Location = new System.Drawing.Point(214, 330);
             this.comboBoxListaCedulaRFCExpediente.Name = "comboBoxListaCedulaRFCExpediente";
@@ -1700,6 +1729,7 @@
             // 
             // comboBoxListaComprobanteDomicilioExpediente
             // 
+            this.comboBoxListaComprobanteDomicilioExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaComprobanteDomicilioExpediente.FormattingEnabled = true;
             this.comboBoxListaComprobanteDomicilioExpediente.Location = new System.Drawing.Point(214, 248);
             this.comboBoxListaComprobanteDomicilioExpediente.Name = "comboBoxListaComprobanteDomicilioExpediente";
@@ -1709,6 +1739,7 @@
             // 
             // comboBoxListaIRLExpediente
             // 
+            this.comboBoxListaIRLExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaIRLExpediente.FormattingEnabled = true;
             this.comboBoxListaIRLExpediente.Location = new System.Drawing.Point(214, 170);
             this.comboBoxListaIRLExpediente.Name = "comboBoxListaIRLExpediente";
@@ -1718,6 +1749,7 @@
             // 
             // comboBoxListaPRLExpediente
             // 
+            this.comboBoxListaPRLExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaPRLExpediente.FormattingEnabled = true;
             this.comboBoxListaPRLExpediente.Location = new System.Drawing.Point(214, 93);
             this.comboBoxListaPRLExpediente.Name = "comboBoxListaPRLExpediente";
@@ -1727,6 +1759,7 @@
             // 
             // comboBoxListaContratoExpediente
             // 
+            this.comboBoxListaContratoExpediente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaContratoExpediente.FormattingEnabled = true;
             this.comboBoxListaContratoExpediente.Location = new System.Drawing.Point(217, 12);
             this.comboBoxListaContratoExpediente.Name = "comboBoxListaContratoExpediente";
@@ -2206,6 +2239,7 @@
             // 
             // comboBoxListaPoliticasGarantias
             // 
+            this.comboBoxListaPoliticasGarantias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaPoliticasGarantias.FormattingEnabled = true;
             this.comboBoxListaPoliticasGarantias.Location = new System.Drawing.Point(625, 63);
             this.comboBoxListaPoliticasGarantias.Name = "comboBoxListaPoliticasGarantias";
@@ -2333,6 +2367,7 @@
             // 
             // comboBoxListaPoliticasDevoluciones
             // 
+            this.comboBoxListaPoliticasDevoluciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaPoliticasDevoluciones.FormattingEnabled = true;
             this.comboBoxListaPoliticasDevoluciones.ItemHeight = 14;
             this.comboBoxListaPoliticasDevoluciones.Location = new System.Drawing.Point(624, 74);
@@ -2391,14 +2426,14 @@
             this.pnlCompraMinimaMensual.Controls.Add(this.label12);
             this.pnlCompraMinimaMensual.Controls.Add(this.label11);
             this.pnlCompraMinimaMensual.Controls.Add(this.lblArchivosDisponiblesConvenioCompra);
-            this.pnlCompraMinimaMensual.Controls.Add(this.textBox3);
-            this.pnlCompraMinimaMensual.Controls.Add(this.button1);
+            this.pnlCompraMinimaMensual.Controls.Add(this.txtBoxArchivosConvenioCompraPoliticas);
+            this.pnlCompraMinimaMensual.Controls.Add(this.btnSubirArchivoConvenioCompra);
             this.pnlCompraMinimaMensual.Controls.Add(this.label10);
-            this.pnlCompraMinimaMensual.Controls.Add(this.button2);
-            this.pnlCompraMinimaMensual.Controls.Add(this.button7);
-            this.pnlCompraMinimaMensual.Controls.Add(this.comboBox2);
-            this.pnlCompraMinimaMensual.Controls.Add(this.textBox2);
-            this.pnlCompraMinimaMensual.Controls.Add(this.button8);
+            this.pnlCompraMinimaMensual.Controls.Add(this.btnLimpiarCampoConvenioCompraPoliticas);
+            this.pnlCompraMinimaMensual.Controls.Add(this.btnEliminarConvenioCompra);
+            this.pnlCompraMinimaMensual.Controls.Add(this.comboBoxListaConveniosCompra);
+            this.pnlCompraMinimaMensual.Controls.Add(this.txtBoxConvenioCompraPoliticas);
+            this.pnlCompraMinimaMensual.Controls.Add(this.btnAbrirConvenioCompra);
             this.pnlCompraMinimaMensual.Controls.Add(this.lblTablaCategoriaConvenioCompra);
             this.pnlCompraMinimaMensual.Controls.Add(this.btnLimpiarCamposObservacionesSolicitudCompra);
             this.pnlCompraMinimaMensual.Controls.Add(this.lblCompraMinMensualSimbolo);
@@ -2445,26 +2480,26 @@
             this.lblArchivosDisponiblesConvenioCompra.TabIndex = 185;
             this.lblArchivosDisponiblesConvenioCompra.Text = "Archivos Disponibles";
             // 
-            // textBox3
+            // txtBoxArchivosConvenioCompraPoliticas
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox3.Location = new System.Drawing.Point(622, 52);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(304, 67);
-            this.textBox3.TabIndex = 184;
+            this.txtBoxArchivosConvenioCompraPoliticas.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBoxArchivosConvenioCompraPoliticas.Location = new System.Drawing.Point(622, 52);
+            this.txtBoxArchivosConvenioCompraPoliticas.Multiline = true;
+            this.txtBoxArchivosConvenioCompraPoliticas.Name = "txtBoxArchivosConvenioCompraPoliticas";
+            this.txtBoxArchivosConvenioCompraPoliticas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxArchivosConvenioCompraPoliticas.Size = new System.Drawing.Size(304, 67);
+            this.txtBoxArchivosConvenioCompraPoliticas.TabIndex = 184;
             // 
-            // button1
+            // btnSubirArchivoConvenioCompra
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(318, 148);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(244, 28);
-            this.button1.TabIndex = 180;
-            this.button1.Text = "Subir Archivo";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSubirArchivoConvenioCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSubirArchivoConvenioCompra.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirArchivoConvenioCompra.Location = new System.Drawing.Point(318, 148);
+            this.btnSubirArchivoConvenioCompra.Name = "btnSubirArchivoConvenioCompra";
+            this.btnSubirArchivoConvenioCompra.Size = new System.Drawing.Size(244, 28);
+            this.btnSubirArchivoConvenioCompra.TabIndex = 180;
+            this.btnSubirArchivoConvenioCompra.Text = "Subir Archivo";
+            this.btnSubirArchivoConvenioCompra.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -2477,57 +2512,58 @@
             this.label10.TabIndex = 182;
             this.label10.Text = "Abrir/Eliminar Archivo:";
             // 
-            // button2
+            // btnLimpiarCampoConvenioCompraPoliticas
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(28, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(271, 28);
-            this.button2.TabIndex = 177;
-            this.button2.Text = "Limpiar Campo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampoConvenioCompraPoliticas.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCampoConvenioCompraPoliticas.Location = new System.Drawing.Point(28, 148);
+            this.btnLimpiarCampoConvenioCompraPoliticas.Name = "btnLimpiarCampoConvenioCompraPoliticas";
+            this.btnLimpiarCampoConvenioCompraPoliticas.Size = new System.Drawing.Size(271, 28);
+            this.btnLimpiarCampoConvenioCompraPoliticas.TabIndex = 177;
+            this.btnLimpiarCampoConvenioCompraPoliticas.Text = "Limpiar Campo";
+            this.btnLimpiarCampoConvenioCompraPoliticas.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnEliminarConvenioCompra
             // 
-            this.button7.BackColor = System.Drawing.Color.LightCoral;
-            this.button7.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(781, 145);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(148, 23);
-            this.button7.TabIndex = 179;
-            this.button7.Text = "Eliminar";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnEliminarConvenioCompra.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminarConvenioCompra.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarConvenioCompra.Location = new System.Drawing.Point(781, 145);
+            this.btnEliminarConvenioCompra.Name = "btnEliminarConvenioCompra";
+            this.btnEliminarConvenioCompra.Size = new System.Drawing.Size(148, 23);
+            this.btnEliminarConvenioCompra.TabIndex = 179;
+            this.btnEliminarConvenioCompra.Text = "Eliminar";
+            this.btnEliminarConvenioCompra.UseVisualStyleBackColor = false;
             // 
-            // comboBox2
+            // comboBoxListaConveniosCompra
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 14;
-            this.comboBox2.Location = new System.Drawing.Point(622, 174);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(307, 22);
-            this.comboBox2.TabIndex = 181;
+            this.comboBoxListaConveniosCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxListaConveniosCompra.FormattingEnabled = true;
+            this.comboBoxListaConveniosCompra.ItemHeight = 14;
+            this.comboBoxListaConveniosCompra.Location = new System.Drawing.Point(622, 174);
+            this.comboBoxListaConveniosCompra.Name = "comboBoxListaConveniosCompra";
+            this.comboBoxListaConveniosCompra.Size = new System.Drawing.Size(307, 22);
+            this.comboBoxListaConveniosCompra.TabIndex = 181;
             // 
-            // textBox2
+            // txtBoxConvenioCompraPoliticas
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(28, 52);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(534, 86);
-            this.textBox2.TabIndex = 176;
+            this.txtBoxConvenioCompraPoliticas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxConvenioCompraPoliticas.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxConvenioCompraPoliticas.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxConvenioCompraPoliticas.Location = new System.Drawing.Point(28, 52);
+            this.txtBoxConvenioCompraPoliticas.Multiline = true;
+            this.txtBoxConvenioCompraPoliticas.Name = "txtBoxConvenioCompraPoliticas";
+            this.txtBoxConvenioCompraPoliticas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtBoxConvenioCompraPoliticas.Size = new System.Drawing.Size(534, 86);
+            this.txtBoxConvenioCompraPoliticas.TabIndex = 176;
             // 
-            // button8
+            // btnAbrirConvenioCompra
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(622, 145);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(148, 23);
-            this.button8.TabIndex = 178;
-            this.button8.Text = "Abrir";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAbrirConvenioCompra.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirConvenioCompra.Location = new System.Drawing.Point(622, 145);
+            this.btnAbrirConvenioCompra.Name = "btnAbrirConvenioCompra";
+            this.btnAbrirConvenioCompra.Size = new System.Drawing.Size(148, 23);
+            this.btnAbrirConvenioCompra.TabIndex = 178;
+            this.btnAbrirConvenioCompra.Text = "Abrir";
+            this.btnAbrirConvenioCompra.UseVisualStyleBackColor = true;
             // 
             // lblTablaCategoriaConvenioCompra
             // 
@@ -2574,7 +2610,7 @@
             this.txtBoxObservacionesSolicitudes.Multiline = true;
             this.txtBoxObservacionesSolicitudes.Name = "txtBoxObservacionesSolicitudes";
             this.txtBoxObservacionesSolicitudes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxObservacionesSolicitudes.Size = new System.Drawing.Size(442, 65);
+            this.txtBoxObservacionesSolicitudes.Size = new System.Drawing.Size(534, 65);
             this.txtBoxObservacionesSolicitudes.TabIndex = 17;
             // 
             // lblObservacionesSolicitudes
@@ -2986,6 +3022,7 @@
             // 
             // comboBoxListaAcuerdosAtencionClientes
             // 
+            this.comboBoxListaAcuerdosAtencionClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaAcuerdosAtencionClientes.FormattingEnabled = true;
             this.comboBoxListaAcuerdosAtencionClientes.Location = new System.Drawing.Point(626, 53);
             this.comboBoxListaAcuerdosAtencionClientes.Name = "comboBoxListaAcuerdosAtencionClientes";
@@ -3112,6 +3149,7 @@
             // 
             // comboBoxListaAcuerdosVentaPublico
             // 
+            this.comboBoxListaAcuerdosVentaPublico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaAcuerdosVentaPublico.FormattingEnabled = true;
             this.comboBoxListaAcuerdosVentaPublico.Location = new System.Drawing.Point(626, 52);
             this.comboBoxListaAcuerdosVentaPublico.Name = "comboBoxListaAcuerdosVentaPublico";
@@ -3318,6 +3356,7 @@
             // 
             // comboBoxListaAcuerdosDeCompra
             // 
+            this.comboBoxListaAcuerdosDeCompra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaAcuerdosDeCompra.FormattingEnabled = true;
             this.comboBoxListaAcuerdosDeCompra.Location = new System.Drawing.Point(626, 53);
             this.comboBoxListaAcuerdosDeCompra.Name = "comboBoxListaAcuerdosDeCompra";
@@ -3386,7 +3425,6 @@
             // 
             // pnlDatosPrimCondiciones
             // 
-            this.pnlDatosPrimCondiciones.Controls.Add(this.label9);
             this.pnlDatosPrimCondiciones.Controls.Add(this.checkBoxCondicionesRevisado);
             this.pnlDatosPrimCondiciones.Controls.Add(this.btnGuardarCambiosSeccionCondiciones1);
             this.pnlDatosPrimCondiciones.Controls.Add(this.txtBoxCategoriaCondiciones);
@@ -3404,16 +3442,6 @@
             this.pnlDatosPrimCondiciones.Name = "pnlDatosPrimCondiciones";
             this.pnlDatosPrimCondiciones.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimCondiciones.TabIndex = 31;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(456, 68);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(229, 14);
-            this.label9.TabIndex = 297;
-            this.label9.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // checkBoxCondicionesRevisado
             // 
@@ -3555,6 +3583,7 @@
             // 
             // pnlCondiciones
             // 
+            this.pnlCondiciones.Controls.Add(this.label9);
             this.pnlCondiciones.Controls.Add(this.lblCondicionesEntrega);
             this.pnlCondiciones.Controls.Add(this.pnlPlazosCredito);
             this.pnlCondiciones.Controls.Add(this.pnlRutasFletes);
@@ -3563,9 +3592,19 @@
             this.pnlCondiciones.Controls.Add(this.lblCondicionesPago);
             this.pnlCondiciones.Location = new System.Drawing.Point(3, 180);
             this.pnlCondiciones.Name = "pnlCondiciones";
-            this.pnlCondiciones.Size = new System.Drawing.Size(996, 2765);
+            this.pnlCondiciones.Size = new System.Drawing.Size(996, 2843);
             this.pnlCondiciones.TabIndex = 32;
             this.pnlCondiciones.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(276, 900);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(229, 14);
+            this.label9.TabIndex = 297;
+            this.label9.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // lblCondicionesEntrega
             // 
@@ -3581,7 +3620,6 @@
             // pnlPlazosCredito
             // 
             this.pnlPlazosCredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlPlazosCredito.Controls.Add(this.lblPlazoCreditoNoActualizacion);
             this.pnlPlazosCredito.Controls.Add(this.checkBoxCondicionesItem);
             this.pnlPlazosCredito.Controls.Add(this.lblObservacionesGeneralesPlazo);
             this.pnlPlazosCredito.Controls.Add(this.txtBoxObservacionesGeneralesPlazo);
@@ -3644,24 +3682,14 @@
             this.pnlPlazosCredito.Controls.Add(this.lblCondicionesCreditoCondiciones);
             this.pnlPlazosCredito.Location = new System.Drawing.Point(20, 50);
             this.pnlPlazosCredito.Name = "pnlPlazosCredito";
-            this.pnlPlazosCredito.Size = new System.Drawing.Size(958, 807);
+            this.pnlPlazosCredito.Size = new System.Drawing.Size(958, 824);
             this.pnlPlazosCredito.TabIndex = 64;
-            // 
-            // lblPlazoCreditoNoActualizacion
-            // 
-            this.lblPlazoCreditoNoActualizacion.AutoSize = true;
-            this.lblPlazoCreditoNoActualizacion.ForeColor = System.Drawing.Color.Red;
-            this.lblPlazoCreditoNoActualizacion.Location = new System.Drawing.Point(465, 21);
-            this.lblPlazoCreditoNoActualizacion.Name = "lblPlazoCreditoNoActualizacion";
-            this.lblPlazoCreditoNoActualizacion.Size = new System.Drawing.Size(130, 14);
-            this.lblPlazoCreditoNoActualizacion.TabIndex = 296;
-            this.lblPlazoCreditoNoActualizacion.Text = "*No se puede actualizar";
             // 
             // checkBoxCondicionesItem
             // 
             this.checkBoxCondicionesItem.AutoSize = true;
             this.checkBoxCondicionesItem.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCondicionesItem.Location = new System.Drawing.Point(225, 17);
+            this.checkBoxCondicionesItem.Location = new System.Drawing.Point(224, 42);
             this.checkBoxCondicionesItem.Name = "checkBoxCondicionesItem";
             this.checkBoxCondicionesItem.Size = new System.Drawing.Size(241, 31);
             this.checkBoxCondicionesItem.TabIndex = 290;
@@ -3674,7 +3702,7 @@
             this.lblObservacionesGeneralesPlazo.AutoSize = true;
             this.lblObservacionesGeneralesPlazo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblObservacionesGeneralesPlazo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblObservacionesGeneralesPlazo.Location = new System.Drawing.Point(32, 641);
+            this.lblObservacionesGeneralesPlazo.Location = new System.Drawing.Point(35, 699);
             this.lblObservacionesGeneralesPlazo.Name = "lblObservacionesGeneralesPlazo";
             this.lblObservacionesGeneralesPlazo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblObservacionesGeneralesPlazo.Size = new System.Drawing.Size(217, 17);
@@ -3683,18 +3711,18 @@
             // 
             // txtBoxObservacionesGeneralesPlazo
             // 
-            this.txtBoxObservacionesGeneralesPlazo.Location = new System.Drawing.Point(35, 661);
+            this.txtBoxObservacionesGeneralesPlazo.Location = new System.Drawing.Point(38, 719);
             this.txtBoxObservacionesGeneralesPlazo.Multiline = true;
             this.txtBoxObservacionesGeneralesPlazo.Name = "txtBoxObservacionesGeneralesPlazo";
             this.txtBoxObservacionesGeneralesPlazo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxObservacionesGeneralesPlazo.Size = new System.Drawing.Size(905, 124);
+            this.txtBoxObservacionesGeneralesPlazo.Size = new System.Drawing.Size(514, 67);
             this.txtBoxObservacionesGeneralesPlazo.TabIndex = 65;
             // 
             // checkBoxTieneProntoPago
             // 
             this.checkBoxTieneProntoPago.AutoSize = true;
             this.checkBoxTieneProntoPago.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxTieneProntoPago.Location = new System.Drawing.Point(222, 54);
+            this.checkBoxTieneProntoPago.Location = new System.Drawing.Point(35, 189);
             this.checkBoxTieneProntoPago.Name = "checkBoxTieneProntoPago";
             this.checkBoxTieneProntoPago.Size = new System.Drawing.Size(230, 35);
             this.checkBoxTieneProntoPago.TabIndex = 288;
@@ -3751,7 +3779,7 @@
             // lblLineaPP4
             // 
             this.lblLineaPP4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLineaPP4.Location = new System.Drawing.Point(35, 559);
+            this.lblLineaPP4.Location = new System.Drawing.Point(38, 617);
             this.lblLineaPP4.Name = "lblLineaPP4";
             this.lblLineaPP4.Size = new System.Drawing.Size(500, 2);
             this.lblLineaPP4.TabIndex = 283;
@@ -3759,7 +3787,7 @@
             // lblLineaPP3
             // 
             this.lblLineaPP3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLineaPP3.Location = new System.Drawing.Point(39, 431);
+            this.lblLineaPP3.Location = new System.Drawing.Point(42, 489);
             this.lblLineaPP3.Name = "lblLineaPP3";
             this.lblLineaPP3.Size = new System.Drawing.Size(500, 2);
             this.lblLineaPP3.TabIndex = 282;
@@ -3767,7 +3795,7 @@
             // lblLineaPP2
             // 
             this.lblLineaPP2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLineaPP2.Location = new System.Drawing.Point(35, 386);
+            this.lblLineaPP2.Location = new System.Drawing.Point(38, 444);
             this.lblLineaPP2.Name = "lblLineaPP2";
             this.lblLineaPP2.Size = new System.Drawing.Size(500, 2);
             this.lblLineaPP2.TabIndex = 281;
@@ -3776,7 +3804,7 @@
             // 
             this.lblLineaPP1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblLineaPP1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblLineaPP1.Location = new System.Drawing.Point(35, 296);
+            this.lblLineaPP1.Location = new System.Drawing.Point(38, 354);
             this.lblLineaPP1.Name = "lblLineaPP1";
             this.lblLineaPP1.Size = new System.Drawing.Size(500, 2);
             this.lblLineaPP1.TabIndex = 280;
@@ -3786,7 +3814,7 @@
             this.txtBoxObservacionesProntoPago5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObservacionesProntoPago5.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxObservacionesProntoPago5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxObservacionesProntoPago5.Location = new System.Drawing.Point(138, 601);
+            this.txtBoxObservacionesProntoPago5.Location = new System.Drawing.Point(141, 659);
             this.txtBoxObservacionesProntoPago5.Multiline = true;
             this.txtBoxObservacionesProntoPago5.Name = "txtBoxObservacionesProntoPago5";
             this.txtBoxObservacionesProntoPago5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -3798,7 +3826,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(37, 601);
+            this.label8.Location = new System.Drawing.Point(40, 659);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label8.Size = new System.Drawing.Size(94, 17);
@@ -3810,7 +3838,7 @@
             this.txtBoxObservacionesProntoPago4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObservacionesProntoPago4.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxObservacionesProntoPago4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxObservacionesProntoPago4.Location = new System.Drawing.Point(138, 519);
+            this.txtBoxObservacionesProntoPago4.Location = new System.Drawing.Point(141, 577);
             this.txtBoxObservacionesProntoPago4.Multiline = true;
             this.txtBoxObservacionesProntoPago4.Name = "txtBoxObservacionesProntoPago4";
             this.txtBoxObservacionesProntoPago4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -3822,7 +3850,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(37, 519);
+            this.label7.Location = new System.Drawing.Point(40, 577);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(94, 17);
@@ -3834,7 +3862,7 @@
             this.txtBoxObservacionesProntoPago3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObservacionesProntoPago3.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxObservacionesProntoPago3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxObservacionesProntoPago3.Location = new System.Drawing.Point(137, 439);
+            this.txtBoxObservacionesProntoPago3.Location = new System.Drawing.Point(140, 497);
             this.txtBoxObservacionesProntoPago3.Multiline = true;
             this.txtBoxObservacionesProntoPago3.Name = "txtBoxObservacionesProntoPago3";
             this.txtBoxObservacionesProntoPago3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -3846,7 +3874,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(36, 439);
+            this.label6.Location = new System.Drawing.Point(39, 497);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(94, 17);
@@ -3858,7 +3886,7 @@
             this.txtBoxObservacionesProntoPago2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObservacionesProntoPago2.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxObservacionesProntoPago2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxObservacionesProntoPago2.Location = new System.Drawing.Point(137, 346);
+            this.txtBoxObservacionesProntoPago2.Location = new System.Drawing.Point(140, 404);
             this.txtBoxObservacionesProntoPago2.Multiline = true;
             this.txtBoxObservacionesProntoPago2.Name = "txtBoxObservacionesProntoPago2";
             this.txtBoxObservacionesProntoPago2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -3870,7 +3898,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(36, 346);
+            this.label5.Location = new System.Drawing.Point(39, 404);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(94, 17);
@@ -3882,7 +3910,7 @@
             this.txtBoxObservacionesProntoPago1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObservacionesProntoPago1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxObservacionesProntoPago1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxObservacionesProntoPago1.Location = new System.Drawing.Point(135, 258);
+            this.txtBoxObservacionesProntoPago1.Location = new System.Drawing.Point(138, 316);
             this.txtBoxObservacionesProntoPago1.Multiline = true;
             this.txtBoxObservacionesProntoPago1.Name = "txtBoxObservacionesProntoPago1";
             this.txtBoxObservacionesProntoPago1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -3894,7 +3922,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(34, 258);
+            this.label4.Location = new System.Drawing.Point(37, 316);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(94, 17);
@@ -3906,7 +3934,7 @@
             this.txtBoxDefinicionPlazoCredito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxDefinicionPlazoCredito.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDefinicionPlazoCredito.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxDefinicionPlazoCredito.Location = new System.Drawing.Point(32, 118);
+            this.txtBoxDefinicionPlazoCredito.Location = new System.Drawing.Point(30, 114);
             this.txtBoxDefinicionPlazoCredito.Name = "txtBoxDefinicionPlazoCredito";
             this.txtBoxDefinicionPlazoCredito.Size = new System.Drawing.Size(435, 55);
             this.txtBoxDefinicionPlazoCredito.TabIndex = 268;
@@ -3916,7 +3944,7 @@
             this.lblDefinicionPlazos.AutoSize = true;
             this.lblDefinicionPlazos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDefinicionPlazos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblDefinicionPlazos.Location = new System.Drawing.Point(32, 98);
+            this.lblDefinicionPlazos.Location = new System.Drawing.Point(30, 94);
             this.lblDefinicionPlazos.Name = "lblDefinicionPlazos";
             this.lblDefinicionPlazos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblDefinicionPlazos.Size = new System.Drawing.Size(128, 17);
@@ -4194,7 +4222,7 @@
             this.lblProntosPagos.AutoSize = true;
             this.lblProntosPagos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntosPagos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntosPagos.Location = new System.Drawing.Point(32, 187);
+            this.lblProntosPagos.Location = new System.Drawing.Point(35, 245);
             this.lblProntosPagos.Name = "lblProntosPagos";
             this.lblProntosPagos.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntosPagos.Size = new System.Drawing.Size(85, 17);
@@ -4203,55 +4231,60 @@
             // 
             // comboBoxVencimientoPagoFactura5
             // 
+            this.comboBoxVencimientoPagoFactura5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVencimientoPagoFactura5.FormattingEnabled = true;
             this.comboBoxVencimientoPagoFactura5.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura5.Location = new System.Drawing.Point(268, 572);
+            this.comboBoxVencimientoPagoFactura5.Location = new System.Drawing.Point(271, 630);
             this.comboBoxVencimientoPagoFactura5.Name = "comboBoxVencimientoPagoFactura5";
             this.comboBoxVencimientoPagoFactura5.Size = new System.Drawing.Size(281, 22);
             this.comboBoxVencimientoPagoFactura5.TabIndex = 247;
             // 
             // comboBoxVencimientoPagoFactura4
             // 
+            this.comboBoxVencimientoPagoFactura4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVencimientoPagoFactura4.FormattingEnabled = true;
             this.comboBoxVencimientoPagoFactura4.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura4.Location = new System.Drawing.Point(268, 490);
+            this.comboBoxVencimientoPagoFactura4.Location = new System.Drawing.Point(271, 548);
             this.comboBoxVencimientoPagoFactura4.Name = "comboBoxVencimientoPagoFactura4";
             this.comboBoxVencimientoPagoFactura4.Size = new System.Drawing.Size(281, 22);
             this.comboBoxVencimientoPagoFactura4.TabIndex = 244;
             // 
             // comboBoxVencimientoPagoFactura3
             // 
+            this.comboBoxVencimientoPagoFactura3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVencimientoPagoFactura3.FormattingEnabled = true;
             this.comboBoxVencimientoPagoFactura3.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura3.Location = new System.Drawing.Point(264, 404);
+            this.comboBoxVencimientoPagoFactura3.Location = new System.Drawing.Point(267, 462);
             this.comboBoxVencimientoPagoFactura3.Name = "comboBoxVencimientoPagoFactura3";
             this.comboBoxVencimientoPagoFactura3.Size = new System.Drawing.Size(285, 22);
             this.comboBoxVencimientoPagoFactura3.TabIndex = 241;
             // 
             // comboBoxVencimientoPagoFactura1
             // 
+            this.comboBoxVencimientoPagoFactura1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVencimientoPagoFactura1.FormattingEnabled = true;
             this.comboBoxVencimientoPagoFactura1.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura1.Location = new System.Drawing.Point(265, 220);
+            this.comboBoxVencimientoPagoFactura1.Location = new System.Drawing.Point(268, 278);
             this.comboBoxVencimientoPagoFactura1.Name = "comboBoxVencimientoPagoFactura1";
             this.comboBoxVencimientoPagoFactura1.Size = new System.Drawing.Size(284, 22);
             this.comboBoxVencimientoPagoFactura1.TabIndex = 235;
             // 
             // comboBoxVencimientoPagoFactura2
             // 
+            this.comboBoxVencimientoPagoFactura2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVencimientoPagoFactura2.FormattingEnabled = true;
             this.comboBoxVencimientoPagoFactura2.Items.AddRange(new object[] {
             "Fecha de Factura",
             "Fecha de Entrega"});
-            this.comboBoxVencimientoPagoFactura2.Location = new System.Drawing.Point(264, 312);
+            this.comboBoxVencimientoPagoFactura2.Location = new System.Drawing.Point(267, 370);
             this.comboBoxVencimientoPagoFactura2.Name = "comboBoxVencimientoPagoFactura2";
             this.comboBoxVencimientoPagoFactura2.Size = new System.Drawing.Size(285, 22);
             this.comboBoxVencimientoPagoFactura2.TabIndex = 238;
@@ -4261,7 +4294,7 @@
             this.lblVencimientoFacturaCondiciones.AutoSize = true;
             this.lblVencimientoFacturaCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVencimientoFacturaCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblVencimientoFacturaCondiciones.Location = new System.Drawing.Point(255, 187);
+            this.lblVencimientoFacturaCondiciones.Location = new System.Drawing.Point(258, 245);
             this.lblVencimientoFacturaCondiciones.Name = "lblVencimientoFacturaCondiciones";
             this.lblVencimientoFacturaCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblVencimientoFacturaCondiciones.Size = new System.Drawing.Size(189, 17);
@@ -4273,7 +4306,7 @@
             this.lblProntoPago4Dias.AutoSize = true;
             this.lblProntoPago4Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago4Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago4Dias.Location = new System.Drawing.Point(127, 490);
+            this.lblProntoPago4Dias.Location = new System.Drawing.Point(130, 548);
             this.lblProntoPago4Dias.Name = "lblProntoPago4Dias";
             this.lblProntoPago4Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago4Dias.Size = new System.Drawing.Size(32, 17);
@@ -4285,7 +4318,7 @@
             this.txtBoxProntoPago4Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago4Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago4Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago4Dias.Location = new System.Drawing.Point(59, 490);
+            this.txtBoxProntoPago4Dias.Location = new System.Drawing.Point(62, 548);
             this.txtBoxProntoPago4Dias.Name = "txtBoxProntoPago4Dias";
             this.txtBoxProntoPago4Dias.Size = new System.Drawing.Size(61, 21);
             this.txtBoxProntoPago4Dias.TabIndex = 242;
@@ -4396,7 +4429,7 @@
             "98",
             "99",
             "100"});
-            this.comboBoxDescProntoPago4.Location = new System.Drawing.Point(172, 489);
+            this.comboBoxDescProntoPago4.Location = new System.Drawing.Point(175, 547);
             this.comboBoxDescProntoPago4.Name = "comboBoxDescProntoPago4";
             this.comboBoxDescProntoPago4.Size = new System.Drawing.Size(61, 22);
             this.comboBoxDescProntoPago4.TabIndex = 243;
@@ -4406,7 +4439,7 @@
             this.lblPorc4.AutoSize = true;
             this.lblPorc4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc4.Location = new System.Drawing.Point(239, 491);
+            this.lblPorc4.Location = new System.Drawing.Point(242, 549);
             this.lblPorc4.Name = "lblPorc4";
             this.lblPorc4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc4.Size = new System.Drawing.Size(19, 17);
@@ -4418,7 +4451,7 @@
             this.lblProntoPago4.AutoSize = true;
             this.lblProntoPago4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago4.Location = new System.Drawing.Point(29, 489);
+            this.lblProntoPago4.Location = new System.Drawing.Point(32, 547);
             this.lblProntoPago4.Name = "lblProntoPago4";
             this.lblProntoPago4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago4.Size = new System.Drawing.Size(15, 17);
@@ -4430,7 +4463,7 @@
             this.lblProntoPago3Dias.AutoSize = true;
             this.lblProntoPago3Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago3Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago3Dias.Location = new System.Drawing.Point(126, 405);
+            this.lblProntoPago3Dias.Location = new System.Drawing.Point(129, 463);
             this.lblProntoPago3Dias.Name = "lblProntoPago3Dias";
             this.lblProntoPago3Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago3Dias.Size = new System.Drawing.Size(32, 17);
@@ -4442,7 +4475,7 @@
             this.txtBoxProntoPago3Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago3Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago3Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago3Dias.Location = new System.Drawing.Point(59, 405);
+            this.txtBoxProntoPago3Dias.Location = new System.Drawing.Point(62, 463);
             this.txtBoxProntoPago3Dias.Name = "txtBoxProntoPago3Dias";
             this.txtBoxProntoPago3Dias.Size = new System.Drawing.Size(61, 21);
             this.txtBoxProntoPago3Dias.TabIndex = 239;
@@ -4553,7 +4586,7 @@
             "98",
             "99",
             "100"});
-            this.comboBoxDescProntoPago3.Location = new System.Drawing.Point(171, 405);
+            this.comboBoxDescProntoPago3.Location = new System.Drawing.Point(174, 463);
             this.comboBoxDescProntoPago3.Name = "comboBoxDescProntoPago3";
             this.comboBoxDescProntoPago3.Size = new System.Drawing.Size(61, 22);
             this.comboBoxDescProntoPago3.TabIndex = 240;
@@ -4563,7 +4596,7 @@
             this.lblPorc3.AutoSize = true;
             this.lblPorc3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc3.Location = new System.Drawing.Point(238, 405);
+            this.lblPorc3.Location = new System.Drawing.Point(241, 463);
             this.lblPorc3.Name = "lblPorc3";
             this.lblPorc3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc3.Size = new System.Drawing.Size(19, 17);
@@ -4575,7 +4608,7 @@
             this.lblProntoPago3.AutoSize = true;
             this.lblProntoPago3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago3.Location = new System.Drawing.Point(28, 403);
+            this.lblProntoPago3.Location = new System.Drawing.Point(31, 461);
             this.lblProntoPago3.Name = "lblProntoPago3";
             this.lblProntoPago3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago3.Size = new System.Drawing.Size(15, 17);
@@ -4587,7 +4620,7 @@
             this.lblProntoPago2Dias.AutoSize = true;
             this.lblProntoPago2Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago2Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago2Dias.Location = new System.Drawing.Point(126, 312);
+            this.lblProntoPago2Dias.Location = new System.Drawing.Point(129, 370);
             this.lblProntoPago2Dias.Name = "lblProntoPago2Dias";
             this.lblProntoPago2Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago2Dias.Size = new System.Drawing.Size(32, 17);
@@ -4599,7 +4632,7 @@
             this.txtBoxProntoPago2Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago2Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago2Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago2Dias.Location = new System.Drawing.Point(59, 312);
+            this.txtBoxProntoPago2Dias.Location = new System.Drawing.Point(62, 370);
             this.txtBoxProntoPago2Dias.Name = "txtBoxProntoPago2Dias";
             this.txtBoxProntoPago2Dias.Size = new System.Drawing.Size(61, 21);
             this.txtBoxProntoPago2Dias.TabIndex = 236;
@@ -4710,7 +4743,7 @@
             "98",
             "99",
             "100"});
-            this.comboBoxDescProntoPago2.Location = new System.Drawing.Point(171, 312);
+            this.comboBoxDescProntoPago2.Location = new System.Drawing.Point(174, 370);
             this.comboBoxDescProntoPago2.Name = "comboBoxDescProntoPago2";
             this.comboBoxDescProntoPago2.Size = new System.Drawing.Size(61, 22);
             this.comboBoxDescProntoPago2.TabIndex = 237;
@@ -4720,7 +4753,7 @@
             this.lblPorc2.AutoSize = true;
             this.lblPorc2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc2.Location = new System.Drawing.Point(238, 312);
+            this.lblPorc2.Location = new System.Drawing.Point(241, 370);
             this.lblPorc2.Name = "lblPorc2";
             this.lblPorc2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc2.Size = new System.Drawing.Size(19, 17);
@@ -4732,7 +4765,7 @@
             this.lblProntoPago2.AutoSize = true;
             this.lblProntoPago2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago2.Location = new System.Drawing.Point(28, 310);
+            this.lblProntoPago2.Location = new System.Drawing.Point(31, 368);
             this.lblProntoPago2.Name = "lblProntoPago2";
             this.lblProntoPago2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago2.Size = new System.Drawing.Size(15, 17);
@@ -4744,7 +4777,7 @@
             this.lblProntoPago5Dias.AutoSize = true;
             this.lblProntoPago5Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago5Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago5Dias.Location = new System.Drawing.Point(127, 573);
+            this.lblProntoPago5Dias.Location = new System.Drawing.Point(130, 631);
             this.lblProntoPago5Dias.Name = "lblProntoPago5Dias";
             this.lblProntoPago5Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago5Dias.Size = new System.Drawing.Size(32, 17);
@@ -4756,7 +4789,7 @@
             this.txtBoxProntoPago5Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago5Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago5Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago5Dias.Location = new System.Drawing.Point(60, 573);
+            this.txtBoxProntoPago5Dias.Location = new System.Drawing.Point(63, 631);
             this.txtBoxProntoPago5Dias.Name = "txtBoxProntoPago5Dias";
             this.txtBoxProntoPago5Dias.Size = new System.Drawing.Size(61, 21);
             this.txtBoxProntoPago5Dias.TabIndex = 245;
@@ -4867,7 +4900,7 @@
             "98",
             "99",
             "100"});
-            this.comboBoxDescProntoPago5.Location = new System.Drawing.Point(172, 573);
+            this.comboBoxDescProntoPago5.Location = new System.Drawing.Point(175, 631);
             this.comboBoxDescProntoPago5.Name = "comboBoxDescProntoPago5";
             this.comboBoxDescProntoPago5.Size = new System.Drawing.Size(61, 22);
             this.comboBoxDescProntoPago5.TabIndex = 246;
@@ -4877,7 +4910,7 @@
             this.lblPorc5.AutoSize = true;
             this.lblPorc5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc5.Location = new System.Drawing.Point(239, 573);
+            this.lblPorc5.Location = new System.Drawing.Point(242, 631);
             this.lblPorc5.Name = "lblPorc5";
             this.lblPorc5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc5.Size = new System.Drawing.Size(19, 17);
@@ -4889,7 +4922,7 @@
             this.lblProntoPago5.AutoSize = true;
             this.lblProntoPago5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago5.Location = new System.Drawing.Point(29, 571);
+            this.lblProntoPago5.Location = new System.Drawing.Point(32, 629);
             this.lblProntoPago5.Name = "lblProntoPago5";
             this.lblProntoPago5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago5.Size = new System.Drawing.Size(15, 17);
@@ -4901,7 +4934,7 @@
             this.lblProntoPago1Dias.AutoSize = true;
             this.lblProntoPago1Dias.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago1Dias.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago1Dias.Location = new System.Drawing.Point(126, 221);
+            this.lblProntoPago1Dias.Location = new System.Drawing.Point(129, 279);
             this.lblProntoPago1Dias.Name = "lblProntoPago1Dias";
             this.lblProntoPago1Dias.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago1Dias.Size = new System.Drawing.Size(32, 17);
@@ -4913,7 +4946,7 @@
             this.txtBoxProntoPago1Dias.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxProntoPago1Dias.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxProntoPago1Dias.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxProntoPago1Dias.Location = new System.Drawing.Point(59, 221);
+            this.txtBoxProntoPago1Dias.Location = new System.Drawing.Point(62, 279);
             this.txtBoxProntoPago1Dias.Name = "txtBoxProntoPago1Dias";
             this.txtBoxProntoPago1Dias.Size = new System.Drawing.Size(61, 21);
             this.txtBoxProntoPago1Dias.TabIndex = 233;
@@ -5024,7 +5057,7 @@
             "98",
             "99",
             "100"});
-            this.comboBoxDescProntoPago1.Location = new System.Drawing.Point(171, 221);
+            this.comboBoxDescProntoPago1.Location = new System.Drawing.Point(174, 279);
             this.comboBoxDescProntoPago1.Name = "comboBoxDescProntoPago1";
             this.comboBoxDescProntoPago1.Size = new System.Drawing.Size(61, 22);
             this.comboBoxDescProntoPago1.TabIndex = 234;
@@ -5034,7 +5067,7 @@
             this.lblPorc1.AutoSize = true;
             this.lblPorc1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPorc1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPorc1.Location = new System.Drawing.Point(238, 221);
+            this.lblPorc1.Location = new System.Drawing.Point(241, 279);
             this.lblPorc1.Name = "lblPorc1";
             this.lblPorc1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblPorc1.Size = new System.Drawing.Size(19, 17);
@@ -5046,7 +5079,7 @@
             this.lblProntoPago1.AutoSize = true;
             this.lblProntoPago1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProntoPago1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblProntoPago1.Location = new System.Drawing.Point(28, 219);
+            this.lblProntoPago1.Location = new System.Drawing.Point(31, 277);
             this.lblProntoPago1.Name = "lblProntoPago1";
             this.lblProntoPago1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblProntoPago1.Size = new System.Drawing.Size(15, 17);
@@ -5070,9 +5103,9 @@
             this.txtBoxCondicionesCreditoCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCondicionesCreditoCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCondicionesCreditoCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCondicionesCreditoCondiciones.Location = new System.Drawing.Point(35, 37);
+            this.txtBoxCondicionesCreditoCondiciones.Location = new System.Drawing.Point(30, 37);
             this.txtBoxCondicionesCreditoCondiciones.Name = "txtBoxCondicionesCreditoCondiciones";
-            this.txtBoxCondicionesCreditoCondiciones.Size = new System.Drawing.Size(94, 42);
+            this.txtBoxCondicionesCreditoCondiciones.Size = new System.Drawing.Size(99, 42);
             this.txtBoxCondicionesCreditoCondiciones.TabIndex = 232;
             // 
             // lblCondicionesCreditoCondiciones
@@ -5093,7 +5126,7 @@
             this.pnlRutasFletes.Controls.Add(this.pnlFleterosCondiciones);
             this.pnlRutasFletes.Location = new System.Drawing.Point(16, 1881);
             this.pnlRutasFletes.Name = "pnlRutasFletes";
-            this.pnlRutasFletes.Size = new System.Drawing.Size(963, 881);
+            this.pnlRutasFletes.Size = new System.Drawing.Size(963, 939);
             this.pnlRutasFletes.TabIndex = 63;
             this.pnlRutasFletes.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -5156,12 +5189,13 @@
             this.pnlFleterosCondiciones.Controls.Add(this.btnEliminarFletes);
             this.pnlFleterosCondiciones.Location = new System.Drawing.Point(28, 29);
             this.pnlFleterosCondiciones.Name = "pnlFleterosCondiciones";
-            this.pnlFleterosCondiciones.Size = new System.Drawing.Size(917, 830);
+            this.pnlFleterosCondiciones.Size = new System.Drawing.Size(917, 879);
             this.pnlFleterosCondiciones.TabIndex = 81;
             this.pnlFleterosCondiciones.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFleterosCondiciones_Paint);
             // 
             // comboBoxCargoEntregaFletes
             // 
+            this.comboBoxCargoEntregaFletes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCargoEntregaFletes.FormattingEnabled = true;
             this.comboBoxCargoEntregaFletes.Items.AddRange(new object[] {
             "Pagado",
@@ -5184,6 +5218,7 @@
             // 
             // comboBoxTransporteEnvioFletes
             // 
+            this.comboBoxTransporteEnvioFletes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTransporteEnvioFletes.FormattingEnabled = true;
             this.comboBoxTransporteEnvioFletes.Items.AddRange(new object[] {
             "Terrestre",
@@ -5256,7 +5291,7 @@
             this.txtBoxObservacionesFletes.Multiline = true;
             this.txtBoxObservacionesFletes.Name = "txtBoxObservacionesFletes";
             this.txtBoxObservacionesFletes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxObservacionesFletes.Size = new System.Drawing.Size(329, 35);
+            this.txtBoxObservacionesFletes.Size = new System.Drawing.Size(329, 58);
             this.txtBoxObservacionesFletes.TabIndex = 51;
             // 
             // lblObservacionesFletes
@@ -5273,6 +5308,7 @@
             // 
             // comboBoxTipoEnvioFletes
             // 
+            this.comboBoxTipoEnvioFletes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTipoEnvioFletes.FormattingEnabled = true;
             this.comboBoxTipoEnvioFletes.Items.AddRange(new object[] {
             "Courier",
@@ -5304,7 +5340,6 @@
             this.btnEsPreferenciaFlete.TabIndex = 223;
             this.btnEsPreferenciaFlete.Text = "Marcar Como Preferente";
             this.btnEsPreferenciaFlete.UseVisualStyleBackColor = false;
-            this.btnEsPreferenciaFlete.Visible = false;
             // 
             // lblFletePreferenciaFletes
             // 
@@ -5322,7 +5357,7 @@
             this.lblSucursalCMAFletes.AutoSize = true;
             this.lblSucursalCMAFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalCMAFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalCMAFletes.Location = new System.Drawing.Point(319, 774);
+            this.lblSucursalCMAFletes.Location = new System.Drawing.Point(321, 807);
             this.lblSucursalCMAFletes.Name = "lblSucursalCMAFletes";
             this.lblSucursalCMAFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalCMAFletes.Size = new System.Drawing.Size(36, 17);
@@ -5334,7 +5369,7 @@
             this.lblSucursalCEDISFletes.AutoSize = true;
             this.lblSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalCEDISFletes.Location = new System.Drawing.Point(174, 774);
+            this.lblSucursalCEDISFletes.Location = new System.Drawing.Point(176, 807);
             this.lblSucursalCEDISFletes.Name = "lblSucursalCEDISFletes";
             this.lblSucursalCEDISFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalCEDISFletes.Size = new System.Drawing.Size(42, 17);
@@ -5346,7 +5381,7 @@
             this.lblSucursalCaborcaFletes.AutoSize = true;
             this.lblSucursalCaborcaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalCaborcaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalCaborcaFletes.Location = new System.Drawing.Point(27, 774);
+            this.lblSucursalCaborcaFletes.Location = new System.Drawing.Point(29, 807);
             this.lblSucursalCaborcaFletes.Name = "lblSucursalCaborcaFletes";
             this.lblSucursalCaborcaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalCaborcaFletes.Size = new System.Drawing.Size(57, 17);
@@ -5358,7 +5393,7 @@
             this.lblSucursalMagdalenaFletes.AutoSize = true;
             this.lblSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalMagdalenaFletes.Location = new System.Drawing.Point(463, 722);
+            this.lblSucursalMagdalenaFletes.Location = new System.Drawing.Point(465, 755);
             this.lblSucursalMagdalenaFletes.Name = "lblSucursalMagdalenaFletes";
             this.lblSucursalMagdalenaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalMagdalenaFletes.Size = new System.Drawing.Size(74, 17);
@@ -5370,7 +5405,7 @@
             this.lblSucursalSanPedroFletes.AutoSize = true;
             this.lblSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalSanPedroFletes.Location = new System.Drawing.Point(320, 722);
+            this.lblSucursalSanPedroFletes.Location = new System.Drawing.Point(322, 755);
             this.lblSucursalSanPedroFletes.Name = "lblSucursalSanPedroFletes";
             this.lblSucursalSanPedroFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalSanPedroFletes.Size = new System.Drawing.Size(68, 17);
@@ -5382,7 +5417,7 @@
             this.lblSucursalHipodromoFletes.AutoSize = true;
             this.lblSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalHipodromoFletes.Location = new System.Drawing.Point(171, 722);
+            this.lblSucursalHipodromoFletes.Location = new System.Drawing.Point(173, 755);
             this.lblSucursalHipodromoFletes.Name = "lblSucursalHipodromoFletes";
             this.lblSucursalHipodromoFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalHipodromoFletes.Size = new System.Drawing.Size(76, 17);
@@ -5394,7 +5429,7 @@
             this.lblSucursalMatrizFletes.AutoSize = true;
             this.lblSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSucursalMatrizFletes.Location = new System.Drawing.Point(32, 722);
+            this.lblSucursalMatrizFletes.Location = new System.Drawing.Point(34, 755);
             this.lblSucursalMatrizFletes.Name = "lblSucursalMatrizFletes";
             this.lblSucursalMatrizFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblSucursalMatrizFletes.Size = new System.Drawing.Size(45, 17);
@@ -5406,7 +5441,7 @@
             this.lblCantidadCostoSucursalCMAFletes.AutoSize = true;
             this.lblCantidadCostoSucursalCMAFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalCMAFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalCMAFletes.Location = new System.Drawing.Point(298, 794);
+            this.lblCantidadCostoSucursalCMAFletes.Location = new System.Drawing.Point(300, 827);
             this.lblCantidadCostoSucursalCMAFletes.Name = "lblCantidadCostoSucursalCMAFletes";
             this.lblCantidadCostoSucursalCMAFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalCMAFletes.Size = new System.Drawing.Size(15, 17);
@@ -5418,7 +5453,7 @@
             this.txtBoxCantidadCostoSucursalCMAletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalCMAletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalCMAletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalCMAletes.Location = new System.Drawing.Point(319, 794);
+            this.txtBoxCantidadCostoSucursalCMAletes.Location = new System.Drawing.Point(321, 827);
             this.txtBoxCantidadCostoSucursalCMAletes.Name = "txtBoxCantidadCostoSucursalCMAletes";
             this.txtBoxCantidadCostoSucursalCMAletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalCMAletes.TabIndex = 57;
@@ -5428,7 +5463,7 @@
             this.lblCantidadCostoSucursalCEDISFletes.AutoSize = true;
             this.lblCantidadCostoSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(155, 794);
+            this.lblCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(157, 827);
             this.lblCantidadCostoSucursalCEDISFletes.Name = "lblCantidadCostoSucursalCEDISFletes";
             this.lblCantidadCostoSucursalCEDISFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalCEDISFletes.Size = new System.Drawing.Size(15, 17);
@@ -5440,7 +5475,7 @@
             this.txtBoxCantidadCostoSucursalCEDISFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalCEDISFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalCEDISFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(176, 794);
+            this.txtBoxCantidadCostoSucursalCEDISFletes.Location = new System.Drawing.Point(178, 827);
             this.txtBoxCantidadCostoSucursalCEDISFletes.Name = "txtBoxCantidadCostoSucursalCEDISFletes";
             this.txtBoxCantidadCostoSucursalCEDISFletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalCEDISFletes.TabIndex = 56;
@@ -5451,7 +5486,7 @@
             this.lblCantidadCostoSucursalCaborcaFletes.AutoSize = true;
             this.lblCantidadCostoSucursalCaborcaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalCaborcaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalCaborcaFletes.Location = new System.Drawing.Point(12, 796);
+            this.lblCantidadCostoSucursalCaborcaFletes.Location = new System.Drawing.Point(14, 829);
             this.lblCantidadCostoSucursalCaborcaFletes.Name = "lblCantidadCostoSucursalCaborcaFletes";
             this.lblCantidadCostoSucursalCaborcaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalCaborcaFletes.Size = new System.Drawing.Size(15, 17);
@@ -5463,7 +5498,7 @@
             this.txtBoxCantidadCostoSucursalCabrocaFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalCabrocaFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalCabrocaFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalCabrocaFletes.Location = new System.Drawing.Point(30, 794);
+            this.txtBoxCantidadCostoSucursalCabrocaFletes.Location = new System.Drawing.Point(32, 827);
             this.txtBoxCantidadCostoSucursalCabrocaFletes.Name = "txtBoxCantidadCostoSucursalCabrocaFletes";
             this.txtBoxCantidadCostoSucursalCabrocaFletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalCabrocaFletes.TabIndex = 55;
@@ -5473,7 +5508,7 @@
             this.lblCantidadCostoSucursalMagdalenaFletes.AutoSize = true;
             this.lblCantidadCostoSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(442, 742);
+            this.lblCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(444, 775);
             this.lblCantidadCostoSucursalMagdalenaFletes.Name = "lblCantidadCostoSucursalMagdalenaFletes";
             this.lblCantidadCostoSucursalMagdalenaFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalMagdalenaFletes.Size = new System.Drawing.Size(15, 17);
@@ -5485,7 +5520,7 @@
             this.txtBoxCantidadCostoSucursalMagdalenaFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalMagdalenaFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalMagdalenaFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(463, 742);
+            this.txtBoxCantidadCostoSucursalMagdalenaFletes.Location = new System.Drawing.Point(465, 775);
             this.txtBoxCantidadCostoSucursalMagdalenaFletes.Name = "txtBoxCantidadCostoSucursalMagdalenaFletes";
             this.txtBoxCantidadCostoSucursalMagdalenaFletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalMagdalenaFletes.TabIndex = 54;
@@ -5495,7 +5530,7 @@
             this.lblCantidadCostoSucursalSanPedroFletes.AutoSize = true;
             this.lblCantidadCostoSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(296, 742);
+            this.lblCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(298, 775);
             this.lblCantidadCostoSucursalSanPedroFletes.Name = "lblCantidadCostoSucursalSanPedroFletes";
             this.lblCantidadCostoSucursalSanPedroFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalSanPedroFletes.Size = new System.Drawing.Size(15, 17);
@@ -5507,7 +5542,7 @@
             this.txtBoxCantidadCostoSucursalSanPedroFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalSanPedroFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalSanPedroFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(317, 742);
+            this.txtBoxCantidadCostoSucursalSanPedroFletes.Location = new System.Drawing.Point(319, 775);
             this.txtBoxCantidadCostoSucursalSanPedroFletes.Name = "txtBoxCantidadCostoSucursalSanPedroFletes";
             this.txtBoxCantidadCostoSucursalSanPedroFletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalSanPedroFletes.TabIndex = 53;
@@ -5517,7 +5552,7 @@
             this.lblCantidadCostoSucursalHipodromoFletes.AutoSize = true;
             this.lblCantidadCostoSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(153, 742);
+            this.lblCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(155, 775);
             this.lblCantidadCostoSucursalHipodromoFletes.Name = "lblCantidadCostoSucursalHipodromoFletes";
             this.lblCantidadCostoSucursalHipodromoFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalHipodromoFletes.Size = new System.Drawing.Size(15, 17);
@@ -5529,7 +5564,7 @@
             this.txtBoxCantidadCostoSucursalHipodromoFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalHipodromoFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalHipodromoFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(174, 742);
+            this.txtBoxCantidadCostoSucursalHipodromoFletes.Location = new System.Drawing.Point(176, 775);
             this.txtBoxCantidadCostoSucursalHipodromoFletes.Name = "txtBoxCantidadCostoSucursalHipodromoFletes";
             this.txtBoxCantidadCostoSucursalHipodromoFletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalHipodromoFletes.TabIndex = 52;
@@ -5551,7 +5586,7 @@
             this.lblCantidadCostoSucursalMatrizFletes.AutoSize = true;
             this.lblCantidadCostoSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantidadCostoSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(14, 744);
+            this.lblCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(16, 777);
             this.lblCantidadCostoSucursalMatrizFletes.Name = "lblCantidadCostoSucursalMatrizFletes";
             this.lblCantidadCostoSucursalMatrizFletes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCantidadCostoSucursalMatrizFletes.Size = new System.Drawing.Size(15, 17);
@@ -5563,7 +5598,7 @@
             this.txtBoxCantidadCostoSucursalMatrizFletes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCantidadCostoSucursalMatrizFletes.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCantidadCostoSucursalMatrizFletes.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(32, 742);
+            this.txtBoxCantidadCostoSucursalMatrizFletes.Location = new System.Drawing.Point(34, 775);
             this.txtBoxCantidadCostoSucursalMatrizFletes.Name = "txtBoxCantidadCostoSucursalMatrizFletes";
             this.txtBoxCantidadCostoSucursalMatrizFletes.Size = new System.Drawing.Size(107, 21);
             this.txtBoxCantidadCostoSucursalMatrizFletes.TabIndex = 51;
@@ -5573,7 +5608,7 @@
             this.lblCostoFletePorSucursalCondiciones.AutoSize = true;
             this.lblCostoFletePorSucursalCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCostoFletePorSucursalCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCostoFletePorSucursalCondiciones.Location = new System.Drawing.Point(32, 702);
+            this.lblCostoFletePorSucursalCondiciones.Location = new System.Drawing.Point(34, 735);
             this.lblCostoFletePorSucursalCondiciones.Name = "lblCostoFletePorSucursalCondiciones";
             this.lblCostoFletePorSucursalCondiciones.Size = new System.Drawing.Size(176, 17);
             this.lblCostoFletePorSucursalCondiciones.TabIndex = 183;
@@ -5581,6 +5616,7 @@
             // 
             // comboBoxUnidadPedidoCondiciones
             // 
+            this.comboBoxUnidadPedidoCondiciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUnidadPedidoCondiciones.FormattingEnabled = true;
             this.comboBoxUnidadPedidoCondiciones.Items.AddRange(new object[] {
             "Caja",
@@ -5694,6 +5730,7 @@
             // 
             // comboBoxFormaEntregaFletes
             // 
+            this.comboBoxFormaEntregaFletes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFormaEntregaFletes.FormattingEnabled = true;
             this.comboBoxFormaEntregaFletes.Items.AddRange(new object[] {
             "Paquetería",
@@ -5758,7 +5795,6 @@
             this.btnEditarFletes.TabIndex = 62;
             this.btnEditarFletes.Text = "Editar Flete";
             this.btnEditarFletes.UseVisualStyleBackColor = false;
-            this.btnEditarFletes.Visible = false;
             // 
             // btnAgregarFlete
             // 
@@ -5780,9 +5816,8 @@
             this.btnEliminarFletes.Name = "btnEliminarFletes";
             this.btnEliminarFletes.Size = new System.Drawing.Size(108, 23);
             this.btnEliminarFletes.TabIndex = 61;
-            this.btnEliminarFletes.Text = "Eliminar Flete";
+            this.btnEliminarFletes.Text = "Desactivar Flete";
             this.btnEliminarFletes.UseVisualStyleBackColor = false;
-            this.btnEliminarFletes.Visible = false;
             this.btnEliminarFletes.Click += new System.EventHandler(this.btnEliminarFletes_Click);
             // 
             // lblRutasFletesCondiciones
@@ -6068,6 +6103,7 @@
             // 
             // comboBoxListaObservacionesFormaEntrega
             // 
+            this.comboBoxListaObservacionesFormaEntrega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxListaObservacionesFormaEntrega.FormattingEnabled = true;
             this.comboBoxListaObservacionesFormaEntrega.Location = new System.Drawing.Point(607, 344);
             this.comboBoxListaObservacionesFormaEntrega.Name = "comboBoxListaObservacionesFormaEntrega";
@@ -6473,7 +6509,7 @@
             // 
             this.lblMensajePaginaWebProveedor.AutoSize = true;
             this.lblMensajePaginaWebProveedor.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajePaginaWebProveedor.Location = new System.Drawing.Point(668, 220);
+            this.lblMensajePaginaWebProveedor.Location = new System.Drawing.Point(668, 188);
             this.lblMensajePaginaWebProveedor.Name = "lblMensajePaginaWebProveedor";
             this.lblMensajePaginaWebProveedor.Size = new System.Drawing.Size(130, 14);
             this.lblMensajePaginaWebProveedor.TabIndex = 61;
@@ -6493,7 +6529,7 @@
             // 
             this.btnActualizarCategoria.BackColor = System.Drawing.Color.Wheat;
             this.btnActualizarCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarCategoria.Location = new System.Drawing.Point(365, 179);
+            this.btnActualizarCategoria.Location = new System.Drawing.Point(804, 147);
             this.btnActualizarCategoria.Name = "btnActualizarCategoria";
             this.btnActualizarCategoria.Size = new System.Drawing.Size(153, 23);
             this.btnActualizarCategoria.TabIndex = 8;
@@ -6505,7 +6541,7 @@
             // 
             this.btnActualizarPaginaWebProveedorDatosPrimarios.BackColor = System.Drawing.Color.Wheat;
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(365, 248);
+            this.btnActualizarPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(365, 216);
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Name = "btnActualizarPaginaWebProveedorDatosPrimarios";
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Size = new System.Drawing.Size(153, 23);
             this.btnActualizarPaginaWebProveedorDatosPrimarios.TabIndex = 10;
@@ -6519,7 +6555,7 @@
             this.txtBoxPaginaWebProveedorDatosPrimarios.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxPaginaWebProveedorDatosPrimarios.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPaginaWebProveedorDatosPrimarios.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(365, 220);
+            this.txtBoxPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(365, 188);
             this.txtBoxPaginaWebProveedorDatosPrimarios.Name = "txtBoxPaginaWebProveedorDatosPrimarios";
             this.txtBoxPaginaWebProveedorDatosPrimarios.Size = new System.Drawing.Size(282, 21);
             this.txtBoxPaginaWebProveedorDatosPrimarios.TabIndex = 9;
@@ -6530,7 +6566,7 @@
             this.lblPaginaWebProveedorDatosPrimarios.AutoSize = true;
             this.lblPaginaWebProveedorDatosPrimarios.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaginaWebProveedorDatosPrimarios.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(253, 220);
+            this.lblPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(253, 188);
             this.lblPaginaWebProveedorDatosPrimarios.Name = "lblPaginaWebProveedorDatosPrimarios";
             this.lblPaginaWebProveedorDatosPrimarios.Size = new System.Drawing.Size(82, 17);
             this.lblPaginaWebProveedorDatosPrimarios.TabIndex = 59;
@@ -6560,7 +6596,7 @@
             // btnLimpiarCamposDatosPrim
             // 
             this.btnLimpiarCamposDatosPrim.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCamposDatosPrim.Location = new System.Drawing.Point(365, 302);
+            this.btnLimpiarCamposDatosPrim.Location = new System.Drawing.Point(365, 294);
             this.btnLimpiarCamposDatosPrim.Name = "btnLimpiarCamposDatosPrim";
             this.btnLimpiarCamposDatosPrim.Size = new System.Drawing.Size(244, 23);
             this.btnLimpiarCamposDatosPrim.TabIndex = 14;
@@ -6942,6 +6978,7 @@
             // 
             // comboBoxConceptoUsoDirecciones
             // 
+            this.comboBoxConceptoUsoDirecciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxConceptoUsoDirecciones.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxConceptoUsoDirecciones.FormattingEnabled = true;
             this.comboBoxConceptoUsoDirecciones.Items.AddRange(new object[] {
@@ -7485,6 +7522,7 @@
             // 
             // comboBoxFuncionContacto
             // 
+            this.comboBoxFuncionContacto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFuncionContacto.Font = new System.Drawing.Font("Microsoft Tai Le", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFuncionContacto.FormattingEnabled = true;
             this.comboBoxFuncionContacto.Items.AddRange(new object[] {
@@ -8546,6 +8584,7 @@
             // 
             // comboBoxDivisaCuentaBancariaEX
             // 
+            this.comboBoxDivisaCuentaBancariaEX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDivisaCuentaBancariaEX.FormattingEnabled = true;
             this.comboBoxDivisaCuentaBancariaEX.Items.AddRange(new object[] {
             "Pesos (MX)",
@@ -8819,6 +8858,7 @@
             // 
             // comboBoxBancoDatosBancariosMX
             // 
+            this.comboBoxBancoDatosBancariosMX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBancoDatosBancariosMX.FormattingEnabled = true;
             this.comboBoxBancoDatosBancariosMX.Items.AddRange(new object[] {
             "BANCO SANTANDER (Santander)",
@@ -8865,6 +8905,7 @@
             // 
             // comboBoxDivisaCuentaBancariaMX
             // 
+            this.comboBoxDivisaCuentaBancariaMX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDivisaCuentaBancariaMX.FormattingEnabled = true;
             this.comboBoxDivisaCuentaBancariaMX.Items.AddRange(new object[] {
             "Pesos (MX)",
@@ -9208,11 +9249,11 @@
             this.tabOpciones.Controls.Add(this.tabDatosGenerales);
             this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabCondiciones);
-            this.tabOpciones.Controls.Add(this.tabAcuerdos);
             this.tabOpciones.Controls.Add(this.tabExpediente);
+            this.tabOpciones.Controls.Add(this.tabAcuerdos);
             this.tabOpciones.Location = new System.Drawing.Point(9, 109);
             this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 1;
+            this.tabOpciones.SelectedIndex = 3;
             this.tabOpciones.Size = new System.Drawing.Size(1058, 569);
             this.tabOpciones.TabIndex = 1;
             // 
@@ -9234,6 +9275,7 @@
             this.pnlBarraSuperior.ResumeLayout(false);
             this.pnlBarraSuperior.PerformLayout();
             this.pnlNotificaciones.ResumeLayout(false);
+            this.pnlNotificaciones.PerformLayout();
             this.tabExpediente.ResumeLayout(false);
             this.flowPnlExpediente.ResumeLayout(false);
             this.pnlDatosPrimExpediente.ResumeLayout(false);
@@ -9956,7 +9998,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Preferente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActividad;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatoBancarioEXRevisado;
-        private System.Windows.Forms.Label lblPlazoCreditoNoActualizacion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTipoEnvioCondiciones;
@@ -9999,14 +10040,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Comentarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContactoRevisado;
         private System.Windows.Forms.Label lblArchivosDisponiblesConvenioCompra;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtBoxArchivosConvenioCompraPoliticas;
+        private System.Windows.Forms.Button btnSubirArchivoConvenioCompra;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnLimpiarCampoConvenioCompraPoliticas;
+        private System.Windows.Forms.Button btnEliminarConvenioCompra;
+        private System.Windows.Forms.ComboBox comboBoxListaConveniosCompra;
+        private System.Windows.Forms.TextBox txtBoxConvenioCompraPoliticas;
+        private System.Windows.Forms.Button btnAbrirConvenioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClaveProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Plazoid;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrioridadUso;
@@ -10038,5 +10079,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.LinkLabel linkLabelTableroRevision;
+        private System.Windows.Forms.LinkLabel linkLabelCatálogoProductos;
     }
 }

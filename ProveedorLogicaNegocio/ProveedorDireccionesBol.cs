@@ -36,7 +36,7 @@ namespace ProveedorLogicaNegocio
             {
                 foreach (var i in ListaDirecciones)
                 {
-                    if (Direccion.CalleAveBlvr == i.CalleAveBlvr && Direccion.NumExterior == i.NumExterior && Direccion.NumInterior == i.NumInterior
+                    if (Direccion.ConceptoUso == i.ConceptoUso && Direccion.CalleAveBlvr == i.CalleAveBlvr && Direccion.NumExterior == i.NumExterior && Direccion.NumInterior == i.NumInterior
                     && Direccion.CodigoPostal == i.CodigoPostal && i.EstatusActivo)
                     {
                         mensajeRespuestaSP.Append("La Dirección ingresada ya existe.");
