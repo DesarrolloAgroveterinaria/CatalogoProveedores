@@ -10,6 +10,7 @@ namespace ProveedorEntidades
     {
         public string ClaveProveedor { get; set; }
         public int Politicasid { get; set; }
+        public string ConvenioCompra { get; set; }
         public string PoliticasGarantia { get; set; }
         public string PoliticasDevoluciones { get; set; }
         public string CompraMinimaMensual { get; set; }

@@ -41,7 +41,7 @@ namespace ProveedorLogicaNegocio
                     {
                         mensajeRespuestaSP.Append("La Dirección ingresada ya existe.");
                         mensajeRespuestaSP.Append(System.Environment.NewLine);
-                        mensajeRespuestaSP.Append("Si deseas actualizar la siguiente Dirección presiona el bóton Editar: ");
+                        mensajeRespuestaSP.Append("Si deseas actualizar la siguiente Dirección, cambia el Concepto de Uso. ");
                         mensajeRespuestaSP.Append(System.Environment.NewLine);
                         mensajeRespuestaSP.Append(i.ConceptoUso);
                         mensajeRespuestaSP.Append(System.Environment.NewLine);
@@ -132,5 +132,7 @@ namespace ProveedorLogicaNegocio
             mensajeRespuestaSP.Clear();
             proveedorDireccionesDal.marcarDireccionRevisada(claveProveedor, id, seccionDato, revisado);
         }
+
+        
     }
 }

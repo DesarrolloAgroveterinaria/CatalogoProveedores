@@ -11,10 +11,11 @@ namespace ProveedorEntidades
         public string ClaveProveedor { get; set; }
         public int Fleteid { get; set; }
         public string TipoEnvio { get; set; }
-        public string FormaEntrega { get; set; }        
+        public string FormaEntrega { get; set; }    
+        public string TransporteEnvio { get; set; }
+        public string CargoEntrega { get; set; }
         public string ClaveProveedorFlete { get; set; }
-        public string NombreProveedor { get; set; }
-        public string DescripcionProveedor { get; set; }             
+        public string NombreProveedor { get; set; }                   
         public int PedidoMin { get; set; }
         public int PedidoMax { get; set; }
         public string Unidad { get; set; }

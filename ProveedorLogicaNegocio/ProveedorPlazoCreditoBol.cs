@@ -33,5 +33,11 @@ namespace ProveedorLogicaNegocio
             proveedorPlazoCreditoDal.EditarByIdByClave(plazo);
             return true;
         }
+
+        public void desactivarPlazosCreditoByIdByClaveProveedorVal(int plazoid, string claveProveedor)
+        {
+            mensajeRespuestaSP.Clear();
+            proveedorPlazoCreditoDal.DesactivarByIdByClave(plazoid, claveProveedor);
+        }
     }
 }

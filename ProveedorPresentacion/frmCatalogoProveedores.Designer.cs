@@ -131,7 +131,6 @@
             this.tabPoliticas = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlPoliticas = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimPoliticas = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.checkBoxPoliticasRevisado = new System.Windows.Forms.CheckBox();
             this.btnGuardarCambiosSeccionPoliticas1 = new System.Windows.Forms.Button();
             this.txtBoxCategoriaPoliticas = new System.Windows.Forms.TextBox();
@@ -170,8 +169,6 @@
             this.btnAbrirArchivoPoliticasDevoluciones = new System.Windows.Forms.Button();
             this.lblPoliticasDevoluciones = new System.Windows.Forms.Label();
             this.pnlCompraMinimaMensual = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblArchivosDisponiblesConvenioCompra = new System.Windows.Forms.Label();
             this.txtBoxArchivosConvenioCompraPoliticas = new System.Windows.Forms.TextBox();
             this.btnSubirArchivoConvenioCompra = new System.Windows.Forms.Button();
@@ -212,6 +209,17 @@
             this.lblProveedorAcuerdos = new System.Windows.Forms.Label();
             this.picBoxLogoAcuerdos = new System.Windows.Forms.PictureBox();
             this.pnlAcuerdos = new System.Windows.Forms.Panel();
+            this.lblListaPrecios = new System.Windows.Forms.Label();
+            this.pnlListaPreciosAcuerdos = new System.Windows.Forms.Panel();
+            this.btnSubirArchivoListaPreciosAcuerdos = new System.Windows.Forms.Button();
+            this.lblSubirArchivoListaPreciosAcuerdos = new System.Windows.Forms.Label();
+            this.btnLimpiarCampoListaPrecios = new System.Windows.Forms.Button();
+            this.btnEliminarArchivoListaPreciosAcuerdos = new System.Windows.Forms.Button();
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos = new System.Windows.Forms.Label();
+            this.comboBoxArchivosListaPreciosAcuerdos = new System.Windows.Forms.ComboBox();
+            this.txtBoxListaPreciosAcuerdos = new System.Windows.Forms.TextBox();
+            this.lblListaPreciosAcuerdos = new System.Windows.Forms.Label();
+            this.btnAbrirArchivoListaPreciosAcuerdos = new System.Windows.Forms.Button();
             this.btnGuardarCambiosSeccionAcuerdos2 = new System.Windows.Forms.Button();
             this.lblAcuerdoAtenciónClientes = new System.Windows.Forms.Label();
             this.pnlAcuerdoAtencionClientes = new System.Windows.Forms.Panel();
@@ -415,6 +423,28 @@
             this.btnLimpiarCamposFletes = new System.Windows.Forms.Button();
             this.pnlListaFletesCondiciones = new System.Windows.Forms.Panel();
             this.dataGridFletes = new System.Windows.Forms.DataGridView();
+            this.ClaveProveedorPadreFlete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fleteid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaveProveedorFlete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransporteEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CargoEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PedidoMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PedidoMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EsPreferenciaFlete = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteMatriz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteHipodromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteSanPedro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteMagdalena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteCaborca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteCEDIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CostoFleteCMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarFletes = new System.Windows.Forms.Button();
             this.btnAgregarFlete = new System.Windows.Forms.Button();
             this.btnEliminarFletes = new System.Windows.Forms.Button();
@@ -722,6 +752,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabOpciones = new MetroFramework.Controls.MetroTabControl();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlBarraSuperior.SuspendLayout();
             this.pnlNotificaciones.SuspendLayout();
             this.tabExpediente.SuspendLayout();
@@ -744,6 +775,7 @@
             this.pnlDatosPrimAcuerdos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoAcuerdos)).BeginInit();
             this.pnlAcuerdos.SuspendLayout();
+            this.pnlListaPreciosAcuerdos.SuspendLayout();
             this.pnlAcuerdoAtencionClientes.SuspendLayout();
             this.pnlAcuerdoVentaPublico.SuspendLayout();
             this.pnlAcuerdoCompra.SuspendLayout();
@@ -1969,7 +2001,6 @@
             // 
             // pnlDatosPrimPoliticas
             // 
-            this.pnlDatosPrimPoliticas.Controls.Add(this.label3);
             this.pnlDatosPrimPoliticas.Controls.Add(this.checkBoxPoliticasRevisado);
             this.pnlDatosPrimPoliticas.Controls.Add(this.btnGuardarCambiosSeccionPoliticas1);
             this.pnlDatosPrimPoliticas.Controls.Add(this.txtBoxCategoriaPoliticas);
@@ -1987,16 +2018,6 @@
             this.pnlDatosPrimPoliticas.Name = "pnlDatosPrimPoliticas";
             this.pnlDatosPrimPoliticas.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimPoliticas.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(474, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 14);
-            this.label3.TabIndex = 298;
-            this.label3.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // checkBoxPoliticasRevisado
             // 
@@ -2040,6 +2061,7 @@
             this.dateTimePickerPoliticas.Name = "dateTimePickerPoliticas";
             this.dateTimePickerPoliticas.Size = new System.Drawing.Size(207, 21);
             this.dateTimePickerPoliticas.TabIndex = 55;
+            this.dateTimePickerPoliticas.ValueChanged += new System.EventHandler(this.dateTimePickerPoliticas_ValueChanged);
             // 
             // lblUltimaActualizacionPoliticas
             // 
@@ -2423,8 +2445,6 @@
             // 
             // pnlCompraMinimaMensual
             // 
-            this.pnlCompraMinimaMensual.Controls.Add(this.label12);
-            this.pnlCompraMinimaMensual.Controls.Add(this.label11);
             this.pnlCompraMinimaMensual.Controls.Add(this.lblArchivosDisponiblesConvenioCompra);
             this.pnlCompraMinimaMensual.Controls.Add(this.txtBoxArchivosConvenioCompraPoliticas);
             this.pnlCompraMinimaMensual.Controls.Add(this.btnSubirArchivoConvenioCompra);
@@ -2448,26 +2468,6 @@
             this.pnlCompraMinimaMensual.Size = new System.Drawing.Size(963, 613);
             this.pnlCompraMinimaMensual.TabIndex = 50;
             this.pnlCompraMinimaMensual.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTablaCategorias_Paint);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(754, 34);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 14);
-            this.label12.TabIndex = 298;
-            this.label12.Text = "*No se puede actualizar";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(432, 182);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(130, 14);
-            this.label11.TabIndex = 297;
-            this.label11.Text = "*No se puede actualizar";
             // 
             // lblArchivosDisponiblesConvenioCompra
             // 
@@ -2500,6 +2500,7 @@
             this.btnSubirArchivoConvenioCompra.TabIndex = 180;
             this.btnSubirArchivoConvenioCompra.Text = "Subir Archivo";
             this.btnSubirArchivoConvenioCompra.UseVisualStyleBackColor = false;
+            this.btnSubirArchivoConvenioCompra.Click += new System.EventHandler(this.btnSubirArchivoConvenioCompra_Click);
             // 
             // label10
             // 
@@ -2521,6 +2522,7 @@
             this.btnLimpiarCampoConvenioCompraPoliticas.TabIndex = 177;
             this.btnLimpiarCampoConvenioCompraPoliticas.Text = "Limpiar Campo";
             this.btnLimpiarCampoConvenioCompraPoliticas.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampoConvenioCompraPoliticas.Click += new System.EventHandler(this.btnLimpiarCampoConvenioCompraPoliticas_Click);
             // 
             // btnEliminarConvenioCompra
             // 
@@ -2532,6 +2534,7 @@
             this.btnEliminarConvenioCompra.TabIndex = 179;
             this.btnEliminarConvenioCompra.Text = "Eliminar";
             this.btnEliminarConvenioCompra.UseVisualStyleBackColor = false;
+            this.btnEliminarConvenioCompra.Click += new System.EventHandler(this.btnEliminarConvenioCompra_Click);
             // 
             // comboBoxListaConveniosCompra
             // 
@@ -2564,6 +2567,7 @@
             this.btnAbrirConvenioCompra.TabIndex = 178;
             this.btnAbrirConvenioCompra.Text = "Abrir";
             this.btnAbrirConvenioCompra.UseVisualStyleBackColor = true;
+            this.btnAbrirConvenioCompra.Click += new System.EventHandler(this.btnAbrirConvenioCompra_Click);
             // 
             // lblTablaCategoriaConvenioCompra
             // 
@@ -2913,6 +2917,9 @@
             // 
             // pnlAcuerdos
             // 
+            this.pnlAcuerdos.Controls.Add(this.label3);
+            this.pnlAcuerdos.Controls.Add(this.lblListaPrecios);
+            this.pnlAcuerdos.Controls.Add(this.pnlListaPreciosAcuerdos);
             this.pnlAcuerdos.Controls.Add(this.btnGuardarCambiosSeccionAcuerdos2);
             this.pnlAcuerdos.Controls.Add(this.lblAcuerdoAtenciónClientes);
             this.pnlAcuerdos.Controls.Add(this.pnlAcuerdoAtencionClientes);
@@ -2922,14 +2929,137 @@
             this.pnlAcuerdos.Controls.Add(this.pnlAcuerdoCompra);
             this.pnlAcuerdos.Location = new System.Drawing.Point(3, 180);
             this.pnlAcuerdos.Name = "pnlAcuerdos";
-            this.pnlAcuerdos.Size = new System.Drawing.Size(999, 890);
+            this.pnlAcuerdos.Size = new System.Drawing.Size(999, 1174);
             this.pnlAcuerdos.TabIndex = 32;
+            // 
+            // lblListaPrecios
+            // 
+            this.lblListaPrecios.AutoSize = true;
+            this.lblListaPrecios.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListaPrecios.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblListaPrecios.Location = new System.Drawing.Point(16, 879);
+            this.lblListaPrecios.Name = "lblListaPrecios";
+            this.lblListaPrecios.Size = new System.Drawing.Size(187, 31);
+            this.lblListaPrecios.TabIndex = 72;
+            this.lblListaPrecios.Text = "Listas de Precios";
+            // 
+            // pnlListaPreciosAcuerdos
+            // 
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.btnSubirArchivoListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.lblSubirArchivoListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.btnLimpiarCampoListaPrecios);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.btnEliminarArchivoListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.lblAbrirEliminarArchivoListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.comboBoxArchivosListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.txtBoxListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.lblListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.btnAbrirArchivoListaPreciosAcuerdos);
+            this.pnlListaPreciosAcuerdos.Location = new System.Drawing.Point(14, 918);
+            this.pnlListaPreciosAcuerdos.Name = "pnlListaPreciosAcuerdos";
+            this.pnlListaPreciosAcuerdos.Size = new System.Drawing.Size(963, 219);
+            this.pnlListaPreciosAcuerdos.TabIndex = 71;
+            // 
+            // btnSubirArchivoListaPreciosAcuerdos
+            // 
+            this.btnSubirArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(626, 154);
+            this.btnSubirArchivoListaPreciosAcuerdos.Name = "btnSubirArchivoListaPreciosAcuerdos";
+            this.btnSubirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(307, 21);
+            this.btnSubirArchivoListaPreciosAcuerdos.TabIndex = 22;
+            this.btnSubirArchivoListaPreciosAcuerdos.Text = "Seleccionar Archivo";
+            this.btnSubirArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = true;
+            // 
+            // lblSubirArchivoListaPreciosAcuerdos
+            // 
+            this.lblSubirArchivoListaPreciosAcuerdos.AutoSize = true;
+            this.lblSubirArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubirArchivoListaPreciosAcuerdos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblSubirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(628, 133);
+            this.lblSubirArchivoListaPreciosAcuerdos.Name = "lblSubirArchivoListaPreciosAcuerdos";
+            this.lblSubirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(80, 15);
+            this.lblSubirArchivoListaPreciosAcuerdos.TabIndex = 180;
+            this.lblSubirArchivoListaPreciosAcuerdos.Text = "Subir Archivo:";
+            // 
+            // btnLimpiarCampoListaPrecios
+            // 
+            this.btnLimpiarCampoListaPrecios.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarCampoListaPrecios.Location = new System.Drawing.Point(30, 137);
+            this.btnLimpiarCampoListaPrecios.Name = "btnLimpiarCampoListaPrecios";
+            this.btnLimpiarCampoListaPrecios.Size = new System.Drawing.Size(271, 28);
+            this.btnLimpiarCampoListaPrecios.TabIndex = 18;
+            this.btnLimpiarCampoListaPrecios.Text = "Limpiar Campo\r";
+            this.btnLimpiarCampoListaPrecios.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarArchivoListaPreciosAcuerdos
+            // 
+            this.btnEliminarArchivoListaPreciosAcuerdos.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminarArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(780, 27);
+            this.btnEliminarArchivoListaPreciosAcuerdos.Name = "btnEliminarArchivoListaPreciosAcuerdos";
+            this.btnEliminarArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(148, 23);
+            this.btnEliminarArchivoListaPreciosAcuerdos.TabIndex = 21;
+            this.btnEliminarArchivoListaPreciosAcuerdos.Text = "Eliminar";
+            this.btnEliminarArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = false;
+            // 
+            // lblAbrirEliminarArchivoListaPreciosAcuerdos
+            // 
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.AutoSize = true;
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(628, 9);
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Name = "lblAbrirEliminarArchivoListaPreciosAcuerdos";
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(126, 15);
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.TabIndex = 77;
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Text = "Abrir/Eliminar Archivo:";
+            // 
+            // comboBoxArchivosListaPreciosAcuerdos
+            // 
+            this.comboBoxArchivosListaPreciosAcuerdos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxArchivosListaPreciosAcuerdos.FormattingEnabled = true;
+            this.comboBoxArchivosListaPreciosAcuerdos.Location = new System.Drawing.Point(626, 53);
+            this.comboBoxArchivosListaPreciosAcuerdos.Name = "comboBoxArchivosListaPreciosAcuerdos";
+            this.comboBoxArchivosListaPreciosAcuerdos.Size = new System.Drawing.Size(301, 22);
+            this.comboBoxArchivosListaPreciosAcuerdos.TabIndex = 19;
+            // 
+            // txtBoxListaPreciosAcuerdos
+            // 
+            this.txtBoxListaPreciosAcuerdos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBoxListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxListaPreciosAcuerdos.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtBoxListaPreciosAcuerdos.Location = new System.Drawing.Point(30, 45);
+            this.txtBoxListaPreciosAcuerdos.Multiline = true;
+            this.txtBoxListaPreciosAcuerdos.Name = "txtBoxListaPreciosAcuerdos";
+            this.txtBoxListaPreciosAcuerdos.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtBoxListaPreciosAcuerdos.Size = new System.Drawing.Size(534, 86);
+            this.txtBoxListaPreciosAcuerdos.TabIndex = 17;
+            // 
+            // lblListaPreciosAcuerdos
+            // 
+            this.lblListaPreciosAcuerdos.AutoSize = true;
+            this.lblListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblListaPreciosAcuerdos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblListaPreciosAcuerdos.Location = new System.Drawing.Point(27, 25);
+            this.lblListaPreciosAcuerdos.Name = "lblListaPreciosAcuerdos";
+            this.lblListaPreciosAcuerdos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblListaPreciosAcuerdos.Size = new System.Drawing.Size(104, 17);
+            this.lblListaPreciosAcuerdos.TabIndex = 58;
+            this.lblListaPreciosAcuerdos.Text = "Lista de Precios";
+            // 
+            // btnAbrirArchivoListaPreciosAcuerdos
+            // 
+            this.btnAbrirArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(626, 27);
+            this.btnAbrirArchivoListaPreciosAcuerdos.Name = "btnAbrirArchivoListaPreciosAcuerdos";
+            this.btnAbrirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(148, 23);
+            this.btnAbrirArchivoListaPreciosAcuerdos.TabIndex = 20;
+            this.btnAbrirArchivoListaPreciosAcuerdos.Text = "Abrir";
+            this.btnAbrirArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = true;
             // 
             // btnGuardarCambiosSeccionAcuerdos2
             // 
             this.btnGuardarCambiosSeccionAcuerdos2.BackColor = System.Drawing.Color.Wheat;
             this.btnGuardarCambiosSeccionAcuerdos2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionAcuerdos2.Location = new System.Drawing.Point(466, 847);
+            this.btnGuardarCambiosSeccionAcuerdos2.Location = new System.Drawing.Point(796, 546);
             this.btnGuardarCambiosSeccionAcuerdos2.Name = "btnGuardarCambiosSeccionAcuerdos2";
             this.btnGuardarCambiosSeccionAcuerdos2.Size = new System.Drawing.Size(155, 40);
             this.btnGuardarCambiosSeccionAcuerdos2.TabIndex = 23;
@@ -3774,7 +3904,7 @@
             this.btnDesactivarPlazo.TabIndex = 285;
             this.btnDesactivarPlazo.Text = "Desactivar Plazo";
             this.btnDesactivarPlazo.UseVisualStyleBackColor = false;
-            this.btnDesactivarPlazo.Visible = false;
+            this.btnDesactivarPlazo.Click += new System.EventHandler(this.btnDesactivarPlazo_Click);
             // 
             // lblLineaPP4
             // 
@@ -5340,6 +5470,7 @@
             this.btnEsPreferenciaFlete.TabIndex = 223;
             this.btnEsPreferenciaFlete.Text = "Marcar Como Preferente";
             this.btnEsPreferenciaFlete.UseVisualStyleBackColor = false;
+            this.btnEsPreferenciaFlete.Click += new System.EventHandler(this.btnEsPreferenciaFlete_Click);
             // 
             // lblFletePreferenciaFletes
             // 
@@ -5777,6 +5908,29 @@
             this.dataGridFletes.AllowUserToAddRows = false;
             this.dataGridFletes.AllowUserToDeleteRows = false;
             this.dataGridFletes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFletes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClaveProveedorPadreFlete,
+            this.Fleteid,
+            this.ClaveProveedorFlete,
+            this.NombreProveedor,
+            this.FormaEntrega,
+            this.TipoEnvio,
+            this.TransporteEnvio,
+            this.CargoEntrega,
+            this.PedidoMin,
+            this.PedidoMax,
+            this.Unidad,
+            this.Origen,
+            this.Destino,
+            this.Observaciones,
+            this.EsPreferenciaFlete,
+            this.CostoFleteMatriz,
+            this.CostoFleteHipodromo,
+            this.CostoFleteSanPedro,
+            this.CostoFleteMagdalena,
+            this.CostoFleteCaborca,
+            this.CostoFleteCEDIS,
+            this.CostoFleteCMA});
             this.dataGridFletes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridFletes.Location = new System.Drawing.Point(0, 0);
             this.dataGridFletes.Name = "dataGridFletes";
@@ -5784,6 +5938,175 @@
             this.dataGridFletes.Size = new System.Drawing.Size(454, 198);
             this.dataGridFletes.TabIndex = 59;
             this.dataGridFletes.Click += new System.EventHandler(this.dataGridFletes_Click);
+            // 
+            // ClaveProveedorPadreFlete
+            // 
+            this.ClaveProveedorPadreFlete.DataPropertyName = "ClaveProveedor";
+            this.ClaveProveedorPadreFlete.HeaderText = "Clave Proveedor";
+            this.ClaveProveedorPadreFlete.Name = "ClaveProveedorPadreFlete";
+            this.ClaveProveedorPadreFlete.ReadOnly = true;
+            this.ClaveProveedorPadreFlete.Visible = false;
+            // 
+            // Fleteid
+            // 
+            this.Fleteid.DataPropertyName = "Fleteid";
+            this.Fleteid.HeaderText = "Fleteid";
+            this.Fleteid.Name = "Fleteid";
+            this.Fleteid.ReadOnly = true;
+            this.Fleteid.Width = 50;
+            // 
+            // ClaveProveedorFlete
+            // 
+            this.ClaveProveedorFlete.DataPropertyName = "ClaveProveedorFlete";
+            this.ClaveProveedorFlete.HeaderText = "Clave Proveedor Flete";
+            this.ClaveProveedorFlete.Name = "ClaveProveedorFlete";
+            this.ClaveProveedorFlete.ReadOnly = true;
+            // 
+            // NombreProveedor
+            // 
+            this.NombreProveedor.DataPropertyName = "NombreProveedor";
+            this.NombreProveedor.HeaderText = "Nombre Flete";
+            this.NombreProveedor.Name = "NombreProveedor";
+            this.NombreProveedor.ReadOnly = true;
+            this.NombreProveedor.Width = 200;
+            // 
+            // FormaEntrega
+            // 
+            this.FormaEntrega.DataPropertyName = "FormaEntrega";
+            this.FormaEntrega.HeaderText = "Forma de Entrega";
+            this.FormaEntrega.Name = "FormaEntrega";
+            this.FormaEntrega.ReadOnly = true;
+            this.FormaEntrega.Width = 150;
+            // 
+            // TipoEnvio
+            // 
+            this.TipoEnvio.DataPropertyName = "TipoEnvio";
+            this.TipoEnvio.HeaderText = "Tipo de Envio";
+            this.TipoEnvio.Name = "TipoEnvio";
+            this.TipoEnvio.ReadOnly = true;
+            // 
+            // TransporteEnvio
+            // 
+            this.TransporteEnvio.DataPropertyName = "TransporteEnvio";
+            this.TransporteEnvio.HeaderText = "Transporte de Envio";
+            this.TransporteEnvio.Name = "TransporteEnvio";
+            this.TransporteEnvio.ReadOnly = true;
+            // 
+            // CargoEntrega
+            // 
+            this.CargoEntrega.DataPropertyName = "CargoEntrega";
+            this.CargoEntrega.HeaderText = "Cargo de Entrega";
+            this.CargoEntrega.Name = "CargoEntrega";
+            this.CargoEntrega.ReadOnly = true;
+            // 
+            // PedidoMin
+            // 
+            this.PedidoMin.DataPropertyName = "PedidoMin";
+            this.PedidoMin.HeaderText = "Pedido Min";
+            this.PedidoMin.Name = "PedidoMin";
+            this.PedidoMin.ReadOnly = true;
+            // 
+            // PedidoMax
+            // 
+            this.PedidoMax.DataPropertyName = "PedidoMax";
+            this.PedidoMax.HeaderText = "Pedido Max";
+            this.PedidoMax.Name = "PedidoMax";
+            this.PedidoMax.ReadOnly = true;
+            // 
+            // Unidad
+            // 
+            this.Unidad.DataPropertyName = "Unidad";
+            this.Unidad.HeaderText = "Unidad";
+            this.Unidad.Name = "Unidad";
+            this.Unidad.ReadOnly = true;
+            this.Unidad.Visible = false;
+            // 
+            // Origen
+            // 
+            this.Origen.DataPropertyName = "Origen";
+            this.Origen.HeaderText = "Origen";
+            this.Origen.Name = "Origen";
+            this.Origen.ReadOnly = true;
+            this.Origen.Visible = false;
+            // 
+            // Destino
+            // 
+            this.Destino.DataPropertyName = "Destino";
+            this.Destino.HeaderText = "Destino";
+            this.Destino.Name = "Destino";
+            this.Destino.ReadOnly = true;
+            this.Destino.Visible = false;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.DataPropertyName = "Observaciones";
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            this.Observaciones.Visible = false;
+            // 
+            // EsPreferenciaFlete
+            // 
+            this.EsPreferenciaFlete.DataPropertyName = "EsPreferencia";
+            this.EsPreferenciaFlete.HeaderText = "Es Preferencia";
+            this.EsPreferenciaFlete.Name = "EsPreferenciaFlete";
+            this.EsPreferenciaFlete.ReadOnly = true;
+            // 
+            // CostoFleteMatriz
+            // 
+            this.CostoFleteMatriz.DataPropertyName = "CostoFleteMatriz";
+            this.CostoFleteMatriz.HeaderText = "CostoFleteMatriz";
+            this.CostoFleteMatriz.Name = "CostoFleteMatriz";
+            this.CostoFleteMatriz.ReadOnly = true;
+            this.CostoFleteMatriz.Visible = false;
+            // 
+            // CostoFleteHipodromo
+            // 
+            this.CostoFleteHipodromo.DataPropertyName = "CostoFleteHipodromo";
+            this.CostoFleteHipodromo.HeaderText = "CostoFleteHipodromo";
+            this.CostoFleteHipodromo.Name = "CostoFleteHipodromo";
+            this.CostoFleteHipodromo.ReadOnly = true;
+            this.CostoFleteHipodromo.Visible = false;
+            // 
+            // CostoFleteSanPedro
+            // 
+            this.CostoFleteSanPedro.DataPropertyName = "CostoFleteSanPedro";
+            this.CostoFleteSanPedro.HeaderText = "CostoFleteSanPedro";
+            this.CostoFleteSanPedro.Name = "CostoFleteSanPedro";
+            this.CostoFleteSanPedro.ReadOnly = true;
+            this.CostoFleteSanPedro.Visible = false;
+            // 
+            // CostoFleteMagdalena
+            // 
+            this.CostoFleteMagdalena.DataPropertyName = "CostoFleteMagdalena";
+            this.CostoFleteMagdalena.HeaderText = "CostoFleteMagdalena";
+            this.CostoFleteMagdalena.Name = "CostoFleteMagdalena";
+            this.CostoFleteMagdalena.ReadOnly = true;
+            this.CostoFleteMagdalena.Visible = false;
+            // 
+            // CostoFleteCaborca
+            // 
+            this.CostoFleteCaborca.DataPropertyName = "CostoFleteCaborca";
+            this.CostoFleteCaborca.HeaderText = "CostoFleteCaborca";
+            this.CostoFleteCaborca.Name = "CostoFleteCaborca";
+            this.CostoFleteCaborca.ReadOnly = true;
+            this.CostoFleteCaborca.Visible = false;
+            // 
+            // CostoFleteCEDIS
+            // 
+            this.CostoFleteCEDIS.DataPropertyName = "CostoFleteCEDIS";
+            this.CostoFleteCEDIS.HeaderText = "CostoFleteCEDIS";
+            this.CostoFleteCEDIS.Name = "CostoFleteCEDIS";
+            this.CostoFleteCEDIS.ReadOnly = true;
+            this.CostoFleteCEDIS.Visible = false;
+            // 
+            // CostoFleteCMA
+            // 
+            this.CostoFleteCMA.DataPropertyName = "CostoFleteCMA";
+            this.CostoFleteCMA.HeaderText = "CostoFleteCMA";
+            this.CostoFleteCMA.Name = "CostoFleteCMA";
+            this.CostoFleteCMA.ReadOnly = true;
+            this.CostoFleteCMA.Visible = false;
             // 
             // btnEditarFletes
             // 
@@ -5795,6 +6118,7 @@
             this.btnEditarFletes.TabIndex = 62;
             this.btnEditarFletes.Text = "Editar Flete";
             this.btnEditarFletes.UseVisualStyleBackColor = false;
+            this.btnEditarFletes.Click += new System.EventHandler(this.btnEditarFletes_Click);
             // 
             // btnAgregarFlete
             // 
@@ -5816,8 +6140,9 @@
             this.btnEliminarFletes.Name = "btnEliminarFletes";
             this.btnEliminarFletes.Size = new System.Drawing.Size(108, 23);
             this.btnEliminarFletes.TabIndex = 61;
-            this.btnEliminarFletes.Text = "Desactivar Flete";
+            this.btnEliminarFletes.Text = "Eliminar Flete";
             this.btnEliminarFletes.UseVisualStyleBackColor = false;
+            this.btnEliminarFletes.Visible = false;
             this.btnEliminarFletes.Click += new System.EventHandler(this.btnEliminarFletes_Click);
             // 
             // lblRutasFletesCondiciones
@@ -9249,13 +9574,23 @@
             this.tabOpciones.Controls.Add(this.tabDatosGenerales);
             this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabCondiciones);
-            this.tabOpciones.Controls.Add(this.tabExpediente);
             this.tabOpciones.Controls.Add(this.tabAcuerdos);
+            this.tabOpciones.Controls.Add(this.tabExpediente);
             this.tabOpciones.Location = new System.Drawing.Point(9, 109);
             this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 3;
+            this.tabOpciones.SelectedIndex = 2;
             this.tabOpciones.Size = new System.Drawing.Size(1058, 569);
             this.tabOpciones.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(317, 892);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(229, 14);
+            this.label3.TabIndex = 298;
+            this.label3.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // frmCatalogoProveedores
             // 
@@ -9307,6 +9642,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoAcuerdos)).EndInit();
             this.pnlAcuerdos.ResumeLayout(false);
             this.pnlAcuerdos.PerformLayout();
+            this.pnlListaPreciosAcuerdos.ResumeLayout(false);
+            this.pnlListaPreciosAcuerdos.PerformLayout();
             this.pnlAcuerdoAtencionClientes.ResumeLayout(false);
             this.pnlAcuerdoAtencionClientes.PerformLayout();
             this.pnlAcuerdoVentaPublico.ResumeLayout(false);
@@ -10076,10 +10413,41 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VencimientoPagoFactura5;
         private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesPP5;
         private System.Windows.Forms.DataGridViewTextBoxColumn ObservacionesGenerales;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.LinkLabel linkLabelTableroRevision;
         private System.Windows.Forms.LinkLabel linkLabelCatálogoProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveProveedorPadreFlete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fleteid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveProveedorFlete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoEnvio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransporteEnvio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CargoEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PedidoMin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PedidoMax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Origen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Destino;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EsPreferenciaFlete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteMatriz;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteHipodromo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteSanPedro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteMagdalena;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteCaborca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteCEDIS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteCMA;
+        private System.Windows.Forms.Label lblListaPrecios;
+        private System.Windows.Forms.Panel pnlListaPreciosAcuerdos;
+        private System.Windows.Forms.Button btnSubirArchivoListaPreciosAcuerdos;
+        private System.Windows.Forms.Label lblSubirArchivoListaPreciosAcuerdos;
+        private System.Windows.Forms.Button btnLimpiarCampoListaPrecios;
+        private System.Windows.Forms.Button btnEliminarArchivoListaPreciosAcuerdos;
+        private System.Windows.Forms.Label lblAbrirEliminarArchivoListaPreciosAcuerdos;
+        private System.Windows.Forms.ComboBox comboBoxArchivosListaPreciosAcuerdos;
+        private System.Windows.Forms.TextBox txtBoxListaPreciosAcuerdos;
+        private System.Windows.Forms.Label lblListaPreciosAcuerdos;
+        private System.Windows.Forms.Button btnAbrirArchivoListaPreciosAcuerdos;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -65,6 +65,23 @@ namespace ProveedorAccesoDeDatos
             return null;
         }
 
+        public void DesactivarByIdByClave(int plazoid, string claveProveedor)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))
+            {
+                int valorActivacion = 0;
+                conn.Open();
+                const string Query = @"EXEC AGROCatalogoProveedoresSP_DesactivarPlazoCreditoByIdByClaveProveedor @Plazoid, @EstatusActivo";
+
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Plazoid", plazoid);
+                    cmd.Parameters.Add("@EstatusActivo", SqlDbType.Bit).Value = valorActivacion;
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void EditarByIdByClave(EProveedorPlazoCredito plazo)
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))

@@ -30,6 +30,7 @@ namespace ProveedorAccesoDeDatos
                         {
                             ClaveProveedor = Convert.ToString(reader["ClaveProveedor"]),
                             Politicasid = Convert.ToInt32(reader["Politicasid"]),
+                            ConvenioCompra = reader["ConvenioCompra"] == DBNull.Value ? "" : Convert.ToString(reader["ConvenioCompra"]),
                             PoliticasGarantia = Convert.ToString(reader["PoliticasGarantia"]),                            
                             PoliticasDevoluciones = Convert.ToString(reader["PoliticasDevoluciones"]),                            
                             CompraMinimaMensual = reader["CompraMinimaMensual"] == DBNull.Value ? "0" : Convert.ToString(reader["CompraMinimaMensual"]),
@@ -50,6 +51,7 @@ namespace ProveedorAccesoDeDatos
                 conn.Open();
 
                 const string Query = @"EXEC AGROCatalogoProveedoresSP_EditarPoliticasByClaveProveedor @ClaveProveedor, 
+                                   @ConvenioCompra,
                                    @PoliticasGarantia,
                                    @PoliticasDevoluciones,
                                    @CompraMinimaMensual,
@@ -60,6 +62,7 @@ namespace ProveedorAccesoDeDatos
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     cmd.Parameters.AddWithValue("@ClaveProveedor", politicas.ClaveProveedor);
+                    cmd.Parameters.AddWithValue("@ConvenioCompra", politicas.ConvenioCompra);
                     cmd.Parameters.AddWithValue("@PoliticasGarantia", politicas.PoliticasGarantia);
                     cmd.Parameters.AddWithValue("@PoliticasDevoluciones", politicas.PoliticasDevoluciones);
                     cmd.Parameters.AddWithValue("@CompraMinimaMensual", politicas.CompraMinimaMensual);
@@ -76,6 +79,7 @@ namespace ProveedorAccesoDeDatos
                 conn.Open();
 
                 const string Query = @"EXEC AGROCatalogoProveedoresSP_AgregarPoliticasByClaveProveedor @ClaveProveedor, 
+                                   @ConvenioCompra,
                                    @PoliticasGarantia,
                                    @PoliticasDevoluciones,
                                    @CompraMinimaMensual,
@@ -86,6 +90,7 @@ namespace ProveedorAccesoDeDatos
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
                     cmd.Parameters.AddWithValue("@ClaveProveedor", politicas.ClaveProveedor);
+                    cmd.Parameters.AddWithValue("@ConvenioCompra", politicas.ConvenioCompra);
                     cmd.Parameters.AddWithValue("@PoliticasGarantia", politicas.PoliticasGarantia);
                     cmd.Parameters.AddWithValue("@PoliticasDevoluciones", politicas.PoliticasDevoluciones);
                     cmd.Parameters.AddWithValue("@CompraMinimaMensual", politicas.CompraMinimaMensual);
