@@ -19,5 +19,10 @@ namespace ProveedorLogicaNegocio
             return proveedorProvDal.GetPaginaWebByClave(claveProveedor);
         }
 
+        public void actualizarPaginaWeb(string claveProveedor, string dirPaginaWeb)
+        {
+            mensajeRespuestaSP.Clear();
+            proveedorProvDal.actualizarPaginaWebByClave(claveProveedor, dirPaginaWeb);
+        }
     }
 }

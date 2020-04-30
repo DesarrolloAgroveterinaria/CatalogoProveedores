@@ -19,10 +19,12 @@ namespace ProveedorPrueba
 {
     public partial class frmCatalogoProveedores : MetroFramework.Forms.MetroForm
     {
+        private string versionActualizada = "1.9.0";
         public int pnlBarraSuperior_Width = 1078;
         frmNotificaciones notificaciones = new frmNotificaciones();
         //Crear instancias de Clase Entidad de todas las entidades a utilizar, así como listas para guardar datos 
         //public EProveedorUsuario eProveedorUsuario;
+        private readonly AgroVersionesBol agroVersionesBol = new AgroVersionesBol();
         private List<EProveedorUsuarioPermisos> eProveedorUsuarioPermisos;
         private List<EClaveBanco> ListaBancos;
         //private EProveedorExpediente eProveedorExpediente;
@@ -40,8 +42,8 @@ namespace ProveedorPrueba
         private EProveedorCondiciones eProveedorCondiciones;
         private List<EProveedorPlazoCredito> ListaPlazoCredito;
         private List<EProveedorFletes> ListaFletes;
-        //private List<EProveedorSucursalEntrega> ListaSucursalesEntrega;
         private List<EProveedorCostoFleteLimiteCapacidad> ListaCondicionesEntregaPorSucursal;
+        private List<EProveedorMovimientos> ListaMovimientos;
 
         //Crear instancia de Clase Logica de Negocio de todas las entidades a utilizar
         //
@@ -66,8 +68,8 @@ namespace ProveedorPrueba
         private readonly ProveedorCondicionesBol proveedorCondicionesBol = new ProveedorCondicionesBol();
         private readonly ProveedorPlazoCreditoBol proveedorPlazoCreditoBol = new ProveedorPlazoCreditoBol();
         private readonly ProveedorFletesBol proveedorFletesBol = new ProveedorFletesBol();
-        //private readonly ProveedorSucursalEntregaBol proveedorSucursalEntregaBol = new ProveedorSucursalEntregaBol();
         private readonly ProveedorCostoFleteLimiteCapacidadBol proveedorCostoFleteLimiteCapacidadBol = new ProveedorCostoFleteLimiteCapacidadBol();
+        private readonly ProveedorMovimientosBol proveedorMovimientosBol = new ProveedorMovimientosBol();
 
         //Borrar después de mostrar programa DEMO fase 2
         static string archivoEjemplar = "C:\\Users\\Soporte2\\Desktop\\VIMIFOSFactura.pdf";
@@ -106,6 +108,7 @@ namespace ProveedorPrueba
             //Habilitar campos para ciertos usuarios
             if (EProveedorUsuario.Usuario == "FROMO")
             {
+                checkBoxDatosFiscalesRevisados.Enabled = true;
                 checkBoxDireccionesRevisado.Enabled = true;
                 checkBoxContactosRevisado.Enabled = true;
                 checkBoxDatosBancariosMXRevisado.Enabled = true;
@@ -117,6 +120,7 @@ namespace ProveedorPrueba
             }
             else if (EProveedorUsuario.Usuario == "SI")
             {
+                checkBoxDatosFiscalesRevisados.Enabled = true;
                 checkBoxDireccionesRevisado.Enabled = true;
                 checkBoxContactosRevisado.Enabled = true;
                 checkBoxDatosBancariosMXRevisado.Enabled = true;
@@ -128,6 +132,7 @@ namespace ProveedorPrueba
             }
             else if (EProveedorUsuario.Usuario == "PMILLAN")
             {
+                checkBoxDatosFiscalesRevisados.Enabled = true;
                 checkBoxDireccionesRevisado.Enabled = true;
                 checkBoxContactosRevisado.Enabled = true;
                 checkBoxDatosBancariosMXRevisado.Enabled = true;
@@ -295,6 +300,28 @@ namespace ProveedorPrueba
             //}
 
         }
+        private void AgregarMovimiento(string accionDato, string categoriaDato)
+        {
+            try
+            {
+                int id = 0;
+                EProveedorMovimientos Mov = new EProveedorMovimientos()
+                {
+                    ClaveProveedor = eProveedorDatosPrim.ClaveProveedor,
+                    NombreProveedor = eProveedorDatosPrim.NombreProveedor,
+                    AccionDato = accionDato,
+                    CategoriaDato = categoriaDato,
+                    Usuario = EProveedorUsuario.Usuario,
+                    idCorrespondiente = id,
+                    Fecha = DateTime.Now
+                };
+                proveedorMovimientosBol.agregarMov(Mov);
+            }
+             catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
         private void checkBoxDireccionesRevisado_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -310,15 +337,40 @@ namespace ProveedorPrueba
                 
                 if (checkBoxDireccionesRevisado.Checked)
                 {
-                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    if (!eProveedorDatosPrim.isDireccionesRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);                    
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
-                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    if (eProveedorDatosPrim.isDireccionesRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);                    
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -340,15 +392,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxContactosRevisado.Checked)
                 {
-                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    if (!eProveedorDatosPrim.isContactosRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);                    
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
+                    if (eProveedorDatosPrim.isContactosRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -370,15 +447,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxDatosBancariosMXRevisado.Checked)
                 {
+                    if (!eProveedorDatosPrim.isDatosBancariosMXRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
-                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    if (eProveedorDatosPrim.isDatosBancariosMXRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
+                    proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);                    
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -401,15 +503,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxDatosBancariosEXRevisado.Checked)
                 {
+                    if (!eProveedorDatosPrim.isDatosBancariosEXRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
+                    if (eProveedorDatosPrim.isDatosBancariosEXRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -432,15 +559,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxPoliticasRevisado.Checked)
                 {
+                    if (!eProveedorDatosPrim.isPoliticasRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
-                   //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
+                    //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
+                    if (eProveedorDatosPrim.isPoliticasRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -463,15 +615,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxCondicionesRevisado.Checked)
                 {
+                    if (!eProveedorDatosPrim.isCondicionesRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
+                    if (eProveedorDatosPrim.isCondicionesRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -494,15 +671,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxExpedienteRevisado.Checked)
                 {
+                    if (!eProveedorDatosPrim.isExpedienteRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
+                    if (eProveedorDatosPrim.isExpedienteRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -524,15 +726,40 @@ namespace ProveedorPrueba
 
                 if (checkBoxAcuerdosRevisado.Checked)
                 {
+                    if (!eProveedorDatosPrim.isAcuerdosRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como revisada.", "Revisión Sección " + seccionDato);
                 }
                 else
                 {
+                    if (eProveedorDatosPrim.isAcuerdosRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
                     proveedorDatosPrimBol.editarRevisionDirecciones(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
                     //MessageBox.Show("Sección " + seccionDato + " ha sido marcada como NO revisada.", "Revisión Sección " + seccionDato);
                 }
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -543,10 +770,21 @@ namespace ProveedorPrueba
         {
             try
             {
-                //Ignore this code, modify completely
+                LimpiarFletes();
                 ListaFletes = proveedorFletesBol.consultarFletesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
 
+                int counter = 0;
+
                 if (ListaFletes.Count == 0)
+                    return;
+
+                foreach (var i in ListaFletes)
+                {
+                    if (i.EstatusActivo)
+                        counter++;
+                }
+
+                if (counter < 1)
                     return;
 
                 DataTable tablaFletes = new DataTable();
@@ -575,18 +813,20 @@ namespace ProveedorPrueba
 
                 foreach (var i in ListaFletes)
                 {
-                    tablaFletes.Rows.Add(new object[] { i.ClaveProveedor, i.Fleteid, i.ClaveProveedorFlete, i.NombreProveedor,
+                    if (i.EstatusActivo)
+                    {
+                        tablaFletes.Rows.Add(new object[] { i.ClaveProveedor, i.Fleteid, i.ClaveProveedorFlete, i.NombreProveedor,
                                                         i.FormaEntrega, i.TipoEnvio, i.TransporteEnvio, i.CargoEntrega,
                                                         i.PedidoMin, i.PedidoMax, i.Unidad, i.Origen, i.Destino, i.Observaciones,
                                                         i.EsPreferencia ? "Preferente" : "No Preferente", i.CostoFleteMatriz, i.CostoFleteHipodromo, i.CostoFleteSanPedro,
                                                         i.CostoFleteMagdalena, i.CostoFleteCaborca, i.CostoFleteCEDIS, i.CostoFleteCMA });
+                    }
                 }
 
                 dataGridFletes.AutoGenerateColumns = false;
                 dataGridFletes.DataSource = tablaFletes;
                 dataGridFletes.CurrentCell = dataGridFletes.Rows[0].Cells[1];
-
-                //Flete    
+                  
                 if (dataGridFletes.CurrentRow.Cells[14].Value.ToString() == "Preferente")
                     lblFletePreferenciaFletes.Visible = true;
                 txtBoxClaveProveedorFletes.Text = dataGridFletes.CurrentRow.Cells[2].Value.ToString();
@@ -742,14 +982,16 @@ namespace ProveedorPrueba
 
                 if (eProveedorCondiciones == null)
                     return;
-                
-                //checkBoxAereoCondiciones.Checked = eProveedorCondiciones.
 
-                txtBoxTiempoEntregaCondiciones.Text = Convert.ToString(eProveedorCondiciones.TiempoEntrega);
-                txtBoxObservacionesCondiciones.Text = Convert.ToString(eProveedorCondiciones.ObservacionesTiempoEntrega);
-                txtBoxCondicionesEspecialesCondiciones.Text = Convert.ToString(eProveedorCondiciones.CondicionesEspecialesEntrega);
-                
-
+                checkBoxAereoCondiciones.Checked = eProveedorCondiciones.TransporteEnvioAereo;
+                checkBoxTerrestreCondiciones.Checked = eProveedorCondiciones.TransporteEnvioTerrestre;
+                checkBoxCourierCondiciones.Checked = eProveedorCondiciones.TipoCourier;
+                checkBoxDomicilio.Checked = eProveedorCondiciones.TipoDomicilio;
+                checkBoxEntregaPersonal.Checked = eProveedorCondiciones.FormaEntregaPersonal;
+                checkBoxPaqueteria.Checked = eProveedorCondiciones.FormaPaqueteria;
+                checkBoxTransporteCarga.Checked = eProveedorCondiciones.FormaTransporteCarga;
+                checkBoxPagada.Checked = eProveedorCondiciones.CargoPagado;
+                checkBoxPorCobrar.Checked = eProveedorCondiciones.CargoPorCobrar;
                 //Sucursales de Entrega
                 if (eProveedorCondiciones.SucursalEntrega.Contains(" Matriz "))
                     checkBoxMatriz.Checked = true;
@@ -766,21 +1008,10 @@ namespace ProveedorPrueba
                 if (eProveedorCondiciones.SucursalEntrega.Contains(" CMA "))
                     checkBoxCMA.Checked = true;
 
-                //Forma de Entrega            
-                //if (eProveedorCondiciones.FormaEntrega.Contains(" Paquetería Pagada por Proveedor "))
-                //    checkBoxPaqueteriaPagadaProveedor.Checked = true;
-                //if (eProveedorCondiciones.FormaEntrega.Contains(" Paquetería por Cobrar "))
-                //    checkBoxPaqueteriaPorCobrar.Checked = true;
-                //if (eProveedorCondiciones.FormaEntrega.Contains(" Transporte Contratado "))
-                //    checkBoxTransporteContratado.Checked = true;
-                //if (eProveedorCondiciones.FormaEntrega.Contains(" Transporte de Proveedor "))
-                //    checkBoxTransporteProveedor.Checked = true;
-                //if (eProveedorCondiciones.FormaEntrega.Contains(" Otra: "))
-                //{
-                //    string[] cadenaFormaEntrega = eProveedorCondiciones.FormaEntrega.Split(new string[] { "Otra: " }, StringSplitOptions.None);
-                //    txtBoxOtraFormaEntrega.Text = cadenaFormaEntrega[1];
-                //}
-
+                txtBoxTiempoEntregaCondiciones.Text = Convert.ToString(eProveedorCondiciones.TiempoEntrega);
+                txtBoxObservacionesCondiciones.Text = Convert.ToString(eProveedorCondiciones.ObservacionesTiempoEntrega);
+                txtBoxCondicionesEspecialesCondiciones.Text = Convert.ToString(eProveedorCondiciones.CondicionesEspecialesEntrega);
+                
                
                 //    //Límite Capacidad de Bodega Por Producto
                 //    DataTable tablaLimiteCapacidad = new DataTable();
@@ -913,6 +1144,7 @@ namespace ProveedorPrueba
                 textBoxAcuerdoCompra.Text = Convert.ToString(eProveedorAcuerdos.AcuerdoCompra);
                 txtBoxAcuerdoVentaPublico.Text = Convert.ToString(eProveedorAcuerdos.AcuerdoVentaPublico);
                 txtBoxAcuerdoAtencionClientes.Text = Convert.ToString(eProveedorAcuerdos.AcuerdoAtencionClientes);
+                txtBoxListaPreciosAcuerdos.Text = Convert.ToString(eProveedorAcuerdos.ListaPrecios);
             }
             catch (Exception ex)
             {
@@ -1272,7 +1504,29 @@ namespace ProveedorPrueba
                 dateTimePickerDatosGen.Value = eProveedorDatosPrim.fechaUltimaActualizacion;
                 if (eProveedorDatosPrim.PATHImagen != "")
                     picBoxLogoProveedor.ImageLocation = Convert.ToString(eProveedorDatosPrim.PATHImagen);
-                txtBoxPaginaWebProveedorDatosPrimarios.Text = Convert.ToString(eProveedorProv.DirInternet);
+                txtBoxPaginaWebProveedorDatosPrimarios.Text = Convert.ToString(eProveedorProv.DirInternet);                
+                checkBoxDatosFiscalesRevisados.Checked = eProveedorDatosPrim.isDatosFiscalesRevisado;
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
+
 
                 CargarDireccionesDatosGenerales(claveP);
                 CargarContactosDatosGenerales(claveP);
@@ -1288,7 +1542,7 @@ namespace ProveedorPrueba
         {
             try
             {
-                checkBoxPoliticasRevisado.Checked = false;
+                //checkBoxPoliticasRevisado.Checked = false;
                 picBoxLogoPoliticas.ImageLocation = "";
                 txtBoxProveedorPoliticas.Clear();
                 txtBoxClavePoliticas.Clear();
@@ -1324,7 +1578,7 @@ namespace ProveedorPrueba
         {
             try
             {
-                checkBoxExpedienteRevisado.Checked = false;
+                //checkBoxExpedienteRevisado.Checked = false;
                 txtBoxClaveExpediente.Clear();
                 txtBoxProveedorExpediente.Clear();
                 txtBoxRFCExpediente.Clear();
@@ -1474,7 +1728,7 @@ namespace ProveedorPrueba
             try
             {
                 //tab Condiciones
-                checkBoxCondicionesRevisado.Checked = false;
+                //checkBoxCondicionesRevisado.Checked = false;
                 txtBoxClaveCondiciones.Clear();
                 txtBoxProveedorCondiciones.Clear();
                 txtBoxRFCCondiciones.Clear();
@@ -1516,7 +1770,7 @@ namespace ProveedorPrueba
         {
             try
             {
-                checkBoxAcuerdosRevisado.Checked = false;
+                //checkBoxAcuerdosRevisado.Checked = false;
                 txtBoxClaveAcuerdos.Clear();
                 txtBoxProveedorAcuerdos.Clear();
                 txtBoxRFCAcuerdos.Clear();
@@ -1532,6 +1786,10 @@ namespace ProveedorPrueba
                 txtBoxAcuerdoAtencionClientes.Clear();
                 comboBoxListaAcuerdosAtencionClientes.SelectedIndex = -1;
                 comboBoxListaAcuerdosAtencionClientes.Text = "";
+                txtBoxListaPreciosAcuerdos.Clear();
+                txtBoxArchivosDisponiblesListaPreciosAcuerdos.Clear();
+                comboBoxArchivosListaPreciosAcuerdos.SelectedIndex = -1;
+                comboBoxArchivosListaPreciosAcuerdos.Text = "";
                 
             }
             catch (Exception ex)
@@ -1693,6 +1951,9 @@ namespace ProveedorPrueba
                 comboBoxListaAcuerdosVentaPublico.SelectedIndex = -1;
                 comboBoxListaAcuerdosAtencionClientes.Items.Clear();
                 comboBoxListaAcuerdosAtencionClientes.SelectedIndex = -1;
+                txtBoxArchivosDisponiblesListaPreciosAcuerdos.Clear();
+                comboBoxArchivosListaPreciosAcuerdos.Items.Clear();
+                comboBoxArchivosListaPreciosAcuerdos.SelectedIndex = -1;
                 comboBoxListaObservacionesFormaEntrega.Items.Clear();
                 comboBoxListaObservacionesFormaEntrega.SelectedIndex = -1;
                 comboBoxListaContratoExpediente.Items.Clear();
@@ -1731,7 +1992,7 @@ namespace ProveedorPrueba
                     {
                         comboBoxListaConveniosCompra.Items.Add(i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo));
                         txtBoxArchivosConvenioCompraPoliticas.Text += (i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo)) + "\r\n";
-                    }                       
+                    }
                     else if (i.CategoriaArchivo == "Políticas para Devoluciones")
                         comboBoxListaPoliticasDevoluciones.Items.Add(i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo));
                     else if (i.CategoriaArchivo == "Políticas de Garantías")
@@ -1742,6 +2003,11 @@ namespace ProveedorPrueba
                         comboBoxListaAcuerdosVentaPublico.Items.Add(i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo));
                     else if (i.CategoriaArchivo == "Acuerdo para Atención a Clientes")
                         comboBoxListaAcuerdosAtencionClientes.Items.Add(i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo));
+                    else if (i.CategoriaArchivo == "Listas de Precios")
+                    {
+                        comboBoxArchivosListaPreciosAcuerdos.Items.Add(i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo));
+                        txtBoxArchivosDisponiblesListaPreciosAcuerdos.Text += (i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo)) + "\r\n";
+                    }
                     else if (i.CategoriaArchivo == "Observaciones en Tiempo y Forma de Entrega")
                         comboBoxListaObservacionesFormaEntrega.Items.Add(i.UbicacionArchivoid + " " + Path.GetFileName(i.PATHArchivo));
                     else if (i.CategoriaArchivo == "Contrato")
@@ -1820,20 +2086,39 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);                
             }
         }
+        private void CargarActividad() 
+        {
+            ListaMovimientos = proveedorMovimientosBol.consultarUltimos100Movimientos();
+            notificaciones.txtBoxCambiosRealizados.Clear();
+            foreach (var i in ListaMovimientos)
+            {
+                notificaciones.txtBoxCambiosRealizados.Text += "- " + Convert.ToString(i.Fecha) +": " +
+                    i.AccionDato + " " + i.CategoriaDato + " de " + i.ClaveProveedor + " " + i.NombreProveedor +
+                    " por " + i.Usuario + "\r\n \r\n";
+            }
+        }
+        private void CargarProximasActualizacionesProveedor(string claveProveedor)
+        {
 
+        }
+        private void CargarProximasActualizacionesGeneral()
+        {
+
+        }
         private void btnVerNotificaciones_Click(object sender, EventArgs e)
         {
             //Cargar Panel de Notificaciones
             try
             {
-                notificaciones.Show();
-                MessageBox.Show(string.Format("En Proceso ..."),
-                "Función no implementada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                notificaciones.Show();                
                 if (eProveedorDatosPrim != null)
                 {
-                    notificaciones.ClaveProveedor = eProveedorDatosPrim.ClaveProveedor;
-                    notificaciones.NombreProveedor = eProveedorDatosPrim.NombreProveedor;
+                    notificaciones.lblProximasActualizacionesIndividual.Text = "Próximas Actualizaciones de " +
+                    eProveedorDatosPrim.ClaveProveedor + " " + eProveedorDatosPrim.NombreProveedor;
                 }
+                CargarActividad();
+                //Cargar Proximas Actualizaciones de Proveedor
+                //Cargar Proximas Actualizaciones General
             }
             catch (Exception ex)
             {
@@ -1846,6 +2131,14 @@ namespace ProveedorPrueba
         {
             try
             {
+                EAgroVersiones eAgroVersiones = agroVersionesBol.getAppVersion("Catalogo de Proveedores");
+                if (eAgroVersiones.Version != versionActualizada)
+                {
+                    MessageBox.Show("La actualización " + eAgroVersiones.Version + " ya está lista. \r\n" +
+                        "Presiona ACEPTAR y cóntactate con Soporte Técnico para actualizar la aplicación.", "Nueva actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+
                 eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
 
                 if (eProveedorDatosPrim == null)
@@ -1882,6 +2175,14 @@ namespace ProveedorPrueba
         {
             try
             {
+                EAgroVersiones eAgroVersiones = agroVersionesBol.getAppVersion("Catalogo de Proveedores");
+                if (eAgroVersiones.Version != versionActualizada)
+                {
+                    MessageBox.Show("La actualización " + eAgroVersiones.Version + " ya está lista. \r\n" +
+                        "Presiona ACEPTAR y cóntactate con Soporte Técnico para actualizar la aplicación.", "Nueva actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+
                 List<EProveedorDatosPrimarios> ListaProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByNombreProveedorVal(txtBoxProveedorDatosPrimarios.Text);
 
                 if (ListaProveedorDatosPrim == null)
@@ -1923,6 +2224,14 @@ namespace ProveedorPrueba
         {
             try
             {
+                EAgroVersiones eAgroVersiones = agroVersionesBol.getAppVersion("Catalogo de Proveedores");
+                if (eAgroVersiones.Version != versionActualizada)
+                {
+                    MessageBox.Show("La actualización " + eAgroVersiones.Version + " ya está lista. \r\n" +
+                        "Presiona ACEPTAR y cóntactate con Soporte Técnico para actualizar la aplicación.", "Nueva actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+
                 List<EProveedorDatosPrimarios> ListaProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByRFCProveedorVal(txtBoxRFCDatosPrimarios.Text);
                 if (ListaProveedorDatosPrim == null)
                 {
@@ -2000,13 +2309,88 @@ namespace ProveedorPrueba
         {
             try
             {
+                string dirPaginaWeb = "";
                 string accionDato = "Actualizar";
                 string categoriaDato = "Página Web";
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.No)
                 {
                     return;
-                }                
+                }
+
+                dirPaginaWeb = txtBoxPaginaWebProveedorDatosPrimarios.Text;
+
+                proveedorProvBol.actualizarPaginaWeb(eProveedorDatosPrim.ClaveProveedor, dirPaginaWeb);
+                proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarDatosGenerales(eProveedorDatosPrim.ClaveProveedor); 
+                AgregarMovimiento(accionDato, categoriaDato);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado");
+            }
+        }
+        private void checkBoxDatosFiscalesRevisados_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string accionDato = "Revisar";
+                string seccionDato = "Datos Fiscales";
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " Sección " + seccionDato,
+                          accionDato + " Sección " + seccionDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (checkBoxDatosFiscalesRevisados.Checked)
+                {
+                    if(!eProveedorDatosPrim.isDatosFiscalesRevisado)
+                        AgregarMovimiento(accionDato, seccionDato);
+                    proveedorDatosPrimBol.editarRevisionDatosFiscales(eProveedorDatosPrim.ClaveProveedor, seccionDato, true);
+                    
+                    
+                }
+                else
+                {
+                    if (eProveedorDatosPrim.isDatosFiscalesRevisado)
+                        AgregarMovimiento("No Revisado", seccionDato);
+                    proveedorDatosPrimBol.editarRevisionDatosFiscales(eProveedorDatosPrim.ClaveProveedor, seccionDato, false);
+                    
+                }
+                eProveedorDatosPrim = proveedorDatosPrimBol.consultarProveedorDatosPrimByClaveProveedorVal(txtBoxClaveDatosPrimarios.Text);
+
+                if (eProveedorDatosPrim.isDatosFiscalesRevisado && eProveedorDatosPrim.isDireccionesRevisado &&
+                    eProveedorDatosPrim.isContactosRevisado && eProveedorDatosPrim.isDatosBancariosMXRevisado &&
+                    eProveedorDatosPrim.isDatosBancariosEXRevisado && eProveedorDatosPrim.isCondicionesRevisado)
+                {
+                    checkBoxCapturaParcial.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaParcial.Checked = false;
+                }
+
+                if (checkBoxCapturaParcial.Checked && eProveedorDatosPrim.isAcuerdosRevisado &&
+                    eProveedorDatosPrim.isPoliticasRevisado && eProveedorDatosPrim.isExpedienteRevisado)
+                {
+                    checkBoxCapturaTotal.Checked = true;
+                }
+                else
+                {
+                    checkBoxCapturaTotal.Checked = false;
+                }
             }
             catch (Exception ex)
             {
@@ -2051,6 +2435,7 @@ namespace ProveedorPrueba
                             CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }  
                     }
                 }
@@ -2106,6 +2491,7 @@ namespace ProveedorPrueba
                     proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     CargarDireccionesDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                    AgregarMovimiento(accionDato, categoriaDato);
                     MessageBox.Show(categoriaDato + " ha sido agregada exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -2152,6 +2538,7 @@ namespace ProveedorPrueba
                         proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                         CargarDireccionesDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                         CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                        AgregarMovimiento(accionDato, categoriaDato);
                         return;
                     }
                 }
@@ -2233,6 +2620,7 @@ namespace ProveedorPrueba
                         proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                         CargarDireccionesDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                         CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                        AgregarMovimiento(accionDato, categoriaDato);
                         return;
                     }
                 }
@@ -2301,6 +2689,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido editada exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -2363,6 +2752,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido agregado exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -2422,6 +2812,7 @@ namespace ProveedorPrueba
                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarContactosDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                         CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                        AgregarMovimiento(accionDato, categoriaDato);
                         return;
                     }
                 }
@@ -2463,6 +2854,7 @@ namespace ProveedorPrueba
                         proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                         CargarContactosDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                         CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                        AgregarMovimiento(accionDato, categoriaDato);
                         return;
                     }
                 }
@@ -2533,6 +2925,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido editado exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -2679,6 +3072,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido agregada exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -2711,7 +3105,8 @@ namespace ProveedorPrueba
                 CargarCuentasBancariasMXDatosGenerales(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " ha sido marcada como preferente exitosamente.", accionDato + " - " + categoriaDato,
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);                
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -2745,6 +3140,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " ha sido desactivada exitosamente.", accionDato + " " + categoriaDato,
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -2805,6 +3201,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido editada exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -2952,6 +3349,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido agregada exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -3045,6 +3443,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido editada exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -3083,6 +3482,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " ha sido desactivada exitosamente.", accionDato + " " + categoriaDato,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -3109,6 +3509,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " ha sido marcada como preferente exitosamente.", accionDato + " - " + categoriaDato,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -3316,6 +3717,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -3372,6 +3774,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK); 
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -3388,6 +3797,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -3457,6 +3867,7 @@ namespace ProveedorPrueba
                             CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }
                     }
                 }
@@ -3513,6 +3924,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -3528,7 +3946,8 @@ namespace ProveedorPrueba
                 comboBoxListaIRLExpediente.SelectedIndex = -1;
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
-                CargarExpediente(eProveedorDatosPrim.ClaveProveedor);                
+                CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -3598,6 +4017,7 @@ namespace ProveedorPrueba
                             CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }
                     }
                 }
@@ -3654,6 +4074,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -3669,7 +4096,8 @@ namespace ProveedorPrueba
                 comboBoxListaPRLExpediente.SelectedIndex = -1;
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
-                CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);               
+                CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -3739,6 +4167,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -3795,6 +4224,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -3811,6 +4247,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -3880,6 +4317,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -3936,6 +4374,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -3952,6 +4397,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4021,6 +4467,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -4077,6 +4524,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -4093,6 +4547,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4162,6 +4617,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -4218,6 +4674,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -4234,6 +4697,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4303,6 +4767,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -4360,6 +4825,12 @@ namespace ProveedorPrueba
                     return;
                 }
 
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -4376,6 +4847,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4410,7 +4882,8 @@ namespace ProveedorPrueba
                     //Acuerdoid
                     AcuerdoCompra = textBoxAcuerdoCompra.Text,
                     AcuerdoVentaPublico = txtBoxAcuerdoVentaPublico.Text,
-                    AcuerdoAtencionClientes = txtBoxAcuerdoAtencionClientes.Text
+                    AcuerdoAtencionClientes = txtBoxAcuerdoAtencionClientes.Text,
+                    ListaPrecios = txtBoxListaPreciosAcuerdos.Text
                 };
 
                 proveedorAcuerdosBol.actualizarAcuerdos(Acuerdos);
@@ -4419,6 +4892,7 @@ namespace ProveedorPrueba
                 MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarAcuerdos(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch(Exception ex)
             {
@@ -4451,7 +4925,8 @@ namespace ProveedorPrueba
                     //Acuerdoid
                     AcuerdoCompra = textBoxAcuerdoCompra.Text,
                     AcuerdoVentaPublico = txtBoxAcuerdoVentaPublico.Text,
-                    AcuerdoAtencionClientes = txtBoxAcuerdoAtencionClientes.Text
+                    AcuerdoAtencionClientes = txtBoxAcuerdoAtencionClientes.Text,
+                    ListaPrecios = txtBoxListaPreciosAcuerdos.Text
                 };
 
                 proveedorAcuerdosBol.actualizarAcuerdos(Acuerdos);
@@ -4460,6 +4935,7 @@ namespace ProveedorPrueba
                 MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 CargarAcuerdos(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4499,6 +4975,17 @@ namespace ProveedorPrueba
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
         }
+        private void btnLimpiarCampoListaPrecios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtBoxListaPreciosAcuerdos.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnAbrirAcuerdoCompra_Click(object sender, EventArgs e)
         {
             try
@@ -4528,7 +5015,7 @@ namespace ProveedorPrueba
             try
             {
                 string categoriaDato = "Acuerdo de Compra";
-                string accionDato = "Agregar";
+                string accionDato = "Subir";
                 string imageLocation = "";
                 string newLocation = "";
                 OpenFileDialog dialog = new OpenFileDialog();
@@ -4562,6 +5049,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -4590,6 +5078,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -4606,6 +5101,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4675,6 +5171,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -4704,6 +5201,12 @@ namespace ProveedorPrueba
                     return;
                 }
 
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -4720,6 +5223,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4789,6 +5293,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }
                     }
                 }
@@ -4818,6 +5323,12 @@ namespace ProveedorPrueba
                     return;
                 }
 
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -4835,10 +5346,133 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSubirArchivoListaPreciosAcuerdos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string categoriaDato = "Listas de Precios";
+                string accionDato = "Agregar";
+                string imageLocation = "";
+                string newLocation = "";
+                OpenFileDialog dialog = new OpenFileDialog();
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                dialog.Filter = "All files(*.*)|*.*";
+
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    imageLocation = dialog.FileName;
+                    newLocation = copiarArchivoEnServidor(eProveedorDatosPrim.ClaveProveedor, imageLocation);
+
+                    if (!(newLocation == ""))
+                    {
+                        string pathLocation = System.IO.Path.GetFullPath(newLocation);
+                        if (!proveedorUbicacionArchivosBol.agregarUbicacionArchivo(pathLocation, eProveedorDatosPrim.ClaveProveedor, categoriaDato))
+                        {
+                            MessageBox.Show(categoriaDato + " NO ha podido ser agregada. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
+                           accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                            CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                            MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
+                           accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
+                        }
+                        DelegarUbicacionDeArchivos(eProveedorDatosPrim.ClaveProveedor);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnEliminarArchivoListaPreciosAcuerdos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string categoriaDato = "Listas de Precios";
+                string accionDato = "Desactivar Uso de ";
+
+                if (eProveedorDatosPrim == null)
+                {
+                    MessageBox.Show("Ingresar datos de Proveedor para poder " + accionDato + " " + categoriaDato,
+                          accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (Convert.ToString(comboBoxArchivosListaPreciosAcuerdos.SelectedItem) == "" || comboBoxArchivosListaPreciosAcuerdos.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
+                    return;
+                }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
+                EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
+                ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
+                string[] cadenaArchivo = null;
+                string nombreArchivo = comboBoxArchivosListaPreciosAcuerdos.SelectedItem.ToString();
+                cadenaArchivo = nombreArchivo.Split();
+                ubicacionArchivos = proveedorUbicacionArchivosBol.consultarUbicacionArchivosById(Convert.ToInt32(cadenaArchivo[0]));
+
+                proveedorUbicacionArchivosBol.desactivarUbicacionArchivoByIdVal(Convert.ToInt32(ubicacionArchivos.UbicacionArchivoid));
+                MessageBox.Show(categoriaDato + " ha sido desactivada exitosamente.", accionDato + " " + categoriaDato,
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                comboBoxArchivosListaPreciosAcuerdos.SelectedIndex = -1;
+                proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                DelegarUbicacionDeArchivos(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error: {0}", ex.Message), "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAbrirArchivoListaPreciosAcuerdos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToString(comboBoxArchivosListaPreciosAcuerdos.SelectedItem) == "" || comboBoxArchivosListaPreciosAcuerdos.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
+                    return;
+                }
+
+                EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
+                string[] cadenaArchivo = null;
+                string nombreArchivo = comboBoxArchivosListaPreciosAcuerdos.SelectedItem.ToString();
+                cadenaArchivo = nombreArchivo.Split();
+                ubicacionArchivos = proveedorUbicacionArchivosBol.consultarUbicacionArchivosById(Convert.ToInt32(cadenaArchivo[0]));
+                System.Diagnostics.Process.Start(ubicacionArchivos.PATHArchivo);
+                MessageBox.Show("El archivo seleccionado está abriéndose en el programa predeterminado.", "Abrir Archivo", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado: Es necesario verificar que se ha seleccionado un archivo.", ex.Message, MessageBoxButtons.OK);
             }
         }
 
@@ -4865,19 +5499,8 @@ namespace ProveedorPrueba
                 }
 
                 StringBuilder formaDeEntrega = new StringBuilder("");
-                StringBuilder sucursalesDeEntrega = new StringBuilder("");                
+                StringBuilder sucursalesDeEntrega = new StringBuilder("");  
 
-                //if (checkBoxPaqueteriaPagadaProveedor.Checked)
-                //    formaDeEntrega.Append(" Paquetería Pagada por Proveedor ");
-                //if (checkBoxPaqueteriaPorCobrar.Checked)
-                //    formaDeEntrega.Append(" Paquetería por Cobrar ");
-                //if (checkBoxTransporteContratado.Checked)
-                //    formaDeEntrega.Append(" Transporte Contratado ");
-                //if (checkBoxTransporteProveedor.Checked)
-                //    formaDeEntrega.Append(" Transporte de Proveedor ");
-                //if (txtBoxOtraFormaEntrega.Text != "")
-                //    formaDeEntrega.Append(" Otra: " + txtBoxOtraFormaEntrega.Text);
-                
                 if (checkBoxMatriz.Checked)
                     sucursalesDeEntrega.Append(" Matriz ");
                 if (checkBoxMagdalena.Checked)
@@ -4897,27 +5520,19 @@ namespace ProveedorPrueba
                 {
                     ClaveProveedor = eProveedorDatosPrim.ClaveProveedor,
                     //Condicionesid
-                    CondicionesCreditoDias = txtBoxCondicionesCreditoCondiciones.Text,
-                    //FletePorCobrar = null,
-                    ProntoPago1Dias = txtBoxProntoPago1Dias.Text,
-                    ProntoPago2Dias = txtBoxProntoPago2Dias.Text,
-                    ProntoPago3Dias = txtBoxProntoPago3Dias.Text,
-                    ProntoPago4Dias = txtBoxProntoPago4Dias.Text,
-                    ProntoPago5Dias = txtBoxProntoPago5Dias.Text,
-                    ProntoPago1Descuento = Convert.ToInt32(comboBoxDescProntoPago1.SelectedItem),
-                    ProntoPago2Descuento = Convert.ToInt32(comboBoxDescProntoPago2.SelectedItem),
-                    ProntoPago3Descuento = Convert.ToInt32(comboBoxDescProntoPago3.SelectedItem),
-                    ProntoPago4Descuento = Convert.ToInt32(comboBoxDescProntoPago4.SelectedItem),
-                    ProntoPago5Descuento = Convert.ToInt32(comboBoxDescProntoPago5.SelectedItem),
-                    VencimientoPagoFactura1 = Convert.ToString(comboBoxVencimientoPagoFactura1.SelectedItem),
-                    VencimientoPagoFactura2 = Convert.ToString(comboBoxVencimientoPagoFactura2.SelectedItem),
-                    VencimientoPagoFactura3 = Convert.ToString(comboBoxVencimientoPagoFactura3.SelectedItem),
-                    VencimientoPagoFactura4 = Convert.ToString(comboBoxVencimientoPagoFactura4.SelectedItem),
-                    VencimientoPagoFactura5 = Convert.ToString(comboBoxVencimientoPagoFactura5.SelectedItem),
-                    TiempoEntrega = txtBoxTiempoEntregaCondiciones.Text,
-                    ObservacionesTiempoEntrega = txtBoxObservacionesCondiciones.Text,
-                    FormaEntrega = Convert.ToString(formaDeEntrega),
+                    TransporteEnvioAereo = checkBoxAereoCondiciones.Checked,
+                    TransporteEnvioTerrestre = checkBoxTerrestreCondiciones.Checked,
+                    TipoCourier = checkBoxCourierCondiciones.Checked,
+                    TipoDomicilio = checkBoxDomicilio.Checked,
+                    FormaEntregaPersonal = checkBoxEntregaPersonal.Checked,
+                    FormaPaqueteria = checkBoxPaqueteria.Checked,
+                    FormaTransporteCarga = checkBoxTransporteCarga.Checked,
+                    CargoPagado = checkBoxPagada.Checked,
                     SucursalEntrega = Convert.ToString(sucursalesDeEntrega),
+                    CargoPorCobrar = checkBoxPorCobrar.Checked,
+                    TiempoEntrega = txtBoxTiempoEntregaCondiciones.Text,
+                    FormaEntrega = Convert.ToString(formaDeEntrega),
+                    ObservacionesTiempoEntrega = txtBoxObservacionesCondiciones.Text,                                        
                     CondicionesEspecialesEntrega = txtBoxCondicionesEspecialesCondiciones.Text
                 };                
 
@@ -4925,7 +5540,8 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);  
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -4955,17 +5571,6 @@ namespace ProveedorPrueba
                 StringBuilder formaDeEntrega = new StringBuilder("");
                 StringBuilder sucursalesDeEntrega = new StringBuilder("");
 
-                //if (checkBoxPaqueteriaPagadaProveedor.Checked)
-                //    formaDeEntrega.Append(" Paquetería Pagada por Proveedor ");
-                //if (checkBoxPaqueteriaPorCobrar.Checked)
-                //    formaDeEntrega.Append(" Paquetería por Cobrar ");
-                //if (checkBoxTransporteContratado.Checked)
-                //    formaDeEntrega.Append(" Transporte Contratado ");
-                //if (checkBoxTransporteProveedor.Checked)
-                //    formaDeEntrega.Append(" Transporte de Proveedor ");
-                //if (txtBoxOtraFormaEntrega.Text != "")
-                //    formaDeEntrega.Append(" Otra: " + txtBoxOtraFormaEntrega.Text);
-
                 if (checkBoxMatriz.Checked)
                     sucursalesDeEntrega.Append(" Matriz ");
                 if (checkBoxMagdalena.Checked)
@@ -4985,27 +5590,19 @@ namespace ProveedorPrueba
                 {
                     ClaveProveedor = eProveedorDatosPrim.ClaveProveedor,
                     //Condicionesid
-                    CondicionesCreditoDias = txtBoxCondicionesCreditoCondiciones.Text,
-                    //FletePorCobrar = null,
-                    ProntoPago1Dias = txtBoxProntoPago1Dias.Text,
-                    ProntoPago2Dias = txtBoxProntoPago2Dias.Text,
-                    ProntoPago3Dias = txtBoxProntoPago3Dias.Text,
-                    ProntoPago4Dias = txtBoxProntoPago4Dias.Text,
-                    ProntoPago5Dias = txtBoxProntoPago5Dias.Text,
-                    ProntoPago1Descuento = Convert.ToInt32(comboBoxDescProntoPago1.SelectedItem),
-                    ProntoPago2Descuento = Convert.ToInt32(comboBoxDescProntoPago2.SelectedItem),
-                    ProntoPago3Descuento = Convert.ToInt32(comboBoxDescProntoPago3.SelectedItem),
-                    ProntoPago4Descuento = Convert.ToInt32(comboBoxDescProntoPago4.SelectedItem),
-                    ProntoPago5Descuento = Convert.ToInt32(comboBoxDescProntoPago5.SelectedItem),
-                    VencimientoPagoFactura1 = Convert.ToString(comboBoxVencimientoPagoFactura1.SelectedItem),
-                    VencimientoPagoFactura2 = Convert.ToString(comboBoxVencimientoPagoFactura2.SelectedItem),
-                    VencimientoPagoFactura3 = Convert.ToString(comboBoxVencimientoPagoFactura3.SelectedItem),
-                    VencimientoPagoFactura4 = Convert.ToString(comboBoxVencimientoPagoFactura4.SelectedItem),
-                    VencimientoPagoFactura5 = Convert.ToString(comboBoxVencimientoPagoFactura5.SelectedItem),
-                    TiempoEntrega = txtBoxTiempoEntregaCondiciones.Text,
-                    ObservacionesTiempoEntrega = txtBoxObservacionesCondiciones.Text,
-                    FormaEntrega = Convert.ToString(formaDeEntrega),
+                    TransporteEnvioAereo = checkBoxAereoCondiciones.Checked,
+                    TransporteEnvioTerrestre = checkBoxTerrestreCondiciones.Checked,
+                    TipoCourier = checkBoxCourierCondiciones.Checked,
+                    TipoDomicilio = checkBoxDomicilio.Checked,
+                    FormaEntregaPersonal = checkBoxEntregaPersonal.Checked,
+                    FormaPaqueteria = checkBoxPaqueteria.Checked,
+                    FormaTransporteCarga = checkBoxTransporteCarga.Checked,
+                    CargoPagado = checkBoxPagada.Checked,
                     SucursalEntrega = Convert.ToString(sucursalesDeEntrega),
+                    CargoPorCobrar = checkBoxPorCobrar.Checked,
+                    TiempoEntrega = txtBoxTiempoEntregaCondiciones.Text,
+                    FormaEntrega = Convert.ToString(formaDeEntrega),
+                    ObservacionesTiempoEntrega = txtBoxObservacionesCondiciones.Text,
                     CondicionesEspecialesEntrega = txtBoxCondicionesEspecialesCondiciones.Text
                 };
 
@@ -5014,6 +5611,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -5135,6 +5733,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido agregado exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -5215,6 +5814,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido editado exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -5252,7 +5852,8 @@ namespace ProveedorPrueba
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarPlazosCredito(eProveedorDatosPrim.ClaveProveedor);
-                CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
+                CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -5341,6 +5942,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -5357,6 +5965,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -5402,6 +6011,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -5523,6 +6133,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido agregado exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -5604,6 +6215,7 @@ namespace ProveedorPrueba
                     CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                     MessageBox.Show(categoriaDato + " ha sido editado exitosamente.", accionDato + " " + categoriaDato,
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AgregarMovimiento(accionDato, categoriaDato);
                 }
                 else
                 {
@@ -5630,29 +6242,20 @@ namespace ProveedorPrueba
                     return;
                 }
 
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 proveedorFletesBol.desactivarFleteByIdByClaveProveedorVal(dataGridFletes.CurrentRow.Cells[1].Value.ToString(), eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " ha sido eliminada exitosamente.", accionDato + " " + categoriaDato,
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarFletes(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
-                return;
-
-                //ListaFletes = proveedorFletesBol.consultarFletesByClaveProveedorVal(Convert.ToString(eProveedorDatosPrim.ClaveProveedor));
-
-                //foreach (var i in ListaFletes)
-                //{
-                //    if (Convert.ToInt32(dataGridFletes.CurrentRow.Cells[0].Value) == i.Fleteid)
-                //    {
-                //        proveedorFletesBol.desactivarFleteByIdByClaveProveedorVal(i.Fleteid, i.ClaveProveedor);
-                //        MessageBox.Show(categoriaDato + " ha sido desactivada exitosamente.", accionDato + " " + categoriaDato,
-                //           MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //        proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
-                //        CargarCondiciones(eProveedorDatosPrim.ClaveProveedor);
-                //        CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
-                //        return;
-                //    }
-                //}
+                AgregarMovimiento(accionDato, categoriaDato);
+                return;                
             }
             catch (Exception ex)
             {
@@ -5680,6 +6283,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " ha sido marcada como preferente exitosamente.", accionDato + " - " + categoriaDato,
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -5819,6 +6423,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -5871,6 +6476,7 @@ namespace ProveedorPrueba
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 MessageBox.Show(categoriaDato + " han sido actualizado exitosamente.", accionDato + " " + categoriaDato,
                                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -5915,6 +6521,7 @@ namespace ProveedorPrueba
                             CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }
                         DelegarUbicacionDeArchivos(eProveedorDatosPrim.ClaveProveedor);
                     }
@@ -5945,6 +6552,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -5961,6 +6575,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 DelegarUbicacionDeArchivos(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -6034,6 +6649,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -6051,6 +6673,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -6097,6 +6720,7 @@ namespace ProveedorPrueba
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                        AgregarMovimiento(accionDato, categoriaDato);
                     }
                 }
             }
@@ -6148,6 +6772,13 @@ namespace ProveedorPrueba
                     MessageBox.Show("Es necesario verificar el origen del archivo.", "Archivo no encontrado.", MessageBoxButtons.OK);
                     return;
                 }
+
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro que deseas continuar?", accionDato + " " + categoriaDato, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+
                 EProveedorUbicacionArchivos ubicacionArchivos = new EProveedorUbicacionArchivos();
                 ProveedorUbicacionArchivosBol proveedorUbicacionArchivosBol = new ProveedorUbicacionArchivosBol();
                 string[] cadenaArchivo = null;
@@ -6164,6 +6795,7 @@ namespace ProveedorPrueba
                 proveedorDatosPrimBol.actualizarUtlimaActualizacion(eProveedorDatosPrim.ClaveProveedor);
                 CargarUltimaActualizacion(eProveedorDatosPrim.ClaveProveedor);                
                 CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
+                AgregarMovimiento(accionDato, categoriaDato);
             }
             catch (Exception ex)
             {
@@ -6209,6 +6841,7 @@ namespace ProveedorPrueba
                             CargarExpediente(eProveedorDatosPrim.ClaveProveedor);
                             MessageBox.Show(categoriaDato + " ha sido agregada exitosamente. " + System.Environment.NewLine + Convert.ToString(proveedorDatosPrimBol.mensajeRespuestaSP),
                            accionDato + " " + categoriaDato, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            AgregarMovimiento(accionDato, categoriaDato);
                         }                        
                     }
                 }
@@ -6644,7 +7277,22 @@ namespace ProveedorPrueba
 
         }
 
+        private void pnlDatosPrimPoliticas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         
+
+
+
+
+
+
+
+
+
+
 
 
 

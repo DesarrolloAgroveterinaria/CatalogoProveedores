@@ -32,7 +32,8 @@ namespace ProveedorAccesoDeDatos
                             Acuerdoid = Convert.ToInt32(reader["Acuerdoid"]),
                             AcuerdoCompra = reader["AcuerdoCompra"] == DBNull.Value ? "" : Convert.ToString(reader["AcuerdoCompra"]),
                             AcuerdoVentaPublico = reader["AcuerdoVentaPublico"] == DBNull.Value ? "" : Convert.ToString(reader["AcuerdoVentaPublico"]),
-                            AcuerdoAtencionClientes = reader["AcuerdoAtencioClientes"] == DBNull.Value ? "" : Convert.ToString(reader["AcuerdoAtencioClientes"])
+                            AcuerdoAtencionClientes = reader["AcuerdoAtencioClientes"] == DBNull.Value ? "" : Convert.ToString(reader["AcuerdoAtencioClientes"]),
+                            ListaPrecios = reader["ListaPrecios"] == DBNull.Value ? "" : Convert.ToString(reader["ListaPrecios"])
                         };
                         return A;
                     }
@@ -49,7 +50,8 @@ namespace ProveedorAccesoDeDatos
                 const string Query = @"EXEC AGROCatalogoProveedoresSP_EditarAcuerdosByClaveProveedor @ClaveProveedor,
 	                               @AcuerdoCompra,
                                    @AcuerdoVentaPublico,
-                                   @AcuerdoAtencioClientes";
+                                   @AcuerdoAtencioClientes,
+                                   @ListaPrecios";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
@@ -57,6 +59,7 @@ namespace ProveedorAccesoDeDatos
                     cmd.Parameters.AddWithValue("@AcuerdoCompra", acuerdos.AcuerdoCompra);
                     cmd.Parameters.AddWithValue("@AcuerdoVentaPublico", acuerdos.AcuerdoVentaPublico);
                     cmd.Parameters.AddWithValue("@AcuerdoAtencioClientes", acuerdos.AcuerdoAtencionClientes);
+                    cmd.Parameters.AddWithValue("@ListaPrecios", acuerdos.ListaPrecios);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -70,7 +73,8 @@ namespace ProveedorAccesoDeDatos
                 const string Query = @"EXEC AGROCatalogoProveedoresSP_AgregarAcuerdosByClaveProveedor @ClaveProveedor,
 	                               @AcuerdoCompra,
                                    @AcuerdoVentaPublico,
-                                   @AcuerdoAtencioClientes";
+                                   @AcuerdoAtencioClientes
+                                   @ListaPrecios";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
@@ -78,6 +82,7 @@ namespace ProveedorAccesoDeDatos
                     cmd.Parameters.AddWithValue("@AcuerdoCompra", acuerdos.AcuerdoCompra);
                     cmd.Parameters.AddWithValue("@AcuerdoVentaPublico", acuerdos.AcuerdoVentaPublico);
                     cmd.Parameters.AddWithValue("@AcuerdoAtencioClientes", acuerdos.AcuerdoAtencionClientes);
+                    cmd.Parameters.AddWithValue("@ListaPrecios", acuerdos.ListaPrecios);
                     cmd.ExecuteNonQuery();
                 }
             }

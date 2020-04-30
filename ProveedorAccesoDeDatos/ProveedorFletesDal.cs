@@ -49,6 +49,7 @@ namespace ProveedorAccesoDeDatos
                             CostoFleteCaborca = reader["CostoFleteCaborca"] == DBNull.Value ? "" : Convert.ToString(reader["CostoFleteCaborca"]),
                             CostoFleteCEDIS = reader["CostoFleteCEDIS"] == DBNull.Value ? "" : Convert.ToString(reader["CostoFleteCEDIS"]),
                             CostoFleteCMA = reader["CostoFleteCMA"] == DBNull.Value ? "" : Convert.ToString(reader["CostoFleteCMA"]),
+                            EstatusActivo = reader["EstatusActivo"] == DBNull.Value ? true : Convert.ToBoolean(reader["EstatusActivo"])
                         };
                         FLista.Add(F);
                     }
@@ -78,14 +79,16 @@ namespace ProveedorAccesoDeDatos
         public void DesactivarByIdByClave(string fleteid, string claveProveedor)
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))
-            {                
+            {
+                bool valorActivacion = false;
                 conn.Open();
-                const string Query = @"EXEC AGROCatalogoProveedoresSP_DesactivarFleteByIdByClaveProveedor @ClaveProveedor, @Fleteid";
+                const string Query = @"EXEC AGROCatalogoProveedoresSP_DesactivarFleteByIdByClaveProveedor @Fleteid, @ClaveProveedor, @EstatusActivo";
 
                 using (SqlCommand cmd = new SqlCommand(Query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@ClaveProveedor", claveProveedor);
                     cmd.Parameters.AddWithValue("@Fleteid", fleteid);
+                    cmd.Parameters.AddWithValue("@ClaveProveedor", claveProveedor);                    
+                    cmd.Parameters.AddWithValue("@EstatusActivo", valorActivacion);
                     cmd.ExecuteNonQuery();
                 }
             }

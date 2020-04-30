@@ -16,6 +16,7 @@ namespace ProveedorEntidades
         public string PATHImagen { get; set; }
         public bool hasImagen { get; set; }
         public DateTime fechaUltimaActualizacion { get; set; }
+        public bool isDatosFiscalesRevisado { get; set; }
         public bool isDireccionesRevisado { get; set; }
         public bool isContactosRevisado { get; set; }
         public bool isDatosBancariosMXRevisado { get; set; }

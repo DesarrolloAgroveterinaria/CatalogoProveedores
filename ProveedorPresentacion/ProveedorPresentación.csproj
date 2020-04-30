@@ -147,6 +147,7 @@
     <Content Include="Imagenes\agroveterinaria_logo.PNG" />
     <None Include="Imagenes\maximize %281%29.png" />
     <None Include="Imagenes\enlarge %281%29.png" />
+    <None Include="Imagenes\updated.png" />
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <ItemGroup>

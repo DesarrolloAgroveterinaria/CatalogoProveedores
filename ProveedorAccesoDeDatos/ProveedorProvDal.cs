@@ -34,5 +34,24 @@ namespace ProveedorAccesoDeDatos
                 return null;
             }            
         }
+
+        public void actualizarPaginaWebByClave(string claveProveedor, string dirPaginaWeb)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexionBD"].ToString()))
+            {
+                conn.Open();
+                DateTime dateToday = DateTime.Today;
+
+                const string Query = @"EXEC AGROCatalogoProveedoresSP_UpdatePaginaWebByClaveProveedor @ClaveProveedor,
+                                    @DirInternet";
+
+                using (SqlCommand cmd = new SqlCommand(Query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ClaveProveedor", claveProveedor);
+                    cmd.Parameters.AddWithValue("@DirInternet", dirPaginaWeb);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

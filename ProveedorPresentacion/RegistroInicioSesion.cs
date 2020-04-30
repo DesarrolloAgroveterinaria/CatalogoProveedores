@@ -16,7 +16,9 @@ namespace ProveedorPrueba
 {
     public partial class frmRegistroInicioSesion : MetroFramework.Forms.MetroForm
     {
+        private string versionActualizada = "1.9.0";
         private readonly ProveedorUsuariosBol proveedorUsuariosBol = new ProveedorUsuariosBol();
+        private readonly AgroVersionesBol agroVersionesBol = new AgroVersionesBol();
         public frmRegistroInicioSesion()
         {
             InitializeComponent();
@@ -45,6 +47,14 @@ namespace ProveedorPrueba
         {
             try
             {
+                EAgroVersiones eAgroVersiones = agroVersionesBol.getAppVersion("Catalogo de Proveedores");
+                if (eAgroVersiones.Version != versionActualizada)
+                {
+                    MessageBox.Show("La actualización " + eAgroVersiones.Version + " ya está lista. \r\n" +
+                        "Presiona ACEPTAR y cóntactate con Soporte Técnico para actualizar la aplicación.", "Nueva actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.Exit();
+                }
+                    
                 string inicio = proveedorUsuariosBol.iniciarSesion(txtBoxUsuario.Text, txtBoxContra.Text);                
 
                 if (inicio == "")

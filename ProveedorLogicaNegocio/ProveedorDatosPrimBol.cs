@@ -98,7 +98,13 @@ namespace ProveedorLogicaNegocio
 
 
             return mensajeRespuestaSP.Length == 0;
-        }                
+        }
+
+        public void editarRevisionDatosFiscales(string claveProveedor, string seccion, bool revisado)
+        {
+            mensajeRespuestaSP.Clear();
+            proveedorDatosPrimDal.editarRevision(claveProveedor, seccion, revisado);
+        }
 
         //Obtener tabla de Proveedores
         //Obtener Ultima Actualizacion

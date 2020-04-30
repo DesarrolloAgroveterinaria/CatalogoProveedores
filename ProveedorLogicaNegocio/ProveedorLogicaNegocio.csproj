@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgroVersionesBol.cs" />
     <Compile Include="ClaveBancoBol.cs" />
+    <Compile Include="ProveedorMovimientosBol.cs" />
     <Compile Include="ProveedorPlazoCreditoBol.cs" />
     <Compile Include="ProveedorUsuarioPermisosBol.cs" />
     <Compile Include="ProveedorAcuerdosBol.cs" />

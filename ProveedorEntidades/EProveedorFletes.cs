@@ -30,5 +30,6 @@ namespace ProveedorEntidades
         public string CostoFleteCaborca { get; set; }
         public string CostoFleteCEDIS { get; set; }
         public string CostoFleteCMA { get; set; }
+        public bool EstatusActivo { get; set; }
     }
 }

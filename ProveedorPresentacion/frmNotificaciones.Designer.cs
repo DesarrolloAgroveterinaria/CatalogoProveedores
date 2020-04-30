@@ -38,6 +38,8 @@
             this.txtBoxCambiosRealizados = new System.Windows.Forms.TextBox();
             this.txtBoxProximasActualizacionesIndividual = new System.Windows.Forms.TextBox();
             this.txtBoxProximasActualizacionesGeneral = new System.Windows.Forms.TextBox();
+            this.lblMensajeCategoriaProveedor = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlBarraSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,8 +136,6 @@
             this.txtBoxCambiosRealizados.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxCambiosRealizados.Size = new System.Drawing.Size(278, 422);
             this.txtBoxCambiosRealizados.TabIndex = 45;
-            this.txtBoxCambiosRealizados.Text = "- [Fecha]: [Acción] [Categoria de Dato] de [Clave] [NombreProveedor] por [Usuario" +
-    "]";
             // 
             // txtBoxProximasActualizacionesIndividual
             // 
@@ -145,7 +145,6 @@
             this.txtBoxProximasActualizacionesIndividual.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxProximasActualizacionesIndividual.Size = new System.Drawing.Size(449, 196);
             this.txtBoxProximasActualizacionesIndividual.TabIndex = 46;
-            this.txtBoxProximasActualizacionesIndividual.Text = "- [Fecha]: Vencimiento de [Documentación]";
             // 
             // txtBoxProximasActualizacionesGeneral
             // 
@@ -155,13 +154,34 @@
             this.txtBoxProximasActualizacionesGeneral.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtBoxProximasActualizacionesGeneral.Size = new System.Drawing.Size(449, 190);
             this.txtBoxProximasActualizacionesGeneral.TabIndex = 47;
-            this.txtBoxProximasActualizacionesGeneral.Text = "- [Fecha]: Vencimiento de [Documentación] de [Clave] [NombreProveedor]";
+            // 
+            // lblMensajeCategoriaProveedor
+            // 
+            this.lblMensajeCategoriaProveedor.AutoSize = true;
+            this.lblMensajeCategoriaProveedor.ForeColor = System.Drawing.Color.Red;
+            this.lblMensajeCategoriaProveedor.Location = new System.Drawing.Point(339, 94);
+            this.lblMensajeCategoriaProveedor.Name = "lblMensajeCategoriaProveedor";
+            this.lblMensajeCategoriaProveedor.Size = new System.Drawing.Size(214, 13);
+            this.lblMensajeCategoriaProveedor.TabIndex = 61;
+            this.lblMensajeCategoriaProveedor.Text = "*Esta sección está parcialmente inhabilitada";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(339, 329);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 13);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "*Esta sección está parcialmente inhabilitada";
             // 
             // frmNotificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 564);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMensajeCategoriaProveedor);
             this.Controls.Add(this.txtBoxProximasActualizacionesGeneral);
             this.Controls.Add(this.txtBoxProximasActualizacionesIndividual);
             this.Controls.Add(this.txtBoxCambiosRealizados);
@@ -181,15 +201,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlBarraSuperior;
-        private System.Windows.Forms.Label lblNotificacionesCatalogoDeProveedores;
-        private System.Windows.Forms.Button btnMin;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Label lblActividadRealizados;
-        private System.Windows.Forms.Label lblProximasActualizacionesIndividual;
-        private System.Windows.Forms.Label lblProximasActualizacionesGeneral;
-        private System.Windows.Forms.TextBox txtBoxCambiosRealizados;
-        private System.Windows.Forms.TextBox txtBoxProximasActualizacionesIndividual;
-        private System.Windows.Forms.TextBox txtBoxProximasActualizacionesGeneral;
+        public System.Windows.Forms.Panel pnlBarraSuperior;
+        public System.Windows.Forms.Label lblNotificacionesCatalogoDeProveedores;
+        public System.Windows.Forms.Button btnMin;
+        public System.Windows.Forms.Button btnCerrar;
+        public System.Windows.Forms.Label lblActividadRealizados;
+        public System.Windows.Forms.Label lblProximasActualizacionesIndividual;
+        public System.Windows.Forms.Label lblProximasActualizacionesGeneral;
+        public System.Windows.Forms.TextBox txtBoxCambiosRealizados;
+        public System.Windows.Forms.TextBox txtBoxProximasActualizacionesIndividual;
+        public System.Windows.Forms.TextBox txtBoxProximasActualizacionesGeneral;
+        private System.Windows.Forms.Label lblMensajeCategoriaProveedor;
+        private System.Windows.Forms.Label label1;
     }
 }

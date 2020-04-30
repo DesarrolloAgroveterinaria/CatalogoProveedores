@@ -13,5 +13,6 @@ namespace ProveedorEntidades
         public string AcuerdoCompra { get; set; }        
         public string AcuerdoVentaPublico { get; set; }
         public string AcuerdoAtencionClientes { get; set; }
+        public string ListaPrecios { get; set; }
     }
 }

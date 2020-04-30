@@ -169,6 +169,7 @@
             this.btnAbrirArchivoPoliticasDevoluciones = new System.Windows.Forms.Button();
             this.lblPoliticasDevoluciones = new System.Windows.Forms.Label();
             this.pnlCompraMinimaMensual = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblArchivosDisponiblesConvenioCompra = new System.Windows.Forms.Label();
             this.txtBoxArchivosConvenioCompraPoliticas = new System.Windows.Forms.TextBox();
             this.btnSubirArchivoConvenioCompra = new System.Windows.Forms.Button();
@@ -209,10 +210,12 @@
             this.lblProveedorAcuerdos = new System.Windows.Forms.Label();
             this.picBoxLogoAcuerdos = new System.Windows.Forms.PictureBox();
             this.pnlAcuerdos = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblListaPrecios = new System.Windows.Forms.Label();
             this.pnlListaPreciosAcuerdos = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos = new System.Windows.Forms.TextBox();
             this.btnSubirArchivoListaPreciosAcuerdos = new System.Windows.Forms.Button();
-            this.lblSubirArchivoListaPreciosAcuerdos = new System.Windows.Forms.Label();
             this.btnLimpiarCampoListaPrecios = new System.Windows.Forms.Button();
             this.btnEliminarArchivoListaPreciosAcuerdos = new System.Windows.Forms.Button();
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos = new System.Windows.Forms.Label();
@@ -278,7 +281,6 @@
             this.lblProveedorCondiciones = new System.Windows.Forms.Label();
             this.picBoxLogoCondiciones = new System.Windows.Forms.PictureBox();
             this.pnlCondiciones = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             this.lblCondicionesEntrega = new System.Windows.Forms.Label();
             this.pnlPlazosCredito = new System.Windows.Forms.Panel();
             this.checkBoxCondicionesItem = new System.Windows.Forms.CheckBox();
@@ -506,7 +508,9 @@
             this.tabDatosGenerales = new MetroFramework.Controls.MetroTabPage();
             this.flowPnlDatosGen = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlDatosPrimarios = new System.Windows.Forms.Panel();
-            this.lblMensajePaginaWebProveedor = new System.Windows.Forms.Label();
+            this.checkBoxCapturaTotal = new System.Windows.Forms.CheckBox();
+            this.checkBoxCapturaParcial = new System.Windows.Forms.CheckBox();
+            this.checkBoxDatosFiscalesRevisados = new System.Windows.Forms.CheckBox();
             this.lblMensajeCategoriaProveedor = new System.Windows.Forms.Label();
             this.btnActualizarCategoria = new System.Windows.Forms.Button();
             this.btnActualizarPaginaWebProveedorDatosPrimarios = new System.Windows.Forms.Button();
@@ -752,7 +756,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabOpciones = new MetroFramework.Controls.MetroTabControl();
-            this.label3 = new System.Windows.Forms.Label();
             this.pnlBarraSuperior.SuspendLayout();
             this.pnlNotificaciones.SuspendLayout();
             this.tabExpediente.SuspendLayout();
@@ -769,12 +772,14 @@
             this.pnlPoliticasGarantias.SuspendLayout();
             this.pnlPoliticasDevoluciones.SuspendLayout();
             this.pnlCompraMinimaMensual.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlcheckBoxFrecuencia.SuspendLayout();
             this.tabAcuerdos.SuspendLayout();
             this.flowPnlAcuerdos.SuspendLayout();
             this.pnlDatosPrimAcuerdos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoAcuerdos)).BeginInit();
             this.pnlAcuerdos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlListaPreciosAcuerdos.SuspendLayout();
             this.pnlAcuerdoAtencionClientes.SuspendLayout();
             this.pnlAcuerdoVentaPublico.SuspendLayout();
@@ -2018,6 +2023,7 @@
             this.pnlDatosPrimPoliticas.Name = "pnlDatosPrimPoliticas";
             this.pnlDatosPrimPoliticas.Size = new System.Drawing.Size(999, 171);
             this.pnlDatosPrimPoliticas.TabIndex = 31;
+            this.pnlDatosPrimPoliticas.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDatosPrimPoliticas_Paint);
             // 
             // checkBoxPoliticasRevisado
             // 
@@ -2445,6 +2451,7 @@
             // 
             // pnlCompraMinimaMensual
             // 
+            this.pnlCompraMinimaMensual.Controls.Add(this.pictureBox1);
             this.pnlCompraMinimaMensual.Controls.Add(this.lblArchivosDisponiblesConvenioCompra);
             this.pnlCompraMinimaMensual.Controls.Add(this.txtBoxArchivosConvenioCompraPoliticas);
             this.pnlCompraMinimaMensual.Controls.Add(this.btnSubirArchivoConvenioCompra);
@@ -2468,6 +2475,17 @@
             this.pnlCompraMinimaMensual.Size = new System.Drawing.Size(963, 613);
             this.pnlCompraMinimaMensual.TabIndex = 50;
             this.pnlCompraMinimaMensual.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTablaCategorias_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CatalogoDeProveedores.Properties.Resources.updated;
+            this.pictureBox1.Location = new System.Drawing.Point(175, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
             // 
             // lblArchivosDisponiblesConvenioCompra
             // 
@@ -2917,7 +2935,7 @@
             // 
             // pnlAcuerdos
             // 
-            this.pnlAcuerdos.Controls.Add(this.label3);
+            this.pnlAcuerdos.Controls.Add(this.pictureBox2);
             this.pnlAcuerdos.Controls.Add(this.lblListaPrecios);
             this.pnlAcuerdos.Controls.Add(this.pnlListaPreciosAcuerdos);
             this.pnlAcuerdos.Controls.Add(this.btnGuardarCambiosSeccionAcuerdos2);
@@ -2929,8 +2947,19 @@
             this.pnlAcuerdos.Controls.Add(this.pnlAcuerdoCompra);
             this.pnlAcuerdos.Location = new System.Drawing.Point(3, 180);
             this.pnlAcuerdos.Name = "pnlAcuerdos";
-            this.pnlAcuerdos.Size = new System.Drawing.Size(999, 1174);
+            this.pnlAcuerdos.Size = new System.Drawing.Size(999, 1229);
             this.pnlAcuerdos.TabIndex = 32;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CatalogoDeProveedores.Properties.Resources.updated;
+            this.pictureBox2.Location = new System.Drawing.Point(211, 877);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 75;
+            this.pictureBox2.TabStop = false;
             // 
             // lblListaPrecios
             // 
@@ -2945,8 +2974,10 @@
             // 
             // pnlListaPreciosAcuerdos
             // 
+            this.pnlListaPreciosAcuerdos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.label11);
+            this.pnlListaPreciosAcuerdos.Controls.Add(this.txtBoxArchivosDisponiblesListaPreciosAcuerdos);
             this.pnlListaPreciosAcuerdos.Controls.Add(this.btnSubirArchivoListaPreciosAcuerdos);
-            this.pnlListaPreciosAcuerdos.Controls.Add(this.lblSubirArchivoListaPreciosAcuerdos);
             this.pnlListaPreciosAcuerdos.Controls.Add(this.btnLimpiarCampoListaPrecios);
             this.pnlListaPreciosAcuerdos.Controls.Add(this.btnEliminarArchivoListaPreciosAcuerdos);
             this.pnlListaPreciosAcuerdos.Controls.Add(this.lblAbrirEliminarArchivoListaPreciosAcuerdos);
@@ -2959,26 +2990,38 @@
             this.pnlListaPreciosAcuerdos.Size = new System.Drawing.Size(963, 219);
             this.pnlListaPreciosAcuerdos.TabIndex = 71;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(624, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 15);
+            this.label11.TabIndex = 186;
+            this.label11.Text = "Archivos Disponibles";
+            // 
+            // txtBoxArchivosDisponiblesListaPreciosAcuerdos
+            // 
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.Location = new System.Drawing.Point(623, 45);
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.Multiline = true;
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.Name = "txtBoxArchivosDisponiblesListaPreciosAcuerdos";
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.Size = new System.Drawing.Size(304, 67);
+            this.txtBoxArchivosDisponiblesListaPreciosAcuerdos.TabIndex = 185;
+            // 
             // btnSubirArchivoListaPreciosAcuerdos
             // 
+            this.btnSubirArchivoListaPreciosAcuerdos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnSubirArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(626, 154);
+            this.btnSubirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(320, 137);
             this.btnSubirArchivoListaPreciosAcuerdos.Name = "btnSubirArchivoListaPreciosAcuerdos";
-            this.btnSubirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(307, 21);
-            this.btnSubirArchivoListaPreciosAcuerdos.TabIndex = 22;
-            this.btnSubirArchivoListaPreciosAcuerdos.Text = "Seleccionar Archivo";
-            this.btnSubirArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = true;
-            // 
-            // lblSubirArchivoListaPreciosAcuerdos
-            // 
-            this.lblSubirArchivoListaPreciosAcuerdos.AutoSize = true;
-            this.lblSubirArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubirArchivoListaPreciosAcuerdos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSubirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(628, 133);
-            this.lblSubirArchivoListaPreciosAcuerdos.Name = "lblSubirArchivoListaPreciosAcuerdos";
-            this.lblSubirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(80, 15);
-            this.lblSubirArchivoListaPreciosAcuerdos.TabIndex = 180;
-            this.lblSubirArchivoListaPreciosAcuerdos.Text = "Subir Archivo:";
+            this.btnSubirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(244, 28);
+            this.btnSubirArchivoListaPreciosAcuerdos.TabIndex = 181;
+            this.btnSubirArchivoListaPreciosAcuerdos.Text = "Subir Archivo";
+            this.btnSubirArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = false;
+            this.btnSubirArchivoListaPreciosAcuerdos.Click += new System.EventHandler(this.btnSubirArchivoListaPreciosAcuerdos_Click);
             // 
             // btnLimpiarCampoListaPrecios
             // 
@@ -2989,24 +3032,26 @@
             this.btnLimpiarCampoListaPrecios.TabIndex = 18;
             this.btnLimpiarCampoListaPrecios.Text = "Limpiar Campo\r";
             this.btnLimpiarCampoListaPrecios.UseVisualStyleBackColor = true;
+            this.btnLimpiarCampoListaPrecios.Click += new System.EventHandler(this.btnLimpiarCampoListaPrecios_Click);
             // 
             // btnEliminarArchivoListaPreciosAcuerdos
             // 
             this.btnEliminarArchivoListaPreciosAcuerdos.BackColor = System.Drawing.Color.LightCoral;
             this.btnEliminarArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(780, 27);
+            this.btnEliminarArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(777, 134);
             this.btnEliminarArchivoListaPreciosAcuerdos.Name = "btnEliminarArchivoListaPreciosAcuerdos";
             this.btnEliminarArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(148, 23);
             this.btnEliminarArchivoListaPreciosAcuerdos.TabIndex = 21;
             this.btnEliminarArchivoListaPreciosAcuerdos.Text = "Eliminar";
             this.btnEliminarArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = false;
+            this.btnEliminarArchivoListaPreciosAcuerdos.Click += new System.EventHandler(this.btnEliminarArchivoListaPreciosAcuerdos_Click);
             // 
             // lblAbrirEliminarArchivoListaPreciosAcuerdos
             // 
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos.AutoSize = true;
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(628, 9);
+            this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(625, 116);
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Name = "lblAbrirEliminarArchivoListaPreciosAcuerdos";
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(126, 15);
             this.lblAbrirEliminarArchivoListaPreciosAcuerdos.TabIndex = 77;
@@ -3016,7 +3061,7 @@
             // 
             this.comboBoxArchivosListaPreciosAcuerdos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxArchivosListaPreciosAcuerdos.FormattingEnabled = true;
-            this.comboBoxArchivosListaPreciosAcuerdos.Location = new System.Drawing.Point(626, 53);
+            this.comboBoxArchivosListaPreciosAcuerdos.Location = new System.Drawing.Point(623, 160);
             this.comboBoxArchivosListaPreciosAcuerdos.Name = "comboBoxArchivosListaPreciosAcuerdos";
             this.comboBoxArchivosListaPreciosAcuerdos.Size = new System.Drawing.Size(301, 22);
             this.comboBoxArchivosListaPreciosAcuerdos.TabIndex = 19;
@@ -3048,18 +3093,19 @@
             // btnAbrirArchivoListaPreciosAcuerdos
             // 
             this.btnAbrirArchivoListaPreciosAcuerdos.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(626, 27);
+            this.btnAbrirArchivoListaPreciosAcuerdos.Location = new System.Drawing.Point(623, 134);
             this.btnAbrirArchivoListaPreciosAcuerdos.Name = "btnAbrirArchivoListaPreciosAcuerdos";
             this.btnAbrirArchivoListaPreciosAcuerdos.Size = new System.Drawing.Size(148, 23);
             this.btnAbrirArchivoListaPreciosAcuerdos.TabIndex = 20;
             this.btnAbrirArchivoListaPreciosAcuerdos.Text = "Abrir";
             this.btnAbrirArchivoListaPreciosAcuerdos.UseVisualStyleBackColor = true;
+            this.btnAbrirArchivoListaPreciosAcuerdos.Click += new System.EventHandler(this.btnAbrirArchivoListaPreciosAcuerdos_Click);
             // 
             // btnGuardarCambiosSeccionAcuerdos2
             // 
             this.btnGuardarCambiosSeccionAcuerdos2.BackColor = System.Drawing.Color.Wheat;
             this.btnGuardarCambiosSeccionAcuerdos2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionAcuerdos2.Location = new System.Drawing.Point(796, 546);
+            this.btnGuardarCambiosSeccionAcuerdos2.Location = new System.Drawing.Point(419, 1159);
             this.btnGuardarCambiosSeccionAcuerdos2.Name = "btnGuardarCambiosSeccionAcuerdos2";
             this.btnGuardarCambiosSeccionAcuerdos2.Size = new System.Drawing.Size(155, 40);
             this.btnGuardarCambiosSeccionAcuerdos2.TabIndex = 23;
@@ -3080,6 +3126,7 @@
             // 
             // pnlAcuerdoAtencionClientes
             // 
+            this.pnlAcuerdoAtencionClientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAcuerdoAtencionClientes.Controls.Add(this.btnSubirArchivoAcuerdoAtencionClientes);
             this.pnlAcuerdoAtencionClientes.Controls.Add(this.lblSubirArchivoAcuerdoAtencionClientes);
             this.pnlAcuerdoAtencionClientes.Controls.Add(this.btnLimpiarCampoAcuerdoAtencionClientes);
@@ -3207,6 +3254,7 @@
             // 
             // pnlAcuerdoVentaPublico
             // 
+            this.pnlAcuerdoVentaPublico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAcuerdoVentaPublico.Controls.Add(this.btnSubirArchivoAcuerdoVentaPublico);
             this.pnlAcuerdoVentaPublico.Controls.Add(this.lblSubirArchivoAcuerdoVentaPublico);
             this.pnlAcuerdoVentaPublico.Controls.Add(this.btnLimpiarCampoAcuerdoVentaPublico);
@@ -3334,6 +3382,7 @@
             // 
             // pnlAcuerdoCompra
             // 
+            this.pnlAcuerdoCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAcuerdoCompra.Controls.Add(this.btnSubirArchivoAcuerdoCompra);
             this.pnlAcuerdoCompra.Controls.Add(this.lblSubirArchivoAcuerdoCompra);
             this.pnlAcuerdoCompra.Controls.Add(this.btnLimpiarCampoAcuerdoCompra);
@@ -3713,7 +3762,6 @@
             // 
             // pnlCondiciones
             // 
-            this.pnlCondiciones.Controls.Add(this.label9);
             this.pnlCondiciones.Controls.Add(this.lblCondicionesEntrega);
             this.pnlCondiciones.Controls.Add(this.pnlPlazosCredito);
             this.pnlCondiciones.Controls.Add(this.pnlRutasFletes);
@@ -3725,16 +3773,6 @@
             this.pnlCondiciones.Size = new System.Drawing.Size(996, 2843);
             this.pnlCondiciones.TabIndex = 32;
             this.pnlCondiciones.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(276, 900);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(229, 14);
-            this.label9.TabIndex = 297;
-            this.label9.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // lblCondicionesEntrega
             // 
@@ -6140,9 +6178,8 @@
             this.btnEliminarFletes.Name = "btnEliminarFletes";
             this.btnEliminarFletes.Size = new System.Drawing.Size(108, 23);
             this.btnEliminarFletes.TabIndex = 61;
-            this.btnEliminarFletes.Text = "Eliminar Flete";
+            this.btnEliminarFletes.Text = "Desactivar Flete";
             this.btnEliminarFletes.UseVisualStyleBackColor = false;
-            this.btnEliminarFletes.Visible = false;
             this.btnEliminarFletes.Click += new System.EventHandler(this.btnEliminarFletes_Click);
             // 
             // lblRutasFletesCondiciones
@@ -6373,7 +6410,7 @@
             // 
             this.btnGuardarCambiosSeccionCondiciones2.BackColor = System.Drawing.Color.Wheat;
             this.btnGuardarCambiosSeccionCondiciones2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarCambiosSeccionCondiciones2.Location = new System.Drawing.Point(765, 821);
+            this.btnGuardarCambiosSeccionCondiciones2.Location = new System.Drawing.Point(406, 845);
             this.btnGuardarCambiosSeccionCondiciones2.Name = "btnGuardarCambiosSeccionCondiciones2";
             this.btnGuardarCambiosSeccionCondiciones2.Size = new System.Drawing.Size(155, 40);
             this.btnGuardarCambiosSeccionCondiciones2.TabIndex = 43;
@@ -6460,7 +6497,7 @@
             // btnLimpiarCampoCondicionesEspecialesEntrega
             // 
             this.btnLimpiarCampoCondicionesEspecialesEntrega.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarCampoCondicionesEspecialesEntrega.Location = new System.Drawing.Point(34, 839);
+            this.btnLimpiarCampoCondicionesEspecialesEntrega.Location = new System.Drawing.Point(43, 592);
             this.btnLimpiarCampoCondicionesEspecialesEntrega.Name = "btnLimpiarCampoCondicionesEspecialesEntrega";
             this.btnLimpiarCampoCondicionesEspecialesEntrega.Size = new System.Drawing.Size(274, 28);
             this.btnLimpiarCampoCondicionesEspecialesEntrega.TabIndex = 42;
@@ -6473,11 +6510,11 @@
             this.txtBoxCondicionesEspecialesCondiciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxCondicionesEspecialesCondiciones.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCondicionesEspecialesCondiciones.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtBoxCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(34, 737);
+            this.txtBoxCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(31, 496);
             this.txtBoxCondicionesEspecialesCondiciones.Multiline = true;
             this.txtBoxCondicionesEspecialesCondiciones.Name = "txtBoxCondicionesEspecialesCondiciones";
             this.txtBoxCondicionesEspecialesCondiciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxCondicionesEspecialesCondiciones.Size = new System.Drawing.Size(518, 90);
+            this.txtBoxCondicionesEspecialesCondiciones.Size = new System.Drawing.Size(521, 90);
             this.txtBoxCondicionesEspecialesCondiciones.TabIndex = 41;
             // 
             // lblCondicionesEspecialesCondiciones
@@ -6485,7 +6522,7 @@
             this.lblCondicionesEspecialesCondiciones.AutoSize = true;
             this.lblCondicionesEspecialesCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCondicionesEspecialesCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(31, 716);
+            this.lblCondicionesEspecialesCondiciones.Location = new System.Drawing.Point(28, 475);
             this.lblCondicionesEspecialesCondiciones.Name = "lblCondicionesEspecialesCondiciones";
             this.lblCondicionesEspecialesCondiciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCondicionesEspecialesCondiciones.Size = new System.Drawing.Size(219, 17);
@@ -6505,7 +6542,7 @@
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22});
             this.dataGridLimiteCapacidad.Enabled = false;
-            this.dataGridLimiteCapacidad.Location = new System.Drawing.Point(32, 519);
+            this.dataGridLimiteCapacidad.Location = new System.Drawing.Point(33, 665);
             this.dataGridLimiteCapacidad.Name = "dataGridLimiteCapacidad";
             this.dataGridLimiteCapacidad.Size = new System.Drawing.Size(888, 165);
             this.dataGridLimiteCapacidad.TabIndex = 40;
@@ -6573,7 +6610,7 @@
             this.lblLimiteCapacidadCondiciones.AutoSize = true;
             this.lblLimiteCapacidadCondiciones.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLimiteCapacidadCondiciones.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblLimiteCapacidadCondiciones.Location = new System.Drawing.Point(27, 499);
+            this.lblLimiteCapacidadCondiciones.Location = new System.Drawing.Point(28, 645);
             this.lblLimiteCapacidadCondiciones.Name = "lblLimiteCapacidadCondiciones";
             this.lblLimiteCapacidadCondiciones.Size = new System.Drawing.Size(268, 17);
             this.lblLimiteCapacidadCondiciones.TabIndex = 89;
@@ -6800,7 +6837,9 @@
             // 
             // pnlDatosPrimarios
             // 
-            this.pnlDatosPrimarios.Controls.Add(this.lblMensajePaginaWebProveedor);
+            this.pnlDatosPrimarios.Controls.Add(this.checkBoxCapturaTotal);
+            this.pnlDatosPrimarios.Controls.Add(this.checkBoxCapturaParcial);
+            this.pnlDatosPrimarios.Controls.Add(this.checkBoxDatosFiscalesRevisados);
             this.pnlDatosPrimarios.Controls.Add(this.lblMensajeCategoriaProveedor);
             this.pnlDatosPrimarios.Controls.Add(this.btnActualizarCategoria);
             this.pnlDatosPrimarios.Controls.Add(this.btnActualizarPaginaWebProveedorDatosPrimarios);
@@ -6830,15 +6869,41 @@
             this.pnlDatosPrimarios.TabIndex = 12;
             this.pnlDatosPrimarios.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDatosPrimarios_Paint);
             // 
-            // lblMensajePaginaWebProveedor
+            // checkBoxCapturaTotal
             // 
-            this.lblMensajePaginaWebProveedor.AutoSize = true;
-            this.lblMensajePaginaWebProveedor.ForeColor = System.Drawing.Color.Red;
-            this.lblMensajePaginaWebProveedor.Location = new System.Drawing.Point(668, 188);
-            this.lblMensajePaginaWebProveedor.Name = "lblMensajePaginaWebProveedor";
-            this.lblMensajePaginaWebProveedor.Size = new System.Drawing.Size(130, 14);
-            this.lblMensajePaginaWebProveedor.TabIndex = 61;
-            this.lblMensajePaginaWebProveedor.Text = "*No se puede actualizar";
+            this.checkBoxCapturaTotal.AutoSize = true;
+            this.checkBoxCapturaTotal.Enabled = false;
+            this.checkBoxCapturaTotal.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCapturaTotal.Location = new System.Drawing.Point(505, 239);
+            this.checkBoxCapturaTotal.Name = "checkBoxCapturaTotal";
+            this.checkBoxCapturaTotal.Size = new System.Drawing.Size(156, 31);
+            this.checkBoxCapturaTotal.TabIndex = 64;
+            this.checkBoxCapturaTotal.Text = "Captura Total";
+            this.checkBoxCapturaTotal.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCapturaParcial
+            // 
+            this.checkBoxCapturaParcial.AutoSize = true;
+            this.checkBoxCapturaParcial.Enabled = false;
+            this.checkBoxCapturaParcial.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCapturaParcial.Location = new System.Drawing.Point(310, 239);
+            this.checkBoxCapturaParcial.Name = "checkBoxCapturaParcial";
+            this.checkBoxCapturaParcial.Size = new System.Drawing.Size(171, 31);
+            this.checkBoxCapturaParcial.TabIndex = 63;
+            this.checkBoxCapturaParcial.Text = "Captura Parcial";
+            this.checkBoxCapturaParcial.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDatosFiscalesRevisados
+            // 
+            this.checkBoxDatosFiscalesRevisados.AutoSize = true;
+            this.checkBoxDatosFiscalesRevisados.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDatosFiscalesRevisados.Location = new System.Drawing.Point(19, 191);
+            this.checkBoxDatosFiscalesRevisados.Name = "checkBoxDatosFiscalesRevisados";
+            this.checkBoxDatosFiscalesRevisados.Size = new System.Drawing.Size(148, 18);
+            this.checkBoxDatosFiscalesRevisados.TabIndex = 62;
+            this.checkBoxDatosFiscalesRevisados.Text = "Datos Fiscales Revisados";
+            this.checkBoxDatosFiscalesRevisados.UseVisualStyleBackColor = true;
+            this.checkBoxDatosFiscalesRevisados.CheckedChanged += new System.EventHandler(this.checkBoxDatosFiscalesRevisados_CheckedChanged);
             // 
             // lblMensajeCategoriaProveedor
             // 
@@ -6866,13 +6931,12 @@
             // 
             this.btnActualizarPaginaWebProveedorDatosPrimarios.BackColor = System.Drawing.Color.Wheat;
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizarPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(365, 216);
+            this.btnActualizarPaginaWebProveedorDatosPrimarios.Location = new System.Drawing.Point(691, 188);
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Name = "btnActualizarPaginaWebProveedorDatosPrimarios";
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Size = new System.Drawing.Size(153, 23);
             this.btnActualizarPaginaWebProveedorDatosPrimarios.TabIndex = 10;
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Text = "Actualizar Página Web";
             this.btnActualizarPaginaWebProveedorDatosPrimarios.UseVisualStyleBackColor = false;
-            this.btnActualizarPaginaWebProveedorDatosPrimarios.Visible = false;
             this.btnActualizarPaginaWebProveedorDatosPrimarios.Click += new System.EventHandler(this.btnActualizarPaginaWebProveedorDatosPrimarios_Click);
             // 
             // txtBoxPaginaWebProveedorDatosPrimarios
@@ -7084,7 +7148,7 @@
             // 
             // picBoxLogoProveedor
             // 
-            this.picBoxLogoProveedor.Location = new System.Drawing.Point(16, 15);
+            this.picBoxLogoProveedor.Location = new System.Drawing.Point(19, 15);
             this.picBoxLogoProveedor.Name = "picBoxLogoProveedor";
             this.picBoxLogoProveedor.Padding = new System.Windows.Forms.Padding(20, 20, 0, 0);
             this.picBoxLogoProveedor.Size = new System.Drawing.Size(129, 118);
@@ -9572,25 +9636,15 @@
             // tabOpciones
             // 
             this.tabOpciones.Controls.Add(this.tabDatosGenerales);
-            this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabCondiciones);
             this.tabOpciones.Controls.Add(this.tabAcuerdos);
+            this.tabOpciones.Controls.Add(this.tabPoliticas);
             this.tabOpciones.Controls.Add(this.tabExpediente);
             this.tabOpciones.Location = new System.Drawing.Point(9, 109);
             this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 2;
+            this.tabOpciones.SelectedIndex = 3;
             this.tabOpciones.Size = new System.Drawing.Size(1058, 569);
             this.tabOpciones.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(317, 892);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 14);
-            this.label3.TabIndex = 298;
-            this.label3.Text = "Esta sección esta parcialmente habilitada. *";
             // 
             // frmCatalogoProveedores
             // 
@@ -9633,6 +9687,7 @@
             this.pnlPoliticasDevoluciones.PerformLayout();
             this.pnlCompraMinimaMensual.ResumeLayout(false);
             this.pnlCompraMinimaMensual.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlcheckBoxFrecuencia.ResumeLayout(false);
             this.pnlcheckBoxFrecuencia.PerformLayout();
             this.tabAcuerdos.ResumeLayout(false);
@@ -9642,6 +9697,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoAcuerdos)).EndInit();
             this.pnlAcuerdos.ResumeLayout(false);
             this.pnlAcuerdos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlListaPreciosAcuerdos.ResumeLayout(false);
             this.pnlListaPreciosAcuerdos.PerformLayout();
             this.pnlAcuerdoAtencionClientes.ResumeLayout(false);
@@ -10306,7 +10362,6 @@
         private System.Windows.Forms.CheckBox checkBoxDatoBancarioEXItem;
         private System.Windows.Forms.CheckBox checkBoxDatoBancarioItem;
         private System.Windows.Forms.CheckBox checkBoxCondicionesItem;
-        private System.Windows.Forms.Label lblMensajePaginaWebProveedor;
         private System.Windows.Forms.Label lblMensajeCategoriaProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn BancoMXid;
         private System.Windows.Forms.DataGridViewTextBoxColumn EsPreferencia;
@@ -10335,7 +10390,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Preferente;
         private System.Windows.Forms.DataGridViewTextBoxColumn EstatusActividad;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatoBancarioEXRevisado;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTipoEnvioCondiciones;
         private System.Windows.Forms.Label lblCargoCondicionesEntrega;
@@ -10439,8 +10493,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CostoFleteCMA;
         private System.Windows.Forms.Label lblListaPrecios;
         private System.Windows.Forms.Panel pnlListaPreciosAcuerdos;
-        private System.Windows.Forms.Button btnSubirArchivoListaPreciosAcuerdos;
-        private System.Windows.Forms.Label lblSubirArchivoListaPreciosAcuerdos;
         private System.Windows.Forms.Button btnLimpiarCampoListaPrecios;
         private System.Windows.Forms.Button btnEliminarArchivoListaPreciosAcuerdos;
         private System.Windows.Forms.Label lblAbrirEliminarArchivoListaPreciosAcuerdos;
@@ -10448,6 +10500,13 @@
         private System.Windows.Forms.TextBox txtBoxListaPreciosAcuerdos;
         private System.Windows.Forms.Label lblListaPreciosAcuerdos;
         private System.Windows.Forms.Button btnAbrirArchivoListaPreciosAcuerdos;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtBoxArchivosDisponiblesListaPreciosAcuerdos;
+        private System.Windows.Forms.Button btnSubirArchivoListaPreciosAcuerdos;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox checkBoxDatosFiscalesRevisados;
+        private System.Windows.Forms.CheckBox checkBoxCapturaTotal;
+        private System.Windows.Forms.CheckBox checkBoxCapturaParcial;
     }
 }
